@@ -1,3 +1,8 @@
+"""
+Users App - App
+----------------
+App Configuration for Users App.
+"""
 from django.apps import AppConfig
 
 
