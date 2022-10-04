@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "==3.2"
+django-allauth = "==0.41.0"
 
 [dev-packages]
 
