@@ -1,0 +1,1 @@
+web: gunicorn the_guilty_grape.wsgi:application 
