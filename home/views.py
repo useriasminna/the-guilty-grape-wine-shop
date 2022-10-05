@@ -11,5 +11,5 @@ class Home(TemplateView):
     """
     A view to return the index page
     """
-    template_name = 'index.html'
+    template_name = 'home/index.html'
     
