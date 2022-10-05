@@ -11,6 +11,8 @@ psycopg2-binary = "*"
 gunicorn = "*"
 heroku = "*"
 django-heroku = "*"
+boto3 = "*"
+django-storages = "*"
 
 [dev-packages]
 
