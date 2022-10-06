@@ -93,4 +93,5 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         """Override str method"""
-        return self.email
+        return str(self.email)
+    

@@ -15,7 +15,7 @@ admin.site.unregister(Group)
 
 
 class UserAdmin(BaseUserAdmin):
-    """Custom Use Admin"""
+    """Custom User Admin"""
     list_display = ['email', 'admin', 'first_name', 'last_name']
     list_filter = ['admin']
     fieldsets = (
