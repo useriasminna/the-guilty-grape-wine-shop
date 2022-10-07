@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alice&family=Yesteryear&display=swap');
+
+* {
+    box-sizing: border-box;
+    color: #3a3a3a;
+}
+
+body {
+    font-family: 'Alice', serif;
+    scroll-behavior: smooth;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+/* --------------------------------------- HEADER STYLING ------------------------------------------- */
+
+.logo {
+    font-family: 'Yesteryear', cursive;
+}
+
+.logo img {
+    height: auto;
+    width: 25%;
+}
+
+.logo h4 {
+    color: white;
+    margin-bottom: 0;
+}
+
+.navbar {
+    background-color: purple;
+}
+
+.navbar ul{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li{
+    list-style: none;
+}
+
+.nav-item i{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border 0.2s ease-out;
+}
+
+.nav-item i:hover{
+    border: 2px solid #ffffff8a;
+}
+
+.dropdown-item{
+    color: #3a3a3a;
+}
+
+.dropdown-item:hover{
+    background-color: #ac96a98a;
+    color: black;
+}
+
+@media (max-width: 991.98px) {
+    .nav-item i{
+        font-size: 25px;
+    }
+}
