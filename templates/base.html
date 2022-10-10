@@ -52,50 +52,129 @@
   </head>
   <body>
     <header>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3 pt-2 pt-lg-0">
+        <a class="logo d-flex d-lg-none justify-content-center justify-content-md-start align-items-end mb-2 mb-md-0" href="{% url 'home' %}">
+          <img class="col-3 " src="{% static 'img/logo.png' %}" alt="logo image">
+          <h4>The Guilty Grape</h4>  
+        </a>
+      </div>
+      <div class="add-container bg-light d-lg-none mb-lg-2 ">
+        <div class="add container-fluid text-center"><p class="mx-auto">Free delivery on orders over 60€</p></div>
+        <div class="add container-fluid text-center"><p class="mx-auto">Register and enjoy <span class="text-success">15% off</span> on your first order</p></div> 
+      </div>
       <!-- Navigation links -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid d-block d-md-flex">
-          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-            <a class="logo d-flex justify-content-center justify-content-md-start align-items-end mb-2 mb-md-0" href="{% url 'home' %}">
-              <img class="col-3 " src="{% static 'img/logo.png' %}" alt="logo image">
-              <h4>The Guilty Grape</h4>  
-            </a>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <div class="container-fluid p-side">
+            <ul class="categories d-block d-lg-flex col-6">
+              <li class="nav-item mr-3 mt-2 mt-lg-0">
+                <a href="#">All products</a>
+              </li>
+              <li class="nav-item mr-3 mt-2 mt-lg-0">
+                <div class="dropdown">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Wines</a>
+                  <div class="dropdown-menu dropdown-menu-lg-start">
+                      <a class="dropdown-item" href="#">White Wines</a>
+                      <a class="dropdown-item" href="#">Red Wines</a>
+                      <a class="dropdown-item" href="#">Rose Wines</a>
+                      <a class="dropdown-item" href="#">Sparkling Wines</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item mr-3 mt-2 mt-lg-0">
+                <div class="dropdown">
+                  <a class="dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false" >
+                    Deluxe Edition
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-lg-start">
+                      <a class="dropdown-item" href="#">Deluxe Wines</a>
+                      <a class="dropdown-item" href="#">Deluxe Sparkling</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item mr-3 mt-2 mt-lg-0">
+                <a href="#">Special Offers</a>
+              </li>
+            </ul>
           </div>
-          {% if user.is_authenticated %}
-            {% if user.is_staff %}
-              <div class="col-12 col-md-3 col-lg-2 col-xl-1">
-                <ul class="d-flex justify-content-end navigation">
-                  <li class="nav-item mx-auto" id="adminManageNav">
-                    <div class="dropdown">
-                      <a title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
-                        <i class="fas fa-database"></i>
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-lg-start">
-                        <hr class="dropdown-divider">
-                        <a class="dropdown-item" href="#">Orders</a>
-                        <a class="dropdown-item" href="#">Add a product</a>
-                        <hr class="dropdown-divider">
-                        <a class="dropdown-item" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+          <hr class="d-lg-none">
+          <div class="container-fluid add-container bg-light d-none d-lg-block mb-lg-2 ">
+            <div class="add container-fluid"><p class="mx-auto">Free delivery on orders over 60€</p></div>
+            <div class="add container-fluid"><p class="mx-auto">Register and enjoy <span class="text-success">15% off</span> on your first order</p></div> 
+          </div>
+          <div class="container-fluid d-block d-md-flex mb-lg-1">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+              <a class="logo d-none d-lg-flex justify-content-center justify-content-md-start align-items-end mb-2 mb-md-0" href="{% url 'home' %}">
+                <img class="col-3 " src="{% static 'img/logo.png' %}" alt="logo image">
+                <h4>The Guilty Grape</h4>  
+              </a>
+            </div>
+            {% if user.is_authenticated %}
+              {% if user.is_staff %}
+                <div class="col-12 col-md-3 col-lg-2 col-xl-1">
+                  <ul class="d-block d-lg-flex justify-content-end navigation">
+                    <li class="nav-item mx-auto" id="adminManageNav">
+                      <div class="dropdown">
+                        <a title="Admin Manage" href="#"  data-toggle="dropdown" aria-expanded="false" >
+                          <i class="fas fa-database"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg-start">
+                          <hr class="dropdown-divider">
+                          <a class="dropdown-item" href="#">Orders</a>
+                          <a class="dropdown-item" href="#">Add a product</a>
+                          <hr class="dropdown-divider">
+                          <a class="dropdown-item" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li class="nav-item mx-auto" id="chatNav">
-                    <a href="" title="Customer Service"><i class="fas fa-comments"></i></a>
-                  </li>
-                </ul>
-              </div>
+                    </li>
+                    <li class="nav-item mx-auto" id="chatNav">
+                      <a href="" title="Customer Service"><i class="fas fa-comments"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              {% else %}
+                <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+                  <ul class="d-block d-lg-flex justify-content-end navigation">
+                    <li class="nav-item mx-auto" id="userNav">
+                      <div class="dropdown">
+                        <a title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
+                          <i class="fas fa-user-circle"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg-start">
+                          <a class="dropdown-item" href="#">My profile</a>
+                          <hr class="dropdown-divider">
+                          <a class="dropdown-item" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item mx-auto" id="wishlistNav">
+                      <a href="" title="Wishlist"><i class="fas fa-heart"></i></a>
+                    </li>
+                    <li class="nav-item mx-auto" id="bagNav">
+                      <a href="" title="Shopping Bag"><i class="fas fa-shopping-bag"></i></a>
+                    </li>
+                    <li class="nav-item mx-auto" id="chatNav">
+                      <a href="" title="Customer Service"><i class="fas fa-comments"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              {% endif %}
             {% else %}
               <div class="col-12 col-md-6 col-lg-3 col-xl-2">
-                <ul class="d-flex justify-content-end navigation">
+                <ul class="d-block d-lg-flex justify-content-end navigation">
                   <li class="nav-item mx-auto" id="userNav">
                     <div class="dropdown">
                       <a title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                         <i class="fas fa-user-circle"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-lg-start">
-                        <a class="dropdown-item" href="#">My profile</a>
-                        <hr class="dropdown-divider">
-                        <a class="dropdown-item" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+                          <hr class="dropdown-divider">
+                          <a class="dropdown-item" href="{% url 'account_login' %}" >Login</a>
+                          <a class="dropdown-item"  href="{% url 'account_signup' %}">Register</a>
+                          <hr class="dropdown-divider">
                       </div>
                     </div>
                   </li>
@@ -111,34 +190,7 @@
                 </ul>
               </div>
             {% endif %}
-          {% else %}
-            <div class="col-12 col-md-6 col-lg-3 col-xl-2">
-              <ul class="d-flex justify-content-end navigation">
-                <li class="nav-item mx-auto" id="userNav">
-                  <div class="dropdown">
-                    <a title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
-                      <i class="fas fa-user-circle"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg-start">
-                        <hr class="dropdown-divider">
-                        <a class="dropdown-item" href="{% url 'account_login' %}" >Login</a>
-                        <a class="dropdown-item"  href="{% url 'account_signup' %}">Register</a>
-                        <hr class="dropdown-divider">
-                    </div>
-                  </div>
-                </li>
-                <li class="nav-item mx-auto" id="wishlistNav">
-                  <a href="" title="Wishlist"><i class="fas fa-heart"></i></a>
-                </li>
-                <li class="nav-item mx-auto" id="bagNav">
-                  <a href="" title="Shopping Bag"><i class="fas fa-shopping-bag"></i></a>
-                </li>
-                <li class="nav-item mx-auto" id="chatNav">
-                  <a href="" title="Customer Service"><i class="fas fa-comments"></i></a>
-                </li>
-              </ul>
-            </div>
-          {% endif %}
+          </div>
         </div>
       </nav>
     </header>
