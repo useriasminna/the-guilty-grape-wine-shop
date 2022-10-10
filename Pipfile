@@ -13,6 +13,7 @@ heroku = "*"
 django-heroku = "*"
 boto3 = "*"
 django-storages = "*"
+pylint = "*"
 
 [dev-packages]
 
