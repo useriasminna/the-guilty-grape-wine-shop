@@ -64,8 +64,8 @@
       </div>
       <!-- Navigation links -->
       <nav class="navbar navbar-expand-lg navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button id="navbarTogglerButton" class="navbar-toggler bg-transparent" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars text-white"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarToggler">
           <div class="container-fluid p-side">
@@ -99,9 +99,12 @@
                 <a href="#">Special Offers</a>
               </li>
             </ul>
+            <div class="d-none d-lg-block col-lg-3 p-0">
+              {% include 'includes/search-box.html' %}
+            </div>
           </div>
           <hr class="d-lg-none">
-          <div class="container-fluid add-container bg-light d-none d-lg-block mb-lg-2 ">
+          <div class="container-fluid add-container bg-light d-none d-lg-block mb-lg-2 p-lg-0">
             <div class="add container-fluid"><p class="mx-auto">Free delivery on orders over 60€</p></div>
             <div class="add container-fluid"><p class="mx-auto">Register and enjoy <span class="text-success">15% off</span> on your first order</p></div> 
           </div>
@@ -116,7 +119,7 @@
               {% if user.is_staff %}
                 <div class="col-12 col-md-3 col-lg-2 col-xl-1">
                   <ul class="d-block d-lg-flex justify-content-end navigation">
-                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="adminManageNav">
+                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="adminManageNav">
                       <div class="dropdown">
                         <a title="Admin Manage" href="#"  data-toggle="dropdown" aria-expanded="false" >
                           <span class="dropdown-toggle d-lg-none">Admin manage</span>
@@ -130,13 +133,13 @@
                         </div>
                       </div>
                     </li>
-                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="chatNav">
+                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="chatNav">
                       <a href="" title="Customer Service">
                         <span class="d-lg-none">Customer service</span>
                         <i class="fas fa-comments d-none d-lg-block"></i>
                       </a>
                     </li>
-                    <li class="nav-item mx-auto mt-2 d-lg-none">
+                    <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 d-lg-none">
                       <a href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">
                         <span>Logout</span>
                       </a>
@@ -146,7 +149,7 @@
               {% else %}
                 <div class="col-12 col-md-6 col-lg-3 col-xl-2">
                   <ul class="d-block d-lg-flex justify-content-end navigation">
-                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="userNav">
+                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="userNav">
                       <div class="dropdown">
                         <a class="d-none d-lg-block" title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                           <i class="fas fa-user-circle"></i>
@@ -161,25 +164,25 @@
                         </div>
                       </div>
                     </li>
-                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="wishlistNav">
+                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="wishlistNav">
                       <a href="" title="Wishlist">
                         <span class="d-lg-none">Wishlist</span>
                         <i class="fas fa-heart d-none d-lg-block"></i>
                       </a>
                     </li>
-                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="bagNav">
+                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="bagNav">
                       <a href="" title="Shopping Bag">
                         <span class="d-lg-none">Shopping Bag</span>
                         <i class="fas fa-shopping-bag d-none d-lg-block"></i>
                       </a>
                     </li>
-                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="chatNav">
+                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="chatNav">
                       <a href="" title="Customer Service">
                         <span class="d-lg-none">Customer Service</span>
                         <i class="fas fa-comments d-none d-lg-block"></i>
                       </a>
                     </li>
-                    <li class="nav-item mx-auto mt-2 d-lg-none">
+                    <li class="nav-item mx-auto mb-2 mb-lg-0 mt-2 d-lg-none">
                       <a href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">
                         <span>Logout</span>
                       </a>
@@ -190,17 +193,17 @@
             {% else %}
               <div class="col-12 col-md-6 col-lg-3 col-xl-2">
                 <ul class="d-block d-lg-flex justify-content-end navigation">
-                  <li class="nav-item mx-auto mt-2 d-lg-none">
+                  <li class="nav-item ml-lg-4 mt-2 d-lg-none">
                     <a href="{% url 'account_login' %}" >
                       <span>Login</span>
                     </a>
                   </li>
-                  <li class="nav-item mx-auto mt-2 d-lg-none">
+                  <li class="nav-item ml-lg-4 mt-2 d-lg-none">
                     <a href="{% url 'account_signup' %}" >
                       <span>Register</span>
                     </a>
                   </li>
-                  <li class="nav-item mx-auto mt-2 mt-lg-0 d-none d-lg-block" id="userNav">
+                  <li class="nav-item ml-lg-4 mt-2 mt-lg-0 d-none d-lg-block" id="userNav">
                     <div class="dropdown">
                       <a title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                         <i class="fas fa-user-circle"></i>
@@ -211,19 +214,19 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-item mx-auto mt-2 mt-lg-0" id="wishlistNav">
+                  <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="wishlistNav">
                     <a href="" title="Wishlist">
                       <span class="d-lg-none">Wishlist</span>
                       <i class="fas fa-heart d-none d-lg-block"></i>
                     </a>
                   </li>
-                  <li class="nav-item mx-auto mt-2 mt-lg-0" id="bagNav">
+                  <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="bagNav">
                     <a href="" title="Shopping Bag">
                       <span class="d-lg-none">Shopping Bag</span>
                       <i class="fas fa-shopping-bag d-none d-lg-block"></i>
                     </a>
                   </li>
-                  <li class="nav-item mx-auto mt-2 mt-lg-0" id="chatNav">
+                  <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0" id="chatNav">
                     <a href="" title="Customer Service">
                       <span class="d-lg-none">Customer Service</span>
                       <i class="fas fa-comments d-none d-lg-block"></i>
@@ -232,6 +235,19 @@
                 </ul>
               </div>
             {% endif %}
+          </div>
+        </div>
+        <div class="d-none d-md-block d-lg-none col-md-6 search-bar">
+          {% include 'includes/search-box.html' %}
+        </div>
+        <div class="d-md-none p-0 search-bar">
+          <div class="dropdown">
+            <a class="d-lg-none" title="Search" href="#"  data-toggle="dropdown" aria-expanded="false" >
+              <i class="fas fa-search text-light"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg-start col-12">
+              {% include 'includes/search-box.html' %}
+            </div>
           </div>
         </div>
       </nav>
@@ -249,5 +265,7 @@
 
     {% block postloadjs %}
     {% endblock %}
+
+    <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
