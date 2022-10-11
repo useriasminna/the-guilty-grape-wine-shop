@@ -144,6 +144,10 @@ a, a:hover{
     }
 
 /* HEADER STYLING */
+
+    .navigation a, .navigation span{
+        color: white;
+    }
     .navbar{
         padding: 0.5rem 1rem;
     }
@@ -161,6 +165,7 @@ a, a:hover{
 
     .dropdown-menu{
         position: initial;
+        float: unset;
         background-color: transparent;
         color: white;
         border: none;
