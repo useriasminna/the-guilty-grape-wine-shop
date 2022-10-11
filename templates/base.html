@@ -52,9 +52,9 @@
   </head>
   <body>
     <header>
-      <div class="col-12 col-md-6 col-lg-4 col-xl-3 pt-2 pt-lg-0">
-        <a class="logo d-flex d-lg-none justify-content-center justify-content-md-start align-items-end mb-2 mb-md-0" href="{% url 'home' %}">
-          <img class="col-3 " src="{% static 'img/logo.png' %}" alt="logo image">
+      <div class="col-12 col-md-6 mx-md-auto mb-md-2 mb-lg-0 col-lg-4 col-xl-3 pt-2 pt-lg-0">
+        <a class="logo d-flex d-lg-none justify-content-center justify-content-lg-start align-items-end mb-2 mb-md-0" href="{% url 'home' %}">
+          <img class="col-3" src="{% static 'img/logo.png' %}" alt="logo image">
           <h4>The Guilty Grape</h4>  
         </a>
       </div>
@@ -105,7 +105,7 @@
             <div class="add container-fluid"><p class="mx-auto">Free delivery on orders over 60€</p></div>
             <div class="add container-fluid"><p class="mx-auto">Register and enjoy <span class="text-success">15% off</span> on your first order</p></div> 
           </div>
-          <div class="container-fluid d-block d-md-flex mb-lg-1">
+          <div class="container-fluid d-block d-lg-flex mb-lg-1">
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
               <a class="logo d-none d-lg-flex justify-content-center justify-content-md-start align-items-end mb-2 mb-md-0" href="{% url 'home' %}">
                 <img class="col-3 " src="{% static 'img/logo.png' %}" alt="logo image">
@@ -116,48 +116,73 @@
               {% if user.is_staff %}
                 <div class="col-12 col-md-3 col-lg-2 col-xl-1">
                   <ul class="d-block d-lg-flex justify-content-end navigation">
-                    <li class="nav-item mx-auto" id="adminManageNav">
+                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="adminManageNav">
                       <div class="dropdown">
                         <a title="Admin Manage" href="#"  data-toggle="dropdown" aria-expanded="false" >
-                          <i class="fas fa-database"></i>
+                          <span class="dropdown-toggle d-lg-none">Admin manage</span>
+                          <i class="fas fa-database d-none d-lg-block"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-start">
-                          <hr class="dropdown-divider">
                           <a class="dropdown-item" href="#">Orders</a>
                           <a class="dropdown-item" href="#">Add a product</a>
-                          <hr class="dropdown-divider">
-                          <a class="dropdown-item" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+                          <hr class="dropdown-divider d-none d-lg-block">
+                          <a class="dropdown-item d-none d-lg-block" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
                         </div>
                       </div>
                     </li>
-                    <li class="nav-item mx-auto" id="chatNav">
-                      <a href="" title="Customer Service"><i class="fas fa-comments"></i></a>
+                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="chatNav">
+                      <a href="" title="Customer Service">
+                        <span class="d-lg-none">Customer service</span>
+                        <i class="fas fa-comments d-none d-lg-block"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item mx-auto mt-2 d-lg-none">
+                      <a href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        <span>Logout</span>
+                      </a>
                     </li>
                   </ul>
                 </div>
               {% else %}
                 <div class="col-12 col-md-6 col-lg-3 col-xl-2">
                   <ul class="d-block d-lg-flex justify-content-end navigation">
-                    <li class="nav-item mx-auto" id="userNav">
+                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="userNav">
                       <div class="dropdown">
-                        <a title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
+                        <a class="d-none d-lg-block" title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                           <i class="fas fa-user-circle"></i>
+                        </a>
+                        <a class="d-lg-none" href="#">
+                          <span>My profile</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-start">
                           <a class="dropdown-item" href="#">My profile</a>
-                          <hr class="dropdown-divider">
+                          <hr class="dropdown-divider d-none d-lg-block">
                           <a class="dropdown-item" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
                         </div>
                       </div>
                     </li>
-                    <li class="nav-item mx-auto" id="wishlistNav">
-                      <a href="" title="Wishlist"><i class="fas fa-heart"></i></a>
+                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="wishlistNav">
+                      <a href="" title="Wishlist">
+                        <span class="d-lg-none">Wishlist</span>
+                        <i class="fas fa-heart d-none d-lg-block"></i>
+                      </a>
                     </li>
-                    <li class="nav-item mx-auto" id="bagNav">
-                      <a href="" title="Shopping Bag"><i class="fas fa-shopping-bag"></i></a>
+                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="bagNav">
+                      <a href="" title="Shopping Bag">
+                        <span class="d-lg-none">Shopping Bag</span>
+                        <i class="fas fa-shopping-bag d-none d-lg-block"></i>
+                      </a>
                     </li>
-                    <li class="nav-item mx-auto" id="chatNav">
-                      <a href="" title="Customer Service"><i class="fas fa-comments"></i></a>
+                    <li class="nav-item mx-auto mt-2 mt-lg-0" id="chatNav">
+                      <a href="" title="Customer Service">
+                        <span class="d-lg-none">Customer Service</span>
+                        <i class="fas fa-comments d-none d-lg-block"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item mx-auto mt-2 d-lg-none">
+                      <a href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        <span>Logout</span>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -165,27 +190,44 @@
             {% else %}
               <div class="col-12 col-md-6 col-lg-3 col-xl-2">
                 <ul class="d-block d-lg-flex justify-content-end navigation">
-                  <li class="nav-item mx-auto" id="userNav">
+                  <li class="nav-item mx-auto mt-2 d-lg-none">
+                    <a href="{% url 'account_login' %}" >
+                      <span>Login</span>
+                    </a>
+                  </li>
+                  <li class="nav-item mx-auto mt-2 d-lg-none">
+                    <a href="{% url 'account_signup' %}" >
+                      <span>Register</span>
+                    </a>
+                  </li>
+                  <li class="nav-item mx-auto mt-2 mt-lg-0 d-none d-lg-block" id="userNav">
                     <div class="dropdown">
                       <a title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                         <i class="fas fa-user-circle"></i>
                       </a>
                       <div class="dropdown-menu dropdown-menu-lg-start">
-                          <hr class="dropdown-divider">
                           <a class="dropdown-item" href="{% url 'account_login' %}" >Login</a>
                           <a class="dropdown-item"  href="{% url 'account_signup' %}">Register</a>
-                          <hr class="dropdown-divider">
                       </div>
                     </div>
                   </li>
-                  <li class="nav-item mx-auto" id="wishlistNav">
-                    <a href="" title="Wishlist"><i class="fas fa-heart"></i></a>
+                  <li class="nav-item mx-auto mt-2 mt-lg-0" id="wishlistNav">
+                    <a href="" title="Wishlist">
+                      <span class="d-lg-none">Wishlist</span>
+                      <i class="fas fa-heart d-none d-lg-block"></i>
+                    </a>
                   </li>
-                  <li class="nav-item mx-auto" id="bagNav">
-                    <a href="" title="Shopping Bag"><i class="fas fa-shopping-bag"></i></a>
+                  <li class="nav-item mx-auto mt-2 mt-lg-0" id="bagNav">
+                    <a href="" title="Shopping Bag">
+                      <span class="d-lg-none">Shopping Bag</span>
+                      <i class="fas fa-shopping-bag d-none d-lg-block"></i>
+                    </a>
                   </li>
-                  <li class="nav-item mx-auto" id="chatNav">
-                    <a href="" title="Customer Service"><i class="fas fa-comments"></i></a>
+                  <li class="nav-item mx-auto mt-2 mt-lg-0" id="chatNav">
+                    <a href="" title="Customer Service">
+                      <span class="d-lg-none">Customer Service</span>
+                      <i class="fas fa-comments d-none d-lg-block"></i>
+                    </a>
                   </li>
                 </ul>
               </div>
