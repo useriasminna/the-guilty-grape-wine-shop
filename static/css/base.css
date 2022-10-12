@@ -2,12 +2,12 @@
 
 * {
     box-sizing: border-box;
-    color: #3a3a3a;
 }
 
 body {
     font-family: 'Alice', serif;
     scroll-behavior: smooth;
+    color: #3a3a3a;
 }
 
 .p-side {
@@ -15,8 +15,82 @@ body {
 }
 
 header {
-    position: sticky;
-    background-color: purple;
+    position: fixed;
+    background-color: #7c004f;
+    width: 100%;
+    z-index: 1024;
+}
+
+/* ------------BUTTON CLASSES------- */
+.button{
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-out;
+}
+
+.button a:hover{
+    color: inherit;
+}
+
+.purple-btn{
+    background-color: #7c004f;
+    border: #7c004f;
+    box-shadow: rgb(255 255 255 / 12%) 0px 2px 4px 0px, #ffffff 0px 1px 17px 0px;
+} 
+
+.purple-btn a{
+    color: white;
+}
+
+.purple-btn:hover{
+    background-color: #5f003c;
+}
+
+/* Wiggle button class and animation */
+.wiggle-btn{
+    backface-visibility: hidden;
+    transform: translateZ(0px);
+    animation-duration: 5s;
+    animation-name: wiggle;
+    animation-play-state: running;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+    2% {
+        transform: translateX(3px) rotate(2deg);
+    }
+    4% {
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    6% {
+        transform: translateX(3px) rotate(2deg);
+    }
+    8% {
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    10% {
+        transform: translateX(2px) rotate(1deg);
+    }
+    12% {
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    14% {
+        transform: translateX(2px) rotate(1deg);
+    }
+    16% {
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    18% {
+        transform: translateX(1px) rotate(0deg);
+    }
+    20% {
+        transform: translateX(-1px) rotate(0deg);
+    }
 }
 
 a,
@@ -142,6 +216,7 @@ a:hover {
     flex-direction: column-reverse;
 }
 
+/* SEARCH BAR STYLING */
 .search-bar .form-control {
     height: 30px;
 }
@@ -171,8 +246,47 @@ a:hover {
     width: 100%;
     position: absolute;
     top: 90%;
-    background-color: purple;
+    background-color: #7c004f;
     border-radius: 0%;
+}
+
+/* HOME COVER STYLING */
+.home-cover {
+    background: url('/media/home_cover.jpg');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: right top;
+    height: 90vh;
+    position: relative;
+}
+
+.cover-overlay{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    color: white;
+} 
+
+.overlay-content{
+    width: fit-content;
+    padding: 20px;
+}
+
+/* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
+
+@media (max-width: 1200px) {
+    .home-cover {
+        height: 85vh;
+    }
+}
+
+/* --------------------------------- IPAD PRO STYLINYG ------------------------------- */
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
+
+    .home-cover {
+        height: 36vh;
+    }
 }
 
 /* --------------------------------- SMALL AND MEDIUM DEVICES STYLINYG ------------------------------- */
@@ -189,7 +303,7 @@ a:hover {
         color: white;
     }
 
-    .navigation{
+    .navigation {
         padding-left: 15px;
     }
 
@@ -227,12 +341,45 @@ a:hover {
     .categories a:hover {
         border: none;
     }
+
+    .home-cover {
+        height: 36vh;
+    }
 }
 
 /* --------------------------------- SMALL DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 767.98px) {
-    .search-bar i {
+
+    i {
+        font-size: 25px;
+    }
+
+    .search-bar .dropdown a i{
         padding-right: 12PX;
     }
+    .search-bar .dropdown-menu i{
+        margin-top: 0px;
+    }
+
+    .home-cover {
+        height: 30vh;
+        padding-left: 0px;
+
+    }
+
+    .cover-overlay{
+        padding-left: 0px;
+        width: 80%;
+    }
+}
+
+/* --------------------------------- EXTRA SMALL DEVICES STYLINYG ------------------------------- */
+
+@media (max-width: 380px) {
+
+    .home-cover {
+        height: 45vh;
+    }
+
 }
