@@ -180,7 +180,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'the-guilty-grape-wine-shop'
     AWS_S3_REGION_NAME = 'eu-west-1'
