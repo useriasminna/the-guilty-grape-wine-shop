@@ -1,6 +1,17 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block content %}
-<h1 class="display-4 text-succes">It works!</h1>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="col-12 container-fluid home-cover bg-succes">
+  <div class="text-center col-12 col-md-8 cover-overlay pl-3 pr-3 pt-5 pb-3">
+      <h1 class="d-none d-lg-block">Wines With Fortune</h1>
+      <h2 class="d-none d-md-block d-lg-none">Wines With Fortune</h2>
+      <h3 class="d-md-none">Wines With Fortune</h3>
+      <br>
+      <h4 class="d-none d-lg-block">Discover our selection of fine wines and sparkling drinks</h4>
+      <h5 class="d-none d-md-block d-lg-none">Discover our selection of fine wines and sparkling drinks</h5>
+      <h6 class="d-md-none">Discover our selection of fine wines and sparkling drinks</h6>
+      <br>
+      <div class="button purple-btn wiggle-btn mx-auto">
+        <a href="#">Explore our products</a>
+      </div>      
+  </div>
+</div>
 {% endblock %}
