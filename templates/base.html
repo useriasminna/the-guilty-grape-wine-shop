@@ -252,20 +252,18 @@
         </div>
       </nav>
     </header>
-    <main class="flex-shrink-0 main-bg">
-      
-    </main>
     <!-- LOGOUT MODAL -->
     <!-- MESSAGES -->
     {% block page_header %} 
-    {% endblock %} 
-    
-    {% block content %} 
     {% endblock %}
-
+    <main class="flex-shrink-0 main-bg">
+      <div class="content-container">
+        {% block content %} 
+        {% endblock %}
+      </div>
+    </main>
     {% block postloadjs %}
     {% endblock %}
-
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
