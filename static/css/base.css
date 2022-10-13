@@ -21,6 +21,10 @@ header {
     z-index: 1024;
 }
 
+i:focus, i:focus-visible{
+    outline: none;
+}
+
 /* ------------BUTTON CLASSES------- */
 .button{
     width: fit-content;
@@ -135,6 +139,10 @@ a:hover {
 
 .nav-item:focus,
 .nav-item:focus-visible {
+    outline: none;
+}
+
+.dropdown-toggle:focus, .dropdown-toggle:focus-within{
     outline: none;
 }
 
@@ -359,7 +367,8 @@ a:hover {
         padding-right: 12PX;
     }
     .search-bar .dropdown-menu i{
-        margin-top: 0px;
+        margin-top: 4px;
+        font-size: 20px;
     }
 
     .home-cover {
