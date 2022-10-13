@@ -252,7 +252,7 @@ a:hover {
 
 /* HOME COVER STYLING */
 .home-cover {
-    background: url('/media/home_cover.jpg');
+    background: url('../../media/home_cover.jpg');
     background-size: cover;
     background-repeat: repeat-y;
     background-position: right top;
@@ -262,7 +262,7 @@ a:hover {
 
 .cover-overlay{
     position: absolute;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     color: white;
 } 
@@ -363,7 +363,6 @@ a:hover {
     }
 
     .home-cover {
-        height: 30vh;
         padding-left: 0px;
 
     }
