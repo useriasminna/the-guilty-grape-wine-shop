@@ -23,6 +23,12 @@ header {
 
 i:focus, i:focus-visible{
     outline: none;
+    outline-offset: 0px;
+
+}
+a:focus, a:focus-visible{
+    outline: none;
+    outline-offset: 0px;
 }
 
 /* ------------BUTTON CLASSES------- */
@@ -139,10 +145,6 @@ a:hover {
 
 .nav-item:focus,
 .nav-item:focus-visible {
-    outline: none;
-}
-
-.dropdown-toggle:focus, .dropdown-toggle:focus-within{
     outline: none;
 }
 
