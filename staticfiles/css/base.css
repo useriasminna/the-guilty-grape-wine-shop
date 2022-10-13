@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alice&family=Yesteryear&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Alice', serif;
+    scroll-behavior: smooth;
+    color: #3a3a3a;
+}
+
+.p-side {
+    padding: 0 45px;
+}
+
+header {
+    position: fixed;
+    background-color: #7c004f;
+    width: 100%;
+    z-index: 1024;
+}
+
+/* ------------BUTTON CLASSES------- */
+.button{
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-out;
+}
+
+.button a:hover{
+    color: inherit;
+}
+
+.purple-btn{
+    background-color: #7c004f;
+    border: #7c004f;
+    box-shadow: rgb(255 255 255 / 12%) 0px 2px 4px 0px, #ffffff 0px 1px 17px 0px;
+} 
+
+.purple-btn a{
+    color: white;
+}
+
+.purple-btn:hover{
+    background-color: #5f003c;
+}
+
+/* Wiggle button class and animation */
+.wiggle-btn{
+    backface-visibility: hidden;
+    transform: translateZ(0px);
+    animation-duration: 5s;
+    animation-name: wiggle;
+    animation-play-state: running;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+    2% {
+        transform: translateX(3px) rotate(2deg);
+    }
+    4% {
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    6% {
+        transform: translateX(3px) rotate(2deg);
+    }
+    8% {
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    10% {
+        transform: translateX(2px) rotate(1deg);
+    }
+    12% {
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    14% {
+        transform: translateX(2px) rotate(1deg);
+    }
+    16% {
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    18% {
+        transform: translateX(1px) rotate(0deg);
+    }
+    20% {
+        transform: translateX(-1px) rotate(0deg);
+    }
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --------------------------------------- HEADER STYLING ------------------------------------------- */
+
+.logo {
+    font-family: 'Yesteryear', cursive;
+}
+
+.logo h4 {
+    color: white;
+    margin-bottom: 0;
+}
+
+.navbar ul {
+    margin: 0;
+    padding-right: 15px;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.nav-item i {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border 0.2s ease-out;
+}
+
+.nav-item i:hover {
+    border: 2px solid #ffffff8a;
+}
+
+.nav-item:focus,
+.nav-item:focus-visible {
+    outline: none;
+}
+
+.dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.dropdown-item {
+    color: #3a3a3a;
+}
+
+.dropdown-item:hover {
+    background-color: #ac96a98a;
+    color: black;
+}
+
+
+/* ADD-CONTAINER STYLING */
+.add-container {
+    font-weight: bold;
+    position: relative;
+    height: 25px;
+}
+
+.add-container .add {
+    width: 100%;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    animation: 6s autoplay infinite;
+}
+
+.add-container .add:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.add-container .add:nth-child(2) {
+    animation-delay: 3s;
+}
+
+@keyframes autoplay {
+    0% {
+        visibility: visible
+    }
+
+    50% {
+        visibility: hidden
+    }
+}
+
+/* CATEGORIES NAVBAR STYLING */
+.categories .dropdown-menu {
+    right: auto;
+    left: 0;
+}
+
+.categories a {
+    color: white;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease-out;
+}
+
+.categories a:hover {
+    color: white;
+    border-bottom: 2px solid #facef38a;
+}
+
+.categories .dropdown-menu a {
+    color: inherit;
+}
+
+.navbar {
+    padding: 0.5rem 0;
+}
+
+.navbar-collapse {
+    flex-direction: column-reverse;
+}
+
+/* SEARCH BAR STYLING */
+.search-bar .form-control {
+    height: 30px;
+}
+
+.search-bar .btn {
+    background-color: #b4b3b5;
+    border: 1px solid #b4b3b5;
+    padding: 0;
+    width: 35px;
+}
+
+.search-bar i {
+    margin-top: 6px;
+}
+
+.search-bar .btn:hover {
+    background-color: #a4a4a4;
+    border: 1px solid #a4a4a4
+}
+
+.search-bar .dropdown {
+    position: initial;
+}
+
+.search-bar .dropdown-menu {
+    padding: 0px 28px 10px 28px;
+    width: 100%;
+    position: absolute;
+    top: 90%;
+    background-color: #7c004f;
+    border-radius: 0%;
+}
+
+/* HOME COVER STYLING */
+.home-cover {
+    background: url('/media/home_cover.jpg');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: right top;
+    height: 90vh;
+    position: relative;
+}
+
+.cover-overlay{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    color: white;
+} 
+
+.overlay-content{
+    width: fit-content;
+    padding: 20px;
+}
+
+/* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
+
+@media (max-width: 1200px) {
+    .home-cover {
+        height: 85vh;
+    }
+}
+
+/* --------------------------------- IPAD PRO STYLINYG ------------------------------- */
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
+
+    .home-cover {
+        height: 36vh;
+    }
+}
+
+/* --------------------------------- SMALL AND MEDIUM DEVICES STYLINYG ------------------------------- */
+
+@media (max-width: 991.98px) {
+    .p-side {
+        padding: 0;
+    }
+
+    /* HEADER STYLING */
+
+    .navigation a,
+    .navigation span {
+        color: white;
+    }
+
+    .navigation {
+        padding-left: 15px;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-item i {
+        font-size: 25px;
+    }
+
+    .navbar-collapse hr {
+        border-top: 1px solid rgb(255 255 255 / 60%);
+    }
+
+    .navbar-collapse div:nth-of-type(3),
+    .navbar-collapse div:nth-of-type(3) div:nth-of-type(2) {
+        padding: 0px;
+    }
+
+    .dropdown-menu {
+        position: initial;
+        float: unset;
+        background-color: transparent;
+        color: white;
+        border: none;
+
+    }
+
+    .categories a {
+        border: none;
+    }
+
+    .categories a:focus,
+    .categories a:hover {
+        border: none;
+    }
+
+    .home-cover {
+        height: 36vh;
+    }
+}
+
+/* --------------------------------- SMALL DEVICES STYLINYG ------------------------------- */
+
+@media (max-width: 767.98px) {
+
+    i {
+        font-size: 25px;
+    }
+
+    .search-bar .dropdown a i{
+        padding-right: 12PX;
+    }
+    .search-bar .dropdown-menu i{
+        margin-top: 0px;
+    }
+
+    .home-cover {
+        height: 30vh;
+        padding-left: 0px;
+
+    }
+
+    .cover-overlay{
+        padding-left: 0px;
+        width: 80%;
+    }
+}
+
+/* --------------------------------- EXTRA SMALL DEVICES STYLINYG ------------------------------- */
+
+@media (max-width: 380px) {
+
+    .home-cover {
+        height: 45vh;
+    }
+
+}
