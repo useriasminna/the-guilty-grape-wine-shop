@@ -63,6 +63,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         full_name = '%s %s' % (self.first_name, self.last_name)
         return full_name.strip()
 
+    @property
+    def is_superuser(self):
+        """Return User Superuser state"""
+        return self.is_admin
+
     def has_perm(self, *args):
         """Returns true if user has permisions"""
         return self.is_staff
