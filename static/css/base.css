@@ -15,11 +15,35 @@ body {
     padding: 0 45px;
 }
 
+.min-vh{
+    min-height: 100vh;
+}
+
 header {
     position: fixed;
     background-color: #7c004f;
     width: 100%;
     z-index: 1024;
+}
+
+footer{
+    background-color: #7c004f;
+}
+
+footer i{
+    color: floralwhite;
+    border: 2px solid transparent;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+}
+
+footer i:hover{
+    border: 2px solid #fffaf08a;
+}
+
+i{
+    font-size: 20px;
 }
 
 i:focus, i:focus-visible{
@@ -367,6 +391,10 @@ a:hover {
 
 @media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
 
+    .min-vh{
+        min-height: 90vh;
+    }
+
     .home-cover {
         height: 36vh;
     }
@@ -375,6 +403,10 @@ a:hover {
 /* --------------------------------- SMALL AND MEDIUM DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 991.98px) {
+    .min-vh{
+        min-height: 90vh;
+    }
+
     .p-side {
         padding: 0;
     }
