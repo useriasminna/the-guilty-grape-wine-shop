@@ -104,7 +104,7 @@
             </div>
           </div>
           <hr class="d-lg-none">
-          <div class="container-fluid add-container bg-light d-none d-lg-block mb-lg-2 p-lg-0">
+          <div class="container-fluid add-container d-none d-lg-block mb-lg-2 p-lg-0">
             <div class="add container-fluid"><p class="mx-auto">Free delivery on orders over 60€</p></div>
             <div class="add container-fluid"><p class="mx-auto">Register and enjoy <span class="text-success">15% off</span> on your first order</p></div> 
           </div>
@@ -257,13 +257,42 @@
     {% block page_header %} 
     {% endblock %}
     <main class="flex-shrink-0 main-bg">
-      <div class="content-container">
+      <div class="content-container min-vh">
         {% block content %} 
         {% endblock %}
       </div>
     </main>
-    {% block postloadjs %}
-    {% endblock %}
+     <!-- Footer -->
+     <footer class="footer pt-4 pb-4">
+      <div class="col-12 col-xl-11 mx-auto">
+        <div class="d-md-flex text-white">
+          <div class="col-10 col-md-6 mx-auto">
+            <div class="d-lg-flex justify-content-between col-md-10 p-0 mx-auto">
+              <div class="d-flex flex-column mb-3 mb-lg-0 text-center">
+                <a class="text-white" href="#">All Products</a>
+                <a class="text-white" href="#">Sitemap</a>
+                <a class="text-white" href="#">Privacy And Policy</a>
+                <a class="text-white" href="#">Terms & Conditions</a>
+              </div>
+              <div class="text-center">
+                <p class="mb-0">Follow us on social media: </p>
+                <div class="d-flex justify-content-between text-center mb-2">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Link to facebook page"><i class="fab fa-facebook-square ms-3 "></i></a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener" aria-label="Link to twitter page"><i class="fab fa-twitter-square ms-3"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Link to instagram page"><i class="fab fa-instagram-square ms-3"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="Link to youtube page"><i class="fab fa-youtube-square ms-3"></i></a>
+                </div>
+                <p class="mb-0">Copyright &copy;Pal Iasmina 2022</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <div class="col-md-10 p-0 mx-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
