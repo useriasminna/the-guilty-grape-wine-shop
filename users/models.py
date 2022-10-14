@@ -23,9 +23,9 @@ class UserManager(BaseUserManager):
         )
 
         user.set_password(password)
-        user.staff = is_staff
-        user.admin = is_admin
-        user.active = is_active
+        user.is_staff = is_staff
+        user.is_admin = is_admin
+        user.is_active = is_active
         user.save(using=self._db)
         return user
 
@@ -62,7 +62,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         """
         full_name = '%s %s' % (self.first_name, self.last_name)
         return full_name.strip()
-
 
     def has_perm(self, *args):
         """Returns true if user has permisions"""
