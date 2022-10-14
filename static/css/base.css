@@ -10,6 +10,7 @@ body {
     color: #3a3a3a;
 }
 
+/* PADDING ON LATERAL SIDES CLASS */
 .p-side {
     padding: 0 45px;
 }
@@ -24,11 +25,25 @@ header {
 i:focus, i:focus-visible{
     outline: none;
     outline-offset: 0px;
-
 }
+
 a:focus, a:focus-visible{
     outline: none;
     outline-offset: 0px;
+}
+
+h1{
+    font-weight: bold;
+}
+
+input:focus, input:focus-visible{
+    outline: 1px solid gray;
+}
+
+.form-control:focus{
+    border: initial;
+    border-color: unset;
+    box-shadow: none;
 }
 
 /* ------------BUTTON CLASSES------- */
@@ -49,6 +64,7 @@ a:focus, a:focus-visible{
     background-color: #7c004f;
     border: #7c004f;
     box-shadow: rgb(255 255 255 / 12%) 0px 2px 4px 0px, #ffffff 0px 1px 17px 0px;
+    color: white;
 } 
 
 .purple-btn a{
@@ -168,6 +184,7 @@ a:hover {
     font-weight: bold;
     position: relative;
     height: 25px;
+    background-color: floralwhite;
 }
 
 .add-container .add {
@@ -282,6 +299,62 @@ a:hover {
     padding: 20px;
 }
 
+/* STYLING FOR ALLAUTH CONTENT */
+.auth-content>div>div:nth-child(1){
+    border-right: 1px solid #e0d9d9;
+}
+
+.auth-content form p:nth-child(2), .auth-content form p:nth-child(3){
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.auth-content form p input{
+    width: 100%;
+}
+
+#id_remember{
+    width: auto;
+}
+
+.auth-content button{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.login-content form p:nth-child(4) input{
+    width: auto;
+}
+
+.auth-link{
+    font-weight: bold;
+    color: #7c004f;
+    text-transform: uppercase;
+    animation: pulse 3s infinite;
+}
+
+.auth-link:hover{
+    color: #7c004f;
+    text-decoration: underline;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgb(79 12 41 / 70%);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(237, 233, 215, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(248, 222, 178, 0);
+    }
+}
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 1200px) {
@@ -381,6 +454,9 @@ a:hover {
     .cover-overlay{
         padding-left: 0px;
         width: 80%;
+    }
+    .auth-content>div>div:nth-child(1){
+        border-right: none;
     }
 }
 
