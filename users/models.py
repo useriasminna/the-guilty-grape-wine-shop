@@ -47,9 +47,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(verbose_name='email address', unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    active = models.BooleanField(default=True)
-    staff = models.BooleanField(default=False)
-    admin = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -63,33 +63,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         full_name = '%s %s' % (self.first_name, self.last_name)
         return full_name.strip()
 
-    @property
-    def is_staff(self):
-        """Return User Staff state"""
-        return self.staff
-
-    @property
-    def is_admin(self):
-        """Return User Admin state"""
-        return self.admin
-
-    @property
-    def is_superuser(self):
-        """Return User Superuser state"""
-        return self.admin
-
-    @property
-    def is_active(self):
-        """Return User Active state"""
-        return self.active
 
     def has_perm(self, *args):
         """Returns true if user has permisions"""
-        return self.staff
+        return self.is_staff
 
     def has_module_perms(self, *args):
         """Returns true if user has module permisions"""
-        return self.staff
+        return self.is_staff
 
     def __str__(self):
         """Override str method"""

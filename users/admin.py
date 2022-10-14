@@ -16,12 +16,12 @@ admin.site.unregister(Group)
 
 class UserAdmin(BaseUserAdmin):
     """Custom User Admin"""
-    list_display = ['email', 'admin', 'first_name', 'last_name']
-    list_filter = ['admin']
+    list_display = ['email', 'is_admin', 'first_name', 'last_name']
+    list_filter = ['is_admin']
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': ()}),
-        ('Permissions', {'fields': ('admin',)}),
+        ('Permissions', {'fields': ('is_admin',)}),
     )
 
     add_fieldsets = (
