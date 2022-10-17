@@ -123,6 +123,10 @@ input:focus, input:focus-visible{
     background-color: #5f003c;
 }
 
+.green-btn{
+    background-color: #0e8814;
+}
+
 .white-btn{
     background-color: white;
     border: 1px solid gray;
@@ -397,13 +401,44 @@ a:hover {
     font-weight: bold;
     color: #7c004f;
     text-transform: uppercase;
-    animation: pulse 3s infinite;
 }
 
 .auth-link:hover{
     color: #7c004f;
     text-decoration: underline;
 }
+
+.pulse{
+    animation: pulse 3s infinite;
+}
+
+/* LOGOUT MODAL STYLING */
+#logoutModal .modal-content{
+    border: 2px solid white;
+}
+
+#logoutModal .modal-header{
+    background-color: #5f003c;
+    color: white;
+    padding: 8px 16px;
+}
+#logoutModal .modal-footer{
+    padding: 8px 16px;
+}
+
+#logoutModal .modal-close{
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    padding: 0;
+}
+
+#logoutModal .modal-close span:hover{
+    color: #d0cbcb;
+}
+
 
 @keyframes pulse {
     0% {
