@@ -129,7 +129,7 @@
                           <a class="dropdown-item" href="#">Orders</a>
                           <a class="dropdown-item" href="#">Add a product</a>
                           <hr class="dropdown-divider d-none d-lg-block">
-                          <a class="dropdown-item d-none d-lg-block" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+                          <a class="dropdown-item d-none d-lg-block" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                         </div>
                       </div>
                     </li>
@@ -140,7 +140,7 @@
                       </a>
                     </li>
                     <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 d-lg-none">
-                      <a href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                      <a href="#" data-toggle="modal" data-target="#logoutModal">
                         <span>Logout</span>
                       </a>
                     </li>
@@ -160,7 +160,7 @@
                         <div class="dropdown-menu dropdown-menu-lg-start">
                           <a class="dropdown-item" href="#">My profile</a>
                           <hr class="dropdown-divider d-none d-lg-block">
-                          <a class="dropdown-item" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
+                          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                         </div>
                       </div>
                     </li>
@@ -183,7 +183,7 @@
                       </a>
                     </li>
                     <li class="nav-item mx-auto mb-2 mb-lg-0 mt-2 d-lg-none">
-                      <a href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                      <a href="#" data-toggle="modal" data-target="#logoutModal">
                         <span>Logout</span>
                       </a>
                     </li>
@@ -253,6 +253,31 @@
       </nav>
     </header>
     <!-- LOGOUT MODAL -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex align-items-center">
+            <h5 class="modal-title" id="logoutModalLabel">Logout</h5>
+            <button type="button" class="modal-close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to sign out?</p> 
+          </div>
+          <div class="modal-footer">
+            <form method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+              {% endif %}
+              <button type="submit" class="btn btn-secondary">Yes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- MESSAGES -->
     {% block page_header %} 
     {% endblock %}
