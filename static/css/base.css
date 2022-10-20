@@ -16,37 +16,37 @@ body {
 }
 
 /* BACKGROUND CLASSES */
-.bg-floral{
+.bg-floral {
     background-color: floralwhite;
 }
 
 /* BOX-SHADOW CLASSES */
-.card-shadow{
+.card-shadow {
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
 /* BORDER CLASSES */
-.b-light-gray{
+.b-light-gray {
     border: 1px solid #80808085;
 }
 
-.min-vh{
+.min-vh {
     min-height: 100vh;
 }
 
 header {
     position: fixed;
-    background-color: #7c004f;
+    background-color: #590243;
     width: 100%;
     z-index: 1024;
 }
 
 /* FOOTER STYLING */
-footer{
-    background-color: #7c004f;
+footer {
+    background-color: #590243;
 }
 
-footer i{
+footer i {
     color: floralwhite;
     border: 2px solid transparent;
     padding: 8px;
@@ -54,69 +54,76 @@ footer i{
     transition: all 0.2s ease-out;
 }
 
-footer i:hover{
+footer i:hover {
     border: 2px solid #fffaf08a;
 }
 
-footer .success-message{
+footer .success-message {
     color: #79f37f;
     font-size: smaller;
     font-weight: bold;
 }
 
-footer .errorlist{
+footer .errorlist {
     color: #ff0019;
 }
 
-footer > div > div > div:nth-child(1) form p{
+footer>div>div>div:nth-child(1) form p {
     text-align: left;
     margin-bottom: 10px;
 }
 
-footer > div > div > div:nth-child(1) form p input{
+footer>div>div>div:nth-child(1) form p input {
     width: 100%;
 }
 
-footer > div > div > div:nth-child(1) form p label::before{
+footer>div>div>div:nth-child(1) form p label::before {
     content: "*";
     color: #ff0019;
 }
 
-footer > div > div > div:nth-child(1) form .messages{
+footer>div>div>div:nth-child(1) form .messages {
     height: 20px;
 }
 
-/* ICON STYLING */
-i{
-    font-size: 20px;
-}
-
-i:focus, i:focus-visible{
-    outline: none;
-    outline-offset: 0px;
-}
-
-a:focus, a:focus-visible{
-    outline: none;
-    outline-offset: 0px;
-}
-
-h1{
+footer .button{
     font-weight: bold;
 }
 
-input:focus, input:focus-visible{
+/* ICON STYLING */
+i {
+    font-size: 20px;
+}
+
+i:focus,
+i:focus-visible {
+    outline: none;
+    outline-offset: 0px;
+}
+
+a:focus,
+a:focus-visible {
+    outline: none;
+    outline-offset: 0px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+input:focus,
+input:focus-visible {
     outline: 1px solid gray;
 }
 
-.form-control:focus{
+.form-control:focus {
     border: initial;
     border-color: unset;
     box-shadow: none;
 }
 
 /* FORM ERRORS STYLING */
-.errorlist{
+.errorlist {
     font-size: smaller;
     font-weight: bold;
     list-style-type: none;
@@ -125,7 +132,7 @@ input:focus, input:focus-visible{
 }
 
 /* ------------BUTTON CLASSES------- */
-.button{
+.button {
     width: fit-content;
     padding: 10px 20px;
     border-radius: 25px;
@@ -134,62 +141,66 @@ input:focus, input:focus-visible{
     transition: all 0.2s ease-out;
 }
 
-.button a:hover{
+.button a:hover {
     color: inherit;
 }
 
-.purple-btn{
-    background-color: #7c004f;
-    border: 1px solid #7c004f;
+.purple-btn {
+    background-color: #590243;
+    border: 1px solid #590243;
     box-shadow: rgb(255 255 255 / 12%) 0px 2px 4px 0px, #ffffff 0px 1px 17px 0px;
     color: white;
     transition: all 0.2s ease-out;
-} 
+}
 
-.purple-btn a{
+.purple-btn a {
     color: white;
 }
 
-.purple-btn:hover{
-    background-color: #5f003c;
+.purple-btn:hover {
+    background-color: #3a012c;
 }
 
-.green-btn{
+.green-btn {
     background-color: #0e8814;
 }
 
-.white-btn{
+.white-btn {
     background-color: white;
     border: 1px solid gray;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     color: #3a3a3a;
     transition: all 0.2s ease-out;
-} 
+}
 
-.white-btn a{
+.white-btn a {
     color: #3a3a3a;
 }
 
-.white-btn:hover{
+.white-btn:hover {
     background-color: gray;
     color: white;
-} 
+}
 
-.gray-btn{
+.gray-btn {
     background-color: #bcbcbc;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    border: 1px solid  gray;
+    border: 1px solid gray;
+    color: #3a3a3a;
 
 }
-.gray-btn:hover{
+
+.gray-btn:hover {
     background-color: gray;
     color: white;
 }
-.small-btn{
+
+.small-btn {
     padding: 5px 10px;
 }
+
 /* Wiggle button class and animation */
-.wiggle-btn{
+.wiggle-btn {
     backface-visibility: hidden;
     transform: translateZ(0px);
     animation-duration: 5s;
@@ -203,30 +214,39 @@ input:focus, input:focus-visible{
     2% {
         transform: translateX(3px) rotate(2deg);
     }
+
     4% {
         transform: translateX(-3px) rotate(-2deg);
     }
+
     6% {
         transform: translateX(3px) rotate(2deg);
     }
+
     8% {
         transform: translateX(-3px) rotate(-2deg);
     }
+
     10% {
         transform: translateX(2px) rotate(1deg);
     }
+
     12% {
         transform: translateX(-2px) rotate(-1deg);
     }
+
     14% {
         transform: translateX(2px) rotate(1deg);
     }
+
     16% {
         transform: translateX(-2px) rotate(-1deg);
     }
+
     18% {
         transform: translateX(1px) rotate(0deg);
     }
+
     20% {
         transform: translateX(-1px) rotate(0deg);
     }
@@ -386,7 +406,7 @@ a:hover {
     width: 100%;
     position: absolute;
     top: 90%;
-    background-color: #7c004f;
+    background-color: #590243;
     border-radius: 0%;
 }
 
@@ -400,58 +420,60 @@ a:hover {
     position: relative;
 }
 
-.cover-overlay{
+.cover-overlay {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: white;
-} 
+}
 
-.overlay-content{
+.overlay-content {
     width: fit-content;
     padding: 20px;
 }
 
 /* STYLING FOR ALLAUTH CONTENT */
-.auth-content>div>div:nth-child(1){
+.auth-content>div>div:nth-child(1) {
     border-right: 1px solid #e0d9d9;
 }
 
-.auth-content form p:nth-child(2), .auth-content form p:nth-child(3){
+.auth-content form p:nth-child(2),
+.auth-content form p:nth-child(3) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.auth-content form p input{
+.auth-content form p input {
     width: 100%;
 }
 
-#id_remember{
+#id_remember {
     width: auto;
 }
 
-.auth-content button{
+.auth-content button {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
-.login-content form p:nth-child(4) input{
+
+.login-content form p:nth-child(4) input {
     width: auto;
 }
 
-.auth-link{
+.auth-link {
     font-weight: bold;
-    color: #7c004f;
+    color: #590243;
     text-transform: uppercase;
 }
 
-.auth-link:hover{
-    color: #7c004f;
+.auth-link:hover {
+    color: #3a012c;
     text-decoration: underline;
 }
 
-.pulse{
+.pulse {
     animation: pulse 3s infinite;
 }
 
@@ -473,20 +495,21 @@ a:hover {
 }
 
 /* LOGOUT MODAL STYLING */
-#logoutModal .modal-content{
+#logoutModal .modal-content {
     border: 2px solid white;
 }
 
-#logoutModal .modal-header{
-    background-color: #5f003c;
+#logoutModal .modal-header {
+    background-color: #590243;
     color: white;
     padding: 8px 16px;
 }
-#logoutModal .modal-footer{
+
+#logoutModal .modal-footer {
     padding: 8px 16px;
 }
 
-#logoutModal .modal-close{
+#logoutModal .modal-close {
     background-color: transparent;
     border: none;
     font-size: 25px;
@@ -495,17 +518,17 @@ a:hover {
     padding: 0;
 }
 
-#logoutModal .modal-close span:hover{
+#logoutModal .modal-close span:hover {
     color: #d0cbcb;
 }
 
 /* MAILCHIMP NEWSLETTER */
-#mc_embed_signup{
-    background:transparent;
-    clear:left; 
+#mc_embed_signup {
+    background: transparent;
+    clear: left;
 }
 
-#mc_embed_signup .helper_text{
+#mc_embed_signup .helper_text {
     background-color: transparent;
 }
 
@@ -521,24 +544,19 @@ a:hover {
 
 @media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
 
-    .min-vh{
+    .min-vh {
         min-height: 90vh;
     }
 
     .home-cover {
         height: 36vh;
     }
-
-    .button:hover{
-        background-color: initial;
-        color: initial;
-    }
 }
 
 /* --------------------------------- SMALL AND MEDIUM DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 991.98px) {
-    .min-vh{
+    .min-vh {
         min-height: 90vh;
     }
 
@@ -596,18 +614,22 @@ a:hover {
         height: 36vh;
     }
 
-    .gray-btn:hover{
+    button:active{
+        transform: translateY(4px);
+    }
+
+    .gray-btn:hover {
         background-color: #bcbcbc;
         color: initial;
     }
 
-    .white-btn:hover{
+    .white-btn:hover {
         background-color: white;
         color: initial;
     }
 
-    .purple-btn:hover{
-        background-color: #7c004f;
+    .purple-btn:hover {
+        background-color: #3a012c;
     }
 }
 
@@ -615,37 +637,43 @@ a:hover {
 
 @media (max-width: 767.98px) {
 
-    footer > .col-12{
+    footer>.col-12 {
         padding: 0px;
     }
 
-    footer > div > div > div:nth-child(1){
+    footer>div>div>div:nth-child(1) {
         background-color: #f0f0f0;
         color: #3a3a3a;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     }
 
-    footer .success-message{
+    footer .success-message {
         color: #0e8814;
         font-size: smaller;
     }
 
-    footer .errorlist{
+    footer .errorlist {
         color: #bd2130;
     }
 
-    footer > div > div > div:nth-child(1) form p label::before{
+    footer>div>div>div:nth-child(1) form p label::before {
         content: "*";
-        color:#bd2130;
+        color: #bd2130;
+    }
+
+    footer i {
+        font-size: 30px;
     }
 
     i {
         font-size: 25px;
     }
 
-    .search-bar .dropdown a i{
+    .search-bar .dropdown a i {
         padding-right: 12PX;
     }
-    .search-bar .dropdown-menu i{
+
+    .search-bar .dropdown-menu i {
         margin-top: 4px;
         font-size: 20px;
     }
@@ -655,11 +683,12 @@ a:hover {
 
     }
 
-    .cover-overlay{
+    .cover-overlay {
         padding-left: 0px;
         width: 80%;
     }
-    .auth-content>div>div:nth-child(1){
+
+    .auth-content>div>div:nth-child(1) {
         border-right: none;
     }
 }
