@@ -25,6 +25,11 @@ body {
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
+/* BORDER CLASSES */
+.b-light-gray{
+    border: 1px solid #80808085;
+}
+
 .min-vh{
     min-height: 100vh;
 }
@@ -36,6 +41,7 @@ header {
     z-index: 1024;
 }
 
+/* FOOTER STYLING */
 footer{
     background-color: #7c004f;
 }
@@ -52,6 +58,35 @@ footer i:hover{
     border: 2px solid #fffaf08a;
 }
 
+footer .success-message{
+    color: #79f37f;
+    font-size: smaller;
+    font-weight: bold;
+}
+
+footer .errorlist{
+    color: #ff0019;
+}
+
+footer > div > div > div:nth-child(1) form p{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+footer > div > div > div:nth-child(1) form p input{
+    width: 100%;
+}
+
+footer > div > div > div:nth-child(1) form p label::before{
+    content: "*";
+    color: #ff0019;
+}
+
+footer > div > div > div:nth-child(1) form .messages{
+    height: 20px;
+}
+
+/* ICON STYLING */
 i{
     font-size: 20px;
 }
@@ -87,10 +122,6 @@ input:focus, input:focus-visible{
     list-style-type: none;
     color: #bd2130;
     padding-left: 0px;
-}
-
-.errorlist li::before{
-    content: "* ";
 }
 
 /* ------------BUTTON CLASSES------- */
@@ -144,7 +175,19 @@ input:focus, input:focus-visible{
     color: white;
 } 
 
+.gray-btn{
+    background-color: #bcbcbc;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    border: 1px solid  gray;
 
+}
+.gray-btn:hover{
+    background-color: gray;
+    color: white;
+}
+.small-btn{
+    padding: 5px 10px;
+}
 /* Wiggle button class and animation */
 .wiggle-btn{
     backface-visibility: hidden;
@@ -412,6 +455,23 @@ a:hover {
     animation: pulse 3s infinite;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgb(79 12 41 / 70%);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(237, 233, 215, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(248, 222, 178, 0);
+    }
+}
+
 /* LOGOUT MODAL STYLING */
 #logoutModal .modal-content{
     border: 2px solid white;
@@ -439,23 +499,16 @@ a:hover {
     color: #d0cbcb;
 }
 
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgb(79 12 41 / 70%);
-    }
-
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(237, 233, 215, 0);
-    }
-
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(248, 222, 178, 0);
-    }
+/* MAILCHIMP NEWSLETTER */
+#mc_embed_signup{
+    background:transparent;
+    clear:left; 
 }
+
+#mc_embed_signup .helper_text{
+    background-color: transparent;
+}
+
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 1200px) {
@@ -474,6 +527,11 @@ a:hover {
 
     .home-cover {
         height: 36vh;
+    }
+
+    .button:hover{
+        background-color: initial;
+        color: initial;
     }
 }
 
@@ -537,11 +595,48 @@ a:hover {
     .home-cover {
         height: 36vh;
     }
+
+    .gray-btn:hover{
+        background-color: #bcbcbc;
+        color: initial;
+    }
+
+    .white-btn:hover{
+        background-color: white;
+        color: initial;
+    }
+
+    .purple-btn:hover{
+        background-color: #7c004f;
+    }
 }
 
 /* --------------------------------- SMALL DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 767.98px) {
+
+    footer > .col-12{
+        padding: 0px;
+    }
+
+    footer > div > div > div:nth-child(1){
+        background-color: #f0f0f0;
+        color: #3a3a3a;
+    }
+
+    footer .success-message{
+        color: #0e8814;
+        font-size: smaller;
+    }
+
+    footer .errorlist{
+        color: #bd2130;
+    }
+
+    footer > div > div > div:nth-child(1) form p label::before{
+        content: "*";
+        color:#bd2130;
+    }
 
     i {
         font-size: 25px;
