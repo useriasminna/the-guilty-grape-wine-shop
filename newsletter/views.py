@@ -33,7 +33,7 @@ class SubscribeToNewsletter(CreateView):
                 subscription = Subscription(email=email)
                 subscription.save()
                 messages.success(
-                    request, 'Thank you for you subscription!', extra_tags="form_success")
+                    request, 'Thank you for your subscription!', extra_tags="form_success")
                 return HttpResponseRedirect(
                     request.POST.get('newsletter_submit_btn','') + '#newsletter')
             else:
