@@ -86,7 +86,7 @@ footer>div>div>div:nth-child(1) form .messages {
     height: 20px;
 }
 
-footer .button{
+footer .button {
     font-weight: bold;
 }
 
@@ -320,6 +320,12 @@ a:hover {
     background-color: floralwhite;
 }
 
+.add-container span {
+    background: black;
+    padding: 0px 3px 1px 3px;
+    color: #14e443;
+}
+
 .add-container .add {
     width: 100%;
     visibility: hidden;
@@ -381,6 +387,10 @@ a:hover {
     height: 30px;
 }
 
+.search-bar label{
+    width: inherit;    
+}
+
 .search-bar .btn {
     background-color: #b4b3b5;
     border: 1px solid #b4b3b5;
@@ -388,13 +398,13 @@ a:hover {
     width: 35px;
 }
 
-.search-bar i {
-    margin-top: 6px;
-}
-
 .search-bar .btn:hover {
     background-color: #a4a4a4;
     border: 1px solid #a4a4a4
+}
+
+.search-bar i {
+    margin-top: 4px;
 }
 
 .search-bar .dropdown {
@@ -432,6 +442,14 @@ a:hover {
     padding: 20px;
 }
 
+.cover-text {
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #000000ab;
+    padding: 0px 10px;
+    border-radius: 25px;
+}
+
 /* STYLING FOR ALLAUTH CONTENT */
 .auth-content>div>div:nth-child(1) {
     border-right: 1px solid #e0d9d9;
@@ -460,6 +478,14 @@ a:hover {
 
 .login-content form p:nth-child(4) input {
     width: auto;
+}
+
+.auth-content .login a{
+    color: #3a012c;
+}
+
+.auth-content .login a:hover{
+    text-decoration: underline;
 }
 
 .auth-link {
@@ -614,7 +640,7 @@ a:hover {
         height: 36vh;
     }
 
-    button:active{
+    button:active {
         transform: translateY(4px);
     }
 
@@ -676,6 +702,10 @@ a:hover {
     .search-bar .dropdown-menu i {
         margin-top: 4px;
         font-size: 20px;
+    }
+
+    .search-bar i {
+        margin-top: 0px;
     }
 
     .home-cover {
