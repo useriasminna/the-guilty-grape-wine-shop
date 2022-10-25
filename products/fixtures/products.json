@@ -1,0 +1,382 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "category": 1,
+            "is_deluxe": false,
+            "sku": "wre10774 ",
+            "name": "Ciu Ciu Bacchus",
+            "region": "Marche IGP",
+            "country": "Italy",
+            "grapes": "Montepulciano, Sangiovese",
+            "year": "2019",
+            "style": "Red",
+            "code": "10774",
+            "food_pairing": "Spicy Food, Pasta and Pizza, Hard Cheese",
+            "price": 15.00,
+            "image": "red10774.png"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "category": 1,
+            "is_deluxe": false,
+            "sku": "wre10923",
+            "name": "Domaine Horgelus Rouge de Gala",
+            "region": "South West France",
+            "country": "France",
+            "grapes": "Merlot, Cabernet Franc, Cabernet Sauvignon, Tannat",
+            "year": "2018",
+            "style": "Red",
+            "code": "10923",
+            "food_pairing": "Spicy Food, Pasta and Pizza, Hard Cheese",
+            "price": 14.50,
+            "image": "red10923.png"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "category": 1,
+            "is_deluxe": false,
+            "sku": "wre10778",
+            "name": "Flor de Crasto",
+            "region": "Douro",
+            "country": "Portugal",
+            "grapes": "Tinta Roriz, Touriga Franca, Touriga Nacional, Vinhas Velhas",
+            "year": "2019",
+            "style": "Red",
+            "code": "10778",
+            "food_pairing": "Spicy Food, Pasta and Pizza, Hard Cheese",
+            "price": 15.10,
+            "image": "red10778.png"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "category": 1,
+            "is_deluxe": false,
+            "sku": "wre10193",
+            "name": "Rondan Crianza",
+            "region": "Rioja",
+            "country": "Spain",
+            "grapes": "Tempranillo",
+            "year": "2018",
+            "style": "Red",
+            "code": "10193",
+            "food_pairing": "Pasta and Pizza, Hard Cheese,Beef and Lamb",
+            "price": 16.45,
+            "image": "red10193.png"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "category": 2,
+            "is_deluxe": false,
+            "sku": "wwh10921",
+            "name": "Horgelus",
+            "region": "South West France",
+            "country": "France",
+            "grapes": "Sauvignon Blanc, Gros Manseng",
+            "year": "2021",
+            "style": "White",
+            "code": "10921",
+            "food_pairing": "Soft Cheese, Pork and Poultry, Light Fish and Shellfish, Fresh Greens",
+            "price": 13.10,
+            "image": "white10921.png"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "category": 2,
+            "is_deluxe": false,
+            "sku": "wwh10567",
+            "name": "San Simone",
+            "region": "Friuli Grave DOC",
+            "country": "Italy",
+            "grapes": "Pinot Grigio",
+            "year": "2021",
+            "style": "White",
+            "code": "10567",
+            "food_pairing": "Spicy Food, Rich Fish, Pork and Poultry, Light Fish and Shellfish",
+            "price": 16.10,
+            "image": "white10567.png"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "category": 2,
+            "is_deluxe": false,
+            "sku": "wwh11201",
+            "name": "Pousio Selection",
+            "region": "Alentejo DOC",
+            "country": "Portugal",
+            "grapes": "Antão Vaz, Verdelho, Alvarinho",
+            "year": "2021",
+            "style": "White",
+            "code": "11201",
+            "food_pairing": "Spicy Food, Rich Fish, Pork and Poultry, Light Fish and Shellfish",
+            "price": 15.60,
+            "image": "white11201.png"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "category": 2,
+            "is_deluxe": false,
+            "sku": "wwh0592",
+            "name": "Val Do Sosego",
+            "region": "Rias Baixas",
+            "country": "Spain",
+            "grapes": "Albarino",
+            "year": "2021",
+            "style": "White",
+            "code": "10592",
+            "food_pairing": "Spicy Food, Pork and Poultry, Light Fish and Shellfish, Hearty Roots",
+            "price": 17.60,
+            "image": "white10592.png"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "category": 3,
+            "is_deluxe": false,
+            "sku": "wro10209",
+            "name": "Château Haut Rian Rosé",
+            "region": "Bordeaux",
+            "country": "France",
+            "grapes": "Merlot, Cabernet Sauvignon",
+            "year": "2021",
+            "style": "Rose",
+            "code": "10209",
+            "food_pairing": "Spicy Food, Pork and Poultry, Pasta and Pizza, Light Fish and Shellfish",
+            "price": 14.50,
+            "image": "rose10209.png"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "category": 3,
+            "is_deluxe": false,
+            "sku": "wro11382",
+            "name": "Kamara Pure Rosé 'Stalisma'",
+            "region": "Oraiokastro",
+            "country": "Greece",
+            "grapes": "Xinomavro, Malagouzia, Assyrtiko",
+            "year": "2019",
+            "style": "Rose",
+            "code": "11382",
+            "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
+            "price": 26.15,
+            "image": "rose11382.png"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "category": 3,
+            "is_deluxe": false,
+            "sku": "wro11408",
+            "name": "La Sapata ‘Petiant Artizanal’ Rosé",
+            "region": "Podgoria Sarica Niculitel DOC",
+            "country": "Romania",
+            "grapes": "Feteasca Regala",
+            "year": "2021",
+            "style": "Rose",
+            "code": "11408",
+            "food_pairing": "Spicy Food, Pork and Poultry, Light Fish and Shellfish, Fresh Greens",
+            "price": 21.15,
+            "image": "rose11408.png"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "category": 4,
+            "is_deluxe": true,
+            "sku": "wsp10050",
+            "name": "J. Charpentier Brut Prestige Rosé",
+            "region": "Champagne",
+            "country": "France",
+            "grapes": "Pinot Noir, Pinot Meunier, Chardonnay",
+            "year": "2017",
+            "style": "Sparkling",
+            "code": "10050",
+            "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
+            "price": 55.15,
+            "image": "sparkling10050.png"
+        }
+    }, 
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "category": 4,
+            "is_deluxe": true,
+            "sku": "wsp11247",
+            "name": "Jo Landron ‘Atmosphères’",
+            "region": "Loire Valley",
+            "country": "France",
+            "grapes": "Folle Blanche, Pinot Noir",
+            "year": "2018",
+            "style": "Sparkling",
+            "code": "11247",
+            "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
+            "price": 33.15,
+            "image": "sparkling11247.png"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "category": 4,
+            "is_deluxe": false,
+            "sku": "wsp10319",
+            "name": "Le Contesse Frizzante",
+            "region": "Valdobbiandene",
+            "country": "Italy",
+            "grapes": "Prosecco",
+            "year": "2018",
+            "style": "Sparkling",
+            "code": "10319",
+            "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
+            "price": 16.70,
+            "image": "sparkling10319.png"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "category": 4,
+            "is_deluxe": true,
+            "sku": "wsp10393",
+            "name": "Le Contesse Pinot Rose Cuvee Brut",
+            "region": "Valdobbiandene",
+            "country": "Italy",
+            "grapes": "Pinot Noir, Pinot Blanc, Chardonnay",
+            "year": "2018",
+            "style": "Sparkling",
+            "code": "10393",
+            "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
+            "price": 22.15,
+            "image": "sparkling10393.png"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "category": 1,
+            "is_deluxe": true,
+            "sku": "wre10850",
+            "name": "Chateau Le Tertre Roteboeuf - 2010",
+            "region": "Bordeaux",
+            "country": "France",
+            "grapes": "Merlot, Cabernet Franc",
+            "year": "2010",
+            "style": "Red",
+            "code": "10850",
+            "food_pairing": "Soft Cheese, Hearty Roots, Beef and Lamb",
+            "price": 373.50,
+            "image": "red10850.png"
+        }
+    }, 
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "category": 1,
+            "is_deluxe": true,
+            "sku": "wre11297",
+            "name": "Domaine Chandon De Briailles Corton Grand Cru ‘Les Bressandes’",
+            "region": "Burgundy",
+            "country": "France",
+            "grapes": "Pinot Noir",
+            "year": "2019",
+            "style": "Red",
+            "code": "11297",
+            "food_pairing": "Spicy Food, Soft Cheese, Pork and Poultry",
+            "price": 242.80,
+            "image": "red11297.png"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "category": 1,
+            "is_deluxe": true,
+            "sku": "wre11465",
+            "name": "Chateau Labegorce",
+            "region": "Bordeaux",
+            "country": "France",
+            "grapes": "Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",
+            "year": "2016",
+            "style": "Red",
+            "code": "11465",
+            "food_pairing": "Pasta and Pizza, Hard Cheese, Beef and Lamb",
+            "price": 74.50,
+            "image": "red11465.png"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "category": 2,
+            "is_deluxe": true,
+            "sku": "wwh10291",
+            "name": "Domaine Christian Moreau Chablis Grand Cru ‘Les Clos’",
+            "region": "Burgundy",
+            "country": "France",
+            "grapes": "Chardonnay",
+            "year": "2018",
+            "style": "White",
+            "code": "10291",
+            "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Fresh Greens",
+            "price": 80.10,
+            "image": "white10291.png"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "category": 2,
+            "is_deluxe": true,
+            "sku": "wwh11412",
+            "name": "Bret Brothers La Soufrandière - Climat ‘Le Quarts’",
+            "region": "Burgundy",
+            "country": "France",
+            "grapes": "Chardonnay",
+            "year": "2019",
+            "style": "White",
+            "code": "11412",
+            "food_pairing": "Spicy Food, Rich Fish, Pork and Poultry, Hearty Roots",
+            "price": 61.15,
+            "image": "white11412.png"
+        }
+    }
+]
