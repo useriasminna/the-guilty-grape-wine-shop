@@ -10,6 +10,15 @@ body {
     color: #3a3a3a;
 }
 
+/* COLORS CLASSES */
+.text-yellow {
+    color: #ffc107;
+}
+
+.text-red {
+    color: #ff4456;
+}
+
 /* PADDING ON LATERAL SIDES CLASS */
 .p-side {
     padding: 0 45px;
@@ -39,6 +48,7 @@ header {
     background-color: #590243;
     width: 100%;
     z-index: 1024;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 }
 
 /* FOOTER STYLING */
@@ -65,7 +75,7 @@ footer .success-message {
 }
 
 footer .errorlist {
-    color: #ff0019;
+    color: #ff4456;
 }
 
 footer>div>div>div:nth-child(1) form p {
@@ -79,7 +89,7 @@ footer>div>div>div:nth-child(1) form p input {
 
 footer>div>div>div:nth-child(1) form p label::before {
     content: "*";
-    color: #ff0019;
+    color: #ff4456;
 }
 
 footer>div>div>div:nth-child(1) form .messages {
@@ -387,8 +397,8 @@ a:hover {
     height: 30px;
 }
 
-.search-bar label{
-    width: inherit;    
+.search-bar label {
+    width: inherit;
 }
 
 .search-bar .btn {
@@ -480,11 +490,11 @@ a:hover {
     width: auto;
 }
 
-.auth-content .login a{
+.auth-content .login a {
     color: #3a012c;
 }
 
-.auth-content .login a:hover{
+.auth-content .login a:hover {
     text-decoration: underline;
 }
 
@@ -558,6 +568,143 @@ a:hover {
     background-color: transparent;
 }
 
+/* PRODUCTS DISPLAY STYLING */
+.product-container {
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-container h6 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.product-container p:last-child {
+    font-size: larger;
+}
+
+.product-count button,
+.product-count input {
+    border: 1px solid grey;
+}
+
+.product-count input {
+    width: inherit;
+    height: 100%;
+}
+
+.product-count input:focus{
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.product-count input::-webkit-outer-spin-button,
+.product-count input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.product-count button:hover {
+    background-color: #c8c8c8b3;
+}
+
+.product-img {
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    z-index: 5;
+    top: 48%;
+    right: 17%;
+    text-transform: uppercase;
+    width: 60%;
+    opacity: 1;
+}
+
+.banner-text span {
+    opacity: 1;
+    background-color: #00000069;
+}
+
+.product-banner {
+    position: absolute;
+    top: -27%;
+    right: -22%;
+}
+
+.banner-hover {
+    position: absolute;
+    top: -5%;
+    right: 0%;
+    opacity: 0;
+}
+
+.banner-hover .banner-text {
+    transform: rotate(0);
+    top: 43%;
+}
+
+.product-banner img,
+.banner-text {
+    transform: rotate(35deg);
+}
+
+.product-container:hover {
+    cursor: pointer;
+    background-color: #ededed0f;
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+}
+
+.product-container img {
+    opacity: 1;
+}
+
+.product-container:hover img {
+    opacity: 0.2;
+}
+
+.product-container:hover .product-banner {
+    opacity: 0;
+}
+
+.product-container:hover .product-overlay {
+    opacity: 1;
+}
+
+.product-container:hover .banner-hover {
+    opacity: 1;
+}
+
+.product-container:hover .banner-hover img {
+    opacity: 1;
+}
+
+.product-overlay {
+    position: absolute;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.pagination {
+    font-size: large;
+}
+
+.pagination a {
+    font-weight: bold;
+    color: #590243;
+}
+
+.pagination a:hover {
+    color: #590243;
+    text-decoration: underline;
+}
+
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 1200px) {
@@ -576,6 +723,36 @@ a:hover {
 
     .home-cover {
         height: 36vh;
+    }
+
+    .product-container:hover {
+        cursor: initial;
+        background-color: initial;
+        box-shadow: none;
+    }
+
+    .product-container:hover img {
+        opacity: initial;
+    }
+
+    .product-container:hover .product-overlay {
+        opacity: 0;
+    }
+
+    .product-container>div:last-of-type {
+        display: block !important;
+    }
+
+    .product-container:hover .banner-hover {
+        opacity: 0;
+    }
+
+    .product-container:hover .banner-hover img {
+        opacity: 0;
+    }
+
+    .product-container:hover .product-banner {
+        opacity: 1;
     }
 }
 
@@ -656,6 +833,32 @@ a:hover {
 
     .purple-btn:hover {
         background-color: #3a012c;
+    }
+
+    .product-container:hover {
+        cursor: initial;
+        background-color: initial;
+        box-shadow: none;
+    }
+
+    .product-container:hover img {
+        opacity: initial;
+    }
+
+    .product-container:hover .product-overlay {
+        opacity: 0;
+    }
+
+    .product-container:hover .banner-hover {
+        opacity: 0;
+    }
+
+    .product-container:hover .banner-hover img {
+        opacity: 0;
+    }
+
+    .product-container:hover .product-banner {
+        opacity: 1;
     }
 }
 
