@@ -40,7 +40,7 @@
           <h4>The Guilty Grape</h4>  
         </a>
       </div>
-      <div class="add-container bg-light d-lg-none mb-lg-2 ">
+      <div class="add-container d-lg-none mb-lg-2 ">
         <div class="add container-fluid text-center"><p class="mx-auto">Free delivery on orders over 60€</p></div>
         <div class="add container-fluid text-center"><p class="mx-auto">Register and enjoy <span class="text-success">15% off</span> on your first order</p></div> 
       </div>
@@ -53,7 +53,7 @@
           <div class="container-fluid p-side">
             <ul class="categories d-block d-lg-flex col-6 pl-lg-0">
               <li class="nav-item mr-3 mt-2 mt-lg-0">
-                <a href="#">All products</a>
+                <a href="{% url 'products' %}">All products</a>
               </li>
               <li class="nav-item mr-3 mt-2 mt-lg-0">
                 <div class="dropdown">
@@ -67,15 +67,7 @@
                 </div>
               </li>
               <li class="nav-item mr-3 mt-2 mt-lg-0">
-                <div class="dropdown">
-                  <a class="dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false" >
-                    Deluxe Edition
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-lg-start">
-                      <a class="dropdown-item" href="#">Deluxe Wines</a>
-                      <a class="dropdown-item" href="#">Deluxe Sparkling</a>
-                  </div>
-                </div>
+                  <a href="">Deluxe Edition</a>
               </li>
               <li class="nav-item mr-3 mt-2 mt-lg-0">
                 <a href="#">Special Offers</a>
@@ -299,7 +291,7 @@
           <div class="col-10 pt-4 pt-md-0 col-md-6 mx-auto">
             <div class="d-lg-flex justify-content-between col-md-10 p-0 mx-auto">
               <div class="d-flex flex-column mb-3 mb-lg-0 text-center">
-                <a class="text-white" href="#">All Products</a>
+                <a class="text-white" href="{% url 'products' %}">All Products</a>
                 <a class="text-white" href="#">Sitemap</a>
                 <a class="text-white" href="#">Privacy And Policy</a>
                 <a class="text-white" href="#">Terms & Conditions</a>
