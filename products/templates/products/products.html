@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-container col-lg-11 mx-auto pt-3 pb-3 mt-2 mt-lg-4 mb-4 bg-white">
+    <h1 class="mb-3 mb-lg-4 text-center">Products</h1>
+    <div class="pt-lg-3">
+      <div class="col-12 mb-4 mb-lg-0">
+        <div class="col-md-10 p-0 mx-auto">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="col-12 p-0 mx-auto">
+            <div class="d-flex flex-wrap">
+                {% for product in products_list %}
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-container">
+                    {% if product.stock == 0 %}
+                    <div class="col-12">
+                        <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <div class="product-banner col-9">
+                            <img class="img-fluid" src="../../media/product-banner.png" alt="Item out of stock">
+                            <div class="banner-text text-center text-red">
+                                <span>Out of stock</span>
+                            </div>
+                        </div>
+                    </div>   
+                    {% elif product.stock == 1 %}
+                    <div class="col-12">
+                        <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <div class="product-banner col-9">
+                            <img class="img-fluid" src="../../media/product-banner.png" alt="Last item">
+                            <div class="banner-text text-center text-yellow">
+                                <span>Last item</span>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    {% elif product.stock <= 15 %}
+                        <div class="col-12">
+                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <div class="product-banner col-9 ">
+                                <img class="img-fluid" src="../../media/product-banner.png" alt="Last {{product.stock}} items">
+                                <div class="banner-text text-center text-yellow">
+                                    <span>Last {{product.stock}} items</span>
+                                </div>
+                            </div>
+                        </div>   
+                    {% else %}
+                    <div class="col-12">
+                        <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                    <div class="col-12">
+                        <h6>{{product.name}}</h6>
+                        <div class="d-flex align-items-center">
+                            <p class="font-italic m-0">{{product.country}} -</p>
+                            <p class="m-0"> {{product.year}}</p>
+                        </div>
+                        <p class="font-weight-bold">€{{product.price}}</p>
+                    </div>
+                    {% if product.stock != 0 %}
+                        <div class="product-overlay col-10 d-none d-lg-block">
+                            <div class="d-flex">
+                                <div class="col-4 p-0 product-count d-flex">
+                                    <button class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
+                                    <label class="col-4 p-0 m-0">
+                                        <span hidden>Product count</span>
+                                        <input readonly class="p-0 text-center rounded-0" type="number" value="1" min="1" max="{{product.stock}}">
+                                    </label>
+                                    <button class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
+                                </div>
+                                <div class="col-8 p-0">
+                                    <button class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-block d-lg-none ">
+                            <div class="d-flex">
+                                <div class="col-5 col-md-4 p-0 product-count d-flex">
+                                    <button class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
+                                    <label class="col-4 p-0 m-0">
+                                        <span hidden>Product count</span>
+                                        <input readonly class="p-0 text-center rounded-0" type="number" value="1" min="1" max="{{product.stock}}">
+                                    </label>
+                                    <button class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
+                                </div>
+                                <div class="col-7 col-md-8 p-0">
+                                    <button class="w-100 button purple-btn small-btn pb-2 pt-2 rounded-0">Add to bag</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="banner-hover">
+                            <img class="img-fluid" src="../../media/product-banner.png" alt="">
+                            <div class="banner-text text-center text-red">
+                                <span>Sorry, this item is <br> Out of stock</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                {% if forloop.counter|divisibleby:1 %}
+                    <div class="col-12 d-sm-none mb-5">
+                        <hr>
+                    </div>
+                {% endif %}    
+                {% if forloop.counter|divisibleby:2 %}
+                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                        <hr>
+                    </div>
+                {% endif %}                
+                {% if forloop.counter|divisibleby:3 %}
+                    <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                        <hr>
+                    </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                    <div class="col-12 d-none d-xl-block mb-5">
+                        <hr>
+                    </div>
+                {% endif %}
+                {% endfor %}
+                {% if is_paginated %}
+                    <!-- Pagination -->
+                    <div class="pagination mx-auto">
+                        {% if page_obj.has_previous %}
+                        <a class="authenticate-link" href='{% url "products" %}?page={{ page_obj.previous_page_number }}'>Previous </a>
+                        {% endif %}
+                    
+                        <span class='mx-4'>
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                        </span>
+                    
+                        {% if page_obj.has_next %}
+                        <a class="authenticate-link" href='{% url "products" %}?page={{ page_obj.next_page_number }}' > Next</a>
+                        {% endif %}
+                    </div><br>
+                {% endif %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
