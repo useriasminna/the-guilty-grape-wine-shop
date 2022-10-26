@@ -34,7 +34,8 @@
             "code": "10923",
             "food_pairing": "Spicy Food, Pasta and Pizza, Hard Cheese",
             "price": 14.50,
-            "image": "red10923.png"
+            "image": "red10923.png",
+            "stock": 15
         }
     },
     {
@@ -53,7 +54,8 @@
             "code": "10778",
             "food_pairing": "Spicy Food, Pasta and Pizza, Hard Cheese",
             "price": 15.10,
-            "image": "red10778.png"
+            "image": "red10778.png",
+            "stock": 0
         }
     },
     {
