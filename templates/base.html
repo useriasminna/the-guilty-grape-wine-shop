@@ -59,15 +59,15 @@
                 <div class="dropdown">
                   <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Wines</a>
                   <div class="dropdown-menu dropdown-menu-lg-start">
-                      <a class="dropdown-item" href="#">White Wines</a>
-                      <a class="dropdown-item" href="#">Red Wines</a>
-                      <a class="dropdown-item" href="#">Rose Wines</a>
-                      <a class="dropdown-item" href="#">Sparkling Wines</a>
+                      <a class="dropdown-item" href="{% url 'products' %}?category=white_wines">White Wines</a>
+                      <a class="dropdown-item" href="{% url 'products' %}?category=red_wines">Red Wines</a>
+                      <a class="dropdown-item" href="{% url 'products' %}?category=rose_wines">Rose Wines</a>
+                      <a class="dropdown-item" href="{% url 'products' %}?category=sparkling_wines">Sparkling Wines</a>
                   </div>
                 </div>
               </li>
               <li class="nav-item mr-3 mt-2 mt-lg-0">
-                  <a href="">Deluxe Edition</a>
+                  <a href="{% url 'products' %}?is_deluxe=True">Deluxe Edition</a>
               </li>
               <li class="nav-item mr-3 mt-2 mt-lg-0">
                 <a href="#">Special Offers</a>
