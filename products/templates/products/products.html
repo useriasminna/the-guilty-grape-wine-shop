@@ -1,17 +1,160 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% load urls %}
 <div class="main-container col-lg-11 mx-auto pt-3 pb-3 mt-2 mt-lg-4 mb-4 bg-white">
-    <h1 class="mb-3 mb-lg-4 text-center">Products</h1>
+    {% if current_category %}
+        <h1 class="mb-3 mb-lg-4 text-center">{{current_category.get_friendly_name}}</h1>
+    {% elif is_deluxe %}
+        <h1 class="mb-3 mb-lg-4 text-center">Deluxe Edition</h1>
+    {% else %}
+        <h1 class="mb-3 mb-lg-4 text-center">All Products</h1>
+    {% endif %}
     <div class="pt-lg-3">
-      <div class="col-12 mb-4 mb-lg-0">
-        <div class="col-md-10 p-0 mx-auto">
+      <div class="col-12 mb-4 mb-lg-3">
+        <div class="col-12 p-0 mx-auto">
+            <hr class="d-none d-lg-block mb-1">
+            <div class="navbar navbar-expand-lg navbar-light">
+                <button class="d-lg-none button rounded-0 purple-btn small-btn" type="button" data-toggle="collapse" data-target="#navbarTogglerFilters" aria-controls="navbarTogglerFilters" aria-expanded="false" aria-label="Toggle navigation">
+                  Filter
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex flex-row align-items-start" id="navbarTogglerFilters">
+                    <h6 class="col-lg-1 p-0 mb-0 d-none d-lg-block mr-4 text-uppercase font-weight-bold">Filter By</h6>
+                    <ul class="col-lg-10 navbar-nav mr-auto mt-2 mt-lg-0 d-lg-flex flex-wrap">
+                        {% if not current_category and not is_deluxe and not filters_list.category %}
+                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Category</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for category in categories %}
+                                    <a class="dropdown-item" href="{{current_url}}category={{category|urlencode}}">{{category.get_friendly_name}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if is_deluxe and not deluxe_style %}
+                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Style Of Wine</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for style in deluxe_styles %}
+                                    <a class="dropdown-item" href="{{current_url}}style={{style|urlencode}}">{{style}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.grapes %}
+                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Grape Variety</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for grape in grapes_list %}
+                                        <a class="dropdown-item" href="{{current_url}}grapes={{grape|urlencode}}">{{grape}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.year %}
+                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Year</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for year in years_list %}
+                                        <a class="dropdown-item" href="{{current_url}}year={{year|urlencode}}">{{year}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.country %}
+                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Country</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for country in countries_list %}
+                                        <a class="dropdown-item" href="{{current_url}}country={{country|urlencode}}">{{country}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.region %}
+                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Region</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for region in regions_list %}
+                                        <a class="dropdown-item" href="{{current_url}}region={{region|urlencode}}">{{region}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.food_pairing %}
+                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Food Pairing</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for food in food_pairing_list %}
+                                        <a class="dropdown-item" href="{{current_url}}food_pairing={{food|urlencode}}">{{food}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <hr class="d-none d-lg-block mt-0">
+            {% if filters_list %}
+            <div class="d-flex">          
+                <a class="col-1 p-0 pt-1 m-0 mr-4 " href="{{current_url_no_filters}}"><u>CLEAR ALL</u></a>
+                <ul class="col-10 m-0 p-0 d-flex flex-wrap list-unstyled">
+                    {% for key, value in filters_list.items %}
+                    <li class="mr-2 mb-2">
+                        <div class="d-flex p-1 pr-4 position-relative filter-active">
+                            <span>{{value}}</span>
+                            {% if remove_filter %}
+                            <a class="position-absolute" href="{{ current_url_no_filters }}"><i class="fas fa-times"></i></a>
+                            {% else %}
+                            <a class="position-absolute" href="{% del_params request.get_full_path key %}"><i class="fas fa-times"></i></a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
         </div>
       </div>
       <div class="col-12">
         <div class="col-12 p-0 mx-auto">
             <div class="d-flex flex-wrap">
-                {% for product in products_list %}
+                {% for product in products %}
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-container">
                     {% if product.stock == 0 %}
                     <div class="col-12">
