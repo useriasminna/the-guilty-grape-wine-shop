@@ -33,7 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['the-guilty-grape-wine-shop.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['the-guilty-grape-wine-shop.herokuapp.com', 'localhost',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'url_tools',
     'users',
     'home',
     'newsletter',
@@ -74,16 +76,17 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR,'templates', 'allauth'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', #required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'the_guilty_grape.context_processors.add_subscription_form_to_context'
+                'the_guilty_grape.context_processors.add_subscription_form_to_context',
+                'url_tools.context_processors.current_url',
             ],
         },
     },
@@ -97,11 +100,11 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_ADAPTER = 'users.adapters.AccountAdapter'
 ACCOUNT_FORMS = {
-'signup': 'users.forms.CustomSignupForm',
+    'signup': 'users.forms.CustomSignupForm',
 }
 
 LOGIN_URL = '/accounts/login/'
@@ -115,7 +118,7 @@ WSGI_APPLICATION = 'the_guilty_grape.wsgi.application'
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-    'default' : dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     DATABASES = {
@@ -124,7 +127,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
 
 
 # Password validation
