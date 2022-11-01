@@ -16,8 +16,14 @@ django-storages = "*"
 pylint = "*"
 pylint-django = "*"
 pillow = "*"
+install = "*"
+django-url-tools = "*"
+django-url-tools-py3 = "*"
 
 [dev-packages]
+django-url-tools = "*"
+django-url-tools-py3 = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.9"
