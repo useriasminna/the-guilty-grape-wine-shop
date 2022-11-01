@@ -111,6 +111,11 @@ i:focus-visible {
     outline-offset: 0px;
 }
 
+a,
+a:hover {
+    color: inherit;
+}
+
 a:focus,
 a:focus-visible {
     outline: none;
@@ -594,15 +599,15 @@ a:hover {
     height: 100%;
 }
 
-.product-count input:focus{
+.product-count input:focus {
     outline: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
 .product-count input::-webkit-outer-spin-button,
 .product-count input::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
+    appearance: none;
+    margin: 0;
 }
 
 .product-count button:hover {
@@ -703,6 +708,27 @@ a:hover {
 .pagination a:hover {
     color: #590243;
     text-decoration: underline;
+}
+
+#navbarTogglerFilters a,
+#navbarTogglerFilters a:hover {
+    color: #6c757d;
+}
+
+#navbarTogglerFilters .dropdown-menu {
+    left: 0;
+    width: fit-content;
+}
+
+.filter-active {
+    background-color: #e9ecefab !important;
+    border: 1px solid #dee2e6;
+}
+
+.filter-active a {
+    right: 2%;
+    top: 20%;
+    color: gray;
 }
 
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
