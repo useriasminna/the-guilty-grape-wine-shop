@@ -6,8 +6,11 @@ Views for Products App.
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic import ListView
 from django.db.models import Q
+from django.db.models.functions import Lower
 from django.contrib import messages
-from models import Product, Category
+import urllib
+import json
+from .models import Product, Category
 
 
 class Products(ListView):
@@ -30,6 +33,26 @@ class Products(ListView):
         deluxe_style = None
         filters = {}
         remove_filter = None
+        sort = None
+        direction = None
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            if sortkey != 'best_sellers':
+                products = products.order_by(sortkey)
+
+        if sort == 'best_sellers':
+            current_sorting = sort
+        else:
+            current_sorting = f'{sort}_{direction}'
 
         # CREATE DINAMIC QUERY FOR FILTERING PRODUCTS
         filter_options = ['category', 'style', 'grapes', 'year',
@@ -142,11 +165,18 @@ class Products(ListView):
             current_url += 'filter=True&'
 
         # REMOVE FILTERS FROM URL TO BE USED IN TEMPLATE HREFS WHEN
-        # 'CLEAR ALL' BUTOTN IS ACTIVE
-        current_url_no_filters = request.get_full_path()
-        if 'filter' in current_url_no_filters:
-            string_index = current_url_no_filters.find('filter=True&')
-            current_url_no_filters = current_url_no_filters[0:string_index-1]
+        # 'CLEAR ALL' BUTTON IS ACTIVE
+        current_url_no_filters = request.path_info
+        parameters = request.GET.copy()
+        parameters_list = json.loads(json.dumps(request.GET)).items()
+        is_filter = False
+        for key, value in parameters_list:
+            if key == 'filter':
+                is_filter = True
+                del parameters['filter']
+            if is_filter is True and key in filter_clauses:
+                del parameters[key]
+        current_url_no_filters += '?' + urllib.parse.urlencode(parameters)
 
         # CHECK IF THERE IS ONLY ONE FILTER APPLIED AND CREATE BOOLEAN VALUE
         # TO BE ADDED TO CONTEXT
@@ -157,6 +187,17 @@ class Products(ListView):
             if parameters[len(parameters)-2] == 'filter' and \
                parameters[len(parameters)-1] in filter_options:
                 remove_filter = True
+            else:
+                for i in range(0, len(parameters)-2):
+                    if parameters[i] == 'filter' and \
+                       parameters[i+1] in filter_options:
+                        one_filter = True
+                        for j in range(i+2, len(parameters)):
+                            if parameters[j] in filter_options:
+                                one_filter = False
+                                break
+                        if one_filter is True:
+                            remove_filter = True
 
         context = {
             'products': products,
@@ -175,5 +216,6 @@ class Products(ListView):
             'current_url': current_url,
             'current_url_no_filters': current_url_no_filters,
             'remove_filter': remove_filter,
+            'current_sorting': current_sorting,
             }
         return render(request, 'products/products.html', context)
