@@ -10,7 +10,7 @@ body {
     color: #3a3a3a;
 }
 
-.font-size-smaller{
+.font-size-smaller {
     font-size: smaller;
 }
 
@@ -596,6 +596,7 @@ a:hover {
 .product-count button,
 .product-count input {
     border: 1px solid grey;
+    color: #3a3a3a;
 }
 
 .product-count input {
@@ -714,6 +715,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* FILTERS SECTION STYLING */
 #navbarTogglerFilters a,
 #navbarTogglerFilters a:hover {
     color: #6c757d;
@@ -734,6 +736,13 @@ a:hover {
     top: 20%;
     color: gray;
 }
+
+/* SORT SELECT CONTAINER STYLING */
+
+.sort-select-container .custom-select{
+    border: 1px solid gray;
+}
+
 
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
 
@@ -890,6 +899,11 @@ a:hover {
     .product-container:hover .product-banner {
         opacity: 1;
     }
+
+    #navbarTogglerFilters {
+        background-color: #e9ecefab;
+        padding-left: 5px;
+    }
 }
 
 /* --------------------------------- SMALL DEVICES STYLINYG ------------------------------- */
@@ -953,6 +967,10 @@ a:hover {
 
     .auth-content>div>div:nth-child(1) {
         border-right: none;
+    }
+
+    .filter-active a {
+        top: 8%;
     }
 }
 
