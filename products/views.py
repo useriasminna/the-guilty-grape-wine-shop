@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic import ListView
 from django.db.models import Q
 from django.contrib import messages
-from .models import Product, Category
+from models import Product, Category
 
 
 class Products(ListView):
@@ -47,6 +47,41 @@ class Products(ListView):
 
         if filter_clauses:
             products = products.filter(**filter_clauses)
+            for key, value in filter_clauses.items():
+                if key == 'category':
+                    category_name = request.GET['category']
+                    category = get_object_or_404(Category, name=category_name)
+                    # ADD CATEGORY FILTER TO FILTER CONTEXT
+                    if 'filter' in request.GET and\
+                        request.get_full_path().find('filter') < \
+                       request.get_full_path().find('category'):
+                        filters['category'] = 'CATEGORY - ' + \
+                                              category.get_friendly_name()
+                        category = None
+                # ADD STYLE FILTER TO FILTER CONTEXT
+                elif key == 'style':
+                    deluxe_style = request.GET['style']
+                    filters['style'] = 'STYLE OF WINE - ' + deluxe_style
+                # ADD GRAPE VARIETY FILTER TO FILTER CONTEXT
+                elif 'grapes' in key:
+                    grape = request.GET['grapes']
+                    filters['grapes'] = 'GRAPE VARIETY - ' + grape
+                # ADD YEAR FILTER TO FILTER CONTEXT
+                elif key == 'year':
+                    year = request.GET['year']
+                    filters['year'] = 'YEAR - ' + year
+                # ADD COUNTRY FILTER TO FILTER CONTEXT
+                elif key == 'country':
+                    country = request.GET['country']
+                    filters['country'] = 'COUNTRY - ' + country
+                # ADD REGION FILTER TO FILTER CONTEXT
+                elif key == 'region':
+                    region = request.GET['region']
+                    filters['region'] = 'REGION - ' + region
+                # ADD FOOD FILTER TO FILTER CONTEXT
+                elif 'food_pairing' in key:
+                    food = request.GET['food_pairing']
+                    filters['food_pairing'] = 'FOOD PAIRING - ' + food
 
         # HANDLE SEARCH QUERIES
         if 'q' in request.GET:
@@ -61,47 +96,10 @@ class Products(ListView):
                 Q(style__icontains=query)
             products = products.filter(queries)
 
-        # FILTER BY CATEGORY FIELD
-        if 'category' in request.GET:
-            category_name = request.GET['category']
-            category = get_object_or_404(Category, name=category_name)
-            if 'filter' in request.GET and \
-               request.get_full_path().find('filter') < \
-               request.get_full_path().find('category'):
-                filters['category'] = 'CATEGORY - ' + \
-                    category.get_friendly_name()
-                category = None
-
         # ADD IS_DELUXE VALUE TO CONTEXT
         if 'is_deluxe' in request.GET:
             deluxe = request.GET['is_deluxe']
             is_deluxe = deluxe
-
-        if 'filter' in request.GET:
-            # ADD STYLE FILTER TO FILTER CONTEXT
-            if 'style' in request.GET:
-                deluxe_style = request.GET['style']
-                filters['style'] = 'STYLE OF WINE - ' + deluxe_style
-            # ADD GRAPE VARIETY FILTER TO FILTER CONTEXT
-            if 'grapes' in request.GET:
-                grape = request.GET['grapes']
-                filters['grapes'] = 'GRAPE VARIETY - ' + grape
-            # ADD YEAR FILTER TO FILTER CONTEXT
-            if 'year' in request.GET:
-                year = request.GET['year']
-                filters['year'] = 'YEAR - ' + year
-            # ADD COUNTRY FILTER TO FILTER CONTEXT
-            if 'country' in request.GET:
-                country = request.GET['country']
-                filters['country'] = 'COUNTRY - ' + country
-            # ADD REGION FILTER TO FILTER CONTEXT
-            if 'region' in request.GET:
-                region = request.GET['region']
-                filters['region'] = 'REGION - ' + region
-            # ADD FOOD FILTER TO FILTER CONTEXT
-            if 'food_pairing' in request.GET:
-                food = request.GET['food_pairing']
-                filters['food_pairing'] = 'FOOD PAIRING - ' + food
 
         # ADD FILTERS LISTS TO CONTEXT FOR FILTERS DROPDOWNS
         categories = Category.objects.filter(
@@ -167,6 +165,7 @@ class Products(ListView):
             'is_deluxe': is_deluxe,
             'categories': categories,
             'deluxe_styles': deluxe_styles,
+            'deluxe_style': deluxe_style,
             'filters_list': filters,
             'grapes_list': grapes_list,
             'years_list': years_list,
