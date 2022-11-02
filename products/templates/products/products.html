@@ -4,7 +4,7 @@
 {% load urls %}
 <div class="main-container col-lg-11 mx-auto pt-3 pb-3 mt-2 mt-lg-4 mb-4 bg-white">
     {% if current_category %}
-        <h1 class="mb-3 mb-lg-4 text-center">{{current_category.get_friendly_name}}</h1>
+    <h1 class="mb-3 mb-lg-4 text-center">{{current_category.get_friendly_name}}</h1>
     {% elif is_deluxe %}
         <h1 class="mb-3 mb-lg-4 text-center">Deluxe Edition</h1>
     {% else %}
@@ -13,29 +13,45 @@
     <div class="pt-lg-3">
       <div class="col-12 mb-4 mb-lg-3">
         <div class="col-12 p-0 mx-auto">
-            <p>
-                <i class="fas fa-th-large font-size-smaller"></i>
-                <span class="font-weight-bold">{{products|length}} items</span>
-                {% if current_category %}
-                <span> found in <em class="font-weight-bold">{{current_category.get_friendly_name}}</em> collection</span>
-                {% endif %}
-                {% if is_deluxe %}
-                <span> found in <em class="font-weight-bold">Deluxe</em> collection</span>
-                {% endif %}
-                {% if search_term %}
-                <span> found for <q class="font-weight-bold">{{search_term}}</q></span>
-                {% endif %}
-            </p>
-            <hr class="d-none d-lg-block mb-1">
-            <div class="navbar navbar-expand-lg navbar-light">
+            <div class="d-md-flex align-items-baseline justify-content-between mb-2">
+                <div class="col-md-6 p-0">
+                    <p class="mb-2 mb-md-1">
+                        <i class="fas fa-th-large font-size-smaller"></i>
+                        <span class="font-weight-bold">{{products|length}} items</span>
+                        {% if current_category %}
+                        <span> found in <em class="font-weight-bold">{{current_category.get_friendly_name}}</em> collection</span>
+                        {% endif %}
+                        {% if is_deluxe %}
+                        <span> found in <em class="font-weight-bold">Deluxe</em> collection</span>
+                        {% endif %}
+                        {% if search_term %}
+                        <span> found for <q class="font-weight-bold">{{search_term}}</q></span>
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="col-md-4 col-xl-2 pr-0 sort-select-container w-50 p-0">
+                    <select id="sort-selector" class="custom-select custom-select-sm rounded-0">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option> 
+                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                        <option value="best_sellers" {% if current_sorting == 'best_sellers' %}selected{% endif %}>Best Sellers</option>
+                    </select>
+                </div>
+            </div>
+            <hr class="d-none d-lg-block mb-1 mt-0">
+            <div class="navbar navbar-expand-lg navbar-light pl-0">
                 <button class="d-lg-none button rounded-0 purple-btn small-btn" type="button" data-toggle="collapse" data-target="#navbarTogglerFilters" aria-controls="navbarTogglerFilters" aria-expanded="false" aria-label="Toggle navigation">
                   Filter
                 </button>
                 <div class="collapse navbar-collapse d-lg-flex flex-row align-items-start" id="navbarTogglerFilters">
-                    <h6 class="col-lg-1 p-0 mb-0 d-none d-lg-block mr-4 text-uppercase font-weight-bold">Filter By</h6>
-                    <ul class="col-lg-10 navbar-nav mr-auto mt-2 mt-lg-0 d-lg-flex flex-wrap">
+                    <h6 class="col-md-2 col-xl-1 p-0 mb-0 d-none d-lg-block mr-xl-4 text-uppercase font-weight-bold">Filter By</h6>
+                    <ul class="col-xl-10 navbar-nav mt-2 mt-lg-0 d-lg-flex flex-wrap">
                         {% if not current_category and not is_deluxe and not filters_list.category %}
-                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
                                 <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Category</span>
@@ -50,7 +66,7 @@
                         </li>
                         {% endif %}
                         {% if is_deluxe and not deluxe_style %}
-                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
                                 <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Style Of Wine</span>
@@ -65,7 +81,7 @@
                         </li>
                         {% endif %}
                         {% if not filters_list.grapes %}
-                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
                                 <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Grape Variety</span>
@@ -80,7 +96,7 @@
                         </li>
                         {% endif %}
                         {% if not filters_list.year %}
-                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
                                 <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Year</span>
@@ -95,7 +111,7 @@
                         </li>
                         {% endif %}
                         {% if not filters_list.country %}
-                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
                                 <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Country</span>
@@ -110,7 +126,7 @@
                         </li>
                         {% endif %}
                         {% if not filters_list.region %}
-                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
                                 <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Region</span>
@@ -125,7 +141,7 @@
                         </li>
                         {% endif %}
                         {% if not filters_list.food_pairing %}
-                        <li class="col-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
                                 <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Food Pairing</span>
@@ -144,17 +160,24 @@
             </div>
             <hr class="d-none d-lg-block mt-0">
             {% if filters_list %}
-            <div class="d-flex">          
-                <a class="col-1 p-0 pt-1 m-0 mr-4 " href="{{current_url_no_filters}}"><u>CLEAR ALL</u></a>
-                <ul class="col-10 m-0 p-0 d-flex flex-wrap list-unstyled">
+            <div class="d-flex flex-column-reverse flex-md-row"> 
+                <div class="d-flex flex-column-reverse flex-md-row"></div>         
+                <a class="col-md-2 col-xl-1 p-0 pt-xl-1 m-0 mr-xl-4" href="{{current_url_no_filters}}"><u>CLEAR ALL</u></a>
+                <ul class="col-md-10 mt-2 m-md-0 p-0 d-flex flex-wrap list-unstyled">
                     {% for key, value in filters_list.items %}
                     <li class="mr-2 mb-2">
                         <div class="d-flex p-1 pr-4 position-relative filter-active">
                             <span>{{value}}</span>
                             {% if remove_filter %}
-                            <a class="position-absolute" href="{{ current_url_no_filters }}"><i class="fas fa-times"></i></a>
+                            <a class="position-absolute" href="{{ current_url_no_filters }}">
+                                <span hidden>Clear Filter</span>
+                                <i class="fas fa-times"></i>
+                            </a>
                             {% else %}
-                            <a class="position-absolute" href="{% del_params request.get_full_path key %}"><i class="fas fa-times"></i></a>
+                            <a class="position-absolute" href="{% del_params request.get_full_path key %}">
+                                <span hidden>Clear Filter</span>
+                                <i class="fas fa-times"></i>
+                            </a>
                             {% endif %}
                         </div>
                     </li>
@@ -173,7 +196,7 @@
                     <div class="col-12">
                         <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                         <div class="product-banner col-9">
-                            <img class="img-fluid" src="../../media/product-banner.png" alt="Item out of stock">
+                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Item out of stock">
                             <div class="banner-text text-center text-red">
                                 <span>Out of stock</span>
                             </div>
@@ -183,7 +206,7 @@
                     <div class="col-12">
                         <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                         <div class="product-banner col-9">
-                            <img class="img-fluid" src="../../media/product-banner.png" alt="Last item">
+                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last item">
                             <div class="banner-text text-center text-yellow">
                                 <span>Last item</span>
                             </div>
@@ -194,7 +217,7 @@
                         <div class="col-12">
                             <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                             <div class="product-banner col-9 ">
-                                <img class="img-fluid" src="../../media/product-banner.png" alt="Last {{product.stock}} items">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last {{product.stock}} items">
                                 <div class="banner-text text-center text-yellow">
                                     <span>Last {{product.stock}} items</span>
                                 </div>
@@ -246,7 +269,7 @@
                         </div>
                     {% else %}
                         <div class="banner-hover">
-                            <img class="img-fluid" src="../../media/product-banner.png" alt="">
+                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Out of stock banner">
                             <div class="banner-text text-center text-red">
                                 <span>Sorry, this item is <br> Out of stock</span>
                             </div>
