@@ -70,6 +70,7 @@ class Products(ListView):
                request.get_full_path().find('category'):
                 filters['category'] = 'CATEGORY - ' + \
                     category.get_friendly_name()
+                category = None
 
         # ADD IS_DELUXE VALUE TO CONTEXT
         if 'is_deluxe' in request.GET:
@@ -166,7 +167,6 @@ class Products(ListView):
             'is_deluxe': is_deluxe,
             'categories': categories,
             'deluxe_styles': deluxe_styles,
-            'deluxe_style': deluxe_style,
             'filters_list': filters,
             'grapes_list': grapes_list,
             'years_list': years_list,
