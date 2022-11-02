@@ -49,3 +49,34 @@ for(let container of productCountContainers){
     }
     
 }
+
+// SCRIPT FOR UPDATING CURRENT URL WITH SORT VA
+document.getElementById('sort-selector').addEventListener('change', (e) =>{
+    let selector = e.target;
+    let currentUrl = new URL(window.location);
+
+    let selectedVal = selector.value;
+    if(selectedVal != "reset"){
+        if(selectedVal == 'best_sellers'){
+            let sort = selectedVal;
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.delete("direction");
+        }
+        else{
+            let sort = selectedVal.split("_")[0];
+            let direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+        }
+
+        window.location.replace(currentUrl);
+    } else {
+        currentUrl.searchParams.delete("sort");
+        currentUrl.searchParams.delete("direction");
+
+        window.location.replace(currentUrl);
+    }
+
+} );
+   
