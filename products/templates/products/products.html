@@ -13,6 +13,19 @@
     <div class="pt-lg-3">
       <div class="col-12 mb-4 mb-lg-3">
         <div class="col-12 p-0 mx-auto">
+            <p>
+                <i class="fas fa-th-large font-size-smaller"></i>
+                <span class="font-weight-bold">{{products|length}} items</span>
+                {% if current_category %}
+                <span> found in <em class="font-weight-bold">{{current_category.get_friendly_name}}</em> collection</span>
+                {% endif %}
+                {% if is_deluxe %}
+                <span> found in <em class="font-weight-bold">Deluxe</em> collection</span>
+                {% endif %}
+                {% if search_term %}
+                <span> found for <q class="font-weight-bold">{{search_term}}</q></span>
+                {% endif %}
+            </p>
             <hr class="d-none d-lg-block mb-1">
             <div class="navbar navbar-expand-lg navbar-light">
                 <button class="d-lg-none button rounded-0 purple-btn small-btn" type="button" data-toggle="collapse" data-target="#navbarTogglerFilters" aria-controls="navbarTogglerFilters" aria-expanded="false" aria-label="Toggle navigation">
