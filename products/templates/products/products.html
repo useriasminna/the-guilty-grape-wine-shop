@@ -191,10 +191,14 @@
         <div class="col-12 p-0 mx-auto">
             <div class="d-flex flex-wrap">
                 {% for product in products %}
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-container">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-container" onclick='location.href="{% url 'product_detail' product.id %}";'>
                     {% if product.stock == 0 %}
                     <div class="col-12">
-                        <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% if product.image %}
+                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        {% endif %}
                         <div class="product-banner col-9">
                             <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Item out of stock">
                             <div class="banner-text text-center text-red">
@@ -204,7 +208,11 @@
                     </div>   
                     {% elif product.stock == 1 %}
                     <div class="col-12">
-                        <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% if product.image %}
+                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        {% endif %}
                         <div class="product-banner col-9">
                             <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last item">
                             <div class="banner-text text-center text-yellow">
@@ -215,7 +223,11 @@
                         
                     {% elif product.stock <= 15 %}
                         <div class="col-12">
+                            {% if product.image %}
                             <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        {% endif %}
                             <div class="product-banner col-9 ">
                                 <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last {{product.stock}} items">
                                 <div class="banner-text text-center text-yellow">
@@ -225,7 +237,11 @@
                         </div>   
                     {% else %}
                     <div class="col-12">
-                        <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% if product.image %}
+                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        {% endif %}
                     </div>
                     {% endif %}
                     <div class="col-12">
