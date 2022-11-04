@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% load urls %}
+{% load products_filters %}
+<div class="main-container col-lg-11 mx-auto pt-3 pb-3 mt-2 mt-lg-4 mb-4 bg-white">
+    <div class="pt-lg-3">
+      <div class="col-12 mb-4 mb-lg-3">
+        <div class="col-12 p-0 mx-auto">
+            <div class="col-xl-10 p-0 mx-auto d-md-flex justify-content-between d-md-row">
+              <!-- DISPLAY IMAGE -->
+              <div class="col-12 col-md-6 p-0">
+                {% if product.image %}
+                  <a href="{{ product.image.url }}" target="_blank">
+                    <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                  </a>
+                {% else %}
+                    <img class="img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                {% endif %}
+              </div>
+              <!-- DISPLAY STOCK AVAILABILITY -->
+              <div class="col-12 col-md-6 p-0">
+                <h1>{{product.name}}</h1>
+                <div class="d-md-flex justify-content-between w-100">
+                  <h2>€ {{product.price}}</h2>
+                  {% if product.stock == 0 %}
+                  <p class="text-uppercase bg-black text-red p-1">Out of stock</p>
+                  {% elif product.stock == 1 %}
+                  <p class="text-uppercase bg-black text-yellow p-1">Last item</p>
+                  {% elif product.stock <= 15 %}
+                  <p class="text-uppercase bg-black text-yellow p-1">Last {{product.stock}} items</p>
+                  {% endif %}
+                </div>
+                
+                <div class="w-100 mt-3">
+                  <ul class="p-0">
+                    <!-- DISPLAY COUNTRY VALUE -->
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="col-4 p-0 text-uppercase">Country</span>
+                      <span class="col-8 p-0 font-italic text-left">---- {{product.country}}</span>
+                    </li>
+                    <!-- DISPLAY REGION VALUE -->
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="col-4 p-0 text-uppercase">Region</span>
+                      <span class="col-8 p-0 font-italic text-left">---- {{product.region}}</span>
+                    </li>
+                    <!-- DISPLAY GRAPES VALUES -->
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="col-4 p-0 text-uppercase">Grapes</span>
+                      <span class="col-8 p-0 font-italic">---- {{product.grapes}}</span>
+                    </li>
+                    <!-- DISPLAY YEAR VALUE -->
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="col-4 p-0 text-uppercase">Year</span>
+                      <span class="col-8 p-0 font-italic">---- {{product.year}}</span>
+                    </li>
+                    <!-- DISPLAY CODE VALUE -->
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="col-4 p-0 text-uppercase">Code</span>
+                      <span class="col-8 p-0 font-italic">---- {{product.code}}</span>
+                    </li>
+                    <!-- DISPLAY STYLE VALUE -->
+                    <li class="d-flex justify-content-between mb-2">
+                      <span class="col-4 p-0 text-uppercase">Style</span>
+                      <span class="col-8 p-0 font-italic">---- {{product.style}}</span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- DISPLAY FOOD PAIRING LIST -->
+                <p class="p-0 mb-2 font-weight-bold text-uppercase">Food pairing</p>
+                <ul class="d-flex flex-wrap list-unstyled food-pairing-list font-size-smaller font-weight-bold">
+                  {% with product.food_pairing|split:", " as food_list %}
+                    {% for food in food_list %}
+                        <li class="font-italic mr-3 mb-2">
+                          {% if 'Spicy' in food %}
+                            <i class="fas fa-pepper-hot"></i>
+                          {% elif 'Cheese' in food %} 
+                            <i class="fas fa-cheese"></i>
+                          {% elif 'Dessert' in food %} 
+                            <i class="fas fa-cookie"></i>
+                          {% elif 'Greens' in food %} 
+                            <i class="fas fa-seedling"></i>
+                          {% elif 'Pizza' in food %} 
+                            <i class="fas fa-pizza-slice"></i>
+                          {% elif 'Pork' in food %} 
+                            <i class="fas fa-bacon"></i>
+                          {% elif 'Fish' in food %}
+                            <i class="fas fa-fish"></i>
+                          {% elif 'Root' in food %}
+                            <i class="fas fa-carrot"></i>
+                          {% elif 'Lamb' in food %}
+                            <img src="{{ MEDIA_URL }}lamb-icon.png" alt="lamb-icon">
+                          {% endif %}
+                          {{food}}
+                        </li>
+                    {% endfor %}
+                  {% endwith %}
+                </ul>
+                {% if user.is_authenticated and user.is_superuser %}
+                <!-- UPDATE PRODUCT MODAL -->
+                <div class="col-12 col-md-8 col-xl-6 p-0">
+                  <input hidden id="currentProduct" type="text" value='{{ product.id }}'>
+                  <button class="w-100 button purple-btn small-btn rounded-0  mb-3 mb-md-2" data-toggle="modal" data-target="#updateProductModal{{ product.pk }}">Edit product details</button>
+                  <div class="modal fade" id="updateProductModal{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="updateProductModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header d-flex align-items-center">
+                          <h5 class="modal-title" id="updateProductModalLabel">Update product {{product.code}}</h5>
+                          <button type="button" class="modal-close text-white" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form method="POST" action="{% url 'product_update' pk=product.pk %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% for field in update_product_form %}
+                              <div class="w-100 mb-3">
+                                {% if field.name == 'image' %}
+                                  {{ field }}
+                                {% elif field.name == 'is_deluxe' %}
+                                <div class="custom-control custom-checkbox mt-2">
+                                  {{ field }}
+                                  <label class="custom-control-label" for="{{ field.auto_id }}">{{ field.label }}</label>
+                                </div>
+                                {% else %}
+                                  {{ field.label }}
+                                  {{ field }}
+                                {% endif %}
+                                <small class="errorlist"></small>
+                              </div> 
+                            {% endfor %}
+                            <button type="submit" class="btn btn-secondary">Update</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- DELETE PRODUCT MODAL -->
+                  <button class="w-100 button gray-btn small-btn rounded-0" data-toggle="modal" data-target="#deleteProductModal{{ product.pk }}">Delete product</button>
+                  <div class="modal fade" id="deleteProductModal{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header d-flex align-items-center">
+                          <h5 class="modal-title" id="deleteProductModalLabel">Delete product</h5>
+                          <button type="button" class="modal-close text-white" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Are you sure you want to delete product with code {{product.code}}</p> 
+                        </div>
+                        <div class="modal-footer">
+                          <form method="post" action="{% url 'product_remove_admin' product.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-secondary">Yes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                  <!-- PRODUCT COUNT AND ADD TO BAG BUTTON FOR GUEST USERS AND AUTHENTICATED USERS THAT ARE NOT SUPERUSERS -->
+                  {% if product.stock > 0 %}
+                  <div class="col-12 col-md-8 col-xl-6 p-0">
+                    <div class="product-count font-size-larger d-flex mb-3 mb-md-2">
+                        <button class="font-weight-bold col-2 p-0 button rounded-0 substraction">-</button>
+                        <label class="col-8 p-0 m-0">
+                            <span hidden>Product count</span>
+                            <input readonly class="p-0 text-center rounded-0" type="number" value="1" min="1" max="{{product.stock}}">
+                        </label>
+                        <button class="font-weight-bold col-2 p-0 button rounded-0 addition">+</button>
+                    </div>
+                    <button class="w-100 button purple-btn small-btn pb-2 pt-2 rounded-0">Add to bag</button>
+                  </div>
+                  {% endif %}
+                {% endif %} 
+                <!-- 'Add to wish list' SECTION -->
+              </div>
+            </div>
+            <hr>
+            <div>
+              <!-- REVIEWS -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
