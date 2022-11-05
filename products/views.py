@@ -3,14 +3,20 @@ Products App - Views
 ----------------
 Views for Products App.
 """
+import urllib
+import json
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import ListView, View, DeleteView, UpdateView
+# from django.http import HttpResponse
+from django.urls import reverse_lazy
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib import messages
-import urllib
-import json
-from .models import Product, Category
+
+
+from products.forms import UpdateReviewForm
+from products.models import Product, Category
 
 
 class Products(ListView):
@@ -219,3 +225,111 @@ class Products(ListView):
             'current_sorting': current_sorting,
             }
         return render(request, 'products/products.html', context)
+
+
+class ProductDetail(View):
+    """ A view to show a product details including reviews """
+    template_name = "products/product_details.html"
+
+    def get(self, request, product_id):
+        """Override get method"""
+        product = get_object_or_404(Product, pk=product_id)
+        if product.is_deluxe is True:
+            update_product_form = UpdateReviewForm(
+                is_deluxe=True, initial={
+                    'category': product.category.get_friendly_name()
+                    },
+                instance=product)
+        else:
+            update_product_form = UpdateReviewForm(instance=product, initial={
+                    'category': product.category.get_friendly_name()
+                    },)
+        context = {
+            'product': product,
+            'update_product_form': update_product_form,
+        }
+
+        return render(request, 'products/product_detail.html', context)
+
+
+class ProductUpdateViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
+                             UpdateView):
+    """
+    A view that provides a form to update the Review entry
+    coresponding to the authenticated user
+    """
+
+    model = Product
+    template_name = "product_detail.html"
+
+    fields = [
+        'category', 'is_deluxe', 'sku', 'name', 'country', 'region',
+        'grapes', 'year', 'style', 'code', 'food_pairing', 'price',
+        'image', 'stock']
+
+    def post(self, request, pk):
+
+        product = get_object_or_404(Product, pk=pk)
+        form_error = None
+        if request.method == 'POST':
+
+            update_product_form = UpdateReviewForm(
+                request.POST, request.FILES, instance=product)
+
+            if update_product_form.is_valid():
+                update_product_form.save()
+                messages.success(
+                    request, 'Your product was successfully updated')
+                return redirect('/products/product_details/' + str(product.pk))
+            else:
+                messages.error(
+                    request, 'There was a problem when trying to update' +
+                             'product details. Please try again!')
+                return redirect('/products/product_details/'
+                                + str(product.pk))
+        else:
+            update_product_form = UpdateReviewForm(instance=product)
+
+        context = {
+            'update_product_form': update_product_form,
+            'product': product,
+            'form_error': form_error,
+        }
+
+        return render(request, 'product_details.html', context)
+
+    def get_success_url(self):
+        id_key = self.get_object().id
+        return '/products/product_details/' + str(id_key)
+
+    def get(self, *args, **kwargs):
+        """Override GET request to redirect to products details page"""
+        return redirect('products')
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+class ProductDeleteViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
+                             DeleteView):
+    """
+    A view that deletes a product entry from the database.
+    The action is performed only if the authenticated user
+    is an admin.
+    """
+
+    model = Product
+    success_url = reverse_lazy('products')
+    template_name = 'product_detail'
+    success_message = "Product was successfully deleted from database."
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def get(self, *args, **kwargs):
+        """Override GET request to redirect to products page"""
+        return redirect('products')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super().delete(request, *args, **kwargs)
