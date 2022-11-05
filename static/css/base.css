@@ -10,8 +10,18 @@ body {
     color: #3a3a3a;
 }
 
+/* WIDTH CLASSES */
+.wh-fit-content{
+    width: fit-content;
+}
+
+/* FONT SIZE CLASSES */
 .font-size-smaller {
     font-size: smaller;
+}
+
+.font-size-larger {
+    font-size: larger;
 }
 
 /* COLORS CLASSES */
@@ -21,6 +31,10 @@ body {
 
 .text-red {
     color: #ff4456;
+}
+
+.bg-black {
+    background-color: black;
 }
 
 /* PADDING ON LATERAL SIDES CLASS */
@@ -98,10 +112,6 @@ footer>div>div>div:nth-child(1) form p label::before {
 
 footer>div>div>div:nth-child(1) form .messages {
     height: 20px;
-}
-
-footer .button {
-    font-weight: bold;
 }
 
 /* ICON STYLING */
@@ -202,16 +212,15 @@ input:focus-visible {
 }
 
 .gray-btn {
-    background-color: #bcbcbc;
+    background-color: #e9ecef;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    border: 1px solid gray;
+    border: 1px solid #bebebe;
     color: #3a3a3a;
 
 }
 
 .gray-btn:hover {
-    background-color: gray;
-    color: white;
+    background-color: #d6d6d6;
 }
 
 .small-btn {
@@ -539,22 +548,22 @@ a:hover {
     }
 }
 
-/* LOGOUT MODAL STYLING */
-#logoutModal .modal-content {
+/* MODAL STYLING */
+.modal-content {
     border: 2px solid white;
 }
 
-#logoutModal .modal-header {
+.modal-header {
     background-color: #590243;
     color: white;
     padding: 8px 16px;
 }
 
-#logoutModal .modal-footer {
+.modal-footer {
     padding: 8px 16px;
 }
 
-#logoutModal .modal-close {
+.modal-close {
     background-color: transparent;
     border: none;
     font-size: 25px;
@@ -563,10 +572,28 @@ a:hover {
     padding: 0;
 }
 
-#logoutModal .modal-close span:hover {
+.modal-close span:hover {
     color: #d0cbcb;
 }
 
+.modal form {
+    padding: 20px;
+}
+
+.modal form input:not([type=checkbox]){
+    width: 100%;
+    border: 1px solid #ced4da;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    border-radius: 0.25rem;
+    color: #3a3a3a;
+    font-size: .875rem;
+}
+
+.custom-control label:hover{
+    cursor: pointer;
+}
 /* MAILCHIMP NEWSLETTER */
 #mc_embed_signup {
     background: transparent;
@@ -739,10 +766,18 @@ a:hover {
 
 /* SORT SELECT CONTAINER STYLING */
 
-.sort-select-container .custom-select{
+.sort-select-container .custom-select {
     border: 1px solid gray;
 }
 
+/* FOOD PAIRING LIST STYLING */
+.food-pairing-list i {
+    color: black;
+}
+
+.food-pairing-list img {
+    margin-top: -10px;
+}
 
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
 
