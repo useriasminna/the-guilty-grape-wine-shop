@@ -24,11 +24,11 @@
                 <div class="d-md-flex justify-content-between w-100">
                   <h2>€ {{product.price}}</h2>
                   {% if product.stock == 0 %}
-                  <p class="text-uppercase bg-black text-red p-1">Out of stock</p>
+                  <p class="text-uppercase bg-black text-red p-1 pl-2 pr-2 wh-fit-content">Out of stock</p>
                   {% elif product.stock == 1 %}
-                  <p class="text-uppercase bg-black text-yellow p-1">Last item</p>
+                  <p class="text-uppercase bg-black text-yellow p-1 pl-2 pr-2 wh-fit-content">Last item</p>
                   {% elif product.stock <= 15 %}
-                  <p class="text-uppercase bg-black text-yellow p-1">Last {{product.stock}} items</p>
+                  <p class="text-uppercase bg-black text-yellow p-1 pl-2 pr-2 wh-fit-content">Last {{product.stock}} items</p>
                   {% endif %}
                 </div>
                 
