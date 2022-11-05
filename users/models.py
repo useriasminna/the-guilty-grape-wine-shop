@@ -3,7 +3,8 @@ Users App - Models
 ----------------
 Models for Users App.
 """
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,\
+                                       PermissionsMixin
 from django.db import models
 
 
@@ -79,4 +80,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """Override str method"""
         return str(self.email)
-    
