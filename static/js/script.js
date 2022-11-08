@@ -244,6 +244,123 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 attributeFilter: ["class"]
                 });
             }
+
+
+
+
+            // --------------------------REVIEWS SECTION----------------------------------------------------------
+            
+            let authStatus= document.getElementById('authStatus');
+            let userType = document.getElementById('userType');
+            if(authStatus.textContent == "authenticated" && userType.textContent == "client"){
+                const rating = document.getElementsByClassName('rating')[0];
+                const stars = rating.getElementsByTagName('button');
+                var rateValue;
+                if(document.querySelector('#myReview'))
+                {
+                rateValue = document.querySelector('#updateRateValue');        
+                }
+                else{
+                rateValue = document.querySelector('#rateValue');
+                }
+                    
+                const displayUpdateForm = document.querySelector('#displayUpdateForm');
+
+                //ADD EVENT LISTENERS FOR STAR RATING BUTTONS
+                stars[0].clicked = true;
+                const makeHoverStarsPurple = (limit) => {
+                    for(let j=0; j<=limit; j++){
+                        stars[j].style.color = "#590243";
+                    }
+                };
+
+                const makeNotClickedStarsGray = (i) => {
+                    for(let j=0; j<=i; j++){
+                        if(!stars[j].clicked)
+                        stars[j].style.color = "#80808066";
+                    }
+                };
+                
+                const makeClickedStarsPurple = (i) => {
+                    rateValue.value = i+1;
+                    rateValue.innerHTML = i+1;
+                    for(let j=0; j<=i; j++){
+                        stars[j].style.color = "#590243";
+                        stars[j].clicked = true;
+                    }
+                    if(i != stars.length-1)
+                        for(let z=i+1; z<stars.length; z++){
+                        stars[z].style.color = "#80808066";
+                        stars[z].clicked = false;
+                        }
+                };
+        
+                for(let i=0; i<stars.length; i++){
+                    stars[i].addEventListener('mouseover', (event) => {
+                    event = makeHoverStarsPurple(i);
+                    });
+                    
+                    stars[i].addEventListener('mouseleave', (event) => {
+                    event = makeNotClickedStarsGray(i);
+                    });
+
+                    stars[i].addEventListener('click', (event) => {
+                    event = makeClickedStarsPurple(i);
+                    });
+
+                }
+            
+            //ON 'UPDATE' BUTTON CLICK, DISPLAY UPDATE FORM AND FILL IT WITH EXISTING VALUES OF THE CURRENT REVIEW 
+            if(displayUpdateForm)
+                displayUpdateForm.addEventListener("click", () => {
+                    const updateReviewForm = document.querySelector('#updateReviewForm');
+                    const reviewText = document.querySelector('#reviewTextHidden');
+                    const reviewTextInput = updateReviewForm.querySelector('#updateReviewText');
+                    const updateRating = updateReviewForm.querySelectorAll('.rating')[0].querySelectorAll('button');
+                    const updateRate = updateReviewForm.getElementsByClassName("rate")[0];
+                    const formRate = updateReviewForm.querySelector('#updateRateValue');
+                    const myReview = document.querySelector('#myReview');
+
+                    myReview.style.display = "none";
+                    updateReviewForm.style.display = "block";
+                    displayUpdateForm.style.display = "none";
+
+                    formRate.value = updateRate.value;
+                    reviewTextInput.textContent = reviewText.value;
+                    for(let i=0; i < updateRate.value; i++){
+                        updateRating[i].style.color = "#590243";
+                    }
+                
+                });
+            }
+
+            const generateStarsContainers = document.getElementsByClassName('ratings-generated');
+            //GENERATE STARS FOR REVIEWS RATING AFTER RATE VALUE
+
+            for(let container of generateStarsContainers){
+            const rateHidden = container.previousElementSibling;
+        
+        
+            for(let i=0; i<rateHidden.value; i++){
+                let star = document.createElement("button");
+                star.textContent = '★';
+                star.classList.add('star');
+                star.style.color = "#590243";
+                container.appendChild(star);
+            
+                }
+            
+                for(let i=0; i<5-rateHidden.value; i++){
+                let star = document.createElement("button");
+                star.textContent = '★';
+                star.classList.add('star');
+                star.style.color = "#80808066";
+                container.appendChild(star);
+            
+                }
+            } 
+    
+
         }
     }
 });
