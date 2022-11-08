@@ -10,7 +10,7 @@ from .models import Category, Product
 from .widgets import CustomClearableFileInput
 
 
-class UpdateReviewForm(forms.ModelForm):
+class UpdateProductForm(forms.ModelForm):
     """Form for update product details"""
 
     category = forms.ChoiceField(label="Category", choices=(),
