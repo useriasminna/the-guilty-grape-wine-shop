@@ -11,7 +11,7 @@ body {
 }
 
 /* WIDTH CLASSES */
-.wh-fit-content{
+.wh-fit-content {
     width: fit-content;
 }
 
@@ -59,6 +59,17 @@ body {
 
 .min-vh {
     min-height: 100vh;
+}
+
+input,
+textarea {
+    border: 1px solid #80808066;
+    width: 100%;
+}
+
+input:focus,
+textarea:focus {
+    outline: 1px solid #80808066;
 }
 
 header {
@@ -138,11 +149,6 @@ a:focus-visible {
 
 h1 {
     font-weight: bold;
-}
-
-input:focus,
-input:focus-visible {
-    outline: 1px solid gray;
 }
 
 .form-control:focus {
@@ -580,7 +586,7 @@ a:hover {
     padding: 20px;
 }
 
-.modal form input:not([type=checkbox]){
+.modal form input:not([type=checkbox]) {
     width: 100%;
     border: 1px solid #ced4da;
     padding-top: 0.25rem;
@@ -591,9 +597,10 @@ a:hover {
     font-size: .875rem;
 }
 
-.custom-control label:hover{
+.custom-control label:hover {
     cursor: pointer;
 }
+
 /* MAILCHIMP NEWSLETTER */
 #mc_embed_signup {
     background: transparent;
@@ -779,6 +786,34 @@ a:hover {
     margin-top: -10px;
 }
 
+/* REVIEW SECTION STYLING */
+#updateReviewForm {
+    display: none;
+}
+
+.star {
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    padding: 0;
+}
+
+.rating button:nth-child(1) {
+    color: #590243;
+}
+
+.rating button:not(:nth-child(1)) {
+    color: #80808066;
+}
+
+.ratings-generated .star:hover {
+    cursor: default;
+}
+
+.review-form-container{
+    background-color: #f8f9fa;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+}
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 1200px) {
