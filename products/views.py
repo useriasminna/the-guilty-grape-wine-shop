@@ -7,15 +7,17 @@ import urllib
 import json
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import ListView, View, DeleteView, UpdateView
+from django.views.generic import ListView, DeleteView, UpdateView
 # from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib import messages
+from product_reviews.forms import ReviewForm, UpdateReviewForm
+from product_reviews.models import Review as ReviewModel
 
 
-from products.forms import UpdateReviewForm
+from products.forms import UpdateProductForm
 from products.models import Product, Category
 
 
@@ -227,26 +229,40 @@ class Products(ListView):
         return render(request, 'products/products.html', context)
 
 
-class ProductDetail(View):
+class ProductDetail(ListView):
     """ A view to show a product details including reviews """
     template_name = "products/product_details.html"
+
+    def get_queryset(self):
+        return ReviewModel.objects.order_by('-date_updated_on')
 
     def get(self, request, product_id):
         """Override get method"""
         product = get_object_or_404(Product, pk=product_id)
+        current_review = None
+        if request.user.is_authenticated and len(
+            ReviewModel.objects.filter(
+                Q(author=request.user) & Q(product=product))) == 1:
+            current_review = ReviewModel.objects.get(
+                author=self.request.user, product=product)
         if product.is_deluxe is True:
-            update_product_form = UpdateReviewForm(
+            update_product_form = UpdateProductForm(
                 is_deluxe=True, initial={
                     'category': product.category.get_friendly_name()
                     },
                 instance=product)
         else:
-            update_product_form = UpdateReviewForm(instance=product, initial={
+            update_product_form = UpdateProductForm(instance=product, initial={
                     'category': product.category.get_friendly_name()
                     },)
+
         context = {
             'product': product,
             'update_product_form': update_product_form,
+            'review_form': ReviewForm,
+            'update_review_form': UpdateReviewForm(instance=current_review),
+            'review_list': ReviewModel.objects.filter(product=product),
+            'current_review': current_review,
         }
 
         return render(request, 'products/product_detail.html', context)
@@ -273,7 +289,7 @@ class ProductUpdateViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
         form_error = None
         if request.method == 'POST':
 
-            update_product_form = UpdateReviewForm(
+            update_product_form = UpdateProductForm(
                 request.POST, request.FILES, instance=product)
 
             if update_product_form.is_valid():
@@ -288,7 +304,7 @@ class ProductUpdateViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
                 return redirect('/products/product_details/'
                                 + str(product.pk))
         else:
-            update_product_form = UpdateReviewForm(instance=product)
+            update_product_form = UpdateProductForm(instance=product)
 
         context = {
             'update_product_form': update_product_form,
@@ -307,7 +323,7 @@ class ProductUpdateViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
         return redirect('products')
 
     def test_func(self):
-        return self.request.user.is_staff
+        return self.request.user.is_superuser
 
 
 class ProductDeleteViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
@@ -324,7 +340,7 @@ class ProductDeleteViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
     success_message = "Product was successfully deleted from database."
 
     def test_func(self):
-        return self.request.user.is_staff
+        return self.request.user.is_superuser
 
     def get(self, *args, **kwargs):
         """Override GET request to redirect to products page"""
