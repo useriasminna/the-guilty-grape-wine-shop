@@ -176,12 +176,120 @@
                   </div>
                   {% endif %}
                 {% endif %} 
-                <!-- 'Add to wish list' SECTION -->
+                <!-- 'ADD TO WISH LIST' SECTION -->
               </div>
             </div>
             <hr>
-            <div>
+            <div class="col-xl-10 p-0 mx-auto">
               <!-- REVIEWS -->
+              <div  id="reviewsSection" class="d-flex flex-column-reverse justify-content-between flex-lg-row">
+                <div class="col-12 col-lg-7 p-2 p-lg-0">
+                  <h4 class="mb-3 mb-md-2">Reviews</h4>
+                  {% if review_list %}
+                    {% for review in review_list %}
+                      {% if review.product == product %}
+                        <!-- REVIEW CONTAINER -->
+                        <div class="d-flex align-items-md-center review-container">
+                            <!-- DEFAULT USER IMAGE -->
+                            <div class="col-1 p-0 mr-md-2">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}user-img.png" alt="user icon">
+                            </div>
+                            <div class="col-11 col-md-10 p-0" >
+                              <div class="d-md-flex justify-content-between align-items-baseline review-header">
+                                  <h6 class="m-0"><b>{{ review.author.get_full_name }}</b></h6>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <small>{{ review.date_updated_on }}</small>
+                                      <input type="hidden" name="rate" class="rate" value="{{review.rate}}">
+                                      <div class="ratings-generated d-flex align-items-end ml-md-2"></div>
+                                  </div>    
+                              </div>
+                                <p class="flex a-start"><q>{{ review.review_text}}</q></p>
+                            </div>
+                        </div>
+                        <hr>
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
+                  <!-- INFO  MESSAGE FOR EMPTY REVIEWS LIST -->
+                  <p><b>There are no reviews for this product yet.</b></p>
+                  {% endif %}
+                </div>
+                <div class="col-12 col-md-8 col-lg-4 p-0">
+                  {% if user.is_authenticated %}
+                    {% if not user.is_superuser %}
+                    <div class="text-left review-form-container mb-3 p-2">
+                      {% if current_review %}    
+                        <p id="reviewExists" hidden></p>
+                        <!-- CURRENT USER REVIEW CONTAINER -->
+                        <div id="myReview">
+                            <h4>Your review</h4>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <input type="hidden" name="rate" class="rate" value="{{current_review.rate}}">
+                                    <div class="ratings-generated d-flex align-items-end"></div>
+                                    <small>{{ current_review.date_updated_on }}</small>
+                                </div>
+                            <p><q>{{ current_review.review_text }}</q></p>                            
+                            <button class="button purple-btn small-btn rounded-0 form-submit" type="button" id="displayUpdateForm">Update</button>
+                        </div>
+                        <div id="updateReviewForm">
+                          <!-- UPDATE REVIEW FORM -->
+                          <h4>Update your review</h4>
+                          <form action="{% url 'update_review' product_id=product.id review_id=current_review.id %}" method="POST" class="flex f-column a-start">
+                              {% csrf_token %}
+                              <input type="hidden" name="rate" class="rate" value="{{current_review.rate}}">
+                              <div class="rating">
+                                  <button type="button" class="star">★</button>
+                                  <button type="button" class="star">★</button>
+                                  <button type="button" class="star">★</button>
+                                  <button type="button" class="star">★</button>
+                                  <button type="button" class="star">★</button>
+                              </div>  
+                              <input type="hidden" id="reviewTextHidden" value="{{ current_review.review_text }}">
+                              {% for field in update_review_form %}
+                                  <label>
+                                    <span hidden>{{ field.label }}</span>
+                                    {{ field }}
+                                  </label>
+                              {% endfor %}
+                              <button type="submit" class="button gray-btn small-btn rounded-0 form-submit" >Submit</button>
+                          </form> 
+                        </div>  
+                        {% else %}
+                        <div class="mb-3" id="addReviewForm">
+                            <!-- ADDD REVIEW FORM -->
+                            <h4>Add your review</h4>
+                            <form method="POST" action="{% url 'add_review' product.id %}" class="flex f-column a-start">
+                                {% csrf_token %}
+                                <div class="d-flex rating">
+                                    <button type="button" class="star mr-1">★</button>
+                                    <button type="button" class="star mr-1">★</button>
+                                    <button type="button" class="star mr-1">★</button>
+                                    <button type="button" class="star mr-1">★</button>
+                                    <button type="button" class="star mr-1">★</button>
+                                </div>  
+                                {% for field in review_form %}
+                                  <label>
+                                    <span hidden>{{ field.label }}</span>
+                                    {{ field }}
+                                  </label>
+                              {% endfor %}
+                                <button class="button gray-btn small-btn rounded-0" type="submit" class="btn form-submit">Submit</button>
+                            </form> 
+                        </div>  
+                        {% endif %}            
+                    </div>
+                    {% else %}
+                    <!-- INFO MESSAGE FOR ADMIN USERS -->
+                      <h4>You are logged in as an admin</h4>
+                      <p><b>As an admin member, you can only read the reviews.</b></p>
+                    {% endif %}
+                {% else %}
+                    <!-- INFO MESSAGE FOR GUEST USERS -->
+                    <h4>You are not logged in</h4>
+                    <p><b>If you want to add or edit your review, please <span><a class="auth-link pulse" href="{% url 'account_login' %}"><b>LOGIN</b></a> / <a  class="auth-link pulse" href="{% url 'account_signup' %}"><b>REGISTER</b></b></a></span>
+                {% endif %}
+                </div>
+              </div>
             </div>
         </div>
       </div>
