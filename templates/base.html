@@ -257,6 +257,16 @@
     {% endblock %}
     <main class="flex-shrink-0 main-bg">
       <div class="content-container min-vh">
+        {% if request.user.is_authenticated %}
+          <p hidden id="authStatus">authenticated</p>
+        {% else %}
+          <p hidden id="authStatus">neauthenticated</p>
+        {% endif %}
+        {% if request.user.is_superuser %}
+          <p hidden id="userType">admin</p>
+        {% else %}
+          <p hidden id="userType">client</p>
+        {% endif %}
         {% block content %} 
         {% endblock %}
       </div>
