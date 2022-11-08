@@ -9,7 +9,7 @@ from .models import Review
 
 
 class ProductReviewAdmin(admin.ModelAdmin):
-    """Class for displaying products in admin panel"""
+    """Class for displaying reviews in admin panel"""
     list_display = (
         'pk',
         'rate',
