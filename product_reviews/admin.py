@@ -1,3 +1,24 @@
-from django.contrib import admin
+"""
+Product Reviews App - Admin
+----------------
+Models Configuration for Product Reviews App.
+"""
 
-# Register your models here.
+from django.contrib import admin
+from .models import Review
+
+
+class ProductReviewAdmin(admin.ModelAdmin):
+    """Class for displaying products in admin panel"""
+    list_display = (
+        'pk',
+        'rate',
+        'review_text',
+        'date_created_on',
+        'date_updated_on',
+        'author',
+        'product',
+    )
+
+
+admin.site.register(Review, ProductReviewAdmin)
