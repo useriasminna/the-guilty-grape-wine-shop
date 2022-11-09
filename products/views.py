@@ -7,7 +7,7 @@ import urllib
 import json
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import ListView, DeleteView, UpdateView
+from django.views.generic import ListView, DeleteView, UpdateView, View
 # from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.db.models import Q
@@ -17,7 +17,7 @@ from product_reviews.forms import ReviewForm, UpdateReviewForm
 from product_reviews.models import Review as ReviewModel
 
 
-from products.forms import UpdateProductForm
+from products.forms import AddUpdateProductForm
 from products.models import Product, Category
 
 
@@ -246,15 +246,16 @@ class ProductDetail(ListView):
             current_review = ReviewModel.objects.get(
                 author=self.request.user, product=product)
         if product.is_deluxe is True:
-            update_product_form = UpdateProductForm(
+            update_product_form = AddUpdateProductForm(
                 is_deluxe=True, initial={
                     'category': product.category.get_friendly_name()
                     },
-                instance=product)
+                instance=product, prefix='UPDATE')
         else:
-            update_product_form = UpdateProductForm(instance=product, initial={
+            update_product_form = AddUpdateProductForm(
+                instance=product, initial={
                     'category': product.category.get_friendly_name()
-                    },)
+                    },  prefix='UPDATE')
 
         context = {
             'product': product,
@@ -268,10 +269,57 @@ class ProductDetail(ListView):
         return render(request, 'products/product_detail.html', context)
 
 
+class ProductAddViewAdmin(LoginRequiredMixin, UserPassesTestMixin, View):
+    """
+    A view that provides a form to add a new Product entry
+    """
+
+    model = Product
+    template_name = "base.html"
+
+    fields = [
+        'category', 'is_deluxe', 'sku', 'name', 'country', 'region',
+        'grapes', 'year', 'style', 'code', 'food_pairing', 'price',
+        'image', 'stock']
+
+    def post(self, request):
+
+        form_error = None
+        if request.method == 'POST':
+
+            add_product_form = AddUpdateProductForm(
+                request.POST, request.FILES, prefix='ADD')
+
+            if add_product_form.is_valid():
+                add_product_form.save()
+                messages.success(
+                    request,
+                    'A new product was successfully added to the database')
+                return redirect('products')
+            else:
+                messages.error(
+                    request, 'There was a problem when trying to add' +
+                             ' a new product to  database. Please try again!')
+                return redirect('products')
+        else:
+            add_product_form = AddUpdateProductForm(request.GET, prefix='ADD')
+            context = {
+                'form_error': form_error,
+            }
+        return render(request, 'products.html', context)
+
+    def get(self, *args, **kwargs):
+        """Override GET request to redirect to products details page"""
+        return redirect('products')
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+
 class ProductUpdateViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
                              UpdateView):
     """
-    A view that provides a form to update the Review entry
+    A view that provides a form to update the Product entry
     coresponding to the authenticated user
     """
 
@@ -289,8 +337,9 @@ class ProductUpdateViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
         form_error = None
         if request.method == 'POST':
 
-            update_product_form = UpdateProductForm(
-                request.POST, request.FILES, instance=product)
+            update_product_form = AddUpdateProductForm(
+                request.POST, request.FILES, instance=product,
+                prefix='UPDATE')
 
             if update_product_form.is_valid():
                 update_product_form.save()
@@ -304,7 +353,8 @@ class ProductUpdateViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
                 return redirect('/products/product_details/'
                                 + str(product.pk))
         else:
-            update_product_form = UpdateProductForm(instance=product)
+            update_product_form = AddUpdateProductForm(instance=product,
+                                                       prefix='UPDATE')
 
         context = {
             'update_product_form': update_product_form,
