@@ -10,13 +10,10 @@ from .models import Category, Product
 from .widgets import CustomClearableFileInput
 
 
-class UpdateProductForm(forms.ModelForm):
+class AddUpdateProductForm(forms.ModelForm):
     """Form for update product details"""
 
-    category = forms.ChoiceField(label="Category", choices=(),
-                                 widget=forms.Select(attrs={
-                                     'class': 'custom-select custom-select-sm'
-                                     }))
+    category = forms.ChoiceField(label="Category", choices=(), )
     is_deluxe = forms.BooleanField(label='Deluxe Collection', required=False,
                                    widget=forms.CheckboxInput(attrs={
                                      'class': 'custom-control-input'
