@@ -14,7 +14,7 @@
 <small class="font-weight-bold">This item has no image yet</small><br>
 {% endif %}
 <span class="rounded-0 btn-file p-0 text-left">
-    <label>
+    <label class="w-100">
         <span hidden>{{widget.name}}</span>
         <input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
     </label>
