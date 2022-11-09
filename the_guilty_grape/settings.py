@@ -88,6 +88,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'the_guilty_grape.context_processors.add_subscription_form_to_context',
+                'the_guilty_grape.context_processors.add_create_product_form_to_context',
+                'the_guilty_grape.context_processors.add_products_list_to_context',
                 'url_tools.context_processors.current_url',
             ],
         },
