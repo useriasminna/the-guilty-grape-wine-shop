@@ -101,7 +101,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-start">
                           <a class="dropdown-item" href="#">Orders</a>
-                          <a class="dropdown-item" href="#">Add a product</a>
+                          <a class="dropdown-item" data-toggle="modal" data-target="#addProductModal">Add a new product</a>
                           <hr class="dropdown-divider d-none d-lg-block">
                           <a class="dropdown-item d-none d-lg-block" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                         </div>
@@ -252,6 +252,48 @@
         </div>
       </div>
     </div>
+    <!-- Add new product modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header d-flex align-items-center">
+            <h5 class="modal-title" id="addProductModalLabel">Add a new product</h5>
+            <button type="button" class="modal-close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="{% url 'product_add' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+              {% for field in add_product_form %}
+              <div class="w-100 mb-3">
+                {% if field.name == 'ADD-image' %}
+                <label class="w-100">
+                  {{ field.label }}
+                  {{ field }}
+                </label>
+                {% elif field.name == 'image' %}
+                  {{ field }}
+                {% elif field.name == 'ADD-is_deluxe' %}
+                <div class="custom-control custom-checkbox mt-2">
+                  {{ field }}
+                  <label class="custom-control-label" for="{{ field.auto_id }}">{{ field.label }}</label>
+                </div>
+                {% else %}
+                  <label class="w-100">
+                    {{ field.label }}
+                    {{ field }}
+                  </label>
+                {% endif %}
+                <small class="errorlist"></small>
+              </div> 
+              {% endfor %}
+              <button type="submit" class="btn btn-secondary">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Messages -->
     {% block page_header %} 
     {% endblock %}
@@ -267,6 +309,7 @@
         {% else %}
           <p hidden id="userType">client</p>
         {% endif %}
+        {{ products_json|json_script:"products_data" }}
         {% block content %} 
         {% endblock %}
       </div>
