@@ -30,7 +30,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 col-xl-2 pr-0 sort-select-container w-50 p-0">
-                    <select id="sort-selector" class="custom-select custom-select-sm rounded-0">
+                    <select id="sort-selector">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                         <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                         <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
