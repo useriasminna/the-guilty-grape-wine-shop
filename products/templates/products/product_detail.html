@@ -118,14 +118,9 @@
                             {% csrf_token %}
                             {% for field in update_product_form %}
                               <div class="w-100 mb-3">
-                                {% if field.name == 'UPDATE-image' %}
-                                <label class="w-100">
-                                  {{ field.label }}
+                                {% if field.name == 'image' %}
                                   {{ field }}
-                                </label>
-                                {% elif field.name == 'image' %}
-                                  {{ field }}
-                                {% elif field.name == 'UPDATE-is_deluxe' %}
+                                {% elif field.name == 'is_deluxe' %}
                                 <div class="custom-control custom-checkbox mt-2">
                                   {{ field }}
                                   <label class="custom-control-label" for="{{ field.auto_id }}">{{ field.label }}</label>
