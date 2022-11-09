@@ -99,7 +99,10 @@
                 {% if user.is_authenticated and user.is_superuser %}
                 <!-- UPDATE PRODUCT MODAL -->
                 <div class="col-12 col-md-8 col-xl-6 p-0">
-                  <input hidden id="currentProduct" type="text" value='{{ product.id }}'>
+                  <label>
+                    <span hidden>Current product</span>
+                    <input hidden id="currentProduct" type="text" value='{{ product.id }}'>
+                  </label>
                   <button class="w-100 button purple-btn small-btn rounded-0  mb-3 mb-md-2" data-toggle="modal" data-target="#updateProductModal{{ product.pk }}">Edit product details</button>
                   <div class="modal fade" id="updateProductModal{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="updateProductModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -115,16 +118,23 @@
                             {% csrf_token %}
                             {% for field in update_product_form %}
                               <div class="w-100 mb-3">
-                                {% if field.name == 'image' %}
+                                {% if field.name == 'UPDATE-image' %}
+                                <label class="w-100">
+                                  {{ field.label }}
                                   {{ field }}
-                                {% elif field.name == 'is_deluxe' %}
+                                </label>
+                                {% elif field.name == 'image' %}
+                                  {{ field }}
+                                {% elif field.name == 'UPDATE-is_deluxe' %}
                                 <div class="custom-control custom-checkbox mt-2">
                                   {{ field }}
                                   <label class="custom-control-label" for="{{ field.auto_id }}">{{ field.label }}</label>
                                 </div>
                                 {% else %}
-                                  {{ field.label }}
-                                  {{ field }}
+                                  <label class="w-100">
+                                    {{ field.label }}
+                                    {{ field }}
+                                  </label>
                                 {% endif %}
                                 <small class="errorlist"></small>
                               </div> 
