@@ -15,4 +15,3 @@ class StaticStorage(S3Boto3Storage):
 class MediaStorage(S3Boto3Storage):
     """Set media files location"""
     location = settings.MEDIAFILES_LOCATION
-    
