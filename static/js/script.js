@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // DISPLAY ERROR
     const showError = (input, message) => {
         // get the form-field element
-        const formField = input.parentElement;
+        const formField = input.parentElement.parentElement;
     
         // show the error message
         const error = formField.querySelector('small');
