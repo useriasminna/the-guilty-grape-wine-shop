@@ -3,6 +3,7 @@ Users App - Adapters
 """
 from allauth.account.adapter import DefaultAccountAdapter
 
+
 class AccountAdapter(DefaultAccountAdapter):
     """Adapter for saving a custom user"""
     def save_user(self, request, user, form, commit=True):
@@ -17,4 +18,3 @@ class AccountAdapter(DefaultAccountAdapter):
         if commit:
             user.save()
         return user
-    
