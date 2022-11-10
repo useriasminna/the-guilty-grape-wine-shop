@@ -45,15 +45,15 @@ class AddReview(LoginRequiredMixin, UserPassesTestMixin, View):
                                      author=user, product=product)
                 review.save()
                 messages.success(
-                    request, 'Your review was successfully' +
-                             'added to the list')
+                    request, 'Your review was successfully ' +
+                             'added to the list.')
                 return HttpResponseRedirect(
                     '/products/product_details/' + str(product_id) +
                     '/#reviewsSection')
 
             messages.error(
                 request,
-                'There was a problem submiting your review.' +
+                'There was a problem submiting your review. ' +
                 'Please try again!')
             return HttpResponseRedirect(
                     '/products/product_details/' + str(product_id) +
@@ -99,13 +99,13 @@ class UpdateReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
                 review = ReviewModel()
                 update_review_form.save()
                 messages.success(
-                    request, 'Your review was successfully updated')
+                    request, 'Your review was successfully updated.')
                 return HttpResponseRedirect(
                     '/products/product_details/' + str(product_id) +
                     '/#reviewsSection')
 
             messages.error(
-                request, 'There was a problem when trying to update' +
+                request, 'There was a problem when trying to update ' +
                 'your review.Please try again!')
             return HttpResponseRedirect(
                     '/products/product_details/' + str(product_id) +
