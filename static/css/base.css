@@ -105,6 +105,7 @@ footer .success-message {
 
 footer .errorlist {
     color: #ff4456;
+    margin-top: 0;
 }
 
 footer>div>div>div:nth-child(1) form p {
@@ -164,6 +165,7 @@ h1 {
     list-style-type: none;
     color: #bd2130;
     padding-left: 0px;
+    margin-top: -12px;
 }
 
 /* ------------BUTTON CLASSES------- */
@@ -586,7 +588,7 @@ a:hover {
     padding: 20px;
 }
 
-.modal form input:not([type=checkbox]), select {
+.modal form input:not([type=checkbox]), select, input {
     width: 100%;
     border: 1px solid #ced4da;
     padding-top: 0.25rem;
