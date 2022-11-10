@@ -27,6 +27,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let contentContainer = document.getElementsByClassName('content-container')[0];
     contentContainer.style.paddingTop= (headerHeight - 2) + 'px';
 
+    //SCRIPT FOR SHOWING THE TOASTS
+    let toasts = document.getElementsByClassName('toast');
+    for(let toast of toasts){
+        toast.style.display = 'block';
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+            toast.style.display = 'none';
+        }, 3000);
+    }
+
     // ---------------------------------------SCRIPT FOR ADDING VALIDATION TO ADD PRODUCT FORM AVAILABLE IN BASE.HTML---------------------------------------------
    
     let addModal =  document.getElementById('addProductModal');
