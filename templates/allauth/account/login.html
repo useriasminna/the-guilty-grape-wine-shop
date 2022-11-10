@@ -15,7 +15,18 @@
         <p>Please enter your credentials to login.</p>
         <form class="login" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
-          {{ form.as_p }}
+          {% for field in form %}
+            <p>
+              <label for="{{field.auto_id}}">{{ field.label }}</label>
+              {{ field }}
+            </p>
+            {% if field.errors %}
+              {{field.errors}}
+            {% endif %}
+          {% endfor %}
+          {% if form.non_field_errors %}
+              {{ form.non_field_errors }}
+          {% endif %}
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
