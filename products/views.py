@@ -233,9 +233,6 @@ class ProductDetail(ListView):
     """ A view to show a product details including reviews """
     template_name = "products/product_details.html"
 
-    def get_queryset(self):
-        return ReviewModel.objects.order_by('-date_updated_on')
-
     def get(self, request, product_id):
         """Override get method"""
         product = get_object_or_404(Product, pk=product_id)
@@ -262,7 +259,8 @@ class ProductDetail(ListView):
             'update_product_form': update_product_form,
             'review_form': ReviewForm,
             'update_review_form': UpdateReviewForm(instance=current_review),
-            'review_list': ReviewModel.objects.filter(product=product),
+            'review_list': ReviewModel.objects.filter(
+                product=product).order_by('-date_updated_on'),
             'current_review': current_review,
         }
 
