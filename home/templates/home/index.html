@@ -13,9 +13,9 @@
         <h6 class="d-md-none">Discover our selection of fine wines and sparkling drinks</h6>
       </div>
       <br>
-      <div class="button purple-btn wiggle-btn mx-auto">
-        <a href="{% url 'products' %}">Explore our products</a>
-      </div>      
+      <button class="button purple-btn wiggle-btn mx-auto" onclick='location.href="{% url 'products' %}";'>
+        Explore our products
+      </button>      
   </div>
 </div>
 {% endblock %}
