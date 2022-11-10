@@ -1,4 +1,8 @@
 {% load account %}
 {% load i18n %}
-{% user_display user as name %}
-{% blocktrans %}Successfully signed in as {{name}}.{% endblocktrans %}
+{% if user.is_superuser %}
+    {% blocktrans %}Successfully signed in as Admin.{% endblocktrans %}
+{% else %}
+    {% user_display user.get_full_name as name %}
+    {% blocktrans %}Successfully signed in as {{name}}.{% endblocktrans %}
+{% endif %}
