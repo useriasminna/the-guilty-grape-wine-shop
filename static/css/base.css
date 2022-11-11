@@ -853,6 +853,25 @@ select:focus {
     height: 2px;
 }
 
+/* WISHLIST STYLING */
+.wishlist-count {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+/* NOTIFICATION STYLING */
+.notification {
+    top: 44%;
+    right: 0;
+    height: 15px;
+    line-height: 14px;
+    width: 15px;
+    background-color: #aa0010;
+    border-radius: 50%;
+    text-align: center;
+}
+
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
 
 @media (max-width: 1200px) {
