@@ -138,11 +138,16 @@
                         </div>
                       </div>
                     </li>
-                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="wishlistNav">
-                      <a href="" title="Wishlist">
+                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="wishlistNav">
+                      <a href="{% url 'wishlist' %}" title="Wishlist">
                         <span class="d-lg-none">Wishlist</span>
                         <i class="fas fa-heart d-none d-lg-block"></i>
                       </a>
+                      {% if wishlist_user_count %}
+                      <div class="notification d-none d-lg-block m-0 position-absolute text-white">
+                        {{wishlist_user_count}}
+                      </div>
+                      {% endif %}
                     </li>
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="bagNav">
                       <a href="" title="Shopping Bag">
@@ -189,7 +194,7 @@
                     </div>
                   </li>
                   <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="wishlistNav">
-                    <a href="" title="Wishlist">
+                    <a href="{% url 'wishlist' %}" title="Wishlist">
                       <span class="d-lg-none">Wishlist</span>
                       <i class="fas fa-heart d-none d-lg-block"></i>
                     </a>
