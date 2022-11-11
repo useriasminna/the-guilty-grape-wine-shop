@@ -255,6 +255,39 @@ document.addEventListener("DOMContentLoaded", function(event) {
     attributeFilter: ["class"]
     });
 
+    if (window.location.pathname == '/products/' || window.location.pathname == '/wishlist/') {  
+     // ---------------------------SCRIPT FOR UPDATING CURRENT URL WITH SORT VALUE--------------------------------------------
+     let sortSelector = document.getElementById('sort-selector');
+     if(sortSelector)
+         sortSelector.addEventListener('change', (e) =>{
+             let selector = e.target;
+             let currentUrl = new URL(window.location);
+     
+             let selectedVal = selector.value;
+             if(selectedVal != "reset"){
+                 if(selectedVal == 'best_sellers'){
+                     let sort = selectedVal;
+                     currentUrl.searchParams.set("sort", sort);
+                     currentUrl.searchParams.delete("direction");
+                 }
+                 else{
+                     let sort = selectedVal.split("_")[0];
+                     let direction = selectedVal.split("_")[1];
+     
+                     currentUrl.searchParams.set("sort", sort);
+                     currentUrl.searchParams.set("direction", direction);
+                 }
+     
+                 window.location.replace(currentUrl);
+             } else {
+                 currentUrl.searchParams.delete("sort");
+                 currentUrl.searchParams.delete("direction");
+     
+                 window.location.replace(currentUrl);
+             }
+     
+         } );
+        }
 
     if (window.location.pathname.includes('/products/')) {  
     
@@ -283,38 +316,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
             
         }
-        
-        // ---------------------------SCRIPT FOR UPDATING CURRENT URL WITH SORT VALUE--------------------------------------------
-        let sortSelector = document.getElementById('sort-selector');
-        if(sortSelector)
-            sortSelector.addEventListener('change', (e) =>{
-                let selector = e.target;
-                let currentUrl = new URL(window.location);
-        
-                let selectedVal = selector.value;
-                if(selectedVal != "reset"){
-                    if(selectedVal == 'best_sellers'){
-                        let sort = selectedVal;
-                        currentUrl.searchParams.set("sort", sort);
-                        currentUrl.searchParams.delete("direction");
-                    }
-                    else{
-                        let sort = selectedVal.split("_")[0];
-                        let direction = selectedVal.split("_")[1];
-        
-                        currentUrl.searchParams.set("sort", sort);
-                        currentUrl.searchParams.set("direction", direction);
-                    }
-        
-                    window.location.replace(currentUrl);
-                } else {
-                    currentUrl.searchParams.delete("sort");
-                    currentUrl.searchParams.delete("direction");
-        
-                    window.location.replace(currentUrl);
-                }
-        
-            } );
 
         if (window.location.pathname.includes('/product_details/')) {  
             // --------------------------SCRIPT FOR ADDING VALIDATION TO UPDATE PRODUCT FORM AVAILABLE IN PRODUCT_DETAILS.HTML--------------------------------------------- 
