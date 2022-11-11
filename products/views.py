@@ -5,10 +5,10 @@ Views for Products App.
 """
 import urllib
 import json
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DeleteView, UpdateView, View
-# from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -19,6 +19,8 @@ from product_reviews.models import Review as ReviewModel
 
 from products.forms import AddUpdateProductForm
 from products.models import Product, Category
+from wishlist.forms import SetWishlistRelation
+from wishlist.models import WishlistLine
 
 
 class Products(ListView):
@@ -237,6 +239,8 @@ class ProductDetail(ListView):
         """Override get method"""
         product = get_object_or_404(Product, pk=product_id)
         current_review = None
+        current_wishlist_line = None
+
         if request.user.is_authenticated and len(
             ReviewModel.objects.filter(
                 Q(author=request.user) & Q(product=product))) == 1:
@@ -254,6 +258,13 @@ class ProductDetail(ListView):
                     'category': product.category.get_friendly_name()
                     },  prefix='UPDATE')
 
+        if self.request.user.is_authenticated and \
+            WishlistLine.objects.filter(
+                Q(user=self.request.user) & Q(product=product)).exists():
+            current_wishlist_line = WishlistLine.objects.get(
+                user=self.request.user, product=product)
+
+        add_to_wishlist_form = SetWishlistRelation(data=request.GET)
         context = {
             'product': product,
             'update_product_form': update_product_form,
@@ -262,6 +273,8 @@ class ProductDetail(ListView):
             'review_list': ReviewModel.objects.filter(
                 product=product).order_by('-date_updated_on'),
             'current_review': current_review,
+            'add_to_wishlist_form': add_to_wishlist_form,
+            'current_wishlist_line': current_wishlist_line,
         }
 
         return render(request, 'products/product_detail.html', context)
