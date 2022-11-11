@@ -5,6 +5,7 @@ from django.core.serializers import serialize
 from newsletter.forms import AddSubscriber
 from products.forms import AddUpdateProductForm
 from products.models import Product
+from wishlist.models import WishlistLine
 
 
 def add_subscription_form_to_context(request):
@@ -26,3 +27,14 @@ def add_products_list_to_context(request):
     return {
         'products_json': serialize('json', Product.objects.all())
     }
+
+
+def add_wishlist_count_to_context(request):
+    """Method to return a list of products as context"""
+    if request.user.is_authenticated:
+        return {
+            'wishlist_user_count': WishlistLine.objects.filter(
+                user=request.user).count()
+        }
+    else:
+        return {'wishlist_user_count': None}
