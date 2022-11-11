@@ -1,3 +1,9 @@
+"""
+Wishlist App - Apps
+----------------
+Apps Configuration for Wishlist App.
+"""
+
 from django.apps import AppConfig
 
 
