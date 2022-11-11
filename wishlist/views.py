@@ -6,15 +6,17 @@ Views for Wishlist App.
 import json
 import urllib
 from django.views.generic import ListView, View
+from django.views.generic.edit import DeleteView
 from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
-from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic.edit import DeleteView
-from products.models import Category, Product
-from wishlist.forms import SetWishlistRelation
+
+from django.db.models import Q
 from django.db.models.functions import Lower
+from products.models import Category, Product
+
+from wishlist.forms import SetWishlistRelation
 
 from wishlist.models import WishlistLine
 
@@ -38,7 +40,6 @@ class WishList(LoginRequiredMixin, ListView):
         remove_filter = None
         sort = None
         direction = None
-        print(request.GET)
         # GET EVERY PRODUCT COUNT OF APPEARENCE IN WISHLISTLINE DATABASE
         wishlist_product_count = []
         products = Product.objects.filter(
@@ -292,7 +293,7 @@ class RemoveProductFromWishList(LoginRequiredMixin, UserPassesTestMixin,
     def get_object(self):
         return WishlistLine.objects.get(pk=self.kwargs.get('wishlist_id'))
 
-    def get(self):
+    def get(self, request, *args, **kwargs):
         id_key = self.get_object().id
         return redirect('/products/product_details/' + str(id_key))
 
