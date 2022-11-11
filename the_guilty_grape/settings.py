@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'products',
     'storages',
     'product_reviews',
+    'wishlist',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +91,7 @@ TEMPLATES = [
                 'the_guilty_grape.context_processors.add_subscription_form_to_context',
                 'the_guilty_grape.context_processors.add_create_product_form_to_context',
                 'the_guilty_grape.context_processors.add_products_list_to_context',
+                'the_guilty_grape.context_processors.add_wishlist_count_to_context',
                 'url_tools.context_processors.current_url',
             ],
         },
@@ -97,6 +99,8 @@ TEMPLATES = [
 ]
 
 SITE_ID = 1
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTH_USER_MODEL = 'users.User'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
