@@ -1,0 +1,322 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% load urls %}
+<div class="main-container col-lg-11 mx-auto pt-3 pb-3 mt-2 mt-lg-4 mb-4 bg-white">
+    <h1 class="mb-3 mb-lg-4 text-center">My Wishlist</h1>
+    <div class="pt-lg-3">
+      <div class="col-12 mb-4 mb-lg-3">
+        <div class="col-12 p-0 mx-auto">
+            <div class="d-md-flex align-items-baseline justify-content-between mb-2">
+                <div class="col-md-6 p-0">
+                    <p class="mb-2 mb-md-1">
+                        <i class="fas fa-th-large font-size-smaller"></i>
+                        <span class="font-weight-bold">{{wishlist|length}} items</span>
+                        {% if current_category %}
+                        <span> found in <em class="font-weight-bold">{{current_category.get_friendly_name}}</em> collection</span>
+                        {% endif %}
+                        {% if is_deluxe %}
+                        <span> found in <em class="font-weight-bold">Deluxe</em> collection</span>
+                        {% endif %}
+                        {% if search_term %}
+                        <span> found for <q class="font-weight-bold">{{search_term}}</q></span>
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="col-md-4 col-xl-2 pr-0 sort-select-container w-50 p-0">
+                    <select id="sort-selector">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option> 
+                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                        <option value="best_sellers" {% if current_sorting == 'best_sellers' %}selected{% endif %}>Best Sellers</option>
+                    </select>
+                </div>
+            </div>
+            <hr class="d-none d-lg-block mb-1 mt-0">
+            <div class="navbar navbar-expand-lg navbar-light pl-0">
+                <button class="d-lg-none button rounded-0 purple-btn small-btn" type="button" data-toggle="collapse" data-target="#navbarTogglerFilters" aria-controls="navbarTogglerFilters" aria-expanded="false" aria-label="Toggle navigation">
+                  Filter
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex flex-row align-items-start" id="navbarTogglerFilters">
+                    <h6 class="col-md-2 col-xl-1 p-0 mb-0 d-none d-lg-block mr-xl-4 text-uppercase font-weight-bold">Filter By</h6>
+                    <ul class="col-xl-10 navbar-nav mt-2 mt-lg-0 d-lg-flex flex-wrap">
+                        {% if not current_category and not is_deluxe and not filters_list.category %}
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Category</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for category in categories %}
+                                    <a class="dropdown-item" href="{{current_url}}category={{category|urlencode}}">{{category.get_friendly_name}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if is_deluxe and not deluxe_style %}
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Style Of Wine</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for style in deluxe_styles %}
+                                    <a class="dropdown-item" href="{{current_url}}style={{style|urlencode}}">{{style}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.grapes %}
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Grape Variety</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for grape in grapes_list %}
+                                        <a class="dropdown-item" href="{{current_url}}grapes={{grape|urlencode}}">{{grape}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.year %}
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Year</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for year in years_list %}
+                                        <a class="dropdown-item" href="{{current_url}}year={{year|urlencode}}">{{year}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.country %}
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Country</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for country in countries_list %}
+                                        <a class="dropdown-item" href="{{current_url}}country={{country|urlencode}}">{{country}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.region %}
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Region</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for region in regions_list %}
+                                        <a class="dropdown-item" href="{{current_url}}region={{region|urlencode}}">{{region}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if not filters_list.food_pairing %}
+                        <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
+                            <div class="dropdown">
+                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                    <span>Food Pairing</span>
+                                    <span class="dropdown-toggle"></span>
+                                </a>                                
+                                <div class="dropdown-menu dropdown-menu-lg-start">
+                                    {% for food in food_pairing_list %}
+                                        <a class="dropdown-item" href="{{current_url}}food_pairing={{food|urlencode}}">{{food}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <hr class="d-none d-lg-block mt-0">
+            {% if filters_list %}
+            <div class="d-flex flex-column-reverse flex-md-row"> 
+                <div class="d-flex flex-column-reverse flex-md-row"></div>         
+                <a class="col-md-2 col-xl-1 p-0 pt-xl-1 m-0 mr-xl-4" href="{{current_url_no_filters}}"><u>CLEAR ALL</u></a>
+                <ul class="col-md-10 mt-2 m-md-0 p-0 d-flex flex-wrap list-unstyled">
+                    {% for key, value in filters_list.items %}
+                    <li class="mr-2 mb-2">
+                        <div class="d-flex p-1 pr-4 position-relative filter-active">
+                            <span>{{value}}</span>
+                            {% if remove_filter %}
+                            <a class="position-absolute" href="{{ current_url_no_filters }}">
+                                <span hidden>Clear Filter</span>
+                                <i class="fas fa-times"></i>
+                            </a>
+                            {% else %}
+                            <a class="position-absolute" href="{% del_params request.get_full_path key %}">
+                                <span hidden>Clear Filter</span>
+                                <i class="fas fa-times"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </li>   
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="col-12 p-0 mx-auto"> 
+            <div class="d-flex flex-wrap">
+                {% for product in wishlist %}
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-container" onclick='location.href="{% url 'product_detail' product.id %}";'>
+                    {% if product.stock == 0 %}
+                    <div class="col-12">
+                        {% if product.image %}
+                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        {% endif %}
+                        <div class="product-banner col-9">
+                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Item out of stock">
+                            <div class="banner-text text-center text-red">
+                                <span>Out of stock</span>
+                            </div>
+                        </div>
+                    </div>   
+                    {% elif product.stock == 1 %}
+                    <div class="col-12">
+                        {% if product.image %}
+                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        {% endif %}
+                        <div class="product-banner col-9">
+                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last item">
+                            <div class="banner-text text-center text-yellow">
+                                <span>Last item</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif product.stock <= 15 %}
+                        <div class="col-12">
+                            {% if product.image %}
+                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        {% endif %}
+                            <div class="product-banner col-9 ">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last {{product.stock}} items">
+                                <div class="banner-text text-center text-yellow">
+                                    <span>Last {{product.stock}} items</span>
+                                </div>
+                            </div>
+                        </div>   
+                    {% else %}
+                    <div class="col-12">
+                        {% if product.image %}
+                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% for obj in wishlist_product_count %}
+                        {% if obj.id == product.pk %}
+                        <div class="wishlist-count d-flex">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>{{obj.count}}</span>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="col-12">
+                        <h6>{{product.name}}</h6>
+                        <div class="d-flex align-items-center">
+                            <p class="font-italic m-0">{{product.country}} -</p>
+                            <p class="m-0"> {{product.year}}</p>
+                        </div>
+                        <p class="font-weight-bold">€{{product.price}}</p>
+                    </div>
+                    {% if product.stock != 0 %}
+                        <div class="product-overlay col-10 d-none d-lg-block">
+                            <div class="d-flex">
+                                <div class="col-4 p-0 product-count d-flex">
+                                    <button class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
+                                    <label class="col-4 p-0 m-0">
+                                        <span hidden>Product count</span>
+                                        <input readonly class="p-0 text-center rounded-0" type="number" value="1" min="1" max="{{product.stock}}">
+                                    </label>
+                                    <button class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
+                                </div>
+                                <div class="col-8 p-0">
+                                    <button class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-block d-lg-none ">
+                            <div class="d-flex">
+                                <div class="col-5 col-md-4 p-0 product-count d-flex">
+                                    <button class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
+                                    <label class="col-4 p-0 m-0">
+                                        <span hidden>Product count</span>
+                                        <input readonly class="p-0 text-center rounded-0" type="number" value="1" min="1" max="{{product.stock}}">
+                                    </label>
+                                    <button class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
+                                </div>
+                                <div class="col-7 col-md-8 p-0">
+                                    <button class="w-100 button purple-btn small-btn pb-2 pt-2 rounded-0">Add to bag</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="banner-hover">
+                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Out of stock banner">
+                            <div class="banner-text text-center text-red">
+                                <span>Sorry, this item is <br> Out of stock</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                {% if forloop.counter|divisibleby:1 %}
+                    <div class="col-12 d-sm-none mb-5">
+                        <hr>
+                    </div>
+                {% endif %}    
+                {% if forloop.counter|divisibleby:2 %}
+                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                        <hr>
+                    </div>
+                {% endif %}                
+                {% if forloop.counter|divisibleby:3 %}
+                    <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                        <hr>
+                    </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                    <div class="col-12 d-none d-xl-block mb-5">
+                        <hr>
+                    </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
