@@ -9,6 +9,7 @@
         <div class="col-12 p-0 mx-auto">
             <div class="d-md-flex align-items-baseline justify-content-between mb-2">
                 <div class="col-md-6 p-0">
+                    <!-- Number of items in page element -->
                     <p class="mb-2 mb-md-1">
                         <i class="fas fa-th-large font-size-smaller"></i>
                         <span class="font-weight-bold">{{wishlist|length}} items</span>
@@ -24,6 +25,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 col-xl-2 pr-0 sort-select-container w-50 p-0">
+                    <!-- Sorting -->
                     <select id="sort-selector">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                         <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
@@ -37,6 +39,7 @@
                 </div>
             </div>
             <hr class="d-none d-lg-block mb-1 mt-0">
+            <!-- Filters -->
             <div class="navbar navbar-expand-lg navbar-light pl-0">
                 <button class="d-lg-none button rounded-0 purple-btn small-btn" type="button" data-toggle="collapse" data-target="#navbarTogglerFilters" aria-controls="navbarTogglerFilters" aria-expanded="false" aria-label="Toggle navigation">
                   Filter
@@ -153,6 +156,7 @@
                 </div>
             </div>
             <hr class="d-none d-lg-block mt-0">
+            <!-- Active filters -->
             {% if filters_list %}
             <div class="d-flex flex-column-reverse flex-md-row"> 
                 <div class="d-flex flex-column-reverse flex-md-row"></div>         
@@ -182,10 +186,13 @@
         </div>
       </div>
       <div class="col-12">
+        <!-- Wishlist products -->
         <div class="col-12 p-0 mx-auto"> 
+            {% if wishlist|length > 0 %}
             <div class="d-flex flex-wrap">
                 {% for product in wishlist %}
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-container" onclick='location.href="{% url 'product_detail' product.id %}";'>
+                    <!-- Product banners -->
                     {% if product.stock == 0 %}
                     <div class="col-12">
                         {% if product.image %}
@@ -237,6 +244,7 @@
                         {% endif %}
                     </div>
                     {% endif %}
+                    <!-- Number of appearence in wihlistLine database -->
                     {% for obj in wishlist_product_count %}
                         {% if obj.id == product.pk %}
                         <div class="wishlist-count d-flex">
@@ -253,6 +261,7 @@
                         </div>
                         <p class="font-weight-bold">€{{product.price}}</p>
                     </div>
+                    <!-- Quantity input and add to bag button  -->
                     {% if product.stock != 0 %}
                         <div class="product-overlay col-10 d-none d-lg-block">
                             <div class="d-flex">
@@ -284,6 +293,7 @@
                                 </div>
                             </div>
                         </div>
+                    <!-- Info message -->
                     {% else %}
                         <div class="banner-hover">
                             <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Out of stock banner">
@@ -292,6 +302,7 @@
                             </div>
                         </div>
                     {% endif %}
+                <!-- Delimitator -->
                 </div>
                 {% if forloop.counter|divisibleby:1 %}
                     <div class="col-12 d-sm-none mb-5">
@@ -315,6 +326,10 @@
                 {% endif %}
                 {% endfor %}
             </div>
+            {% else %}
+            <!-- Info message -->
+            <p class="m-0 font-weight-bold">There are no products added to the wishlist yet.</p>
+            {% endif %}
         </div>
       </div>
     </div>
