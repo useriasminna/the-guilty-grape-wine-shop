@@ -48,7 +48,8 @@ class AddReview(LoginRequiredMixin, UserPassesTestMixin, View):
                 messages.success(
                     request, 'Your review was successfully ' +
                              'added to the list.')
-                # UPDATE PRODUCT RATE VALUE WITH AVERAGE MEAN OF CORESPONDING REVIEWS RATE VALUES
+                # UPDATE PRODUCT RATE VALUE WITH AVERAGE MEAN OF CORESPONDING
+                # REVIEWS RATE VALUES
                 product_rates = ReviewModel.objects.filter(
                     product=product)
                 product_rates_mean = product_rates.aggregate(
@@ -109,8 +110,9 @@ class UpdateReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
                 update_review_form.save()
                 messages.success(
                     request, 'Your review was successfully updated.')
-                
-                # UPDATE PRODUCT RATE VALUE WITH AVERAGE MEAN OF CORESPONDING REVIEWS RATE VALUES
+
+                # UPDATE PRODUCT RATE VALUE WITH AVERAGE MEAN OF CORESPONDING
+                # REVIEWS RATE VALUES
                 product_rates = ReviewModel.objects.filter(
                     product=product)
                 product_rates_mean = product_rates.aggregate(
