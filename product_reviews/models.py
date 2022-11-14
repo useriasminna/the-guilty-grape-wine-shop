@@ -26,6 +26,7 @@ class Review(models.Model):
         Product, on_delete=models.CASCADE, blank=True)
 
     class Meta:
+        """Override Meta method"""
         ordering = ["date_updated_on"]
 
     def __str__(self):

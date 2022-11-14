@@ -21,6 +21,7 @@ class ReviewForm(forms.ModelForm):
         self.fields['rate'].required = False
 
     class Meta:
+        """Override Meta method"""
         model = Review
         fields = ['review_text', 'rate']
 
@@ -37,5 +38,6 @@ class UpdateReviewForm(forms.ModelForm):
         self.fields['rate'].required = False
 
     class Meta:
+        """Override Meta method"""
         model = Review
         fields = ['review_text', 'rate']
