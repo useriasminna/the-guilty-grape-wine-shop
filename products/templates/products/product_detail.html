@@ -31,7 +31,12 @@
                   <p class="text-uppercase bg-black text-yellow p-1 pl-2 pr-2 wh-fit-content">Last {{product.stock}} items</p>
                   {% endif %}
                 </div>
-                
+                <div>
+                  {% if product.rating %}
+                  <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
+                  <div class="ratings-generated stars-big d-flex align-items-end"></div>
+                  {% endif %}
+                </div>
                 <div class="w-100 mt-3">
                   <ul class="p-0">
                     <!-- DISPLAY COUNTRY VALUE -->
