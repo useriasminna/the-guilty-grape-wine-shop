@@ -294,7 +294,7 @@ class ProductAddViewAdmin(LoginRequiredMixin, UserPassesTestMixin, View):
         'image', 'stock']
 
     def post(self, request):
-
+        """Override post method"""
         form_error = None
         if request.method == 'POST':
 
@@ -319,7 +319,7 @@ class ProductAddViewAdmin(LoginRequiredMixin, UserPassesTestMixin, View):
             }
         return render(request, 'products.html', context)
 
-    def get(self, *args, **kwargs):
+    def get(self):
         """Override GET request to redirect to products details page"""
         return redirect('products')
 
