@@ -9,6 +9,7 @@ from django.views.generic import View, UpdateView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
+from django.db.models import Avg
 from products.models import Product
 from .forms import ReviewForm, UpdateReviewForm
 from .models import Review as ReviewModel
@@ -47,6 +48,14 @@ class AddReview(LoginRequiredMixin, UserPassesTestMixin, View):
                 messages.success(
                     request, 'Your review was successfully ' +
                              'added to the list.')
+                # UPDATE PRODUCT RATE VALUE WITH AVERAGE MEAN OF CORESPONDING REVIEWS RATE VALUES
+                product_rates = ReviewModel.objects.filter(
+                    product=product)
+                product_rates_mean = product_rates.aggregate(
+                    Avg('rate'))['rate__avg']
+                product.rating = product_rates_mean
+                product.save(update_fields=['rating'])
+
                 return HttpResponseRedirect(
                     '/products/product_details/' + str(product_id) +
                     '/#reviewsSection')
@@ -86,11 +95,11 @@ class UpdateReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def post(self, request, product_id, review_id):
 
         review = get_object_or_404(ReviewModel, pk=review_id)
-        print(review)
         if request.method == 'POST':
 
             update_review_form = UpdateReviewForm(
                 data=request.POST, instance=review)
+            product = get_object_or_404(Product, pk=product_id)
 
             if update_review_form.is_valid():
                 update_review_form.instance.date_updated_on = datetime.now().\
@@ -100,6 +109,15 @@ class UpdateReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
                 update_review_form.save()
                 messages.success(
                     request, 'Your review was successfully updated.')
+                
+                # UPDATE PRODUCT RATE VALUE WITH AVERAGE MEAN OF CORESPONDING REVIEWS RATE VALUES
+                product_rates = ReviewModel.objects.filter(
+                    product=product)
+                product_rates_mean = product_rates.aggregate(
+                    Avg('rate'))['rate__avg']
+                product.rating = product_rates_mean
+                product.save(update_fields=['rating'])
+
                 return HttpResponseRedirect(
                     '/products/product_details/' + str(product_id) +
                     '/#reviewsSection')
