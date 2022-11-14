@@ -403,7 +403,7 @@ a:hover {
 
 .categories a:hover {
     color: white;
-    border-bottom: 2px solid #facef38a;
+    border-bottom: 2px solid #e8d7e6d4;
 }
 
 .categories .dropdown-menu a {
@@ -733,7 +733,7 @@ input {
     position: absolute;
     opacity: 0;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -816,6 +816,14 @@ select:focus {
     background-color: transparent;
     font-size: 25px;
     padding: 0;
+}
+
+.stars-big .star {
+    font-size: 30px;
+}
+
+.stars-inactive .star {
+    color: rgba(128, 128, 128, 0.4)
 }
 
 .rating button:nth-child(1) {
