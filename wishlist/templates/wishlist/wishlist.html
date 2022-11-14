@@ -264,6 +264,20 @@
                     <!-- Quantity input and add to bag button  -->
                     {% if product.stock != 0 %}
                         <div class="product-overlay col-10 d-none d-lg-block">
+                            <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
+                            {% if product.rating %}
+                            <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
+                            <div class="ratings-generated stars-big d-flex align-items-end justify-content-around mb-3"></div>
+                            {% else %}
+                            <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
+                            <div class="stars-big stars-inactive d-flex align-items-end justify-content-around mb-3">
+                                <button type="button" class="star">★</button>
+                                <button type="button" class="star">★</button>
+                                <button type="button" class="star">★</button>
+                                <button type="button" class="star">★</button>
+                                <button type="button" class="star">★</button>
+                              </div> 
+                            {% endif %}
                             <div class="d-flex">
                                 <div class="col-4 p-0 product-count d-flex">
                                     <button class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
