@@ -317,6 +317,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
             
         }
 
+        const generateStarsContainers = document.getElementsByClassName('ratings-generated');
+            //GENERATE STARS FOR REVIEWS RATING AFTER RATE VALUE
+
+            for(let container of generateStarsContainers){
+            const rateHidden = container.previousElementSibling;
+
+        
+            for(let i=0; i<rateHidden.value; i++){
+                let star = document.createElement("button");
+                star.textContent = '★';
+                star.classList.add('star');
+                star.style.color = "#590243";
+                container.appendChild(star);
+            
+                }
+            
+                for(let i=0; i<5-rateHidden.value; i++){
+                let star = document.createElement("button");
+                star.textContent = '★';
+                star.classList.add('star');
+                star.style.color = "#80808066";
+                container.appendChild(star);
+            
+                }
+            } 
+
         if (window.location.pathname.includes('/product_details/')) {  
             // --------------------------SCRIPT FOR ADDING VALIDATION TO UPDATE PRODUCT FORM AVAILABLE IN PRODUCT_DETAILS.HTML--------------------------------------------- 
             
@@ -519,33 +545,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 
                 });
             }
-
-            const generateStarsContainers = document.getElementsByClassName('ratings-generated');
-            //GENERATE STARS FOR REVIEWS RATING AFTER RATE VALUE
-
-            for(let container of generateStarsContainers){
-            const rateHidden = container.previousElementSibling;
-        
-        
-            for(let i=0; i<rateHidden.value; i++){
-                let star = document.createElement("button");
-                star.textContent = '★';
-                star.classList.add('star');
-                star.style.color = "#590243";
-                container.appendChild(star);
-            
-                }
-            
-                for(let i=0; i<5-rateHidden.value; i++){
-                let star = document.createElement("button");
-                star.textContent = '★';
-                star.classList.add('star');
-                star.style.color = "#80808066";
-                container.appendChild(star);
-            
-                }
-            } 
-    
 
         }
     }
