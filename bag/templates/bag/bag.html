@@ -28,8 +28,8 @@
                                             </div>
                                             <!-- ADD PRODUCT DETAILS FOR MEDIUM AND SMALL DEVICES -->
                                             <div class="col-6 col-lg-6 p-0 font-size-smaller d-flex flex-column justify-content-between">
-                                                <p class="d-none d-lg-block"><b>{{ item.product.name }}</b></p>
-                                                <h5 class="d-lg-none"><b>{{ item.product.name }}</b></h5>
+                                                <a class="d-none d-lg-block" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
+                                                <a class="d-lg-none font-size-larger" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
                                                 <p class="d-lg-none"><b>Price: </b>
                                                     € {{item.product.price}}</p>
                                                 <p class="d-lg-none">{{item.quantity}}</p>
