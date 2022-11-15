@@ -197,13 +197,15 @@
                     <!-- Add to wishlist form -->
                     <form method="POST" action="{% url 'add_wishlist' product.id %}" class="mt-4">
                         {% csrf_token %}
+                        <input name="current_url" type="hidden" value="{{ request.path }}">
                         <!-- Submit button -->
                         <button type="submit" class="d-flex align-items-center border-0 bg-transparent"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button> 
                     </form>
                   {% else %}
                     <!-- Remove from wishlist form -->
-                    <form method="POST" action="{% url 'remove_wishlist' product_id=product.id wishlist_id=current_wishlist_line.id %}" class="mt-4">
+                    <form method="POST" action="{% url 'remove_wishlist' wishlist_id=current_wishlist_line.id %}" class="mt-4">
                         {% csrf_token %}
+                        <input name="current_url" type="hidden" value="{{ request.path }}">
                         <!-- Submit button -->
                         <button type="submit" class="d-flex align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
                     </form>
