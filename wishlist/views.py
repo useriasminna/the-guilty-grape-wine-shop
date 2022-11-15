@@ -21,7 +21,7 @@ from wishlist.forms import SetWishlistRelation
 from wishlist.models import WishlistLine
 
 
-class WishList(LoginRequiredMixin, ListView):
+class WishList(LoginRequiredMixin, UserPassesTestMixin, ListView):
     """
     A view that provides the wishlist of products
     """
@@ -240,8 +240,11 @@ class WishList(LoginRequiredMixin, ListView):
             }
         return render(request, 'wishlist/wishlist.html', context)
 
+    def test_func(self):
+        return not self.request.user.is_superuser
 
-class AddProductToWishList(View):
+
+class AddProductToWishList(UserPassesTestMixin, View):
     """
     A view that provides a form for creating a new entry in
     WishlistLine
@@ -273,6 +276,9 @@ class AddProductToWishList(View):
             'wishlist': wishlist
         }
         return render(request, 'products/product_details.html', context)
+
+    def test_func(self):
+        return not self.request.user.is_superuser
 
 
 class RemoveProductFromWishList(LoginRequiredMixin, UserPassesTestMixin,
