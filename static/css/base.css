@@ -870,14 +870,20 @@ select:focus {
 
 /* NOTIFICATION STYLING */
 .notification {
-    top: 44%;
-    right: 0;
-    height: 15px;
-    line-height: 14px;
-    width: 15px;
+    top: 52%;
+    right: 0px;
+    height: 16px;
+    line-height: 16px;
+    width: 16px;
     background-color: #aa0010;
     border-radius: 50%;
     text-align: center;
+    font-size: smaller;
+}
+
+/* -------------------------------------BAG PAGE STYLING -------------------------------*/
+.bag-table {
+    border-collapse: collapse;
 }
 
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
