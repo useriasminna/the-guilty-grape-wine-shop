@@ -286,35 +286,23 @@
                               </div> 
                             {% endif %}
                             <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR LARGE DEVICES-->
-                            <div class="d-flex">
-                                <div class="col-4 p-0 product-count d-flex">
-                                    <button class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
-                                    <label class="col-4 p-0 m-0">
-                                        <span hidden>Product count</span>
-                                        <input readonly class="p-0 text-center rounded-0" type="number" value="1" min="1" max="{{product.stock}}">
-                                    </label>
-                                    <button class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
+                            <form action="{% url 'add_to_bag' product.id %}" class="overlay-form" method="POST">
+                                {% csrf_token %}
+                                <div class="d-flex">
+                                    <div class="col-4 p-0 product-count d-flex">
+                                        <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
+                                        <label class="col-4 p-0 m-0">
+                                            <span hidden>Product count</span>
+                                            <input readonly class="p-0 text-center rounded-0" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
+                                        </label>
+                                        <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
+                                    </div>
+                                    <div class="col-8 p-0">
+                                        <button type="submit" class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
+                                    </div>
+                                    <input name="current_url" type="hidden" value="{{ request.path }}">
                                 </div>
-                                <div class="col-8 p-0">
-                                    <button class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR MEDIUM AND SMALL DEVICES-->
-                        <div class="col-12 d-block d-lg-none ">
-                            <div class="d-flex">
-                                <div class="col-5 col-md-4 p-0 product-count d-flex">
-                                    <button class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
-                                    <label class="col-4 p-0 m-0">
-                                        <span hidden>Product count</span>
-                                        <input readonly class="p-0 text-center rounded-0" type="number" value="1" min="1" max="{{product.stock}}">
-                                    </label>
-                                    <button class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
-                                </div>
-                                <div class="col-7 col-md-8 p-0">
-                                    <button class="w-100 button purple-btn small-btn pb-2 pt-2 rounded-0">Add to bag</button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     {% else %}
                     <!-- ADD OUT OF STOCK ITEM -->
@@ -326,6 +314,26 @@
                         </div>
                     {% endif %}
                 </div>
+                <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR MEDIUM AND SMALL DEVICES-->
+                        <div class="col-12 d-block d-lg-none ">
+                            <form action="{% url 'add_to_bag' product.id %}" method="POST">
+                                {% csrf_token %}
+                                <div class="d-flex">
+                                    <div class="col-4 p-0 product-count d-flex">
+                                        <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
+                                        <label class="col-4 p-0 m-0">
+                                            <span hidden>Product count</span>
+                                            <input readonly class="p-0 text-center rounded-0 font-size-larger" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
+                                        </label>
+                                        <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
+                                    </div>
+                                    <div class="col-8 p-0">
+                                        <button type="submit" class="w-100 button purple-btn rounded-0">Add to bag</button>
+                                    </div>
+                                    <input name="current_url" type="hidden" value="{{ request.path }}">
+                                </div>
+                            </form>
+                        </div>
                 <!-- ADD SEPARATORS -->
                 {% if forloop.counter|divisibleby:1 %}
                     <div class="col-12 d-sm-none mb-5">

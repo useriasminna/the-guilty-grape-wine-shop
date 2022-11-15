@@ -175,15 +175,19 @@
                   <!-- PRODUCT COUNT AND ADD TO BAG BUTTON FOR GUEST USERS AND AUTHENTICATED USERS THAT ARE NOT SUPERUSERS -->
                   {% if product.stock > 0 %}
                   <div class="col-12 col-md-8 col-xl-6 p-0">
-                    <div class="product-count font-size-larger d-flex mb-3 mb-md-2">
-                        <button class="font-weight-bold col-2 p-0 button rounded-0 substraction">-</button>
-                        <label class="col-8 p-0 m-0">
-                            <span hidden>Product count</span>
-                            <input readonly class="p-0 text-center rounded-0" type="number" value="1" min="1" max="{{product.stock}}">
-                        </label>
-                        <button class="font-weight-bold col-2 p-0 button rounded-0 addition">+</button>
-                    </div>
-                    <button class="w-100 button purple-btn small-btn pb-2 pt-2 rounded-0">Add to bag</button>
+                    <form action="{% url 'add_to_bag' product.id %}" method="POST">
+                      {% csrf_token %}
+                      <div class="product-count font-size-larger d-flex mb-3 mb-md-2">
+                          <button type="button" class="font-weight-bold col-2 p-0 button rounded-0 substraction">-</button>
+                          <label class="col-8 p-0 m-0">
+                              <span hidden>Product count</span>
+                              <input readonly class="p-0 text-center rounded-0" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
+                          </label>
+                          <button type="button" class="font-weight-bold col-2 p-0 button rounded-0 addition">+</button>
+                      </div>
+                      <button type="submit" class="w-100 button purple-btn small-btn pb-2 pt-2 rounded-0">Add to bag</button>
+                      <input name="current_url" type="hidden" value="{{ request.path }}">
+                    </form>
                   </div>
                   {% endif %}
                 {% endif %} 
