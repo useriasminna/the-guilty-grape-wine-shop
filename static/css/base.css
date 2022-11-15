@@ -20,6 +20,10 @@ body {
     font-size: smaller;
 }
 
+.font-size-small {
+    font-size: small;
+}
+
 .font-size-larger {
     font-size: larger;
 }
@@ -31,6 +35,10 @@ body {
 
 .text-red {
     color: #ff4456;
+}
+
+.bg-gray{
+    background-color: #f0f0f0;
 }
 
 .bg-black {
@@ -883,7 +891,7 @@ select:focus {
 
 /* -------------------------------------BAG PAGE STYLING -------------------------------*/
 .bag-table {
-    border-collapse: collapse;
+    border-collapse: separate;
 }
 
 /* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
