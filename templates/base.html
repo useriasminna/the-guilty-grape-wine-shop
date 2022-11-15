@@ -44,7 +44,7 @@
         <div class="add container-fluid text-center"><p class="mx-auto">Free delivery on orders over 60€</p></div>
         <div class="add container-fluid text-center"><p class="mx-auto">Register and enjoy <span class="text-success">15% off</span> on your first order</p></div> 
       </div>
-      <!-- Navigation links -->
+      <!-- NAVIGATION LINKS -->
       <nav class="navbar navbar-expand-lg navbar-light">
         <button id="navbarTogglerButton" class="navbar-toggler bg-transparent" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars text-white"></i>
@@ -79,7 +79,7 @@
           </div>
           <hr class="d-lg-none">
           <div class="container-fluid add-container d-none d-lg-block mb-lg-2 p-lg-0">
-            <div class="add container-fluid"><p class="mx-auto">Free delivery on orders over 60€</p></div>
+            <div class="add container-fluid"><p class="mx-auto">Free delivery on orders over {{ free_delivery_threshold }}€</p></div>
             <div class="add container-fluid"><p class="mx-auto">Register and enjoy <span>15% off</span> on your first order</p></div> 
           </div>
           <div class="container-fluid d-block d-lg-flex mb-lg-1">
@@ -149,11 +149,16 @@
                       </div>
                       {% endif %}
                     </li>
-                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="bagNav">
-                      <a href="" title="Shopping Bag">
+                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="bagNav">
+                      <a href="{% url 'bag' %}" title="Shopping Bag">
                         <span class="d-lg-none">Shopping Bag</span>
                         <i class="fas fa-shopping-bag d-none d-lg-block"></i>
                       </a>
+                      {% if product_count %}
+                      <div class="notification d-none d-lg-block m-0 position-absolute text-white">
+                        {{product_count}}
+                      </div>
+                      {% endif %}
                     </li>
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="chatNav">
                       <a href="" title="Customer Service">
@@ -200,7 +205,7 @@
                     </a>
                   </li>
                   <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="bagNav">
-                    <a href="" title="Shopping Bag">
+                    <a href="{% url 'bag' %}" title="Shopping Bag">
                       <span class="d-lg-none">Shopping Bag</span>
                       <i class="fas fa-shopping-bag d-none d-lg-block"></i>
                     </a>
@@ -230,7 +235,7 @@
           </div>
         </div>
       </nav>
-      <!-- Messages -->
+      <!-- MESSAGES -->
       {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -249,7 +254,7 @@
         </div>
     {% endif %}
     </header>
-    <!-- Logout Modal -->
+    <!-- LOGOUT MODAL -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -275,7 +280,7 @@
         </div>
       </div>
     </div>
-    <!-- Add new product modal -->
+    <!-- ADD NEW PRODUCT MODAL -->
     <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
