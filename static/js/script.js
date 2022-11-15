@@ -345,6 +345,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             
         }
 
+        //----------------------SCRIPT FOR STOPING CLICK EVENT PROPAGATION FROM PRODUCT CONTAINBER TO OVERLAY ADD TO BAG FORM-----------------------------------------------
+        let formsOverlay = document.getElementsByClassName('overlay-form');
+        for(let form of formsOverlay){
+            form.addEventListener('click', (e) => { 
+                e.stopPropagation();
+            });
+        }
 
         if (window.location.pathname.includes('/product_details/')) {  
             // --------------------------SCRIPT FOR ADDING VALIDATION TO UPDATE PRODUCT FORM AVAILABLE IN PRODUCT_DETAILS.HTML--------------------------------------------- 
