@@ -6,17 +6,23 @@ Views for Bag App.
 
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import TemplateView, View
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
 
 from products.models import Product
 
 
-class Bag(TemplateView):
+class Bag(UserPassesTestMixin, TemplateView):
     """A view that will render the bag page template"""
     template_name = 'bag/bag.html'
 
+    def test_func(self):
+        if self.request.user.is_authenticated:
+            return not self.request.user.is_superuser
+        return True
 
-class AddToBag(View):
+
+class AddToBag(UserPassesTestMixin, View):
     """A view that add the product and the corresponding quantity to the
     shopping bag"""
     template_name = 'bag/bag.html'
@@ -37,3 +43,8 @@ class AddToBag(View):
             messages.success(request, f'Added {product.name} to your bag')
         request.session['bag'] = bag
         return redirect(current_url)
+
+    def test_func(self):
+        if self.request.user.is_authenticated:
+            return not self.request.user.is_superuser
+        return True
