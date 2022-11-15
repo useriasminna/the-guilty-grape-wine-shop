@@ -5,110 +5,113 @@
     <h1 class="mb-3 mb-lg-4 text-center">My Bag</h1>
     <div class="pt-lg-3">
         <div class="col-12 mb-4 mb-lg-3">
-            <div class="col-12 p-0 mx-auto">
-                <div class="col-xl-10 p-0 mx-auto">
-                    {% if bag_items %}
-                    <div class="d-lg-flex justify-content-between d-lg-row">
-                        <!-- ADD TABLE WITH BAG PRODUCTS -->
-                        <div class="col-lg-8 mb-3 mb-lg-0">
-                            <table class="bag-table">
-                                <tr>
-                                    <th class="d-none d-md-table-cell col-md-5 p-0 pb-2 text-center">Item</th>
-                                   <th class="d-none d-md-table-cell col-md-2 p-0 pb-2 text-center">Price</th>
-                                    <th class="d-none d-md-table-cell col-md-3 pb-2 text-center">Quantity</th>
-                                    <th class="d-none d-md-table-cell col-md-2 p-0 pb-2 text-center">Total</th>
-                                </tr>
-                                {% for item in bag_items %}
-                                <tr class="bg-gray">
-                                    <td class="col-md-5 p-0 py-2 align-top font-size-larger">
-                                        <div class="d-flex">
-                                            <!-- ADD PRODUCT IMAGE -->
-                                            <div class="col-6 col-md-3 col-lg-4 p-0">
-                                                <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                            </div>
-                                            <!-- ADD PRODUCT DETAILS FOR MEDIUM AND SMALL DEVICES -->
-                                            <div class="col-6 col-md-8 col-lg-6 p-0 font-size-smaller d-flex flex-column justify-content-between">
-                                                <a class="d-none d-lg-block" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
-                                                <a class="d-lg-none font-size-larger" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
-                                                <p class="d-md-none"><b>Price: </b>
-                                                    € {{item.product.price}}</p>
-                                                <p class="d-md-none">{{item.quantity}}</p>
-                                            </div>
-                                        </div>  
-                                        <!-- 'ADD TO WISH LIST' SECTION -->
-                                        {% if user.is_authenticated and not user.is_superuser %}
-                                            {% if not item.current_wishlist_line %}
-                                                <!-- Add to wishlist form -->
-                                                <form method="POST" action="{% url 'add_wishlist' item.product.id %}" class="mt-1">
-                                                    {% csrf_token %}
-                                                    <input name="current_url" type="hidden" value="{{ request.path }}">
-                                                    <!-- Submit button -->
-                                                    <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent font-size-small"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>
-                                                    <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>  
-                                                </form>
-                                            {% else %}
-                                                <!-- Remove from wishlist form -->
-                                                <form method="POST" action="{% url 'remove_wishlist' wishlist_id=item.current_wishlist_line.id %}" class="mt-1">
-                                                    {% csrf_token %}
-                                                    <input name="current_url" type="hidden" value="{{ request.path }}">
-                                                    <!-- Submit button -->
-                                                    <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent font-size-small"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
-                                                    <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
-                                                </form>
-                                            {% endif %}
-                                        {% endif %}  
-                                    </td>
-                                    <!-- ADD PRODUCT DETAILS FOR LARGE DEVICES-->
-                                    <td class="d-none d-md-table-cell col-md-2 align-top text-center">
-                                        <p>€ {{item.product.price}}</p>
-                                    </td>
-                                    <td class="d-none d-md-table-cell col-md-3 align-top text-center">
-                                        <p>{{item.quantity}}</p>
-                                    </td>
-                                    <td class="d-none d-md-table-cell col-md-2 align-top text-center">
-                                        <p><b>€ {{item.subtotal|floatformat:2}}</b></p>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                        <!-- ADD ORDER SUMMARY PRICE DETAILS-->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="border p-3 p-lg-2">
-                                <h5 class="mb-3"><b>Order Summary</b></h5>
-                                <div class="w-100 d-flex justify-content-between">
-                                    <span>Sub Total:</span>
-                                    <span><b>€ {{ total|floatformat:2 }}</b></span>
-                                </div>
-                                <div class="w-100 d-flex justify-content-between">
-                                    <span>Discount:</span>
-                                    <span><b>- €</b></span>
-                                </div>
-                                <div class="w-100 d-flex justify-content-between">
-                                    <span>Delivery:</span>
-                                    <span><b>€ {{ delivery|floatformat:2 }}</b></span>
-                                </div>
-                                <hr>
-                                <div class="w-100 d-flex justify-content-between">
-                                    <span class="font-size-larger"><b>Total</b></span>
-                                    <span><b>€ {{ grand_total|floatformat:2 }}</b></span>
-                                </div>
-                                <hr>
-                                <div class="d-flex flex-column align-items-center mt-2">
-                                    <button class="button purple-btn small-btn rounded-0 mb-2">Proceed To Checkout</button>
-                                    <a href="{% url 'products' %}" class="button gray-btn small-btn rounded-0"><i class="fas fa-chevron-left font-size-smaller"></i> Continue shopping</a>
-                                </div>
+          <div class="col-12 p-0 mx-auto">
+                {% if bag_items %}
+                <div class="d-lg-flex justify-content-between d-lg-row">
+                    <!-- ADD TABLE WITH BAG PRODUCTS -->
+                    <div class="col-lg-8 mb-3 mb-lg-0">
+                        <table class="bag-table">
+                            <tr>
+                                <th class="d-none d-md-table-cell col-md-5 p-0 pb-2 text-center">Item</th>
+                                <th class="d-none d-md-table-cell col-md-2 p-0 pb-2 text-center">Price</th>
+                                <th class="d-none d-md-table-cell col-md-3 pb-2 text-center">Quantity</th>
+                                <th class="d-none d-md-table-cell col-md-2 p-0 pb-2 text-center">Total</th>
+                            </tr>
+                            {% for item in bag_items %}
+                            <tr class="bg-gray">
+                                <td class="col-md-5 p-2 align-top font-size-larger">
+                                    <div class="d-flex">
+                                        <!-- ADD PRODUCT IMAGE -->
+                                        <div class="col-6 col-md-3 col-lg-4 p-0">
+                                            <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                        </div>
+                                        <!-- ADD PRODUCT DETAILS FOR MEDIUM AND SMALL DEVICES -->
+                                        <div class="col-6 col-md-8 col-lg-6 p-0 font-size-smaller d-flex flex-column justify-content-between">
+                                            <a class="d-none d-lg-block font-size-smaller mb-3" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
+                                            <a class="d-lg-none font-size-larger mb-3" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
+                                            <p class="d-md-none">{{item.quantity}}</p>
+                                            <p class="d-md-none"><b>Price: </b> € {{item.product.price}}</p>
+                                            <form  method="POST" action="{% url 'remove_from_bag' item.product.id %}">
+                                                {% csrf_token %}
+                                                <input name="current_url" type="hidden" value="{{ request.path }}">
+                                                <button class="d-none d-lg-block border-0 p-0 font-size-smaller"><u>Delete</u></button>
+                                                <button class="d-lg-none border-0 p-0"><u>Delete</u></button>
+                                            </form>
+                                        </div>
+                                    </div>  
+                                    <!-- 'ADD TO WISH LIST' SECTION -->
+                                    {% if user.is_authenticated and not user.is_superuser %}
+                                        {% if not item.current_wishlist_line %}
+                                            <!-- Add to wishlist form -->
+                                            <form method="POST" action="{% url 'add_wishlist' item.product.id %}" class="mt-1">
+                                                {% csrf_token %}
+                                                <input name="current_url" type="hidden" value="{{ request.path }}">
+                                                <!-- Submit button -->
+                                                <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent font-size-small"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>
+                                                <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>  
+                                            </form>
+                                        {% else %}
+                                            <!-- Remove from wishlist form -->
+                                            <form method="POST" action="{% url 'remove_wishlist' wishlist_id=item.current_wishlist_line.id %}" class="mt-1">
+                                                {% csrf_token %}
+                                                <input name="current_url" type="hidden" value="{{ request.path }}">
+                                                <!-- Submit button -->
+                                                <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent font-size-small"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
+                                                <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
+                                            </form>
+                                        {% endif %}
+                                    {% endif %}  
+                                </td>
+                                <!-- ADD PRODUCT DETAILS FOR LARGE DEVICES-->
+                                <td class="d-none d-md-table-cell col-md-2 align-top text-center">
+                                    <p>€ {{item.product.price}}</p>
+                                </td>
+                                <td class="d-none d-md-table-cell col-md-3 align-top text-center">
+                                    <p>{{item.quantity}}</p>
+                                </td>
+                                <td class="d-none d-md-table-cell col-md-2 align-top text-center">
+                                    <p><b>€ {{item.subtotal|floatformat:2}}</b></p>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <!-- ADD ORDER SUMMARY PRICE DETAILS-->
+                    <div class="col-md-6 col-lg-4 d-flex justify-content-end">
+                        <div class="border col-lg-10 p-3 p-lg-2">
+                            <h5 class="mb-3"><b>Order Summary</b></h5>
+                            <div class="w-100 d-flex justify-content-between">
+                                <span>Sub Total:</span>
+                                <span><b>€ {{ total|floatformat:2 }}</b></span>
+                            </div>
+                            <div class="w-100 d-flex justify-content-between">
+                                <span>Discount:</span>
+                                <span><b>- €</b></span>
+                            </div>
+                            <div class="w-100 d-flex justify-content-between">
+                                <span>Delivery:</span>
+                                <span><b>€ {{ delivery|floatformat:2 }}</b></span>
+                            </div>
+                            <hr>
+                            <div class="w-100 d-flex justify-content-between">
+                                <span class="font-size-larger"><b>Total</b></span>
+                                <span><b>€ {{ grand_total|floatformat:2 }}</b></span>
+                            </div>
+                            <hr>
+                            <div class="d-flex flex-column align-items-center mt-2">
+                                <button class="button purple-btn small-btn rounded-0 mb-2">Proceed To Checkout</button>
+                                <a href="{% url 'products' %}" class="button gray-btn small-btn rounded-0"><i class="fas fa-chevron-left font-size-smaller"></i> Continue shopping</a>
                             </div>
                         </div>
                     </div>
-                    {% else %}
-                    <!-- ADD INFO MESSAGE FOR BAG EMPTY CASE-->
-                    <div class="d-flex flex-column align-items-center">
-                        <p class="mb-4 text-center"><b>There are no items in the shopping bag.</b></p>
-                        <a href="{% url 'products' %}" class="button gray-btn small-btn rounded-0"><i class="fas fa-chevron-left font-size-smaller"></i> Continue shopping</a>
-                    </div>
-                    {% endif %}
                 </div>
+                {% else %}
+                <!-- ADD INFO MESSAGE FOR BAG EMPTY CASE-->
+                <div class="d-flex flex-column align-items-center">
+                    <p class="mb-4 text-center"><b>There are no items in the shopping bag.</b></p>
+                    <a href="{% url 'products' %}" class="button gray-btn small-btn rounded-0"><i class="fas fa-chevron-left font-size-smaller"></i> Continue shopping</a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
