@@ -25,5 +25,6 @@ urlpatterns = [
     path('subscribe/', include('newsletter.urls')),
     path('products/', include('products.urls')),
     path('/', include('product_reviews.urls')),
-    path('wishlist/', include('wishlist.urls'))
+    path('wishlist/', include('wishlist.urls')),
+    path('bag/', include('bag.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
