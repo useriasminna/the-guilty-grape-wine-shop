@@ -22,20 +22,41 @@
                                 <td class="col-md-5 p-2 align-top font-size-larger">
                                     <div class="d-flex">
                                         <!-- ADD PRODUCT IMAGE -->
-                                        <div class="col-6 col-md-3 col-lg-4 p-0">
+                                        <div class="col-6 col-md-4 col-lg-6 col-xl-4 p-0">
                                             <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                         </div>
                                         <!-- ADD PRODUCT DETAILS FOR MEDIUM AND SMALL DEVICES -->
-                                        <div class="col-6 col-md-8 col-lg-6 p-0 font-size-smaller d-flex flex-column justify-content-between">
+                                        <div class="col-6 col-md-8 col-lg-6 col-xl-8 p-0 font-size-smaller d-flex flex-column justify-content-between">
                                             <a class="d-none d-lg-block font-size-smaller mb-3" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
                                             <a class="d-lg-none font-size-larger mb-3" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
-                                            <p class="d-md-none">{{item.quantity}}</p>
+                                            <p class="d-md-none mb-1"><b>Quantity</b></p>
+                                            <!-- ADD FORMS FOR INCREMENTING/DECREMENTING QUANTITY -->
+                                            <div class="d-flex d-md-none mb-3">
+                                                <form class="col-3 p-0" method="POST" action="{% url 'decrement_quantity' item.product.id %}">
+                                                    {% csrf_token %}
+                                                    <input name="current_url" type="hidden" value="{{ request.path }}">
+                                                    <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">-</button>
+                                                </form>
+                                                <label class="col-5 p-0 m-0">
+                                                    <span hidden>Product count</span>
+                                                    <input readonly class="h-100 p-0 text-center rounded-0" value="{{item.quantity}}">
+                                                </label>
+                                                <form class="col-3 p-0" method="POST" action="{% url 'increment_quantity' item.product.id %}">
+                                                    {% csrf_token %}
+                                                    <input name="current_url" type="hidden" value="{{ request.path }}">
+                                                    <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">+</button>
+                                                </form>
+                                            </div>
                                             <p class="d-md-none"><b>Price: </b> € {{item.product.price}}</p>
-                                            <form  method="POST" action="{% url 'remove_from_bag' item.product.id %}">
+                                            {% if item.product.price != item.subtotal  %}
+                                                <p class="d-md-none"><b>Total: </b> € {{item.subtotal}}</p>
+                                            {% endif %}
+                                            <!-- ADD FORM FOR REMOVING PRODUCT FROM BAG -->
+                                            <form  class="mb-3" method="POST" action="{% url 'remove_from_bag' item.product.id %}">
                                                 {% csrf_token %}
                                                 <input name="current_url" type="hidden" value="{{ request.path }}">
-                                                <button class="d-none d-lg-block border-0 p-0 font-size-smaller"><u>Delete</u></button>
-                                                <button class="d-lg-none border-0 p-0"><u>Delete</u></button>
+                                                <button class="d-none d-lg-block border-0 p-0 font-size-smaller"><u><em>Delete</em></u></button>
+                                                <button class="d-lg-none border-0 p-0"><u><em>Delete</em></u></button>
                                             </form>
                                         </div>
                                     </div>  
@@ -63,13 +84,29 @@
                                     {% endif %}  
                                 </td>
                                 <!-- ADD PRODUCT DETAILS FOR LARGE DEVICES-->
-                                <td class="d-none d-md-table-cell col-md-2 align-top text-center">
+                                <td class="d-none d-md-table-cell col-md-2 p-2 align-top text-center">
                                     <p>€ {{item.product.price}}</p>
                                 </td>
-                                <td class="d-none d-md-table-cell col-md-3 align-top text-center">
-                                    <p>{{item.quantity}}</p>
+                                <td class="d-none d-md-table-cell col-md-3 p-2 align-top text-center">
+                                    <!-- ADD FORMS FOR INCREMENTING/DECREMENTING QUANTITY -->
+                                    <div class="col-xl-10 d-flex justify-content-center mx-auto">
+                                        <form class="col-4 col-xl-2 p-0" method="POST" action="{% url 'decrement_quantity' item.product.id %}">
+                                            {% csrf_token %}
+                                            <input name="current_url" type="hidden" value="{{ request.path }}">
+                                            <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">-</button>
+                                        </form>
+                                        <label class="col-6 p-0 m-0">
+                                            <span hidden>Product count</span>
+                                            <input readonly class="p-0 text-center rounded-0 h-100" value="{{item.quantity}}">
+                                        </label>
+                                        <form class="col-4 col-xl-2 p-0" method="POST" action="{% url 'increment_quantity' item.product.id %}">
+                                            {% csrf_token %}
+                                            <input name="current_url" type="hidden" value="{{ request.path }}">
+                                            <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">+</button>
+                                        </form>
+                                    </div>
                                 </td>
-                                <td class="d-none d-md-table-cell col-md-2 align-top text-center">
+                                <td class="d-none d-md-table-cell col-md-2 p-2 align-top text-center">
                                     <p><b>€ {{item.subtotal|floatformat:2}}</b></p>
                                 </td>
                             </tr>
@@ -78,7 +115,7 @@
                     </div>
                     <!-- ADD ORDER SUMMARY PRICE DETAILS-->
                     <div class="col-md-6 col-lg-4 d-flex justify-content-end">
-                        <div class="border col-lg-10 p-3 p-lg-2">
+                        <div class="border col-xl-10 p-3 p-lg-2">
                             <h5 class="mb-3"><b>Order Summary</b></h5>
                             <div class="w-100 d-flex justify-content-between">
                                 <span>Sub Total:</span>
