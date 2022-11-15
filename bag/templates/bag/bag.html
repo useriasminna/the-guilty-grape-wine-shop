@@ -13,37 +13,59 @@
                         <div class="col-lg-8 mb-3 mb-lg-0">
                             <table class="bag-table">
                                 <tr>
-                                    <th class="d-none d-lg-table-cell col-6 p-0 pb-4 text-center">Item</th>
-                                   <th class="d-none d-lg-table-cell col-1 p-0 pb-4 text-center">Price</th>
-                                    <th class="d-none d-lg-table-cell col-3 pb-4 text-center">Quantity</th>
-                                    <th class="d-none d-lg-table-cell col-1 p-0 pb-4 text-center">Total</th>
+                                    <th class="d-none d-md-table-cell col-md-5 p-0 pb-2 text-center">Item</th>
+                                   <th class="d-none d-md-table-cell col-md-2 p-0 pb-2 text-center">Price</th>
+                                    <th class="d-none d-md-table-cell col-md-3 pb-2 text-center">Quantity</th>
+                                    <th class="d-none d-md-table-cell col-md-2 p-0 pb-2 text-center">Total</th>
                                 </tr>
                                 {% for item in bag_items %}
-                                <tr class="border-top">
-                                    <td class="col-lg-6 p-0 py-2 align-top font-size-larger">
+                                <tr class="bg-gray">
+                                    <td class="col-md-5 p-0 py-2 align-top font-size-larger">
                                         <div class="d-flex">
                                             <!-- ADD PRODUCT IMAGE -->
-                                            <div class="col-6 col-lg-4 p-0">
+                                            <div class="col-6 col-md-3 col-lg-4 p-0">
                                                 <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                             </div>
                                             <!-- ADD PRODUCT DETAILS FOR MEDIUM AND SMALL DEVICES -->
-                                            <div class="col-6 col-lg-6 p-0 font-size-smaller d-flex flex-column justify-content-between">
+                                            <div class="col-6 col-md-8 col-lg-6 p-0 font-size-smaller d-flex flex-column justify-content-between">
                                                 <a class="d-none d-lg-block" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
                                                 <a class="d-lg-none font-size-larger" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
-                                                <p class="d-lg-none"><b>Price: </b>
+                                                <p class="d-md-none"><b>Price: </b>
                                                     € {{item.product.price}}</p>
-                                                <p class="d-lg-none">{{item.quantity}}</p>
+                                                <p class="d-md-none">{{item.quantity}}</p>
                                             </div>
-                                        </div>    
+                                        </div>  
+                                        <!-- 'ADD TO WISH LIST' SECTION -->
+                                        {% if user.is_authenticated and not user.is_superuser %}
+                                            {% if not item.current_wishlist_line %}
+                                                <!-- Add to wishlist form -->
+                                                <form method="POST" action="{% url 'add_wishlist' item.product.id %}" class="mt-1">
+                                                    {% csrf_token %}
+                                                    <input name="current_url" type="hidden" value="{{ request.path }}">
+                                                    <!-- Submit button -->
+                                                    <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent font-size-small"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>
+                                                    <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>  
+                                                </form>
+                                            {% else %}
+                                                <!-- Remove from wishlist form -->
+                                                <form method="POST" action="{% url 'remove_wishlist' wishlist_id=item.current_wishlist_line.id %}" class="mt-1">
+                                                    {% csrf_token %}
+                                                    <input name="current_url" type="hidden" value="{{ request.path }}">
+                                                    <!-- Submit button -->
+                                                    <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent font-size-small"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
+                                                    <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
+                                                </form>
+                                            {% endif %}
+                                        {% endif %}  
                                     </td>
                                     <!-- ADD PRODUCT DETAILS FOR LARGE DEVICES-->
-                                    <td class="d-none d-lg-table-cell col-1 p-0 py-2 align-top text-center">
+                                    <td class="d-none d-md-table-cell col-md-2 align-top text-center">
                                         <p>€ {{item.product.price}}</p>
                                     </td>
-                                    <td class="d-none d-lg-table-cell col-3 py-2 align-top text-center">
+                                    <td class="d-none d-md-table-cell col-md-3 align-top text-center">
                                         <p>{{item.quantity}}</p>
                                     </td>
-                                    <td class="d-none d-lg-table-cell col-1 p-0 py-2 align-top text-center">
+                                    <td class="d-none d-md-table-cell col-md-2 align-top text-center">
                                         <p><b>€ {{item.subtotal|floatformat:2}}</b></p>
                                     </td>
                                 </tr>
@@ -51,7 +73,7 @@
                             </table>
                         </div>
                         <!-- ADD ORDER SUMMARY PRICE DETAILS-->
-                        <div class="col-lg-4">
+                        <div class="col-md-6 col-lg-4">
                             <div class="border p-3 p-lg-2">
                                 <h5 class="mb-3"><b>Order Summary</b></h5>
                                 <div class="w-100 d-flex justify-content-between">
