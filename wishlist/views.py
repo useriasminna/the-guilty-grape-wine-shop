@@ -251,31 +251,16 @@ class AddProductToWishList(UserPassesTestMixin, View):
     """
     def post(self, request, product_id):
         """Override post method"""
-        if request.method == 'POST':
+        current_url = request.POST.get('current_url')
+        wishlist_form = SetWishlistRelation(data=request.POST)
 
-            wishlist_form = SetWishlistRelation(data=request.POST)
+        if wishlist_form.is_valid():
+            user = request.user
+            product = get_object_or_404(Product, pk=product_id)
+            wishlist_form = WishlistLine(user=user, product=product)
+            wishlist_form.save()
 
-            if wishlist_form.is_valid():
-                user = request.user
-                product = get_object_or_404(Product, pk=product_id)
-                wishlist_form = WishlistLine(user=user, product=product)
-                wishlist_form.save()
-
-                return redirect('/products/product_details/'
-                                + str(product_id))
-
-            return redirect('/products/product_details/'
-                            + str(product_id))
-
-        wishlist_form = SetWishlistRelation(data=request.GET)
-        wishlist = Product.objects.filter(pk__in=WishlistLine.objects.filter(
-                   user=self.request.user).values_list('product'))
-
-        context = {
-            'wishlist_form': wishlist_form,
-            'wishlist': wishlist
-        }
-        return render(request, 'products/product_details.html', context)
+        return redirect(current_url)
 
     def test_func(self):
         return not self.request.user.is_superuser
@@ -309,8 +294,8 @@ class RemoveProductFromWishList(LoginRequiredMixin, UserPassesTestMixin,
 
     def delete(self, request, *args, **kwargs):
         wishlist_id = self.kwargs['wishlist_id']
-        product_id = self.kwargs['product_id']
+        current_url = request.POST.get('current_url')
         wishlist = WishlistLine.objects.get(pk=wishlist_id)
         wishlist.delete()
 
-        return redirect('/products/product_details/' + str(product_id))
+        return redirect(current_url)
