@@ -6,8 +6,10 @@ Context for Bag App.
 
 from decimal import Decimal
 from django.conf import settings
+from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from wishlist.models import WishlistLine
 
 
 def bag_contents(request):
@@ -23,10 +25,20 @@ def bag_contents(request):
         subtotal = quantity * product.price
         total += subtotal
         product_count += quantity
+        current_wishlist_line = None
+
+        # GET CURRENT WISHLIST LINE OBJECT FOR EVERY PRODUCT
+        if request.user.is_authenticated and \
+            WishlistLine.objects.filter(
+                Q(user=request.user) & Q(product=product)).exists():
+            current_wishlist_line = WishlistLine.objects.get(
+                user=request.user, product=product)
+
         bag_items.append({
             'product': product,
             'quantity': quantity,
             'subtotal': subtotal,
+            'current_wishlist_line': current_wishlist_line
         })
 
     # CALCULATE DELIVERY AND FREE DELIVERY DELTA VALUE
