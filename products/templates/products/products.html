@@ -205,135 +205,141 @@
                 <!-- ADD LIST OF PRODUCTS -->
                 {% for product in products %}
                 <!-- ADD LINKED PRODUCT -->
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-container" onclick='location.href="{% url 'product_detail' product.id %}";'>
-                    <!-- ADD PRODUCT COVER DEPENDING ON STOCK VALUE-->
-                    {% if product.stock == 0 %}
-                    <div class="col-12">
-                        {% if product.image %}
-                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        {% else %}
-                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
-                        {% endif %}
-                        <div class="product-banner col-9">
-                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Item out of stock">
-                            <div class="banner-text text-center text-red">
-                                <span>Out of stock</span>
-                            </div>
-                        </div>
-                    </div>   
-                    {% elif product.stock == 1 %}
-                    <div class="col-12">
-                        {% if product.image %}
-                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        {% else %}
-                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
-                        {% endif %}
-                        <div class="product-banner col-9">
-                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last item">
-                            <div class="banner-text text-center text-yellow">
-                                <span>Last item</span>
-                            </div>
-                        </div>
-                    </div>  
-                    {% elif product.stock <= 15 %}
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="product-container" onclick='location.href="{% url 'product_detail' product.id %}";'>
+                        <!-- ADD PRODUCT COVER DEPENDING ON STOCK VALUE-->
+                        {% if product.stock == 0 %}
                         <div class="col-12">
                             {% if product.image %}
-                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        {% else %}
-                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
-                        {% endif %}
-                            <div class="product-banner col-9 ">
-                                <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last {{product.stock}} items">
-                                <div class="banner-text text-center text-yellow">
-                                    <span>Last {{product.stock}} items</span>
+                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                            {% endif %}
+                            <div class="product-banner col-9">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Item out of stock">
+                                <div class="banner-text text-center text-red">
+                                    <span class="d-none d-lg-block font-size-smaller">Out of stock</span>
+                                    <span class="d-lg-none">Out of stock</span>
                                 </div>
                             </div>
                         </div>   
-                    {% else %}
-                    <div class="col-12">
-                        <!-- ADD PRODUCT COVER -->
-                        {% if product.image %}
-                            <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% elif product.stock == 1 %}
+                        <div class="col-12">
+                            {% if product.image %}
+                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                            {% endif %}
+                            <div class="product-banner col-9">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last item">
+                                <div class="banner-text text-center text-yellow">
+                                    <span class="d-none d-lg-block font-size-smaller">Last item</span>
+                                    <span class="d-lg-none">Last item</span>
+                                </div>
+                            </div>
+                        </div>  
+                        {% elif product.stock <= 15 %}
+                            <div class="col-12">
+                                {% if product.image %}
+                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                            {% endif %}
+                                <div class="product-banner col-9 ">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last {{product.stock}} items">
+                                    <div class="banner-text text-center text-yellow">
+                                        <span class="d-none d-lg-block font-size-smaller">Last {{product.stock}} items</span>
+                                        <span class="d-lg-none">Last {{product.stock}} items</span>
+                                    </div>
+                                </div>
+                            </div>   
                         {% else %}
-                            <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                        <div class="col-12">
+                            <!-- ADD PRODUCT COVER -->
+                            {% if product.image %}
+                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        <div class="col-12">
+                            <!-- ADD PRODUCT DETAILS -->
+                            <h6>{{product.name}}</h6>
+                            <div class="d-flex align-items-center">
+                                <p class="font-italic m-0">{{product.country}} -</p>
+                                <p class="m-0"> {{product.year}}</p>
+                            </div>
+                            <p class="font-weight-bold">€{{product.price}}</p>
+                        </div>
+                        {% if product.stock != 0 %}
+                        <!-- ADD PRODUCT OVERLAY -->
+                            <div class="product-overlay col-10 d-none d-lg-block">
+                                <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
+                                {% if product.rating %}
+                                <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
+                                <div class="ratings-generated stars-big d-flex align-items-end justify-content-around mb-3"></div>
+                                {% else %}
+                                <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
+                                <div class="stars-big stars-inactive d-flex align-items-end justify-content-around mb-3">
+                                    <button type="button" class="star">★</button>
+                                    <button type="button" class="star">★</button>
+                                    <button type="button" class="star">★</button>
+                                    <button type="button" class="star">★</button>
+                                    <button type="button" class="star">★</button>
+                                </div> 
+                                {% endif %}
+                                <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR LARGE DEVICES-->
+                                <form action="{% url 'add_to_bag' product.id %}" class="overlay-form" method="POST">
+                                    {% csrf_token %}
+                                    <div class="d-flex">
+                                        <div class="col-4 p-0 product-count d-flex">
+                                            <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
+                                            <label class="col-4 p-0 m-0">
+                                                <span hidden>Product count</span>
+                                                <input readonly class="p-0 text-center rounded-0" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
+                                            </label>
+                                            <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
+                                        </div>
+                                        <div class="col-8 p-0">
+                                            <button type="submit" class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
+                                        </div>
+                                        <input name="current_url" type="hidden" value="{{ request.path }}">
+                                    </div>
+                                </form>
+                            </div>
+                        {% else %}
+                        <!-- ADD OUT OF STOCK ITEM -->
+                            <div class="banner-hover">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Out of stock banner">
+                                <div class="banner-text text-center text-red">
+                                    <span class="d-none d-lg-block font-size-smaller">Sorry, this item is <br> Out of stock</span>
+                                    <span class="d-lg-none">Sorry, this item is <br> Out of stock</span>
+                                </div>
+                            </div>
                         {% endif %}
                     </div>
-                    {% endif %}
-                    <div class="col-12">
-                        <!-- ADD PRODUCT DETAILS -->
-                        <h6>{{product.name}}</h6>
-                        <div class="d-flex align-items-center">
-                            <p class="font-italic m-0">{{product.country}} -</p>
-                            <p class="m-0"> {{product.year}}</p>
-                        </div>
-                        <p class="font-weight-bold">€{{product.price}}</p>
-                    </div>
-                    {% if product.stock != 0 %}
-                    <!-- ADD PRODUCT OVERLAY -->
-                        <div class="product-overlay col-10 d-none d-lg-block">
-                            <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
-                            {% if product.rating %}
-                            <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
-                            <div class="ratings-generated stars-big d-flex align-items-end justify-content-around mb-3"></div>
-                            {% else %}
-                            <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
-                            <div class="stars-big stars-inactive d-flex align-items-end justify-content-around mb-3">
-                                <button type="button" class="star">★</button>
-                                <button type="button" class="star">★</button>
-                                <button type="button" class="star">★</button>
-                                <button type="button" class="star">★</button>
-                                <button type="button" class="star">★</button>
-                              </div> 
-                            {% endif %}
-                            <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR LARGE DEVICES-->
-                            <form action="{% url 'add_to_bag' product.id %}" class="overlay-form" method="POST">
-                                {% csrf_token %}
-                                <div class="d-flex">
-                                    <div class="col-4 p-0 product-count d-flex">
-                                        <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
-                                        <label class="col-4 p-0 m-0">
-                                            <span hidden>Product count</span>
-                                            <input readonly class="p-0 text-center rounded-0" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
-                                        </label>
-                                        <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
-                                    </div>
-                                    <div class="col-8 p-0">
-                                        <button type="submit" class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
-                                    </div>
-                                    <input name="current_url" type="hidden" value="{{ request.path }}">
+                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR MEDIUM AND SMALL DEVICES-->
+                    <div class="d-block d-xl-none ">
+                        <form action="{% url 'add_to_bag' product.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="d-flex">
+                                <div class="col-4 p-0 product-count d-flex">
+                                    <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
+                                    <label class="col-4 p-0 m-0">
+                                        <span hidden>Product count</span>
+                                        <input readonly class="p-0 text-center rounded-0 font-size-larger" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
+                                    </label>
+                                    <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
                                 </div>
-                            </form>
-                        </div>
-                    {% else %}
-                    <!-- ADD OUT OF STOCK ITEM -->
-                        <div class="banner-hover">
-                            <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Out of stock banner">
-                            <div class="banner-text text-center text-red">
-                                <span>Sorry, this item is <br> Out of stock</span>
+                                <div class="col-8 p-0">
+                                    <button type="submit" class="w-100 button purple-btn rounded-0">Add to bag</button>
+                                </div>
+                                <input name="current_url" type="hidden" value="{{ request.path }}">
                             </div>
-                        </div>
-                    {% endif %}
+                        </form>
+                    </div>
                 </div>
-                <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR MEDIUM AND SMALL DEVICES-->
-                        <div class="col-12 d-block d-lg-none ">
-                            <form action="{% url 'add_to_bag' product.id %}" method="POST">
-                                {% csrf_token %}
-                                <div class="d-flex">
-                                    <div class="col-4 p-0 product-count d-flex">
-                                        <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
-                                        <label class="col-4 p-0 m-0">
-                                            <span hidden>Product count</span>
-                                            <input readonly class="p-0 text-center rounded-0 font-size-larger" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
-                                        </label>
-                                        <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
-                                    </div>
-                                    <div class="col-8 p-0">
-                                        <button type="submit" class="w-100 button purple-btn rounded-0">Add to bag</button>
-                                    </div>
-                                    <input name="current_url" type="hidden" value="{{ request.path }}">
-                                </div>
-                            </form>
-                        </div>
                 <!-- ADD SEPARATORS -->
                 {% if forloop.counter|divisibleby:1 %}
                     <div class="col-12 d-sm-none mb-5">
