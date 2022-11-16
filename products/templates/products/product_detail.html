@@ -210,6 +210,11 @@
                         <button type="submit" class="d-flex align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
                     </form>
                   {% endif %}
+                {% elif not user.is_authenticated %}
+                <div class="d-flex align-items-center mt-4 ">
+                  <i class="far fa-heart mr-1 text-muted"></i>
+                  <span class="text-muted">Authenticate to add product to wishlist</span>
+                </div>
                 {% endif %}
               </div>
             </div>
