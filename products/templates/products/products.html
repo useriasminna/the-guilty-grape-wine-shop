@@ -274,7 +274,7 @@
                         </div>
                         {% if product.stock != 0 %}
                         <!-- ADD PRODUCT OVERLAY -->
-                            <div class="product-overlay col-10 d-none d-lg-block">
+                            <div class="product-overlay col-10 d-none d-XL-block">
                                 <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
                                 {% if product.rating %}
                                 <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
@@ -289,7 +289,7 @@
                                     <button type="button" class="star">★</button>
                                 </div> 
                                 {% endif %}
-                                <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR LARGE DEVICES-->
+                                <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR EXTRA LARGE DEVICES-->
                                 <form action="{% url 'add_to_bag' product.id %}" class="overlay-form" method="POST">
                                     {% csrf_token %}
                                     <div class="d-flex">
@@ -319,7 +319,7 @@
                             </div>
                         {% endif %}
                     </div>
-                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR MEDIUM AND SMALL DEVICES-->
+                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR LARGE MEDIUM AND SMALL DEVICES-->
                     <div class="d-block d-xl-none ">
                         <form action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
@@ -333,7 +333,7 @@
                                     <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
                                 </div>
                                 <div class="col-8 p-0">
-                                    <button type="submit" class="w-100 button purple-btn rounded-0">Add to bag</button>
+                                    <button type="submit" class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
                                 </div>
                                 <input name="current_url" type="hidden" value="{{ request.path }}">
                             </div>
