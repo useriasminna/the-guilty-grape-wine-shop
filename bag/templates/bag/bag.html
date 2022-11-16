@@ -19,15 +19,15 @@
                             </tr>
                             {% for item in bag_items %}
                             <tr class="bg-gray">
-                                <td class="col-md-5 p-2 align-top font-size-larger">
+                                <td class="col-md-5 p-2 align-top">
                                     <div class="d-flex">
                                         <!-- ADD PRODUCT IMAGE -->
                                         <div class="col-6 col-md-4 col-lg-6 col-xl-4 p-0">
                                             <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                         </div>
                                         <!-- ADD PRODUCT DETAILS FOR MEDIUM AND SMALL DEVICES -->
-                                        <div class="col-6 col-md-8 col-lg-6 col-xl-8 p-0 font-size-smaller d-flex flex-column justify-content-between">
-                                            <a class="d-none d-lg-block font-size-smaller mb-3" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
+                                        <div class="col-6 col-md-8 col-lg-6 col-xl-8 p-0 d-flex flex-column justify-content-between">
+                                            <a class="d-none d-lg-block mb-3 font-size-smaller" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
                                             <a class="d-lg-none font-size-larger mb-3" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
                                             <p class="d-md-none mb-1"><b>Quantity</b></p>
                                             <!-- ADD FORMS FOR INCREMENTING/DECREMENTING QUANTITY -->
@@ -81,6 +81,15 @@
                                                 <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
                                             </form>
                                         {% endif %}
+                                    {% elif not user.is_authenticated %}
+                                    <div class="d-flex d-md-none d-lg-flex align-items-center mt-1 font-size-small">
+                                        <i class="far fa-heart mr-1 text-muted"></i>
+                                        <span class="text-muted">Authenticate to add product to wishlist</span>
+                                    </div>
+                                    <div class="d-none d-md-flex d-lg-none align-items-center mt-1 font-size-small">
+                                        <i class="far fa-heart mr-1 text-muted"></i>
+                                        <span class="text-muted">Authenticate to add product to wishlist</span>
+                                    </div>
                                     {% endif %}  
                                 </td>
                                 <!-- ADD PRODUCT DETAILS FOR LARGE DEVICES-->
