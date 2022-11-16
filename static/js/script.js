@@ -317,12 +317,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } 
     } 
 
-    if (window.location.pathname.includes('/products/')) {  
-    
-        
+    if (window.location.pathname == '/products/' || window.location.pathname.includes('/wishlist/')) {
         // -------------------------SCRIPT FOR PRODUCT COUNT BUTTONS FOR ADDITION AND SUBSTRACTION TO UPDATE INPUT VALUE ON CLICK---------------------------------
         let productCountContainers = document.getElementsByClassName('product-count');
-        
+            
         for(let container of productCountContainers){
             let buttons = container.getElementsByTagName('button');
             for (let btn of buttons){
@@ -352,6 +350,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 e.stopPropagation();
             });
         }
+    }
+
+    if (window.location.pathname.includes('/products/')) {  
+
 
         if (window.location.pathname.includes('/product_details/')) {  
             // --------------------------SCRIPT FOR ADDING VALIDATION TO UPDATE PRODUCT FORM AVAILABLE IN PRODUCT_DETAILS.HTML--------------------------------------------- 
