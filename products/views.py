@@ -5,6 +5,7 @@ Views for Products App.
 """
 import urllib
 import json
+from django.db.models import F
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -56,8 +57,10 @@ class Products(ListView):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            if sortkey != 'best_sellers':
+            if sortkey != 'best_sellers' and sortkey != 'rating':
                 products = products.order_by(sortkey)
+            if sortkey == 'rating':
+                products = products.order_by(F(sortkey).asc(nulls_last=True))
 
         if sort == 'best_sellers':
             current_sorting = sort

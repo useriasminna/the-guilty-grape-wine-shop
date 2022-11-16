@@ -5,6 +5,7 @@ Views for Wishlist App.
 """
 import json
 import urllib
+from django.db.models import F
 from django.views.generic import ListView, View
 from django.views.generic.edit import DeleteView
 from django.shortcuts import redirect, render, get_object_or_404
@@ -65,9 +66,10 @@ class WishList(LoginRequiredMixin, UserPassesTestMixin, ListView):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            if sortkey != 'best_sellers':
+            if sortkey != 'best_sellers' and sortkey != 'rating':
                 wishlist = wishlist.order_by(sortkey)
-
+            if sortkey == 'rating':
+                wishlist = wishlist.order_by(F(sortkey).asc(nulls_last=True))
         if sort == 'best_sellers':
             current_sorting = sort
         else:
