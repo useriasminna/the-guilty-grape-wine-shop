@@ -241,6 +241,7 @@ h1 {
 
 .small-btn {
     padding: 5px 10px;
+    font-size: smaller;
 }
 
 /* Wiggle button class and animation */
