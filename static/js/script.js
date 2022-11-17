@@ -32,10 +32,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     for(let toast of toasts){
         toast.style.display = 'block';
         toast.classList.add('show');
-        setTimeout(() => {
+        closeButton = toast.getElementsByClassName('close')[0];
+        closeButton.addEventListener('click',()  => {
             toast.classList.remove('show');
             toast.style.display = 'none';
-        }, 3000);
+        })
     }
 
     // ---------------------------------------SCRIPT FOR ADDING VALIDATION TO ADD PRODUCT FORM AVAILABLE IN BASE.HTML---------------------------------------------
@@ -256,68 +257,73 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     if (window.location.pathname == '/products/' || window.location.pathname == '/wishlist/') {  
-     // ---------------------------SCRIPT FOR UPDATING CURRENT URL WITH SORT VALUE--------------------------------------------
-     let sortSelector = document.getElementById('sort-selector');
-     if(sortSelector)
-         sortSelector.addEventListener('change', (e) =>{
-             let selector = e.target;
-             let currentUrl = new URL(window.location);
-     
-             let selectedVal = selector.value;
-             if(selectedVal != "reset"){
-                 if(selectedVal == 'best_sellers'){
-                     let sort = selectedVal;
-                     currentUrl.searchParams.set("sort", sort);
-                     currentUrl.searchParams.delete("direction");
-                 }
-                 else{
-                     let sort = selectedVal.split("_")[0];
-                     let direction = selectedVal.split("_")[1];
-     
-                     currentUrl.searchParams.set("sort", sort);
-                     currentUrl.searchParams.set("direction", direction);
-                 }
-     
-                 window.location.replace(currentUrl);
-             } else {
-                 currentUrl.searchParams.delete("sort");
-                 currentUrl.searchParams.delete("direction");
-     
-                 window.location.replace(currentUrl);
-             }
-     
-         } );
+        // ---------------------------SCRIPT FOR UPDATING CURRENT URL WITH SORT VALUE--------------------------------------------
+        let sortSelector = document.getElementById('sort-selector');
+        if(sortSelector)
+            sortSelector.addEventListener('change', (e) =>{
+                let selector = e.target;
+                let currentUrl = new URL(window.location);
+        
+                let selectedVal = selector.value;
+                if(selectedVal != "reset"){
+                    if(selectedVal == 'best_sellers'){
+                        let sort = selectedVal;
+                        currentUrl.searchParams.set("sort", sort);
+                        currentUrl.searchParams.delete("direction");
+                    }
+                    else{
+                        let sort = selectedVal.split("_")[0];
+                        let direction = selectedVal.split("_")[1];
+        
+                        currentUrl.searchParams.set("sort", sort);
+                        currentUrl.searchParams.set("direction", direction);
+                    }
+        
+                    window.location.replace(currentUrl);
+                } else {
+                    currentUrl.searchParams.delete("sort");
+                    currentUrl.searchParams.delete("direction");
+        
+                    window.location.replace(currentUrl);
+                }
+            } );
+
+        //----------------------SCRIPT FOR STOPING CLICK EVENT PROPAGATION FROM PRODUCT CONTAINBER TO OVERLAY ADD TO BAG FORM-----------------------------------------------
+        let formsOverlay = document.getElementsByClassName('overlay-form');
+        for(let form of formsOverlay){
+            form.addEventListener('click', (e) => { 
+                e.stopPropagation();
+            });
         }
+    }
 
     if (window.location.pathname.includes('/products/') || window.location.pathname.includes('/wishlist/')) {
         const generateStarsContainers = document.getElementsByClassName('ratings-generated');
-            //GENERATE STARS FOR REVIEWS RATING AFTER RATE VALUE
+        //GENERATE STARS FOR REVIEWS RATING AFTER RATE VALUE
 
-            for(let container of generateStarsContainers){
-            const rateHidden = container.previousElementSibling;
+        for(let container of generateStarsContainers){
+        const rateHidden = container.previousElementSibling;
 
+    
+        for(let i=0; i<rateHidden.value; i++){
+            let star = document.createElement("button");
+            star.textContent = '★';
+            star.classList.add('star');
+            star.style.color = "#590243";
+            container.appendChild(star);
         
-            for(let i=0; i<rateHidden.value; i++){
-                let star = document.createElement("button");
-                star.textContent = '★';
-                star.classList.add('star');
-                star.style.color = "#590243";
-                container.appendChild(star);
-            
-                }
-            
-                for(let i=0; i<5-rateHidden.value; i++){
-                let star = document.createElement("button");
-                star.textContent = '★';
-                star.classList.add('star');
-                star.style.color = "#80808066";
-                container.appendChild(star);
-            
-                }
-            } 
-    } 
+            }
+        
+            for(let i=0; i<5-rateHidden.value; i++){
+            let star = document.createElement("button");
+            star.textContent = '★';
+            star.classList.add('star');
+            star.style.color = "#80808066";
+            container.appendChild(star);
+        
+            }
+        } 
 
-    if (window.location.pathname == '/products/' || window.location.pathname.includes('/wishlist/')) {
         // -------------------------SCRIPT FOR PRODUCT COUNT BUTTONS FOR ADDITION AND SUBSTRACTION TO UPDATE INPUT VALUE ON CLICK---------------------------------
         let productCountContainers = document.getElementsByClassName('product-count');
             
@@ -342,15 +348,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
             
         }
-
-        //----------------------SCRIPT FOR STOPING CLICK EVENT PROPAGATION FROM PRODUCT CONTAINBER TO OVERLAY ADD TO BAG FORM-----------------------------------------------
-        let formsOverlay = document.getElementsByClassName('overlay-form');
-        for(let form of formsOverlay){
-            form.addEventListener('click', (e) => { 
-                e.stopPropagation();
-            });
-        }
-    }
+    } 
 
     if (window.location.pathname.includes('/products/')) {  
 
