@@ -39,7 +39,7 @@
                                                 </form>
                                                 <label class="col-5 p-0 m-0">
                                                     <span hidden>Product count</span>
-                                                    <input readonly class="h-100 p-0 text-center rounded-0" value="{{item.quantity}}">
+                                                    <input readonly type="number" class="h-100 p-0 text-center rounded-0" value="{{item.quantity}}" min="1" max="{{item.product.stock}}">
                                                 </label>
                                                 <form class="col-3 p-0" method="POST" action="{% url 'increment_quantity' item.product.id %}">
                                                     {% csrf_token %}
@@ -55,8 +55,8 @@
                                             <form  class="mb-3" method="POST" action="{% url 'remove_from_bag' item.product.id %}">
                                                 {% csrf_token %}
                                                 <input name="current_url" type="hidden" value="{{ request.path }}">
-                                                <button class="d-none d-lg-block border-0 p-0 font-size-smaller"><u><em>Delete</em></u></button>
-                                                <button class="d-lg-none border-0 p-0"><u><em>Delete</em></u></button>
+                                                <button class="d-none d-lg-block border-0 p-0 font-size-smaller text-purple"><u><em>Delete</em></u></button>
+                                                <button class="d-lg-none border-0 p-0 text-purple"><u><em>Delete</em></u></button>
                                             </form>
                                         </div>
                                     </div>  
@@ -106,7 +106,7 @@
                                         </form>
                                         <label class="col-6 p-0 m-0">
                                             <span hidden>Product count</span>
-                                            <input readonly class="p-0 text-center rounded-0 h-100" value="{{item.quantity}}">
+                                            <input readonly type="number" class="p-0 text-center rounded-0 h-100 product-quantity" value="{{item.quantity}}" min="1" max="{{item.product.stock}}">
                                         </label>
                                         <form class="col-4 col-xl-2 p-0" method="POST" action="{% url 'increment_quantity' item.product.id %}">
                                             {% csrf_token %}
@@ -139,7 +139,7 @@
                                 <span>Delivery:</span>
                                 <span><b>€ {{ delivery|floatformat:2 }}</b></span>
                             </div>
-                            {% if free_delivery_delta != 0 %}
+                            {% if free_delivery_delta > 0 %}
                             <div class="w-100 d-flex justify-content-between text-white bg-dark font-size-smaller p-1 mt-1">
                                 <span>Free delivery:</span>
                                 <span>+ € {{ free_delivery_delta|floatformat:2 }}</span>
