@@ -251,7 +251,11 @@
                     {% elif level == 30 %}
                         {% include 'includes/toasts/toast_warning.html' %}
                     {% elif level == 25 %}
-                      {% include 'includes/toasts/toast_success.html' %}
+                      {% if 'bag' in message.tags %} 
+                        {% include 'includes/toasts/toast_bag_success.html' %}
+                      {% else %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                      {% endif %}
                     {% else %}
                         {% include 'includes/toasts/toast_info.html' %}
                     {% endif %}
