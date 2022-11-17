@@ -37,7 +37,11 @@ body {
     color: #ff4456;
 }
 
-.bg-gray{
+.text-purple{
+    color: #590243;
+}
+
+.bg-gray {
     background-color: #f0f0f0;
 }
 
@@ -862,6 +866,10 @@ select:focus {
     z-index: 999999999;
 }
 
+.message-container:has(> div.toast-bag) {
+    top: 52%;
+}
+
 .custom-toast {
     overflow: visible;
 }
@@ -888,6 +896,28 @@ select:focus {
     border-radius: 50%;
     text-align: center;
     font-size: smaller;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 71px;
+}
+
+.bag-notification-wrapper{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-success {
+    border-bottom-color: #28a745 !important;
 }
 
 /* -------------------------------------BAG PAGE STYLING -------------------------------*/
@@ -1059,6 +1089,17 @@ select:focus {
     .message-container {
         right: 31px;
     }
+
+    .message-container:has(> div.toast-bag) {
+        top: 103%;
+        right: auto;
+        left: 2%;
+    }
+    .arrow-up {
+        top: -10px;
+        right: auto;
+        left: 18px;
+    }
 }
 
 /* --------------------------------- SMALL DEVICES STYLINYG ------------------------------- */
@@ -1130,6 +1171,10 @@ select:focus {
 
     .message-container {
         right: 20px;
+    }
+
+    .arrow-up {
+        left: 28px;
     }
 }
 
