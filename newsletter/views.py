@@ -5,14 +5,14 @@ Views for Newsletter App.
 """
 from django.views.generic import CreateView
 
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
 
 from newsletter.forms import AddSubscriber
 from newsletter.models import Subscription
 
-# Create your views here.
+
 class SubscribeToNewsletter(CreateView):
     """A view that provides a form for users to subscribe for newsletter"""
     template_name = "base.html"
@@ -33,15 +33,16 @@ class SubscribeToNewsletter(CreateView):
                 subscription = Subscription(email=email)
                 subscription.save()
                 messages.success(
-                    request, 'Thank you for your subscription!', extra_tags="form_success")
-                return HttpResponseRedirect(
-                    request.POST.get('newsletter_submit_btn','') + '#newsletter')
+                    request, 'Thank you for your subscription!',
+                    extra_tags="form_success")
+                return HttpResponseRedirect(request.POST.get(
+                    'newsletter_submit_btn', '') + '#newsletter')
             else:
-                messages.error(request, subscribe_form.errors['email'], extra_tags="form_errors")
-                return HttpResponseRedirect(
-                    request.POST.get('newsletter_submit_btn','') + '#newsletter')
-            #  return HttpResponse(
-                # subscribe_form.errors.as_json(), status = 400, content_type='application/json')
+                messages.error(request, subscribe_form.errors['email'],
+                               extra_tags="form_errors")
+                return HttpResponseRedirect(request.POST.get(
+                    'newsletter_submit_btn', '') + '#newsletter')
 
         subscribe_form = AddSubscriber()
-        return render(request, 'base.html', {'add_subscriber_forms': subscribe_form, })
+        return render(request, 'base.html',
+                      {'add_subscriber_forms': subscribe_form, })
