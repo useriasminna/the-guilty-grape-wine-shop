@@ -19,6 +19,8 @@ pillow = "*"
 install = "*"
 django-url-tools = "*"
 django-url-tools-py3 = "*"
+humanhash3 = "*"
+django-countries = "*"
 
 [dev-packages]
 django-url-tools = "*"
