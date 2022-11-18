@@ -104,9 +104,8 @@ class RemoveFromBag(UserPassesTestMixin, DeleteView):
         return True
 
 
-class IncrementQuantity(UserPassesTestMixin, View):
-    """A view that updates the product quantity by incrementing
-    the value with 1"""
+class UpdateBagQuantity(UserPassesTestMixin, View):
+    """A view that updates the product quantity"""
 
     template_name = 'bag/bag.html'
 
@@ -115,54 +114,34 @@ class IncrementQuantity(UserPassesTestMixin, View):
         product = get_object_or_404(Product, pk=product_id)
         current_url = request.POST.get('current_url')
         bag = request.session.get('bag', {})
+        quantity = request.POST.get('quantity')
 
-        if str(product_id) in list(bag.keys()):
-            if bag[str(product_id)] < product.stock:
-                bag[str(product_id)] += 1
+        try:
+            quantity = int(quantity)
+            if quantity in range(1, product.stock+1):
+                bag[str(product_id)] = quantity
                 messages.success(
                     request, f'The quantity for <b>{product.name}</b>\
                      was updated to {bag[str(product_id)]}', extra_tags="safe")
-            else:
-                messages.info(
-                    request, f'Limited stock. Cannot order more than\
-                     {bag[str(product_id)]} items for <b>{product.name}</b>',
+                request.session['bag'] = bag
+            elif quantity < 0:
+                messages.error(
+                    request, f'Quantity input value for <b>{product.name}</b>\
+                        cannot be negative',
                     extra_tags='safe')
-        else:
-            messages.error(request, f'{product.name} is not in your bag.\
-                 Quantity update failed')
-        request.session['bag'] = bag
-        return redirect(current_url)
-
-    def test_func(self):
-        if self.request.user.is_authenticated:
-            return not self.request.user.is_superuser
-        return True
-
-
-class DecrementQuantity(UserPassesTestMixin, View):
-    """A view that updates the product quantity by decrementing
-    the value with 1"""
-
-    template_name = 'bag/bag.html'
-
-    def post(self, request, product_id):
-        """Override post method"""
-        product = get_object_or_404(Product, pk=product_id)
-        current_url = request.POST.get('current_url')
-        bag = request.session.get('bag', {})
-
-        if str(product_id) in list(bag.keys()):
-            if bag[str(product_id)] > 1:
-                bag[str(product_id)] -= 1
-                messages.success(
-                    request, f'The quantity for <b>{product.name}</b>\
-                    was updated to {bag[str(product_id)]}', extra_tags="safe")
-        else:
+            else:
+                messages.error(
+                    request, f'The quantity chosen for <b>{product.name}</b>\
+                        exceeds the stock. Please choose a value smaller than\
+                            {product.stock}.',
+                    extra_tags='safe')
+            return redirect(current_url)
+        except Exception as e:
             messages.error(
-                request, f'<b>{product.name}</b> is not in your bag.\
-                        Quantity update failed', extra_tags='safe')
-        request.session['bag'] = bag
-        return redirect(current_url)
+                    request, f'Quantity input type for <b>{product.name}</b>\
+                        is not correct <span hidden>{e}</span>',
+                    extra_tags='safe')
+            return redirect(current_url)
 
     def test_func(self):
         if self.request.user.is_authenticated:
