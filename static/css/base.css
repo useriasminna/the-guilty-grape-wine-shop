@@ -10,6 +10,13 @@ body {
     color: #3a3a3a;
 }
 
+/* SCROLL CLASSES */
+.scroll-h {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
 /* WIDTH CLASSES */
 .wh-fit-content {
     width: fit-content;
@@ -41,7 +48,7 @@ body {
     color: #ff4456;
 }
 
-.text-purple{
+.text-purple {
     color: #590243;
 }
 
@@ -913,7 +920,7 @@ select:focus {
     right: 71px;
 }
 
-.bag-notification-wrapper{
+.bag-notification-wrapper {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100px;
@@ -922,12 +929,6 @@ select:focus {
 /* Convenience classes - colors copied from Bootstrap */
 .arrow-success {
     border-bottom-color: #28a745 !important;
-}
-
-.scroll-h{
-    overflow-x: hidden;
-    overflow-y: auto;
-    max-height: 50vh;
 }
 
 /* -------------------------------------BAG PAGE STYLING -------------------------------*/
@@ -1105,13 +1106,14 @@ select:focus {
         right: auto;
         left: 2%;
     }
+
     .arrow-up {
         top: -10px;
         right: auto;
         left: 18px;
     }
 
-    .scroll-h{
+    .scroll-h {
         overflow-x: hidden;
         overflow-y: auto;
         max-height: 35vh;
@@ -1193,7 +1195,7 @@ select:focus {
         left: 28px;
     }
 
-    .scroll-h{
+    .scroll-h {
         overflow-x: hidden;
         overflow-y: auto;
         max-height: 50vh;
