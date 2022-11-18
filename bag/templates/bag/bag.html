@@ -34,21 +34,20 @@
                                             <a class="d-none d-lg-block mb-3 font-size-smaller" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
                                             <a class="d-lg-none font-size-larger mb-3" href="{% url 'product_detail' item.product.id %}"><u><b>{{ item.product.name }}</b></u></a>
                                             <p class="d-md-none mb-1"><b>Quantity</b></p>
-                                            <!-- ADD FORMS FOR INCREMENTING/DECREMENTING QUANTITY -->
-                                            <div class="d-flex d-md-none mb-3">
-                                                <form class="col-3 p-0" method="POST" action="{% url 'decrement_quantity' item.product.id %}">
+                                            <!-- ADD FORMS FOR UPDATING QUANTITY -->
+                                            <div class="d-block d-md-none col-xl-8 p-0 mx-auto">
+                                                <form method="POST" action="{% url 'update_quantity' item.product.id %}">
                                                     {% csrf_token %}
+                                                    <div class="product-count bag-count d-flex mb-3 mb-md-2 justify-content-center">
+                                                        <button type="button" class="font-weight-bold col-4 col-xl-2 p-0 button purple-btn small-btn rounded-0 substraction">-</button>
+                                                        <label class="col-6 p-0 m-0">
+                                                            <span hidden>Product count</span>
+                                                            <input class="p-0 text-center rounded-0" name="quantity" type="number" value="{{item.quantity}}" min="1" max="{{item.product.stock}}">
+                                                        </label>
+                                                        <button type="button" class="font-weight-bold col-4 col-xl-2 p-0 button purple-btn small-btn rounded-0 addition">+</button>
+                                                    </div>
+                                                    <button type="submit" class="w-100 border-0 bg-none pb-2 pt-2 rounded-0 small-btn"><u><em>Update</em></u></button>
                                                     <input name="current_url" type="hidden" value="{{ request.path }}">
-                                                    <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">-</button>
-                                                </form>
-                                                <label class="col-5 p-0 m-0">
-                                                    <span hidden>Product count</span>
-                                                    <input readonly type="number" class="h-100 p-0 text-center rounded-0" value="{{item.quantity}}" min="1" max="{{item.product.stock}}">
-                                                </label>
-                                                <form class="col-3 p-0" method="POST" action="{% url 'increment_quantity' item.product.id %}">
-                                                    {% csrf_token %}
-                                                    <input name="current_url" type="hidden" value="{{ request.path }}">
-                                                    <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">+</button>
                                                 </form>
                                             </div>
                                             <p class="d-md-none"><b>Price: </b> €{{item.product.price}}</p>
@@ -101,21 +100,20 @@
                                     <p>€{{item.product.price}}</p>
                                 </td>
                                 <td class="d-none d-md-table-cell col-md-3 p-2 align-top text-center">
-                                    <!-- ADD FORMS FOR INCREMENTING/DECREMENTING QUANTITY -->
-                                    <div class="col-xl-10 d-flex justify-content-center mx-auto">
-                                        <form class="col-4 col-xl-2 p-0" method="POST" action="{% url 'decrement_quantity' item.product.id %}">
+                                    <!-- ADD FORMS FOR UPDATING QUANTITY -->
+                                    <div class="col-xl-8 p-0 mx-auto">
+                                        <form method="POST" action="{% url 'update_quantity' item.product.id %}">
                                             {% csrf_token %}
+                                            <div class="product-count bag-count d-flex mb-3 mb-md-2 justify-content-center">
+                                                <button type="button" class="font-weight-bold col-4 col-xl-2 p-0 button purple-btn small-btn rounded-0 substraction">-</button>
+                                                <label class="col-6 p-0 m-0">
+                                                    <span hidden>Product count</span>
+                                                    <input class="p-0 text-center rounded-0" name="quantity" type="number" value="{{item.quantity}}" min="1" max="{{item.product.stock}}">
+                                                </label>
+                                                <button type="button" class="font-weight-bold col-4 col-xl-2 p-0 button purple-btn small-btn rounded-0 addition">+</button>
+                                            </div>
+                                            <button type="submit" class="w-100 border-0 bg-none pb-2 pt-2 rounded-0 small-btn"><u><em>Update</em></u></button>
                                             <input name="current_url" type="hidden" value="{{ request.path }}">
-                                            <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">-</button>
-                                        </form>
-                                        <label class="col-6 p-0 m-0">
-                                            <span hidden>Product count</span>
-                                            <input readonly type="number" class="p-0 text-center rounded-0 h-100 product-quantity" value="{{item.quantity}}" min="1" max="{{item.product.stock}}">
-                                        </label>
-                                        <form class="col-4 col-xl-2 p-0" method="POST" action="{% url 'increment_quantity' item.product.id %}">
-                                            {% csrf_token %}
-                                            <input name="current_url" type="hidden" value="{{ request.path }}">
-                                            <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">+</button>
                                         </form>
                                     </div>
                                 </td>
