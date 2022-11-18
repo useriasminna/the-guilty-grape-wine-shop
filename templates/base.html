@@ -145,9 +145,13 @@
                         <i class="fas fa-heart d-none d-lg-block"></i>
                       </a>
                       {% if wishlist_user_count %}
-                      <div class="notification d-none d-lg-block m-0 position-absolute text-white">
-                        {{wishlist_user_count}}
-                      </div>
+                        {% if wishlist_user_count > 99 %}
+                          <div class="notification d-none d-lg-block m-0 position-absolute text-white"></div>
+                        {% else %}
+                        <div class="notification notification-small d-none d-lg-block m-0 position-absolute text-white">
+                          {{wishlist_user_count}}
+                        </div>
+                        {% endif %}
                       {% endif %}
                     </li>
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="bagNav">
@@ -156,9 +160,13 @@
                         <i class="fas fa-shopping-bag d-none d-lg-block"></i>
                       </a>
                       {% if product_count %}
-                      <div class="notification d-none d-lg-block m-0 position-absolute text-white">
-                        {{product_count}}
-                      </div>
+                        {% if product_count > 99 %}
+                          <div class="notification d-none d-lg-block m-0 position-absolute text-white"></div>
+                        {% else %}
+                        <div class="notification notification-small d-none d-lg-block m-0 position-absolute text-white">
+                          {{product_count}}
+                        </div>
+                        {% endif %}
                       {% endif %}
                     </li>
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="chatNav">
@@ -211,10 +219,14 @@
                       <i class="fas fa-shopping-bag d-none d-lg-block"></i>
                     </a>
                     {% if product_count %}
-                      <div class="notification d-none d-lg-block m-0 position-absolute text-white">
+                      {% if product_count > 99 %}
+                        <div class="notification d-none d-lg-block m-0 position-absolute text-white"></div>
+                      {% else %}
+                      <div class="notification notification-small d-none d-lg-block m-0 position-absolute text-white">
                         {{product_count}}
                       </div>
                       {% endif %}
+                    {% endif %}
                   </li>
                   <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0" id="chatNav">
                     <a href="" title="Customer Service">
