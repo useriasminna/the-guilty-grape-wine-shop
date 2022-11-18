@@ -24,6 +24,10 @@ body {
     font-size: small;
 }
 
+.font-size-medium {
+    font-size: medium;
+}
+
 .font-size-larger {
     font-size: larger;
 }
@@ -73,7 +77,7 @@ body {
     min-height: 100vh;
 }
 
-input,
+input:not([type=checkbox]),
 textarea {
     border: 1px solid #80808066;
     width: 100%;
@@ -603,7 +607,7 @@ a:hover {
 
 .modal form input:not([type=checkbox]),
 select,
-input {
+input:not([type=checkbox]) {
     width: 100%;
     border: 1px solid #ced4da;
     padding-top: 0.25rem;
@@ -920,6 +924,12 @@ select:focus {
     border-bottom-color: #28a745 !important;
 }
 
+.scroll-h{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
 /* -------------------------------------BAG PAGE STYLING -------------------------------*/
 .bag-table {
     border-collapse: separate;
@@ -1100,6 +1110,12 @@ select:focus {
         right: auto;
         left: 18px;
     }
+
+    .scroll-h{
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 35vh;
+    }
 }
 
 /* --------------------------------- SMALL DEVICES STYLINYG ------------------------------- */
@@ -1175,6 +1191,12 @@ select:focus {
 
     .arrow-up {
         left: 28px;
+    }
+
+    .scroll-h{
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 50vh;
     }
 }
 
