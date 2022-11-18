@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     for(let toast of toasts){
         toast.style.display = 'block';
         toast.classList.add('show');
-        closeButton = toast.getElementsByClassName('close')[0];
+        let closeButton = toast.getElementsByClassName('close')[0];
         closeButton.addEventListener('click',()  => {
             toast.classList.remove('show');
             toast.style.display = 'none';
-        })
+        });
     }
 
     // ---------------------------------------SCRIPT FOR ADDING VALIDATION TO ADD PRODUCT FORM AVAILABLE IN BASE.HTML---------------------------------------------
@@ -323,32 +323,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
             }
         } 
-
-        // -------------------------SCRIPT FOR PRODUCT COUNT BUTTONS FOR ADDITION AND SUBSTRACTION TO UPDATE INPUT VALUE ON CLICK---------------------------------
-        let productCountContainers = document.getElementsByClassName('product-count');
-            
-        for(let container of productCountContainers){
-            let buttons = container.getElementsByTagName('button');
-            for (let btn of buttons){
-                btn.addEventListener('click', (e) => {
-                    let input = e.target.parentElement.getElementsByTagName('input')[0];
-                    let min = input.min;
-                    let max = input.max;
-                    if (e.target.classList.contains('substraction')){
-                        if(parseInt(input.value) > min){
-                            input.setAttribute('value', parseInt(input.value) - 1);
-                        }
-                    }  
-                    else if (e.target.classList.contains('addition')){
-                        if(parseInt(input.value) < parseInt(max)){
-                            input.setAttribute('value', parseInt(input.value) + 1);        
-                        }
-                    }    
-                });
-            }
-            
-        }
     } 
+
+    if (window.location.pathname.includes('/products/') || window.location.pathname.includes('/wishlist/') || 
+        window.location.pathname.includes('/bag/')) {
+            // -------------------------SCRIPT FOR PRODUCT COUNT BUTTONS FOR ADDITION AND SUBSTRACTION TO UPDATE INPUT VALUE ON CLICK---------------------------------
+            let productCountContainers = document.getElementsByClassName('product-count');
+            for(let container of productCountContainers){
+                let buttons = container.getElementsByTagName('button');
+                for (let btn of buttons){
+                    btn.addEventListener('click', (e) => {
+                        let input = e.target.parentElement.getElementsByTagName('input')[0];
+                        let min = input.min;
+                        let max = input.max;
+                        if (e.target.classList.contains('substraction')){
+                            if(parseInt(input.value) > min){
+                                input.setAttribute('value', parseInt(input.value) - 1);
+                            }
+                        }  
+                        else if (e.target.classList.contains('addition')){
+                            if(parseInt(input.value) < parseInt(max)){
+                                input.setAttribute('value', parseInt(input.value) + 1);        
+                            }
+                        }    
+                    });
+                }
+                
+            }
+        }
 
     if (window.location.pathname.includes('/products/')) {  
 
