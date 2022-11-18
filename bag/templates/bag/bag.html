@@ -23,7 +23,11 @@
                                     <div class="d-flex">
                                         <!-- ADD PRODUCT IMAGE -->
                                         <div class="col-6 col-md-4 col-lg-6 col-xl-4 p-0">
-                                            <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                            {% if item.product.image %}
+                                                <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                            {% else %}
+                                                <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                            {% endif %}
                                         </div>
                                         <!-- ADD PRODUCT DETAILS FOR MEDIUM AND SMALL DEVICES -->
                                         <div class="col-6 col-md-8 col-lg-6 col-xl-8 p-0 d-flex flex-column justify-content-between">
@@ -47,9 +51,9 @@
                                                     <button type="submit" class="col-12 font-weight-bold purple-btn rounded-0 text-center p-0">+</button>
                                                 </form>
                                             </div>
-                                            <p class="d-md-none"><b>Price: </b> € {{item.product.price}}</p>
+                                            <p class="d-md-none"><b>Price: </b> €{{item.product.price}}</p>
                                             {% if item.product.price != item.subtotal  %}
-                                                <p class="d-md-none"><b>Total: </b> € {{item.subtotal}}</p>
+                                                <p class="d-md-none"><b>Total: </b> €{{item.subtotal}}</p>
                                             {% endif %}
                                             <!-- ADD FORM FOR REMOVING PRODUCT FROM BAG -->
                                             <form  class="mb-3" method="POST" action="{% url 'remove_from_bag' item.product.id %}">
@@ -94,7 +98,7 @@
                                 </td>
                                 <!-- ADD PRODUCT DETAILS FOR LARGE DEVICES-->
                                 <td class="d-none d-md-table-cell col-md-2 p-2 align-top text-center">
-                                    <p>€ {{item.product.price}}</p>
+                                    <p>€{{item.product.price}}</p>
                                 </td>
                                 <td class="d-none d-md-table-cell col-md-3 p-2 align-top text-center">
                                     <!-- ADD FORMS FOR INCREMENTING/DECREMENTING QUANTITY -->
@@ -123,38 +127,38 @@
                         </table>
                     </div>
                     <!-- ADD ORDER SUMMARY PRICE DETAILS-->
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-end">
-                        <div class="col-xl-10 p-0">
+                    <div class="col-12 p-0 col-lg-4 d-flex justify-content-end">
+                        <div class="col-md-6 col-lg-12">
                             <div class="border p-3 p-lg-2">
                                 <h5 class="mb-3"><b>Order Summary</b></h5>
-                            <div class="w-100 d-flex justify-content-between">
-                                <span>Sub Total:</span>
-                                <span><b>€ {{ total|floatformat:2 }}</b></span>
-                            </div>
-                            <div class="w-100 d-flex justify-content-between">
-                                <span>Discount:</span>
-                                <span><b>- €</b></span>
-                            </div>
-                            <div class="w-100 d-flex justify-content-between">
-                                <span>Delivery:</span>
-                                <span><b>€ {{ delivery|floatformat:2 }}</b></span>
-                            </div>
-                            {% if free_delivery_delta > 0 %}
-                            <div class="w-100 d-flex justify-content-between text-white bg-dark font-size-smaller p-1 mt-1">
-                                <span>Free delivery:</span>
-                                <span>+ € {{ free_delivery_delta|floatformat:2 }}</span>
-                            </div>
-                            {% endif %}
-                            <hr>
-                            <div class="w-100 d-flex justify-content-between">
-                                <span class="font-size-larger"><b>Total</b></span>
-                                <span><b>€ {{ grand_total|floatformat:2 }}</b></span>
-                            </div>
-                            <hr>
-                            <div class="d-flex flex-column align-items-center mt-2">
-                                <button class="button purple-btn small-btn rounded-0 mb-2">Proceed To Checkout</button>
-                                <a href="{% url 'products' %}" class="button gray-btn small-btn rounded-0"><i class="fas fa-chevron-left font-size-smaller"></i> Continue shopping</a>
-                            </div>
+                                <div class="w-100 d-flex justify-content-between">
+                                    <span>Sub Total:</span>
+                                    <span><b>€{{ total|floatformat:2 }}</b></span>
+                                </div>
+                                <div class="w-100 d-flex justify-content-between">
+                                    <span>Discount:</span>
+                                    <span><b>- €</b></span>
+                                </div>
+                                <div class="w-100 d-flex justify-content-between">
+                                    <span>Delivery:</span>
+                                    <span><b>€{{ delivery|floatformat:2 }}</b></span>
+                                </div>
+                                {% if free_delivery_delta > 0 %}
+                                <div class="w-100 d-flex justify-content-between text-white bg-dark font-size-smaller p-1 mt-1">
+                                    <span>Free delivery:</span>
+                                    <span>+ €{{ free_delivery_delta|floatformat:2 }}</span>
+                                </div>
+                                {% endif %}
+                                <hr>
+                                <div class="w-100 d-flex justify-content-between">
+                                    <span class="font-size-larger"><b>Total</b></span>
+                                    <span><b>€{{ grand_total|floatformat:2 }}</b></span>
+                                </div>
+                                <hr>
+                                <div class="d-flex flex-column align-items-center mt-2">
+                                    <a href="{% url 'checkout' %}" class="button purple-btn small-btn rounded-0 mb-2 text-white">Proceed To Checkout</a>
+                                    <a href="{% url 'products' %}" class="button gray-btn small-btn rounded-0"><i class="fas fa-chevron-left font-size-smaller"></i> Continue shopping</a>
+                                </div>
                             </div>
                         </div>
                     </div>
