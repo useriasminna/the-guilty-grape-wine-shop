@@ -124,7 +124,7 @@
                                                     {% if item.product.image %}
                                                         <img class="d-none d-md-block col-2 p-0 img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                                     {% else %}
-                                                        <img class="d-none d-md-block col-2 p-0 img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                                        <img class="d-none d-md-block col-2 p-0 img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.name }}">
                                                     {% endif %}
                                                     <p class="d-none d-lg-block col-10 m-0 font-size-smaller"><b>{{item.product.name}}</b></p>
                                                     <p class="d-lg-none p-0 m-0"><b>{{item.product.name}}</b></p>
