@@ -13,38 +13,49 @@ from .widgets import CustomClearableFileInput
 class AddUpdateProductForm(forms.ModelForm):
     """Form for update product details"""
 
-    category = forms.ChoiceField(label="Category", choices=(), )
+    category = forms.ModelChoiceField(queryset=Category.objects.all(),
+                                      empty_label='Category*')
     is_deluxe = forms.BooleanField(label='Deluxe Collection', required=False,
                                    widget=forms.CheckboxInput(attrs={
                                      'class': 'custom-control-input'
                                      }))
-    sku = forms.CharField(max_length=254)
-    name = forms.CharField(max_length=254)
-    country = forms.CharField(max_length=100)
-    region = forms.CharField(max_length=100)
-    grapes = forms.CharField(max_length=254)
     year = forms.IntegerField(max_value=datetime.datetime.now().year)
-    style = forms.CharField(max_length=50)
-    code = forms.CharField(max_length=6)
-    food_pairing = forms.CharField(max_length=254)
     price = forms.DecimalField(max_digits=6, decimal_places=2)
     image = forms.ImageField(label='Image', required=False,
                              widget=CustomClearableFileInput)
-    stock = forms.IntegerField(min_value=0)
 
     def __init__(self, *args, **kwargs):
+        """
+        Set checkbox default value for update, add placeholders
+        and remove auto-generated labels
+        """
         is_deluxe = kwargs.pop('is_deluxe', None)
         super().__init__(*args, **kwargs)
 
         if is_deluxe:
             self.fields['is_deluxe'].initial = True
 
-        choices = [
-            (category.get_friendly_name(),
-             str(category.get_friendly_name()))
-            for category in Category.objects.all()
-        ]
-        self.fields['category'].choices = choices
+        placeholders = {
+            'sku': 'Sku',
+            'name': 'Product Name',
+            'region': 'Region',
+            'grapes': 'Grapes',
+            'year': 'Year',
+            'style': 'Style',
+            'code': 'Code',
+            'food_pairing': 'Food Pairing',
+            'price': 'Price',
+            'stock': 'Stock',
+        }
+
+        for field in self.fields:
+            if field != 'country' and field != 'category'\
+                 and field != 'is_deluxe' and field != 'image':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
 
     def clean_category(self):
         """Method for assinging the correponding Category object to category
