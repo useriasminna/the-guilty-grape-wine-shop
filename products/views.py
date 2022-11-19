@@ -13,6 +13,7 @@ from django.views.generic import ListView, DeleteView, UpdateView, View
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django_countries.data import COUNTRIES
 from django.contrib import messages
 from product_reviews.forms import ReviewForm, UpdateReviewForm
 from product_reviews.models import Review as ReviewModel
@@ -73,13 +74,22 @@ class Products(ListView):
         filter_clauses = {}
         for key, value in request.GET.items():
             if key in filter_options:
-                if key == 'category':
-                    filter_clauses[key] = get_object_or_404(
-                        Category, name=value)
-                elif key in ('grapes', 'food_pairing'):
-                    filter_clauses[key+"__contains"] = value
-                else:
+                if key not in ('category', 'country', 'grapes',
+                               'food_pairing'):
                     filter_clauses[key] = value
+                else:
+                    if key == 'category':
+                        category = get_object_or_404(
+                            Category, name=value)
+                        filter_clauses[key] = category
+                    if key == 'country':
+                        country_value = None
+                        for c_key, c_value in COUNTRIES.items():
+                            if c_value == value:
+                                country_value = c_key
+                        filter_clauses[key] = country_value
+                    if key in ('grapes', 'food_pairing'):
+                        filter_clauses[key+"__contains"] = value
 
         if filter_clauses:
             products = products.filter(**filter_clauses)
@@ -158,8 +168,10 @@ class Products(ListView):
         regions_list = products.values_list(
             'region', flat=True).distinct().order_by('region')
 
-        countries_list = products.values_list(
-            'country', flat=True).distinct().order_by('country')
+        countries_list = [COUNTRIES[country_code] for country_code
+                          in products.values_list(
+                              'country', flat=True).distinct().order_by(
+                                  'country')]
 
         food_pairings_list = []
         for food in products.values_list('food_pairing', flat=True):
@@ -252,13 +264,15 @@ class ProductDetail(ListView):
         if product.is_deluxe is True:
             update_product_form = AddUpdateProductForm(
                 is_deluxe=True, initial={
-                    'category': product.category.get_friendly_name()
+                    'category': product.category,
+                    'country': product.country
                     },
                 instance=product, prefix='UPDATE')
         else:
             update_product_form = AddUpdateProductForm(
                 instance=product, initial={
-                    'category': product.category.get_friendly_name()
+                    'category': product.category,
+                    'country': product.country
                     },  prefix='UPDATE')
 
         if self.request.user.is_authenticated and \
