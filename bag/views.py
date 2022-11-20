@@ -67,6 +67,7 @@ class AddToBag(UserPassesTestMixin, View):
             return redirect(current_url)
 
     def get(self, request, product_id):
+        """Override get method to redirect to bag page"""
         return redirect('/bag/')
 
     def test_func(self):
