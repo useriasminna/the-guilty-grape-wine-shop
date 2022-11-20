@@ -10,6 +10,11 @@ body {
     color: #3a3a3a;
 }
 
+/* HOVER CLASSES */
+.hover-underline:hover {
+    text-decoration: underline;
+}
+
 /* SCROLL CLASSES */
 .scroll-h {
     overflow-x: hidden;
@@ -40,15 +45,18 @@ body {
 }
 
 /* COLORS CLASSES */
-.text-yellow {
+.text-yellow,
+.text-yellow:hover {
     color: #ffc107;
 }
 
-.text-red {
+.text-red,
+.text-red:hover {
     color: #ff4456;
 }
 
-.text-purple {
+.text-purple,
+.text-purple:hover {
     color: #590243;
 }
 
@@ -383,7 +391,7 @@ a:hover {
 .add-container span {
     background: black;
     padding: 0px 3px 1px 3px;
-    color: #14e443;
+    color: wheat;
 }
 
 .add-container .add {
@@ -644,6 +652,7 @@ input:not([type=checkbox]) {
     padding: 15px;
     position: relative;
     overflow: hidden;
+    min-height: 400px;
 }
 
 .product-container h6 {
@@ -655,8 +664,8 @@ input:not([type=checkbox]) {
     font-size: larger;
 }
 
-.product-count button,
-.product-count input {
+.product-count:not(.bag-count) button,
+.product-product-count:not(.bag-count) input {
     border: 1px solid grey;
     color: #3a3a3a;
 }
@@ -677,7 +686,7 @@ input:not([type=checkbox]) {
     margin: 0;
 }
 
-.product-count button:hover {
+.product-count:not(.bag-count) button:hover {
     background-color: #c8c8c8b3;
 }
 
@@ -733,12 +742,8 @@ input:not([type=checkbox]) {
     opacity: 1;
 }
 
-.product-container:hover img {
+.product-container:hover .product-img {
     opacity: 0.2;
-}
-
-.product-container:hover .product-banner {
-    opacity: 0;
 }
 
 .product-container:hover .product-overlay {
@@ -756,11 +761,18 @@ input:not([type=checkbox]) {
 .product-overlay {
     position: absolute;
     opacity: 0;
-    position: absolute;
-    top: 45%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     text-align: center;
+}
+
+.product-overlay div:nth-child(1) {
+    position: relative;
+}
+
+.product-overlay form:nth-child(2) {
+    position: relative;
 }
 
 .pagination {
