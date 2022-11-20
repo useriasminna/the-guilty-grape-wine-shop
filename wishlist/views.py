@@ -264,6 +264,10 @@ class AddProductToWishList(UserPassesTestMixin, View):
 
         return redirect(current_url)
 
+    def get(self, request, product_id, *args, **kwargs):
+        """Override get method to redirect to product details page"""
+        return redirect('/products/product_details/' + str(product_id))
+
     def test_func(self):
         return not self.request.user.is_superuser
 
@@ -287,6 +291,7 @@ class RemoveProductFromWishList(LoginRequiredMixin, UserPassesTestMixin,
         return WishlistLine.objects.get(pk=self.kwargs.get('wishlist_id'))
 
     def get(self, request, *args, **kwargs):
+        """Override get method to redirect to product details page"""
         id_key = self.get_object().id
         return redirect('/products/product_details/' + str(id_key))
 
