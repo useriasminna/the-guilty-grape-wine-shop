@@ -272,23 +272,23 @@
                             </div>
                             <p class="font-weight-bold">€{{product.price}}</p>
                         </div>
-                        {% if product.stock != 0 %}
                         <!-- ADD PRODUCT OVERLAY -->
-                            <div class="product-overlay col-10 d-none d-xl-block">
-                                <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
-                                {% if product.rating %}
-                                <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
-                                <div class="ratings-generated stars-big d-flex align-items-end justify-content-around mb-3"></div>
-                                {% else %}
-                                <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
-                                <div class="stars-big stars-inactive d-flex align-items-end justify-content-around mb-3">
-                                    <button type="button" class="star">★</button>
-                                    <button type="button" class="star">★</button>
-                                    <button type="button" class="star">★</button>
-                                    <button type="button" class="star">★</button>
-                                    <button type="button" class="star">★</button>
-                                </div> 
-                                {% endif %}
+                        <div class="product-overlay col-10 d-none d-xl-block">
+                            <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
+                            {% if product.rating %}
+                            <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
+                            <div class="ratings-generated stars-big d-flex align-items-end justify-content-around mb-3"></div>
+                            {% else %}
+                            <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
+                            <div class="stars-big stars-inactive d-flex align-items-end justify-content-around mb-3">
+                                <button type="button" class="star">★</button>
+                                <button type="button" class="star">★</button>
+                                <button type="button" class="star">★</button>
+                                <button type="button" class="star">★</button>
+                                <button type="button" class="star">★</button>
+                            </div> 
+                            {% endif %}
+                            {% if product.stock != 0 %}
                                 {% if not request.user.is_authenticated or not request.user.is_superuser %}
                                     <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR EXTRA LARGE DEVICES-->
                                     <form action="{% url 'add_to_bag' product.id %}" class="overlay-form" method="POST">
@@ -298,7 +298,7 @@
                                                 <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
                                                 <label class="col-4 p-0 m-0">
                                                     <span hidden>Product count</span>
-                                                    <input class="p-0 text-center rounded-0" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
+                                                    <input class="p-0 text-center border border-secondary rounded-0" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
                                                 </label>
                                                 <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
                                             </div>
@@ -309,17 +309,8 @@
                                         </div>
                                     </form>
                                 {% endif %}
-                            </div>
-                        {% else %}
-                        <!-- ADD OUT OF STOCK ITEM -->
-                            <div class="banner-hover">
-                                <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Out of stock banner">
-                                <div class="banner-text text-center text-red">
-                                    <span class="d-none d-lg-block font-size-smaller">Sorry, this item is <br> Out of stock</span>
-                                    <span class="d-lg-none">Sorry, this item is <br> Out of stock</span>
-                                </div>
-                            </div>
-                        {% endif %}
+                            {% endif %}
+                        </div>
                     </div>
                     {% if not request.user.is_authenticated or not request.user.is_superuser %}
                     <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR LARGE MEDIUM AND SMALL DEVICES-->
@@ -331,7 +322,7 @@
                                     <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
                                     <label class="col-4 p-0 m-0">
                                         <span hidden>Product count</span>
-                                        <input class="p-0 text-center rounded-0 font-size-larger" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
+                                        <input class="p-0 text-center rounded-0 border border-secondary font-size-larger" name="quantity" type="number" value="1" min="1" max="{{product.stock}}">
                                     </label>
                                     <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
                                 </div>
@@ -346,22 +337,22 @@
                 </div>
                 <!-- ADD SEPARATORS -->
                 {% if forloop.counter|divisibleby:1 %}
-                    <div class="col-12 d-sm-none mb-5">
+                    <div class="col-12 d-sm-none">
                         <hr>
                     </div>
                 {% endif %}    
                 {% if forloop.counter|divisibleby:2 %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
                         <hr>
                     </div>
                 {% endif %}                
                 {% if forloop.counter|divisibleby:3 %}
-                    <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                    <div class="col-12 d-none d-lg-block d-xl-none">
                         <hr>
                     </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:4 %}
-                    <div class="col-12 d-none d-xl-block mb-5">
+                    <div class="col-12 d-none d-xl-block">
                         <hr>
                     </div>
                 {% endif %}
