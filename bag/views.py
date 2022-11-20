@@ -34,6 +34,7 @@ class AddToBag(UserPassesTestMixin, View):
         current_url = request.POST.get('current_url')
         bag = request.session.get('bag', {})
         quantity = request.POST.get('quantity')
+
         try:
             quantity = int(quantity)
             if quantity in range(1, product.stock+1):
@@ -64,6 +65,9 @@ class AddToBag(UserPassesTestMixin, View):
                         is not correct <span hidden>{e}</span>',
                     extra_tags='safe')
             return redirect(current_url)
+
+    def get(self, request, product_id):
+        return redirect('/bag/')
 
     def test_func(self):
         if self.request.user.is_authenticated:
