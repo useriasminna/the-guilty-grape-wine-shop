@@ -21,6 +21,7 @@ django-url-tools = "*"
 django-url-tools-py3 = "*"
 humanhash3 = "*"
 django-countries = "*"
+stripe = "*"
 
 [dev-packages]
 django-url-tools = "*"
