@@ -204,9 +204,10 @@ class Products(ListView):
             if key == 'filter':
                 is_filter = True
                 del parameters['filter']
-            if is_filter is True and key in filter_clauses:
+            if is_filter is True and key in filter_options:
                 del parameters[key]
-        current_url_no_filters += '?' + urllib.parse.urlencode(parameters)
+        if parameters:
+            current_url_no_filters += '?' + urllib.parse.urlencode(parameters)
 
         # CHECK IF THERE IS ONLY ONE FILTER APPLIED AND CREATE BOOLEAN VALUE
         # TO BE ADDED TO CONTEXT
