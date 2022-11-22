@@ -1,4 +1,5 @@
 /*jshint esversion: 6 */
+/*global $:false */
 document.addEventListener("DOMContentLoaded", function(event) { 
 
     // SCRIPT FOR NAVBAR SEARCH BOX TO BE DISPLAYED ONLY WHEN THE COLLAPSIBLE NAV IS OFF
@@ -561,7 +562,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
     if (window.location.pathname == '/checkout/') {
-        console.log(document.getElementById('id_stripe_public_key'))
         var stripePublicKey = document.getElementById('id_stripe_public_key').innerText.slice(1, -1);
         var clientSecret = document.getElementById('id_client_secret').innerText.slice(1, -1);
         var stripe = Stripe(stripePublicKey);
@@ -669,7 +669,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 });
             }).fail(function () {
                 location.reload();
-            })
+            });
         }); 
-    };  
+    }
 });
