@@ -572,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 fontSmoothing: 'antialiased',
                 fontSize: '14px',
                 '::placeholder': {
-                    color: '#84898e'
+                    color: '#5f6468'
                 },
             },
             invalid: {
