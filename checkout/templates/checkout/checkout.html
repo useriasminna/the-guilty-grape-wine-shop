@@ -14,7 +14,7 @@
                             <form method="POST" action="{% url 'checkout' %}" enctype="multipart/form-data" id="payment-form">
                                 {% csrf_token %}
                                 <fieldset class="rounded mb-4">
-                                    <legend class="fieldset-label pl-2 small text-black"><b>Personal Details</b></legend>
+                                    <legend class="fieldset-label pl-2 small"><b>Personal Details</b></legend>
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Full name</span>
@@ -29,7 +29,7 @@
                                     </div>                                    
                                 </fieldset>
                                 <fieldset class="rounded mb-4">
-                                    <legend class="fieldset-label pl-2 small text-black"><b>Delivery</b></legend>
+                                    <legend class="fieldset-label pl-2 small"><b>Delivery</b></legend>
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Phone number</span>
@@ -86,7 +86,7 @@
                                     {% endif %}
                                 </fieldset>
                                 <fieldset>
-                                    <legend class="fieldset-label pl-2 small text-black"><b>Payment</b></legend>
+                                    <legend class="fieldset-label pl-2 small"><b>Payment</b></legend>
                                     <!-- STRIPE CARD -->
                                     <div class="mb-3" id="card-element"></div>
                                     <!-- CARD ERRORS -->
@@ -95,7 +95,7 @@
                                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                                 </fieldset>
                                 <!-- CARD CHARGING AMOUNT -->
-                                <p class="small text-danger my-0 mb-4">
+                                <p class="my-0 mb-4">
                                     <span class="icon">
                                         <i class="fas fa-exclamation-circle"></i>
                                     </span>
