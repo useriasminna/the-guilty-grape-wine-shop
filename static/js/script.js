@@ -672,4 +672,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
         }); 
     }
+
+    // SCRIPT FOR SETTING NAV ITEM ACTIVE
+    path_info = window.location.pathname + window.location.search
+    if (path_info.includes('/products/?category=')) 
+        document.getElementById('navitem-wines').classList.add('nav-item-active');
+    else if (path_info == '/products/?is_deluxe=True') 
+        document.getElementById('navitem-deluxe').classList.add('nav-item-active');
+    else if (path_info.includes('/products/')) 
+        document.getElementById('navitem-products').classList.add('nav-item-active');
+
 });
