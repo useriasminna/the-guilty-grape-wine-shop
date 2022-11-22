@@ -54,11 +54,11 @@
           <div class="container-fluid p-side">
             <ul class="categories d-block d-lg-flex col-6 pl-lg-0">
               <li class="nav-item mr-3 mt-2 mt-lg-0">
-                <a href="{% url 'products' %}">All products</a>
+                <a href="{% url 'products' %}" id="navitem-products">All products</a>
               </li>
               <li class="nav-item mr-3 mt-2 mt-lg-0">
                 <div class="dropdown">
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Wines</a>
+                  <a href="" id="navitem-wines" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Wines</a>
                   <div class="dropdown-menu dropdown-menu-lg-start">
                       <a class="dropdown-item" href="{% url 'products' %}?category=white_wines">White Wines</a>
                       <a class="dropdown-item" href="{% url 'products' %}?category=red_wines">Red Wines</a>
@@ -68,7 +68,7 @@
                 </div>
               </li>
               <li class="nav-item mr-3 mt-2 mt-lg-0">
-                  <a href="{% url 'products' %}?is_deluxe=True">Deluxe Edition</a>
+                  <a href="{% url 'products' %}?is_deluxe=True" id="navitem-deluxe">Deluxe Edition</a>
               </li>
               <li class="nav-item mr-3 mt-2 mt-lg-0">
                 <a href="#">Special Offers</a>
