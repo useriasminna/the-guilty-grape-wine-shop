@@ -452,6 +452,10 @@ a:hover {
     flex-direction: column-reverse;
 }
 
+.nav-item-active{
+    border-bottom: 2px solid #e8d7e6d4 !important;
+}
+
 /* SEARCH BAR STYLING */
 .search-bar .form-control {
     height: 30px;
@@ -886,6 +890,10 @@ input:not([type=checkbox]) {
 
 .message-container:has(> div.toast-bag) {
     top: 52%;
+}
+
+.toast{
+    width: 350px;
 }
 
 .custom-toast {
@@ -1440,6 +1448,11 @@ select option[value=""] {
         overflow-x: hidden;
         overflow-y: auto;
         max-height: 50vh;
+    }
+
+    .toast{
+        width: 90vw;
+        max-width: auto;
     }
 }
 
