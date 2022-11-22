@@ -156,12 +156,6 @@
                                         <span>Delivery:</span>
                                         <span><b>€{{ delivery|floatformat:2 }}</b></span>
                                     </div>
-                                    {% if free_delivery_delta > 0 %}
-                                    <div class="w-100 d-flex justify-content-between text-white bg-dark font-size-smaller p-1 mt-1">
-                                        <span>Free delivery:</span>
-                                        <span>+ €{{ free_delivery_delta|floatformat:2 }}</span>
-                                    </div>
-                                    {% endif %}
                                     <hr>
                                     <div class="w-100 d-flex justify-content-between">
                                         <span class="font-size-larger"><b>Total</b></span>
