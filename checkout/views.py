@@ -5,7 +5,7 @@ Views for Checkout App.
 """
 
 from django.views.generic import View, TemplateView
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404, HttpResponse
 from django.contrib import messages
 from django.urls import reverse
 from django.conf import settings
@@ -17,6 +17,28 @@ from products.models import Product
 from bag.contexts import bag_contents
 
 import stripe
+import json
+
+
+class CacheCheckoutData(View):
+    """Class view for saving cache checkout data"""
+    http_method_names = ['post']
+
+    def post(self, request):
+        """Override post method"""
+        try:
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            stripe.api_key = settings.STRIPE_SECRET_KEY
+            stripe.PaymentIntent.modify(pid, metadata={
+                'bag': json.dumps(request.session.get('bag', {})),
+                'save_info': request.POST.get('save_info'),
+                'username': request.user,
+            })
+            return HttpResponse(status=200)
+        except Exception as e:
+            messages.error(request, 'Sorry, your payment cannot be \
+                processed right now. Please try again later.')
+            return HttpResponse(content=e, status=400)
 
 
 class Checkout(TemplateView):
@@ -76,7 +98,11 @@ class Checkout(TemplateView):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
             for item_id, quantity in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
