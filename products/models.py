@@ -37,7 +37,7 @@ class Product(models.Model):
     year = models.IntegerField(null=False, blank=False)
     style = models.CharField(max_length=50, null=False, blank=False)
     code = models.CharField(max_length=6, unique=True)
-    food_pairing = models.CharField(max_length=60, null=False, blank=False)
+    food_pairing = models.CharField(max_length=254, null=False, blank=False)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=False,
                                 blank=False)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
