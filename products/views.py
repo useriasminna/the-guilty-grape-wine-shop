@@ -34,7 +34,7 @@ class Products(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['products'] = Product.objects.all()
+        context['products'] = Product.objects.all().order_by('style')
         return context
 
     def get(self, request):
@@ -58,10 +58,15 @@ class Products(ListView):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            if sortkey != 'best_sellers' and sortkey != 'rating':
+            if sortkey != 'best_sellers' and 'rating' not in sortkey:
                 products = products.order_by(sortkey)
-            if sortkey == 'rating':
-                products = products.order_by(F(sortkey).asc(nulls_last=True))
+            elif 'rating' in sortkey:
+                if direction == 'asc':
+                    products = products.order_by(
+                        F('rating').asc(nulls_last=True))
+                elif direction == 'desc':
+                    products = products.order_by(
+                        F('rating').desc(nulls_last=True))
 
         if sort == 'best_sellers':
             current_sorting = sort
