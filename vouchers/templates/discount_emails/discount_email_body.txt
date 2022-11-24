@@ -1,0 +1,16 @@
+Hi, {{user.full_name}}
+
+Thank you for your registration on our website!
+
+Here is your 15% discount voucher code for your order:
+{{voucher_code}}
+
+Please note that the voucher can only be used one time. 
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+
+The Guilty Grape
