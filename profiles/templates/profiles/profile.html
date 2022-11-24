@@ -12,11 +12,11 @@
                     <hr>
                     <!-- USER'S DELIVERY DETAILS -->
                     <div class="col-md-10 col-xl-5 mb-3 mb-lg-0 p-0 mx-auto">
-                        <h5 class="text-center mb-4">
+                        <h5 class="text-center mb-3">
                             My Delivery Details 
                             <i class="fas fa-truck fa-sm"></i>
                         </h5>
-                        <form method="POST" action="{% url 'profile_delivery_update' user=request.user.pk %}" enctype="multipart/form-data" id="payment-form">
+                        <form method="POST" action="{% url 'profile_delivery_update' user_pk=request.user.pk %}" enctype="multipart/form-data" id="payment-form">
                             {% csrf_token %}
                             {% for field in delivery_details_form %}
                                 <div class="w-100 p-0 mb-3 mx-auto">
