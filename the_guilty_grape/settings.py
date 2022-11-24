@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['the-guilty-grape-wine-shop.herokuapp.com', 'localhost',
                  '127.0.0.1']
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'wishlist',
     'bag',
     'checkout',
+    'profiles',
 ]
 
 MIDDLEWARE = [
@@ -111,7 +112,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_ADAPTER = 'users.adapters.AccountAdapter'
 ACCOUNT_FORMS = {
