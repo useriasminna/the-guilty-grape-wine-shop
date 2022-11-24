@@ -639,12 +639,12 @@ a:hover {
 select,
 input:not([type=checkbox]) {
     width: 100%;
-    border: 1px solid #ced4da;
+    border: 1px solid #adb5bd;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     padding-left: 0.5rem;
     border-radius: 0.25rem;
-    color: #3a3a3a;
+    color: #000;
     font-size: .875rem;
 }
 
@@ -682,7 +682,7 @@ input:not([type=checkbox]) {
 .product-count:not(.bag-count) button,
 .product-product-count:not(.bag-count) input {
     border: 1px solid grey;
-    color: #3a3a3a;
+    color: #000;
 }
 
 .product-count input {
@@ -1033,7 +1033,7 @@ input:not([type=checkbox]) {
     padding-bottom: 0.5rem;
     padding-left: 0.5rem;
     border-radius: 0.25rem;
-    color: #3a3a3a;
+    color: #000;
 }
 
 .StripeElement--focus,
@@ -1047,7 +1047,7 @@ input:not([type=checkbox]) {
 }
 
 input::placeholder {
-    color: #adb5bd;
+    color: #6c757d;
 }
 
 .fieldset-label {
@@ -1057,12 +1057,12 @@ input::placeholder {
 
 select,
 select option {
-    color: #3a3a3a;
+    color: #000;
 }
 
 select:invalid,
 select option[value=""] {
-    color: #adb5bd;
+    color: #6c757d;
 }
 
 #loading-overlay {

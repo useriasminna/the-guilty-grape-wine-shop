@@ -572,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 fontSmoothing: 'antialiased',
                 fontSize: '14px',
                 '::placeholder': {
-                    color: '#adb5bd'
+                    color: '#6c757d'
                 },
             },
             invalid: {
@@ -687,14 +687,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         let countrySelected = document.getElementById('id_default_country');
         if(!countrySelected.value) {
-            countrySelected.style.color = '#adb5bd';
+            countrySelected.style.color = '#6c757d';
         }
         countrySelected.addEventListener('change', (e) => {
             countrySelected = e.target;
             if(!countrySelected.value) {
-                countrySelected.style.color = '#adb5bd';
+                countrySelected.style.color = '#6c757d';
             } else {
-                countrySelected.style.color = '#3a3a3a';
+                countrySelected.style.color = '#000';
            }
         });    
     }    
