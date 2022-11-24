@@ -41,7 +41,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
     Create or update the user profile
     """
-    if created and not instance.is_superuser:
-        UserProfile.objects.create(user=instance)
+    # if created and not instance.is_superuser:
+    UserProfile.objects.create(user=instance)
     if not instance.is_superuser:
         instance.userprofile.save()
