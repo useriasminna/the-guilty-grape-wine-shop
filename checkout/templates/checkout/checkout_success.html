@@ -8,9 +8,14 @@
                 <h2 class="logo-font mb-4">Thank You</h2>
                 <hr>
                 <div class="pt-lg-3">
-                <p class="text-center text-md-left">Your order information is below. A confirmation email will be sent to <span class="text-light bg-dark p-1">{{ order.email }}</span>.</p>
+                <p class="text-center text-md-left">Your order information is below.
+                    {% if not from_profile %}
+                    A confirmation email will be sent to <span class="text-light bg-dark p-1">{{ order.email }}</span>.
+                    {% endif %}
+                </p>
+
                 <!-- ORDER DETAILS -->
-                <div class="d-flex mt-4">
+                <div class="d-flex mt-2 mt-md-4">
                     <div class="col-md-10 col-xl-8 p-0 d-flex flex-column align-items-center align-items-md-start">
                         <div class="w-100 d-flex flex-column flex-md-row justify-content-md-between align-items-center mb-4 p-1">
                             <div class="col-md-6 p-0 text-center">
@@ -90,11 +95,18 @@
                                 <p class="col-12 col-md-8 p-0 text-md-right mb-0"><b>€{{ order.grand_total }}</b></p>
                             </div>
                         </div>
+                        {% if not from_profile %}
                         <!-- BACK TO PRODUCTS PAGE BUTTON -->
                         <a class="button bg-dark text-white font-size-smaller rounded" href="{% url 'products' %}">
                             <i class="fas fa-chevron-left font-size-smaller"></i>
                             Back to products page
                         </a>
+                        {% else %}
+                        <a class="button bg-dark text-white font-size-smaller rounded" href="{% url 'profile' %}">
+                            <i class="fas fa-chevron-left font-size-smaller"></i>
+                            Back to my profile
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
