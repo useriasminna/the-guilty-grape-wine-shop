@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="main-container col-lg-11 mx-auto pt-3 pb-3 mt-2 mt-lg-4 mb-4 bg-white">
+    <h1 class="mb-2 text-center">My Profile</h1>
+    <p class="text-center mb-1">Welcome back, {{user.get_full_name}}</h1>
+    <p class="text-center font-size-smaller"><b>{{user.email}}</b></p>
+    <div class="pt-lg-3">
+        <div class="col-12 mb-4 mb-lg-3">
+            <div class="col-12 p-0 mx-auto">
+                <div class="d-xl-flex justify-content-between text-center mx-auto">
+                    <hr>
+                    <!-- USER'S DELIVERY DETAILS -->
+                    <div class="col-md-10 col-xl-5 mb-3 mb-lg-0 p-0 mx-auto">
+                        <h5 class="text-center mb-4">
+                            My Delivery Details 
+                            <i class="fas fa-truck fa-sm"></i>
+                        </h5>
+                        <form method="POST" action="{% url 'profile_delivery_update' user=request.user.pk %}" enctype="multipart/form-data" id="payment-form">
+                            {% csrf_token %}
+                            {% for field in delivery_details_form %}
+                                <div class="w-100 p-0 mb-3 mx-auto">
+                                    <label class="w-100">
+                                        <span hidden>{{field.label}}</span>
+                                        {{ field }}
+                                    </label>
+                                    <small class="errorlist"></small>
+                                </div> 
+                            {% endfor %}
+                            <button type="submit" class="button small-btn btn-secondary text-white rounded-0">Update details</button>
+                        </form>
+                    </div> 
+                    <hr>
+                    <!-- USER'S ORDERS HISTORY -->
+                    <div class="col-md-10 col-xl-6 p-0 mx-auto">
+                        <h5 class="text-center mb-3"> 
+                            My Orders 
+                            <i class="fas fa-box-open fa-sm"></i>
+                        </h5>
+                        {% if orders %}
+                            <div class="table-responsive">
+                                <div class="wh-sm-max-content">
+                                    <table class="table table-separate">
+                                        <thead class="thead">
+                                            <tr>
+                                                <th scope="col" class="p-2">Order Number</th>
+                                                <th scope="col" class="p-2">Order Date</th>
+                                                <th scope="col" class="p-2">Quantity</th>
+                                                <th scope="col" class="p-2">Order Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for order in orders %}
+                                                <tr class="bg-gray">
+                                                    <td class="p-2">
+                                                        <!-- LINK TO ORDER'S DETAILS PAGE -->
+                                                        <a class="auth-link" href="{% url 'order_details' order.order_number %}"
+                                                        title="{{ order.order_number }}">
+                                                            {{ order.order_number|truncatechars:10 }}
+                                                        </a>
+                                                    </td>
+                                                    <td class="p-2">{{ order.date }}</td>
+                                                    <td class="p-2">
+                                                        {{ order.lineitems.all|length }}
+                                                        {% if order.lineitems.all|length == 1 %} item {% else %} items {% endif %}
+                                                    </td>
+                                                    <td class="p-2">${{ order.grand_total }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        {% else %}
+                        <!-- INFO MESSAGE FOR EMPTY ORDERS LIST CASE -->
+                        <p class="text-center"><b>There are no orders placed on this account.</b></p>
+                        {% endif %}
+                    </div>      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
