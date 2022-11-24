@@ -1,0 +1,17 @@
+{% extends 'error_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <div id="custom-error">
+		<div class="custom-error">
+			<div class="error-logo mb-2">
+				<h1>4<span>0</span>3</h1>
+			</div>
+			<p class="mb-3">Sorry, it seems like you don't have permission to access this page.</p>
+			<a href="{% url 'home' %}">Back to home page</a>
+		</div>
+	</div>
+</div>
+{% endblock %}
