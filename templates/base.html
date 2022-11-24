@@ -129,11 +129,11 @@
                         <a class="d-none d-lg-block" title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                           <i class="fas fa-user-circle"></i>
                         </a>
-                        <a class="d-lg-none" href="#">
+                        <a class="d-lg-none" href="{% url 'profile' %}">
                           <span>My profile</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-start">
-                          <a class="dropdown-item" href="#">My profile</a>
+                          <a class="dropdown-item" href="{% url 'profile' %}">My profile</a>
                           <hr class="dropdown-divider d-none d-lg-block">
                           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                         </div>
