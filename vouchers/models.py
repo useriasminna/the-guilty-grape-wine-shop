@@ -13,9 +13,8 @@ from django.contrib import messages
 from allauth.account.signals import email_confirmed
 
 from users.models import User
-import os
-import base64
-# import humanhash
+import uuid
+import humanhash
 
 
 class Voucher(models.Model):
@@ -34,12 +33,12 @@ def send_discount_voucher_on_email_confirmed_(request,
     Create a voucher instance"""
     user = User.objects.get(email=email_address.email)
 
-    code = base64.b64encode(os.urandom(8))
-    # voucher_code = humanhash.humanize(code)
+    code = uuid.uuid4().hex
+    voucher_code = humanhash.humanize(str(code))
     while len(Voucher.objects.filter(voucher_code=code)) != 0:
-        code = base64.b64encode(os.urandom(8))
-        # voucher_code = humanhash.humanize(code)
-    voucher = Voucher(user=user, percentage=15, voucher_code=code)
+        code = uuid.uuid4().hex
+        voucher_code = humanhash.humanize(str(code))
+    voucher = Voucher(user=user, percentage=15, voucher_code=voucher_code)
     voucher.save()
 
     customer_email = email_address.email
@@ -50,7 +49,7 @@ def send_discount_voucher_on_email_confirmed_(request,
         {
             'user': user,
             'contact_email': settings.DEFAULT_FROM_EMAIL,
-            'voucher_code': code,
+            'voucher_code': voucher_code,
         })
 
     send_mail(
