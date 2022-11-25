@@ -15,8 +15,6 @@ The contact phone number for this order is {{ order.phone_number }}.
 
 If you have any questions, feel free to contact us at {{ contact_email }}.
 
-Thank you for your order!
-
 Sincerely,
 
 The Guilty Grape
