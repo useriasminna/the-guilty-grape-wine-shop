@@ -44,9 +44,9 @@ def send_discount_voucher_on_email_confirmed_(request,
 
     customer_email = email_address.email
     subject = render_to_string(
-        'profiles/discount_emails/discount_email_subject.txt')
+        'vouchers/discount_emails/discount_email_subject.txt')
     body = render_to_string(
-        'profiles/discount_emails/discount_email_body.txt',
+        'vouchers/discount_emails/discount_email_body.txt',
         {
             'user': user,
             'contact_email': settings.DEFAULT_FROM_EMAIL,
