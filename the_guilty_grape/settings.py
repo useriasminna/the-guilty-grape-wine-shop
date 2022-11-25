@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['the-guilty-grape-wine-shop.herokuapp.com', 'localhost',
                  '127.0.0.1']
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'url_tools',
+    'mathfilters',
     'users',
     'home',
     'newsletter',
@@ -62,6 +63,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'vouchers',
 ]
 
 MIDDLEWARE = [
