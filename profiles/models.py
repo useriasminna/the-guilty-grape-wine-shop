@@ -7,12 +7,7 @@ Models for Profiles App.
 from django.db import models
 from users.models import User
 from django.db.models.signals import post_save
-from allauth.account.signals import email_confirmed
 from django.dispatch import receiver
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
-from django.conf import settings
-from django.contrib import messages
 
 from django_countries.fields import CountryField
 
@@ -39,29 +34,6 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.get_full_name()
-
-
-@receiver(email_confirmed)
-def send_discount_voucher_on_email_confirmed_(request,
-                                              email_address, **kwargs):
-
-    user = User.objects.get(email=email_address.email)
-    customer_email = email_address.email
-    subject = render_to_string(
-        'profiles/discount_emails/discount_email_subject.txt',
-        {'user': user})
-    body = render_to_string(
-        'profiles/discount_emails/discount_email_body.txt',
-        {'user': user, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-
-    send_mail(
-        subject,
-        body,
-        settings.DEFAULT_FROM_EMAIL,
-        [customer_email],
-    )
-    messages.info(request, 'A voucher code was sent to \
-        {{email_address.email}}')
 
 
 @receiver(post_save, sender=User)
