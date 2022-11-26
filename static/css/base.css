@@ -963,6 +963,10 @@ input:not([type=checkbox]) {
     border-collapse: separate;
 }
 
+.voucher-close{
+    top: 9%;
+    right: 0;
+}
 /* 403, 404, 500 CUSTOM ERROR PAGES */
 
 
