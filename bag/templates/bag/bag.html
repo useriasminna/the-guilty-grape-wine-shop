@@ -128,24 +128,28 @@
                     <!-- ADD ORDER SUMMARY PRICE DETAILS-->
                     <div class="col-12 p-0 col-lg-4 d-flex justify-content-end">
                         <div class="col-md-6 col-lg-12">
-                            <form action="{% url 'update_discount' %}" method="POST">
+                            <!-- ADD FORM FOR VOUCHER CODE -->
+                            <form class="mb-2" action="{% url 'update_discount' %}" method="POST">
                                 {% csrf_token %}
-                                <div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-                                    <label class="col-12 p-0 col-md-9 m-md-0 mb-1 mb-md-0">
-                                        Add your voucher code: 
-                                        <input type="text" name="voucher_code">
+                                <div class="d-flex flex-column flex-md-row justify-content-between">
+                                    <label class="col-12 col-md-9 col-lg-8 col-xl-9 p-0 mb-2 mb-md-0">
+                                        Add a voucher code:
+                                        {{ add_voucher_form.voucher_code }}
                                     </label>
                                     <div class="d-flex align-items-end">
                                         <button class="button gray-btn rounded-0 small-btn" type="submit">Apply</button>
                                     </div>
                                 </div>
                             </form>
+                            <!-- ADD ACTIVE VOUCHER -->
                             {% if voucher %}
-                            <div class="wh-fit-content px-2 py-1 mb-2 font-size-smaller bg-warning d-flex align-items-center justify-content-between">
-                                <p class="m-0 mr-2"><b>VOUCHER {{ voucher.percentage }}%</b></p>
+                            <div class="wh-fit-content px-2 py-1 mb-2 border-warning bg-warning card-shadow d-flex align-items-center justify-content-between position-relative">
+                                <p class="m-0 mr-2 d-none d-xl-block font-size-smaller mr-4"><b><em>{{voucher.voucher_code}}</em> ({{ voucher.percentage }}%)</b></p>
+                                <p class="m-0 mr-2 d-xl-none mr-4"><b><em>{{voucher.voucher_code}}</em> ({{ voucher.percentage }}%)</b></p>
                                 <form action="{% url 'update_discount' %}" method="POST">
                                     {% csrf_token %}
-                                    <button class="border-0 bg-transparent" type="submit">
+                                    <button class="border-0 bg-transparent voucher-close position-absolute" type="submit">
+                                        <span hidden>Remove voucher</span>
                                         <i class="fas fa-times"></i>
                                     </button>
                                     <input name="voucher_remove" type="hidden" value="True">
@@ -158,7 +162,7 @@
                                     <span>Sub Total:</span>
                                     <span><b>€{{ total|floatformat:2 }}</b></span>
                                 </div>
-                                {% if discount_value != 0 %}
+                                {% if discount_value %}
                                 <div class="w-100 d-flex justify-content-between">
                                     <span>Discount:</span>
                                     <span><b>- €{{ discount_value|floatformat:2 }}</b></span>
