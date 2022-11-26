@@ -13,20 +13,20 @@ from .widgets import CustomClearableFileInput
 class AddUpdateProductForm(forms.ModelForm):
     """Form for update product details"""
 
-    category = forms.ModelChoiceField(queryset=Category.objects.all(),
-                                      empty_label='Category*')
+    category = forms.ChoiceField()
     is_deluxe = forms.BooleanField(label='Deluxe Collection', required=False,
                                    widget=forms.CheckboxInput(attrs={
                                      'class': 'custom-control-input'
                                      }))
-    year = forms.IntegerField(max_value=datetime.datetime.now().year)
-    price = forms.DecimalField(max_digits=6, decimal_places=2)
+    year = forms.IntegerField(min_value=0,
+                              max_value=datetime.datetime.now().year)
+    price = forms.DecimalField(min_value=0.0, max_digits=6, decimal_places=2)
     image = forms.ImageField(label='Image', required=False,
                              widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         """
-        Set checkbox default value for update, add placeholders
+        Set checkbox initial value, set category choices, add placeholders
         and remove auto-generated labels
         """
         is_deluxe = kwargs.pop('is_deluxe', None)
@@ -34,7 +34,8 @@ class AddUpdateProductForm(forms.ModelForm):
 
         if is_deluxe:
             self.fields['is_deluxe'].initial = True
-
+        self.fields['category'].choices = [('', 'Category*')] +\
+            [(cat.id, cat.friendly_name) for cat in Category.objects.all()]
         placeholders = {
             'sku': 'Sku',
             'name': 'Product Name',
@@ -60,8 +61,8 @@ class AddUpdateProductForm(forms.ModelForm):
     def clean_category(self):
         """Method for assinging the correponding Category object to category
         field"""
-        category_name = self.cleaned_data['category']
-        category = Category.objects.get(friendly_name=category_name)
+        category_id = self.cleaned_data['category']
+        category = Category.objects.get(pk=category_id)
         return category
 
     def clean_is_deluxe(self):
