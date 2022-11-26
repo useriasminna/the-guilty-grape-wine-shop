@@ -4,18 +4,32 @@ Bag App - Views
 Views for Bag App.
 """
 
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import TemplateView, View, DeleteView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
 from django.http import HttpResponse
 
 from products.models import Product
+from vouchers.forms import AddVoucherForm
 
 
 class Bag(UserPassesTestMixin, TemplateView):
-    """A view that will render the bag page template"""
+    """A view that will render the bag page template and will clear
+    discount and voucher_id session variables if bag is empty"""
     template_name = 'bag/bag.html'
+
+    def get(self, request):
+        """Overide get method"""
+        bag = request.session.get('bag', {})
+        if not bag:
+            request.session['discount'] = None
+            request.session['voucher_id'] = None
+
+        context = {
+                'add_voucher_form': AddVoucherForm,
+            }
+        return render(request, 'bag/bag.html', context)
 
     def test_func(self):
         if self.request.user.is_authenticated:
