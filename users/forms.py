@@ -1,5 +1,7 @@
 """
 User App - Forms
+----------------
+Forms for Users App.
 """
 from allauth.account.forms import SignupForm
 from django import forms

@@ -1,3 +1,8 @@
+"""
+Profiles App - Admin
+----------------
+Admin configuration for Profiles App.
+"""
 from django.apps import AppConfig
 
 

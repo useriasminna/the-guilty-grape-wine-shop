@@ -1,5 +1,7 @@
 """
 Users App - Adapters
+----------------
+Adapters for Users App.
 """
 from allauth.account.adapter import DefaultAccountAdapter
 

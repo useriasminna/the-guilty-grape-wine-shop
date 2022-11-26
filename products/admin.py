@@ -1,5 +1,7 @@
 """
-Products App - Admin Panel Configuration
+Products App - Admin
+----------------
+Admin configuration for Products App.
 """
 from django.contrib import admin
 from .models import Product, Category

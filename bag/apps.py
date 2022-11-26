@@ -1,3 +1,8 @@
+"""
+Bag App - Apps
+----------------
+Apps Configuration for Bag App.
+"""
 from django.apps import AppConfig
 
 

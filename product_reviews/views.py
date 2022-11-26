@@ -1,7 +1,7 @@
 """
-Review App - Views
+Product Reviews App - Views
 ----------------
-Views for Review App.
+Views for Product Reviews App.
 """
 from datetime import datetime
 from django.shortcuts import render, get_object_or_404, redirect

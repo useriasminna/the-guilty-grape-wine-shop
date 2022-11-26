@@ -1,7 +1,7 @@
 """
 Product Reviews App - Admin
 ----------------
-Models Configuration for Product Reviews App.
+Admin Configuration for Product Reviews App.
 """
 
 from django.contrib import admin

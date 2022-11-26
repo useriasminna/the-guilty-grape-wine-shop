@@ -1,11 +1,9 @@
-from django.contrib import admin
-
-# Register your models here.
 """
 Vouchers App - Admin
 ----------------
 Admin configuration for Vouchers App.
 """
+from django.contrib import admin
 
 from .models import Voucher
 

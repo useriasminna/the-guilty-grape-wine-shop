@@ -1,3 +1,8 @@
+"""
+Home App - App
+----------------
+App Configuration for Home App.
+"""
 from django.apps import AppConfig
 
 

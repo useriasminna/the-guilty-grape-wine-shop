@@ -1,3 +1,8 @@
+"""
+Vouchers App - App
+----------------
+App configuration for Vouchers App.
+"""
 from django.apps import AppConfig
 
 
