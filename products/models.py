@@ -34,7 +34,7 @@ class Product(models.Model):
     region = models.CharField(max_length=100, null=False, blank=False)
     country = CountryField(blank_label='Country *', null=False, blank=False)
     grapes = models.CharField(max_length=254, null=False, blank=False)
-    year = models.IntegerField(null=False, blank=False)
+    year = models.PositiveIntegerField(null=False, blank=False)
     style = models.CharField(max_length=50, null=False, blank=False)
     code = models.CharField(max_length=6, unique=True)
     food_pairing = models.CharField(max_length=254, null=False, blank=False)
@@ -43,7 +43,7 @@ class Product(models.Model):
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
                                  blank=True)
     image = models.ImageField(null=True, blank=True)
-    stock = models.IntegerField(null=False, blank=False)
+    stock = models.PositiveIntegerField(null=False, blank=False)
 
     def __str__(self):
         return str(self.name)
