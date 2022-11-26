@@ -16,6 +16,7 @@ from .forms import OrderForm
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
+from vouchers.models import Voucher
 from bag.contexts import bag_contents
 
 import stripe
@@ -118,11 +119,16 @@ class Checkout(TemplateView):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
+            # Save order
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+            discount = request.session.get('discount', None)
+            if discount:
+                order.discount = discount
             order.save()
+            # Save order lines
             for item_id, quantity in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -140,6 +146,15 @@ class Checkout(TemplateView):
                     )
                     order.delete()
                     return redirect(reverse('bag'))
+
+            # Delete active voucher and set session variable for voucher_id
+            # and discount
+            voucher_id = request.session.get('voucher_id', None)
+            if voucher_id:
+                voucher = Voucher.objects.get(pk=voucher_id)
+                voucher.delete()
+            request.session['discount'] = None
+            request.session['voucher_id'] = None
 
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse(
