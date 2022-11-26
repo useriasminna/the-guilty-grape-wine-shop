@@ -1,0 +1,14 @@
+
+<h4>Order Confirmation</h4>
+<p>Hi {{ order.full_name }}</p>
+<p>This is a confirmation of your order at The Guilty Grape. See order details below:</p>
+<p>Order Number: </b>{{ order.order_number }}</b></p>
+<p>Order Date: </b>{{ order.date }}</b></p>
+<p>Order Total: </b>{{ order.order_total }}</b></p>
+<p>Delivery: </b>{{ order.delivery_cost }}</b></p>
+<p>Grand Total: </b>{{ order.grand_total }}</b></p>
+<p>Your order will be shipped to {{ order.street_address1 }}|safe in {{ order.town_or_city }}|safe, {{ order.country }}|safe.</p>
+<p>If you have any questions, feel free to contact us at {{ contact_email }}.</p>
+<br>
+<p>Sincerely,</p>
+<p>The Guilty Grape</p>
