@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load mathfilters %}
 {% block content %}
 <div class="main-container col-lg-11 mx-auto pt-3 pb-3 mt-2 mt-lg-4 mb-4 bg-white">
     <h1 class="mb-3 mb-lg-4 text-center">Checkout</h1>
@@ -148,10 +149,16 @@
                                         <span>Sub Total:</span>
                                         <span><b>€{{ total|floatformat:2 }}</b></span>
                                     </div>
+                                    {% if discount_value %}
                                     <div class="w-100 d-flex justify-content-between">
                                         <span>Discount:</span>
-                                        <span><b>- €</b></span>
+                                        <span><b>- €{{ discount_value|floatformat:2 }}</b></span>
                                     </div>
+                                    <div class="w-100 d-flex justify-content-between">
+                                        <span>Subtotal after discount:</span>
+                                        <span><b>€{{ total|sub:discount_value|floatformat:2 }}</b></span>
+                                    </div>
+                                    {% endif %}
                                     <div class="w-100 d-flex justify-content-between">
                                         <span>Delivery:</span>
                                         <span><b>€{{ delivery|floatformat:2 }}</b></span>
