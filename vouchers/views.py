@@ -4,9 +4,12 @@ Vouchers App - Views
 Views for Vouchers App.
 """
 from django.views.generic import View
-from django.shortcuts import render
+from django.shortcuts import redirect
+from django.contrib import messages
+
 
 from .models import Voucher
+from .forms import AddVoucherForm
 
 
 class UpdateDiscountBag(View):
@@ -16,20 +19,33 @@ class UpdateDiscountBag(View):
 
     def post(self, request, *args, **kwargs):
         voucher_remove = request.POST.get('voucher_remove')
+        voucher = None
         if voucher_remove:
-            voucher = None
             request.session['discount'] = None
             request.session['voucher_id'] = None
         else:
-            voucher_code = request.POST.get('voucher_code')
-            voucher = Voucher.objects.get(voucher_code=voucher_code)
-            discount = voucher.percentage
-            request.session['discount'] = discount
-            request.session['voucher_id'] = voucher.id
-
-        template = 'bag/bag.html'
-        context = {
-            'voucher': voucher,
-        }
-
-        return render(request, template, context)
+            voucher_form = AddVoucherForm(request.POST)
+            if voucher_form.is_valid():
+                voucher_code = voucher_form.cleaned_data['voucher_code']
+                if voucher_code != "":
+                    if not Voucher.objects.filter(
+                            voucher_code=voucher_code).exists():
+                        request.session['discount'] = None
+                        request.session['voucher_id'] = None
+                        messages.error(
+                            request,
+                            f'<b>"{voucher_code}"</b> is not a valid\
+                                voucher code',
+                            extra_tags='safe')
+                    else:
+                        voucher = Voucher.objects.get(
+                            voucher_code=voucher_code)
+                        discount = voucher.percentage
+                        request.session['discount'] = discount
+                        request.session['voucher_id'] = voucher.id
+                else:
+                    messages.error(
+                            request, "Please enter a voucher code")
+                    request.session['discount'] = None
+                    request.session['voucher_id'] = None
+        return redirect('/bag/')
