@@ -138,7 +138,9 @@ class Checkout(TemplateView):
                         quantity=quantity,
                     )
                     order_line.save()
-
+                    # Update product stock
+                    product.stock = product.stock - quantity
+                    product.save(update_fields=['stock'])
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in\
