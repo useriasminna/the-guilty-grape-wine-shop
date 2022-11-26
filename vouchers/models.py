@@ -34,7 +34,7 @@ def send_discount_voucher_on_email_confirmed_(request,
     user = User.objects.get(email=email_address.email)
 
     code = uuid.uuid4().hex
-    voucher_code = humanhash.humanize(str(code))
+    voucher_code = humanhash.humanize(str(code), words=4)
     while len(Voucher.objects.filter(voucher_code=code)) != 0:
         code = uuid.uuid4().hex
         voucher_code = humanhash.humanize(str(code))
@@ -47,7 +47,7 @@ def send_discount_voucher_on_email_confirmed_(request,
     body = render_to_string(
         'vouchers/discount_emails/discount_email_body.html',
         {
-            'user': user.first_name,
+            'user': user,
             'contact_email': settings.DEFAULT_FROM_EMAIL,
             'voucher_code': voucher_code,
         })
