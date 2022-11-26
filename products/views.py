@@ -270,14 +270,12 @@ class ProductDetail(ListView):
         if product.is_deluxe is True:
             update_product_form = AddUpdateProductForm(
                 is_deluxe=True, initial={
-                    'category': product.category,
                     'country': product.country
                     },
                 instance=product, prefix='UPDATE')
         else:
             update_product_form = AddUpdateProductForm(
                 instance=product, initial={
-                    'category': product.category,
                     'country': product.country
                     },  prefix='UPDATE')
 
@@ -333,7 +331,8 @@ class ProductAddViewAdmin(LoginRequiredMixin, UserPassesTestMixin, View):
             else:
                 messages.error(
                     request, 'There was a problem when trying to add' +
-                             ' a new product to  database. Please try again!')
+                             ' a new product to  database.\
+                                 Please try again!')
                 return redirect('products')
         else:
             add_product_form = AddUpdateProductForm(request.GET, prefix='ADD')
@@ -383,7 +382,7 @@ class ProductUpdateViewAdmin(LoginRequiredMixin, UserPassesTestMixin,
             else:
                 messages.error(
                     request, 'There was a problem when trying to update' +
-                             'product details. Please try again!')
+                             ' product details. Please try again!')
                 return redirect('/products/product_details/'
                                 + str(product.pk))
         else:
