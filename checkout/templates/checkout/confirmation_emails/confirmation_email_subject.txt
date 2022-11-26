@@ -1,1 +1,1 @@
-Boutique Ado Confirmation for Order Number {{ order.order_number }}
+The Guilty Grape Confirmation for Order Number {{ order.order_number }}
