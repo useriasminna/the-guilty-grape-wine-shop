@@ -36,6 +36,9 @@ class Order(models.Model):
         max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
+    discount = models.PositiveIntegerField(default=0, null=True, blank=True)
+    discount_value = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
@@ -55,12 +58,27 @@ class Order(models.Model):
         """
         self.order_total = self.lineitems.aggregate(
             Sum('quantity_price'))['quantity_price__sum'] or 0
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
+
+        if self.discount != 0:
+            # CALCULATE DISCOUNT VALUE, ORDER_TOTAL, ORDER DELIVERY
+            # AND GRAND TOTAL
+            self.discount_value = self.order_total * self.discount / 100
+            if (self.order_total - self.discount_value) <\
+                    settings.FREE_DELIVERY_THRESHOLD:
+                self.delivery_cost = (self.order_total - self.discount_value) \
+                    * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            else:
+                self.delivery_cost = 0
+            self.grand_total = (
+                self.order_total - self.discount_value) + self.delivery_cost
+        elif self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost =\
-             self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+                self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            self.grand_total = self.order_total + self.delivery_cost
         else:
             self.delivery_cost = 0
-        self.grand_total = self.order_total + self.delivery_cost
+            self.grand_total = self.order_total + self.delivery_cost
+
         self.save()
 
     def save(self, *args, **kwargs):
