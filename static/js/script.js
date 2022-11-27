@@ -682,6 +682,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById('navitem-deluxe').classList.add('nav-item-active');
     else if (path_info.includes('/products/')) 
         document.getElementById('navitem-products').classList.add('nav-item-active');
+    else if (path_info.includes('/manage_orders/')) 
+        document.getElementById('navitem-admin').classList.add('nav-item-active');
+    else if (path_info.includes('/bag/')) 
+        document.getElementById('navitem-bag').classList.add('nav-item-active');
+    else if (path_info.includes('/wishlist/')) 
+        document.getElementById('navitem-wishlist').classList.add('nav-item-active');
+    else if (path_info.includes('/profile/')) 
+        document.getElementById('navitem-profile').classList.add('nav-item-active');
+    else if (path_info.includes('/login/')) 
+        document.getElementById('navitem-login').classList.add('nav-item-active');
+    else if (path_info.includes('/signup/')) 
+        document.getElementById('navitem-signup').classList.add('nav-item-active');
+        
 
     // SCRIPT FOR SETTING COUNTRY PLACEHOLDER COLOR
     if(path_info == ('/profile/')){
