@@ -12,10 +12,10 @@
               <div class="col-12 col-md-6 p-0">
                 {% if product.image %}
                   <a href="{{ product.image.url }}" target="_blank">
-                    <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.style }} wine {{ product.name }}">
                   </a>
                 {% else %}
-                    <img class="img-fluid" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.style }} wine {{ product.name }}">
                 {% endif %}
               </div>
               <!-- DISPLAY STOCK AVAILABILITY -->
