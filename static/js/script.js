@@ -303,10 +303,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         //GENERATE STARS FOR REVIEWS RATING AFTER RATE VALUE
 
         for(let container of generateStarsContainers){
-        const rateHidden = container.previousElementSibling;
+        let rateHidden = container.previousElementSibling.value;
+        rateHidden = Math.ceil(parseFloat(rateHidden))
 
     
-        for(let i=0; i<rateHidden.value; i++){
+        for(let i=0; i<rateHidden; i++){
             let star = document.createElement("button");
             star.textContent = '★';
             star.classList.add('star');
@@ -315,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
             }
         
-            for(let i=0; i<5-rateHidden.value; i++){
+            for(let i=0; i<5-rateHidden; i++){
             let star = document.createElement("button");
             star.textContent = '★';
             star.classList.add('star');
