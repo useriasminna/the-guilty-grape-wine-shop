@@ -15,7 +15,7 @@
             "code": "10774",
             "food_pairing": "Spicy Food, Pasta and Pizza, Hard Cheese",
             "price": 15.00,
-            "image": "red10774.png",
+            "image": "red10774.webp",
             "stock": 10000
         }
     },
@@ -35,7 +35,7 @@
             "code": "10923",
             "food_pairing": "Spicy Food, Pasta and Pizza, Hard Cheese",
             "price": 14.50,
-            "image": "red10923.png",
+            "image": "red10923.webp",
             "stock": 15
         }
     },
@@ -55,7 +55,7 @@
             "code": "10778",
             "food_pairing": "Spicy Food, Pasta and Pizza, Hard Cheese",
             "price": 15.10,
-            "image": "red10778.png",
+            "image": "red10778.webp",
             "stock": 0
         }
     },
@@ -75,7 +75,7 @@
             "code": "10193",
             "food_pairing": "Pasta and Pizza, Hard Cheese, Beef and Lamb",
             "price": 16.45,
-            "image": "red10193.png",
+            "image": "red10193.webp",
             "stock": 10000
         }
     },
@@ -95,7 +95,7 @@
             "code": "10921",
             "food_pairing": "Soft Cheese, Pork and Poultry, Light Fish and Shellfish, Fresh Greens",
             "price": 13.10,
-            "image": "white10921.png",
+            "image": "white10921.webp",
             "stock": 10000
         }
     },
@@ -115,7 +115,7 @@
             "code": "10567",
             "food_pairing": "Spicy Food, Rich Fish, Pork and Poultry, Light Fish and Shellfish",
             "price": 16.10,
-            "image": "white10567.png",
+            "image": "white10567.webp",
             "stock": 10000
         }
     },
@@ -135,7 +135,7 @@
             "code": "11201",
             "food_pairing": "Spicy Food, Rich Fish, Pork and Poultry, Light Fish and Shellfish",
             "price": 15.60,
-            "image": "white11201.png",
+            "image": "white11201.webp",
             "stock": 10000
         }
     },
@@ -155,7 +155,7 @@
             "code": "10592",
             "food_pairing": "Spicy Food, Pork and Poultry, Light Fish and Shellfish, Hearty Roots",
             "price": 17.60,
-            "image": "white10592.png",
+            "image": "white10592.webp",
             "stock": 10000
         }
     },
@@ -175,7 +175,7 @@
             "code": "10209",
             "food_pairing": "Spicy Food, Pork and Poultry, Pasta and Pizza, Light Fish and Shellfish",
             "price": 14.50,
-            "image": "rose10209.png",
+            "image": "rose10209.webp",
             "stock": 10000
         }
     },
@@ -195,7 +195,7 @@
             "code": "11382",
             "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
             "price": 26.15,
-            "image": "rose11382.png",
+            "image": "rose11382.webp",
             "stock": 10000
         }
     },
@@ -215,7 +215,7 @@
             "code": "11408",
             "food_pairing": "Spicy Food, Pork and Poultry, Light Fish and Shellfish, Fresh Greens",
             "price": 21.15,
-            "image": "rose11408.png",
+            "image": "rose11408.webp",
             "stock": 10000
         }
     },
@@ -235,7 +235,7 @@
             "code": "10050",
             "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
             "price": 55.15,
-            "image": "sparkling10050.png",
+            "image": "sparkling10050.webp",
             "stock": 10000
         }
     }, 
@@ -255,7 +255,7 @@
             "code": "11247",
             "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
             "price": 33.15,
-            "image": "sparkling11247.png",
+            "image": "sparkling11247.webp",
             "stock": 10000
         }
     },
@@ -275,7 +275,7 @@
             "code": "10319",
             "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
             "price": 16.70,
-            "image": "sparkling10319.png",
+            "image": "sparkling10319.webp",
             "stock": 10000
         }
     },
@@ -295,7 +295,7 @@
             "code": "10393",
             "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Dessert",
             "price": 22.15,
-            "image": "sparkling10393.png",
+            "image": "sparkling10393.webp",
             "stock": 10000
         }
     },
@@ -315,7 +315,7 @@
             "code": "10850",
             "food_pairing": "Soft Cheese, Hearty Roots, Beef and Lamb",
             "price": 373.50,
-            "image": "red10850.png",
+            "image": "red10850.webp",
             "stock": 10000
         }
     }, 
@@ -335,7 +335,7 @@
             "code": "11297",
             "food_pairing": "Spicy Food, Soft Cheese, Pork and Poultry",
             "price": 242.80,
-            "image": "red11297.png",
+            "image": "red11297.webp",
             "stock": 10000
         }
     },
@@ -355,7 +355,7 @@
             "code": "11465",
             "food_pairing": "Pasta and Pizza, Hard Cheese, Beef and Lamb",
             "price": 74.50,
-            "image": "red11465.png",
+            "image": "red11465.webp",
             "stock": 10000
         }
     },
@@ -375,7 +375,7 @@
             "code": "10291",
             "food_pairing": "Spicy Food, Light Fish and Shellfish, Hard Cheese, Fresh Greens",
             "price": 80.10,
-            "image": "white10291.png",
+            "image": "white10291.webp",
             "stock": 10000
         }
     },
@@ -395,7 +395,7 @@
             "code": "11412",
             "food_pairing": "Spicy Food, Rich Fish, Pork and Poultry, Hearty Roots",
             "price": 61.15,
-            "image": "white11412.png",
+            "image": "white11412.webp",
             "stock": 10000
         }
     }
