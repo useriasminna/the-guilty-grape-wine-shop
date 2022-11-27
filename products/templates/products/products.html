@@ -215,7 +215,7 @@
                             {% else %}
                                 <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}">
                             {% endif %}
-                            <div class="product-banner col-9">
+                            <div class="product-banner col-10">
                                 <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Item out of stock">
                                 <div class="banner-text text-center text-red">
                                     <span class="d-none d-lg-block font-size-smaller">Out of stock</span>
@@ -230,7 +230,7 @@
                             {% else %}
                                 <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}">
                             {% endif %}
-                            <div class="product-banner col-9">
+                            <div class="product-banner col-10">
                                 <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last item">
                                 <div class="banner-text text-center text-yellow">
                                     <span class="d-none d-lg-block font-size-smaller">Last item</span>
@@ -245,7 +245,7 @@
                             {% else %}
                                 <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}">
                             {% endif %}
-                                <div class="product-banner col-9 ">
+                                <div class="product-banner col-10 ">
                                     <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last {{product.stock}} items">
                                     <div class="banner-text text-center text-yellow">
                                         <span class="d-none d-lg-block font-size-smaller">Last {{product.stock}} items</span>
@@ -265,22 +265,40 @@
                         {% endif %}
                         <div class="col-12">
                             <!-- ADD PRODUCT DETAILS -->
-                            <h6>{{product.name}}</h6>
+                            <h6 class="mb-0 mb-lg-1">{{product.name}}</h6>
+                            <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING FOR DEVICES WITH NO HOVER MECHANISM-->
+                            <div class="no-hover-rating">
+                                {% if product.rating %}
+                                    <div class="w-100">
+                                        <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
+                                        <div class="ratings-generated stars-disabled d-flex"></div>
+                                    </div>
+                                {% else %}
+                                    <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
+                                    <div class="stars-inactive d-flex">
+                                        <button type="button" class="star">★</button>
+                                        <button type="button" class="star">★</button>
+                                        <button type="button" class="star">★</button>
+                                        <button type="button" class="star">★</button>
+                                        <button type="button" class="star">★</button>
+                                    </div>
+                                {% endif %} 
+                            </div>
                             <div class="d-flex align-items-center">
                                 <p class="font-italic m-0">{{product.country.name}} -</p>
                                 <p class="m-0"> {{product.year}}</p>
                             </div>
                             <p class="font-weight-bold">€{{product.price}}</p>
                         </div>
-                        <!-- ADD PRODUCT OVERLAY -->
-                        <div class="product-overlay col-10 d-none d-xl-block">
+                        <!-- ADD PRODUCT OVERLAY FOR DEVICES WITH HOVER MECHANISM -->
+                        <div class="product-overlay col-10 ">
                             <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
                             {% if product.rating %}
                             <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
-                            <div class="ratings-generated stars-big d-flex align-items-end justify-content-around mb-3"></div>
+                            <div class="ratings-generated stars-disabled stars-big align-items-end justify-content-around mb-3"></div>
                             {% else %}
                             <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
-                            <div class="stars-big stars-inactive d-flex align-items-end justify-content-around mb-3">
+                            <div class="stars-big stars-inactive align-items-end justify-content-around mb-3">
                                 <button type="button" class="star">★</button>
                                 <button type="button" class="star">★</button>
                                 <button type="button" class="star">★</button>
@@ -290,8 +308,8 @@
                             {% endif %}
                             {% if product.stock != 0 %}
                                 {% if not request.user.is_authenticated or not request.user.is_superuser %}
-                                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR EXTRA LARGE DEVICES-->
-                                    <form action="{% url 'add_to_bag' product.id %}" class="overlay-form" method="POST">
+                                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS -->
+                                    <form action="{% url 'add_to_bag' product.id %}" class="overlay-form " method="POST">
                                         {% csrf_token %}
                                         <div class="d-flex">
                                             <div class="col-4 p-0 product-count d-flex">
@@ -313,11 +331,11 @@
                         </div>
                     </div>
                     {% if not request.user.is_authenticated or not request.user.is_superuser %}
-                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR LARGE MEDIUM AND SMALL DEVICES-->
-                    <div class="d-block d-xl-none ">
+                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR DEVICES WITH NO HOVER MECHANISM-->
+                    <div class="add-to-bag-no-hover">
                         <form action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
-                            <div class="d-flex">
+                            <div class="col-12 d-flex">
                                 <div class="col-4 p-0 product-count d-flex">
                                     <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
                                     <label class="col-4 p-0 m-0">
@@ -327,7 +345,7 @@
                                     <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
                                 </div>
                                 <div class="col-8 p-0">
-                                    <button type="submit" class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
+                                    <button type="submit" class="w-100 button purple-btn rounded-0 font-size-smaller">Add to bag</button>
                                 </div>
                                 <input name="current_url" type="hidden" value="{{ request.path }}">
                             </div>
