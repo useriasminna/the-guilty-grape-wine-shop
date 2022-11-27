@@ -519,7 +519,7 @@ a:hover {
 
 /* HOME COVER STYLING */
 .home-cover {
-    background: url('../../media/home_cover.jpg');
+    background: url('../../media/home-cover.webp');
     background-size: cover;
     background-repeat: repeat-y;
     background-position: right top;
