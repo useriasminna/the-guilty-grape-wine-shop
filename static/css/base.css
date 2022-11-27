@@ -233,7 +233,7 @@ h1 {
 
 .btn-secondary {
     box-shadow: rgb(9 30 66 / 25%) 0px 4px 8px -2px,
-                rgb(9 30 66 / 8%) 0px 0px 0px 1px;
+        rgb(9 30 66 / 8%) 0px 0px 0px 1px;
     border: 1px solid #545b62;
 }
 
@@ -728,9 +728,9 @@ input:not([type=checkbox]) {
     position: absolute;
     z-index: 5;
     top: 48%;
-    right: 17%;
+    right: 16%;
     text-transform: uppercase;
-    width: 60%;
+    width: 63%;
     opacity: 1;
 }
 
@@ -741,8 +741,8 @@ input:not([type=checkbox]) {
 
 .product-banner {
     position: absolute;
-    top: -27%;
-    right: -22%;
+    top: -30%;
+    right: -25%;
 }
 
 .banner-hover {
@@ -760,49 +760,6 @@ input:not([type=checkbox]) {
 .product-banner img,
 .banner-text {
     transform: rotate(35deg);
-}
-
-.product-container:hover {
-    cursor: pointer;
-    background-color: #ededed0f;
-    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
-}
-
-.product-container img {
-    opacity: 1;
-}
-
-.product-container:hover .product-img {
-    opacity: 0.2;
-}
-
-.product-container:hover .product-overlay {
-    opacity: 1;
-}
-
-.product-container:hover .banner-hover {
-    opacity: 1;
-}
-
-.product-container:hover .banner-hover img {
-    opacity: 1;
-}
-
-.product-overlay {
-    position: absolute;
-    opacity: 0;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
-.product-overlay div:nth-child(1) {
-    position: relative;
-}
-
-.product-overlay form:nth-child(2) {
-    position: relative;
 }
 
 .pagination {
@@ -877,6 +834,10 @@ input:not([type=checkbox]) {
 
 .stars-big .star {
     font-size: 30px;
+}
+
+.stars-disabled .star {
+    pointer-events: none;
 }
 
 .stars-inactive .star {
@@ -1240,30 +1201,101 @@ select option[value=""] {
     border-collapse: separate;
 }
 
-/* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
+/* --------------------------------- DEVICES WITH HOVER MECHANISM ------------------------------- */
+@media (hover: hover) {
+    .no-hover-rating {
+        display: none;
+    }
 
-@media (max-width: 1200px) {
-    .home-cover {
-        height: 85vh;
+    .product-overlay {
+        display: block;
+    }
+
+    .product-overlay .ratings-generated,
+    .product-overlay .stars-inactive {
+        display: flex;
+    }
+
+    .add-to-bag-no-hover {
+        display: none;
+    }
+
+    .add-to-bag-no-hover>* {
+        display: none;
+    }
+
+    .product-container:hover {
+        cursor: pointer;
+        background-color: #ededed0f;
+        box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+    }
+
+    .product-container img {
+        opacity: 1;
+    }
+
+    .product-container:hover .product-img {
+        opacity: 0.2;
+    }
+
+    .product-container:hover .product-overlay {
+        opacity: 1;
+    }
+
+    .product-container:hover .banner-hover {
+        opacity: 1;
+    }
+
+    .product-container:hover .banner-hover img {
+        opacity: 1;
+    }
+
+    .product-overlay {
+        position: absolute;
+        opacity: 0;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .product-overlay div:nth-child(1) {
+        position: relative;
+    }
+
+    .product-overlay form:nth-child(2) {
+        position: relative;
     }
 }
 
-/* --------------------------------- IPAD PRO STYLINYG ------------------------------- */
 
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
+/* --------------------------------- DEVICES WITH NO HOVER MECHANISM ------------------------------- */
+@media (hover: none) {
 
-    .min-vh {
-        min-height: 90vh;
+    .no-hover-rating {
+        display: block;
     }
 
-    .home-cover {
-        height: 36vh;
+    .add-to-bag-no-hover {
+        display: block;
+    }
+
+    .product-overlay {
+        display: none;
+    }
+
+    .product-overlay>* {
+        display: none;
     }
 
     .product-container:hover {
         cursor: initial;
         background-color: initial;
         box-shadow: none;
+    }
+
+    .product-container:hover .product-img {
+        opacity: 1;
     }
 
     .product-container:hover img {
@@ -1289,6 +1321,28 @@ select option[value=""] {
     .product-container:hover .product-banner {
         opacity: 1;
     }
+}
+
+/* --------------------------------- LARGE DEVICES STYLINYG ------------------------------- */
+
+@media (max-width: 1200px) {
+    .home-cover {
+        height: 85vh;
+    }
+}
+
+/* --------------------------------- IPAD PRO STYLINYG ------------------------------- */
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
+
+    .min-vh {
+        min-height: 90vh;
+    }
+
+    .home-cover {
+        height: 36vh;
+    }
+
 }
 
 /* --------------------------------- SMALL AND MEDIUM DEVICES STYLINYG ------------------------------- */
@@ -1368,32 +1422,6 @@ select option[value=""] {
 
     .purple-btn:hover {
         background-color: #3a012c;
-    }
-
-    .product-container:hover {
-        cursor: initial;
-        background-color: initial;
-        box-shadow: none;
-    }
-
-    .product-container:hover img {
-        opacity: initial;
-    }
-
-    .product-container:hover .product-overlay {
-        opacity: 0;
-    }
-
-    .product-container:hover .banner-hover {
-        opacity: 0;
-    }
-
-    .product-container:hover .banner-hover img {
-        opacity: 0;
-    }
-
-    .product-container:hover .product-banner {
-        opacity: 1;
     }
 
     #navbarTogglerFilters {
