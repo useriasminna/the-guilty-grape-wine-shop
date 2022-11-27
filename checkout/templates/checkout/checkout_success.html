@@ -6,15 +6,21 @@
         <div class="col-12 mb-4 mb-lg-3">
             <div class="col-12 p-0 mx-auto">
                 <hr>
+                {% if from_admin %}
+                <h2>Order details</h2>
+                {% else %}
                 <h2 class="logo-font mb-4">Thank You</h2>
+                {% endif %}
                 <hr>
                 <div class="pt-lg-3">
+                {% if not from_admin %}
                 <p class="text-center text-md-left">Your order information is below.
                     {% if not from_profile %}
                     A confirmation email will be sent to <span class="text-light bg-dark p-1">{{ order.email }}</span>.
                     {% endif %}
                 </p>
-
+                {% endif %}
+                
                 <!-- ORDER DETAILS -->
                 <div class="d-flex mt-2 mt-md-4">
                     <div class="col-md-10 col-xl-8 p-0 d-flex flex-column align-items-center align-items-md-start">
@@ -35,7 +41,11 @@
                                 <p class="col-12 col-md-4 p-0 small mb-0 font-weight-bold">
                                     {{ item.product.name }}
                                 </p>
-                                <p class="col-12 col-md-8 p-0 text-md-right small mb-0">{{ item.quantity }} x €{{ item.product.price }}each</p>
+                                {% if from_admin %}
+                                <p class="col-12 col-md-8 p-0 text-md-right small mb-0"><b>Sku:</b> {{ item.product.sku }}</p>
+                                {% else %}
+                                <p class="col-12 col-md-8 p-0 text-md-right small mb-0">{{ item.quantity }} x €{{ item.product.price }} each</p>
+                                {% endif %}
                             </div>
                             {% endfor %}
                         </div>
@@ -106,16 +116,23 @@
                                 <p class="col-12 col-md-8 p-0 text-md-right mb-0"><b>€{{ order.grand_total }}</b></p>
                             </div>
                         </div>
-                        {% if not from_profile %}
+                        {% if from_admin  %}
+                        <!-- BACK TO ADMIN ORDERS PAGE BUTTON -->
+                        <a class="button bg-dark text-white font-size-smaller rounded" href="{% url 'admin_manage_orders' %}">
+                            <i class="fas fa-chevron-left font-size-smaller"></i>
+                            Back to orders
+                        </a>
+                        {% elif from_profile %}
+                        <!-- BACK TO MY PROFILE PAGE BUTTON -->
+                        <a class="button bg-dark text-white font-size-smaller rounded" href="{% url 'profile' %}">
+                            <i class="fas fa-chevron-left font-size-smaller"></i>
+                            Back to my profile
+                        </a>
+                        {% else %}
                         <!-- BACK TO PRODUCTS PAGE BUTTON -->
                         <a class="button bg-dark text-white font-size-smaller rounded" href="{% url 'products' %}">
                             <i class="fas fa-chevron-left font-size-smaller"></i>
                             Back to products page
-                        </a>
-                        {% else %}
-                        <a class="button bg-dark text-white font-size-smaller rounded" href="{% url 'profile' %}">
-                            <i class="fas fa-chevron-left font-size-smaller"></i>
-                            Back to my profile
                         </a>
                         {% endif %}
                     </div>
