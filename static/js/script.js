@@ -683,7 +683,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById('navitem-products').classList.add('nav-item-active');
 
     // SCRIPT FOR SETTING COUNTRY PLACEHOLDER COLOR
-    if(path_info.includes('/profile/')){
+    if(path_info == ('/profile/')){
 
         let countrySelected = document.getElementById('id_default_country');
         if(!countrySelected.value) {
