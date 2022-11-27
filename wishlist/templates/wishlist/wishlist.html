@@ -197,9 +197,9 @@
                         {% if product.stock == 0 %}
                         <div class="col-12">
                             {% if product.image %}
-                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.style }} wine {{ product.name }}">
                             {% else %}
-                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}">
+                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.style }} wine {{ product.name }}">
                             {% endif %}
                             <div class="product-banner col-9">
                                 <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Item out of stock">
@@ -212,9 +212,9 @@
                         {% elif product.stock == 1 %}
                         <div class="col-12">
                             {% if product.image %}
-                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.style }} wine {{ product.name }}">
                             {% else %}
-                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}">
+                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.style }} wine {{ product.name }}">
                             {% endif %}
                             <div class="product-banner col-9">
                                 <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last item">
@@ -227,12 +227,12 @@
                         {% elif product.stock <= 15 %}
                             <div class="col-12">
                                 {% if product.image %}
-                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.style }} wine {{ product.name }}">
                             {% else %}
-                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}">
+                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.style }} wine {{ product.name }}">
                             {% endif %}
                                 <div class="product-banner col-9 ">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last {{product.stock}} items">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}product-banner.png" alt="Last {{product.stock}} items for {{ product.style }} wine {{ product.name }}">
                                     <div class="banner-text text-center text-yellow">
                                         <span class="d-none d-lg-block font-size-smaller">Last {{product.stock}} items</span>
                                         <span class="d-lg-none">Last {{product.stock}} items</span>
@@ -243,9 +243,9 @@
                         <div class="col-12">
                             <!-- ADD PRODUCT COVER -->
                             {% if product.image %}
-                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <img class="img-fluid mb-4 product-img" src="{{ product.image.url }}" alt="{{ product.style }} wine {{ product.name }}">
                             {% else %}
-                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}">
+                                <img class="img-fluid mb-4 product-img" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.style }} wine {{ product.name }}">
                             {% endif %}
                         </div>
                         {% endif %}

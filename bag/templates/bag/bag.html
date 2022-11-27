@@ -25,9 +25,9 @@
                                         <!-- ADD PRODUCT IMAGE -->
                                         <div class="col-6 col-md-4 col-lg-6 col-xl-4 p-0">
                                             {% if item.product.image %}
-                                                <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ product.style }} wine {{ item.product.name }}">
                                             {% else %}
-                                                <img class="img-fluid" src="{{ MEDIA_URL }}no-image.webp" alt="{{ item.product.name }}">
+                                                <img class="img-fluid" src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.style }} wine {{ item.product.name }}">
                                             {% endif %}
                                         </div>
                                         <!-- ADD PRODUCT DETAILS FOR MEDIUM AND SMALL DEVICES -->
