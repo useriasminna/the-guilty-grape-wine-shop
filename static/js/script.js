@@ -341,16 +341,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         if (e.target.classList.contains('substraction')){
                             if(parseInt(input.value) > min){
                                 input.setAttribute('value', parseInt(input.value) - 1);
+                                input.value = parseInt(input.getAttribute('value')) 
                             }
                         }  
                         else if (e.target.classList.contains('addition')){
                             if(parseInt(input.value) < parseInt(max)){
-                                input.setAttribute('value', parseInt(input.value) + 1);        
+                                input.setAttribute('value', parseInt(input.value) + 1);  
+                                input.value = parseInt(input.getAttribute('value'))   
                             }
                         }    
                     });
-                }
-                
+                }     
             }
         }
 
