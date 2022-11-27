@@ -35,7 +35,7 @@
                   <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
                   {% if product.rating %}
                   <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
-                  <div class="ratings-generated stars-big d-flex align-items-end"></div>
+                  <div class="ratings-generated stars-disabled stars-big d-flex align-items-end"></div>
                   {% endif %}
                 </div>
                 <div class="w-100 mt-3">
@@ -239,7 +239,7 @@
                                   <div class="col-12 col-md-6 col-lg-6 col-xl-7 p-0 d-flex justify-content-between justify-content-md-end align-items-center">
                                       <small>{{ review.date_updated_on }}</small>
                                       <input type="hidden" name="rate" class="rate" value="{{review.rate}}">
-                                      <div class="ratings-generated d-flex align-items-end ml-md-2"></div>
+                                      <div class="ratings-generated stars-disabled d-flex align-items-end ml-md-2"></div>
                                   </div>    
                               </div>
                                 <p class="flex a-start"><q>{{ review.review_text}}</q></p>
@@ -264,7 +264,7 @@
                             <h4>Your review</h4>
                             <div class="d-flex justify-content-between align-items-center mb-2">
                               <input type="hidden" name="rate" class="rate" value="{{current_review.rate}}">
-                              <div class="ratings-generated d-flex align-items-end"></div>
+                              <div class="ratings-generated stars-disabled d-flex align-items-end"></div>
                               <small>{{ current_review.date_updated_on }}</small>
                             </div>
                             <p><q>{{ current_review.review_text }}</q></p>                            
