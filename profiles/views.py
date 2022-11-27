@@ -3,15 +3,20 @@ Profiles App - Views
 ----------------
 Views for Profiles App.
 """
-from django.views.generic import TemplateView, UpdateView
+from django.views.generic import TemplateView, UpdateView, ListView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+import base64
+import os
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy
 from django.contrib import messages
+from datetime import date
 
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from checkout.models import Order
 from users.models import User
+from .forms import DateOrdersForm
 
 
 class Profile(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
@@ -46,7 +51,6 @@ class ProfileDeliveryUpdate(LoginRequiredMixin, UserPassesTestMixin,
     model = UserProfile
 
     def post(self, request, user_pk):
-        print(user_pk)
         profile = get_object_or_404(UserProfile, user=user_pk)
         orders = Order.objects.filter(user=profile)
         if request.method == 'POST':
@@ -91,3 +95,74 @@ class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
         order = Order.objects.get(order_number=self.kwargs['order_number'])
         user_not_admin = not self.request.user.is_superuser
         return user_not_admin and order.user.user == self.request.user
+
+
+class AdminOrdersList(LoginRequiredMixin, UserPassesTestMixin, ListView):
+    """A view for rendering orders filtered by date"""
+    model = Order
+    template_name = "profiles/admin_orders.html"
+    context_object_name = "orders"
+
+    def get(self, request):
+        if request.method == 'GET':
+            today = date.today()
+            date_form = DateOrdersForm(data=request.GET)
+            if date_form.is_valid():
+                orders_date = date_form.cleaned_data['date']
+                if orders_date:
+                    orders_date = orders_date
+                if orders_date:
+                    query = Order.objects.filter(date=orders_date)
+                else:
+                    orders_date = today
+                query = Order.objects.filter(date__date=orders_date)
+                context = {'date_form': date_form,
+                           'date': orders_date,
+                           'orders': query}
+
+        return render(request, 'profiles/admin_orders.html', context)
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+
+class AdminDeleteOrder(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """A view for removing order object"""
+    model = Order
+    template_name = "profiles/admin_orders.html"
+    success_url = reverse_lazy('admin_manage_orders')
+    success_message = "Order was successfully deleted."
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super().delete(request, *args, **kwargs)
+
+    def get_success_url(self):
+        """Create success url to keep current date filtering"""
+        orders_date = self.get_object().date
+        csrf = base64.b64encode(os.urandom(64))
+        return '/profile/manage_orders/?csrfmiddlewaretoken=' +\
+               csrf.decode("utf-8") + '&date=' + \
+               orders_date.strftime("%Y-%m-%d")
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+
+class AdminOrderDetails(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
+    """A view for rendering order details page"""
+    template_name = "checkout/checkout_success.html"
+
+    def get(self, request, order_number):
+        order = get_object_or_404(Order, order_number=order_number)
+
+        template = 'checkout/checkout_success.html'
+        context = {
+            'order': order,
+            'from_admin': True,
+        }
+
+        return render(request, template, context)
+
+    def test_func(self):
+        return self.request.user.is_superuser
