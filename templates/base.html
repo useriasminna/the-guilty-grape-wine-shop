@@ -96,7 +96,7 @@
                   <ul class="d-block d-lg-flex justify-content-end navigation">
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="adminManageNav">
                       <div class="dropdown">
-                        <a title="Admin Manage" href="#"  data-toggle="dropdown" aria-expanded="false" >
+                        <a title="Admin Manage" href="#"  data-toggle="dropdown" aria-expanded="false" id="navitem-admin">
                           <span class="dropdown-toggle d-lg-none">Admin manage</span>
                           <i class="fas fa-database d-none d-lg-block"></i>
                         </a>
@@ -107,12 +107,6 @@
                           <a class="dropdown-item d-none d-lg-block" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
                         </div>
                       </div>
-                    </li>
-                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="chatNav">
-                      <a href="" title="Customer Service">
-                        <span class="d-lg-none">Customer service</span>
-                        <i class="fas fa-comments d-none d-lg-block"></i>
-                      </a>
                     </li>
                     <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 d-lg-none">
                       <a href="#" data-toggle="modal" data-target="#logoutModal">
@@ -129,7 +123,7 @@
                         <a class="d-none d-lg-block" title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                           <i class="fas fa-user-circle"></i>
                         </a>
-                        <a class="d-lg-none" href="{% url 'profile' %}">
+                        <a class="d-lg-none" href="{% url 'profile' %}" id="navitem-profile">
                           <span>My profile</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-start">
@@ -140,7 +134,7 @@
                       </div>
                     </li>
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="wishlistNav">
-                      <a href="{% url 'wishlist' %}" title="Wishlist">
+                      <a href="{% url 'wishlist' %}" title="Wishlist" id="navitem-wishlist">
                         <span class="d-lg-none">Wishlist</span>
                         <i class="fas fa-heart d-none d-lg-block"></i>
                       </a>
@@ -155,7 +149,7 @@
                       {% endif %}
                     </li>
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="bagNav">
-                      <a href="{% url 'bag' %}" title="Shopping Bag">
+                      <a href="{% url 'bag' %}" title="Shopping Bag" id="navitem-bag">
                         <span class="d-lg-none">Shopping Bag</span>
                         <i class="fas fa-shopping-bag d-none d-lg-block"></i>
                       </a>
@@ -169,12 +163,6 @@
                         {% endif %}
                       {% endif %}
                     </li>
-                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="chatNav">
-                      <a href="" title="Customer Service">
-                        <span class="d-lg-none">Customer Service</span>
-                        <i class="fas fa-comments d-none d-lg-block"></i>
-                      </a>
-                    </li>
                     <li class="nav-item mx-auto mb-2 mb-lg-0 mt-2 d-lg-none">
                       <a href="#" data-toggle="modal" data-target="#logoutModal">
                         <span>Logout</span>
@@ -187,12 +175,12 @@
               <div class="col-12 col-md-6 col-lg-3 col-xl-2">
                 <ul class="d-block d-lg-flex justify-content-end navigation">
                   <li class="nav-item ml-lg-4 mt-2 d-lg-none">
-                    <a href="{% url 'account_login' %}" >
+                    <a href="{% url 'account_login' %}" id="navitem-login">
                       <span>Login</span>
                     </a>
                   </li>
                   <li class="nav-item ml-lg-4 mt-2 d-lg-none">
-                    <a href="{% url 'account_signup' %}" >
+                    <a href="{% url 'account_signup' %}" id="navitem-signup">
                       <span>Register</span>
                     </a>
                   </li>
@@ -227,12 +215,6 @@
                       </div>
                       {% endif %}
                     {% endif %}
-                  </li>
-                  <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0" id="chatNav">
-                    <a href="" title="Customer Service">
-                      <span class="d-lg-none">Customer Service</span>
-                      <i class="fas fa-comments d-none d-lg-block"></i>
-                    </a>
                   </li>
                 </ul>
               </div>
