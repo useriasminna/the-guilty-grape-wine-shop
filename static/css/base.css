@@ -72,10 +72,6 @@ body {
     background-color: black;
 }
 
-.bg-transparent {
-    background-color: transparent;
-}
-
 /* PADDING ON LATERAL SIDES CLASS */
 .p-side {
     padding: 0 45px;
