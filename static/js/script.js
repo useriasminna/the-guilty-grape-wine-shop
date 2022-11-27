@@ -695,6 +695,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById('navitem-login').classList.add('nav-item-active');
     else if (path_info.includes('/signup/')) 
         document.getElementById('navitem-signup').classList.add('nav-item-active');
+    else if (path_info == '/')
+        document.getElementById('navitem-home').classList.add('nav-item-active');
         
 
     // SCRIPT FOR SETTING COUNTRY PLACEHOLDER COLOR
