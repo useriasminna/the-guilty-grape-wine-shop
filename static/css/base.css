@@ -72,7 +72,7 @@ body {
     background-color: black;
 }
 
-.bg-transparent{
+.bg-transparent {
     background-color: transparent;
 }
 
@@ -113,8 +113,8 @@ textarea:focus,
 select:focus {
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
-     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
-     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+        rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 header {
@@ -225,6 +225,16 @@ h1 {
 
 .button a:hover {
     color: inherit;
+}
+
+.btn {
+    text-transform: uppercase;
+}
+
+.btn-secondary {
+    box-shadow: rgb(9 30 66 / 25%) 0px 4px 8px -2px,
+                rgb(9 30 66 / 8%) 0px 0px 0px 1px;
+    border: 1px solid #545b62;
 }
 
 .purple-btn {
@@ -963,10 +973,11 @@ input:not([type=checkbox]) {
     border-collapse: separate;
 }
 
-.voucher-close{
+.voucher-close {
     top: 9%;
     right: 0;
 }
+
 /* 403, 404, 500 CUSTOM ERROR PAGES */
 
 
@@ -1225,7 +1236,7 @@ select option[value=""] {
         rgb(60 64 67 / 15%) 0px 1px 3px 1px;
 }
 
-.table-separate{
+.table-separate {
     border-collapse: separate;
 }
 
