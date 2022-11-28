@@ -1528,6 +1528,16 @@ select option[value=""] {
         overflow-y: auto;
         max-height: 35vh;
     }
+
+    .modal form input:not([type=checkbox]),
+    select,
+    input:not([type=checkbox]) {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: inherit;
+    }
 }
 
 /* --------------------------------- SMALL DEVICES STYLINYG ------------------------------- */
