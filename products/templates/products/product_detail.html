@@ -199,7 +199,7 @@
                         {% csrf_token %}
                         <input name="current_url" type="hidden" value="{{ request.path }}">
                         <!-- SUBMIT BUTTON -->
-                        <button type="submit" class="d-flex align-items-center border-0 bg-transparent"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button> 
+                        <button type="submit" class="d-flex align-items-center border-0 bg-transparent text-dark"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button> 
                     </form>
                   {% else %}
                     <!-- REMOVE FROM WISHLIST FORM -->
@@ -207,7 +207,7 @@
                         {% csrf_token %}
                         <input name="current_url" type="hidden" value="{{ request.path }}">
                         <!-- SUBMIT BUTTON -->
-                        <button type="submit" class="d-flex align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
+                        <button type="submit" class="d-flex align-items-center border-0 bg-transparent text-dark"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
                     </form>
                   {% endif %}
                 {% elif not user.is_authenticated %}
