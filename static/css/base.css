@@ -1242,6 +1242,28 @@ select option[value=""] {
     border-collapse: separate;
 }
 
+/* ADD/EDIT PRODUCTS FORM */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn-file:hover {
+    cursor: pointer;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+}
+
+
 /* --------------------------------- DEVICES WITH HOVER MECHANISM ------------------------------- */
 @media (hover: hover) {
     .no-hover-rating {
