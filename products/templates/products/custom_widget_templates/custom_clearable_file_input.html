@@ -13,9 +13,12 @@
 {% else %}
 <small class="font-weight-bold">This item has no image yet</small><br>
 {% endif %}
-<span class="rounded-0 btn-file p-0 text-left">
-    <label class="w-100">
-        <span hidden>{{widget.name}}</span>
-        <input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+<span class="rounded-0 btn-file button small-btn btn-secondary text-left">
+    Select image
+    <label for="{{ widget.attrs.id }}">
+        <span hidden>Select image</span>
     </label>
-</span>
+        <input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+    
+</span><br>
+<strong class="text-danger font-size-smaller" id="{{ widget.name }}-filename"></strong>
