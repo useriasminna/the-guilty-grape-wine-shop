@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         for(let container of generateStarsContainers){
         let rateHidden = container.previousElementSibling.value;
-        rateHidden = Math.ceil(parseFloat(rateHidden))
+        rateHidden = Math.ceil(parseFloat(rateHidden));
 
     
         for(let i=0; i<rateHidden; i++){
@@ -341,13 +341,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         if (e.target.classList.contains('substraction')){
                             if(parseInt(input.value) > min){
                                 input.setAttribute('value', parseInt(input.value) - 1);
-                                input.value = parseInt(input.getAttribute('value')) 
+                                input.value = parseInt(input.getAttribute('value'));
                             }
                         }  
                         else if (e.target.classList.contains('addition')){
                             if(parseInt(input.value) < parseInt(max)){
                                 input.setAttribute('value', parseInt(input.value) + 1);  
-                                input.value = parseInt(input.getAttribute('value'))   
+                                input.value = parseInt(input.getAttribute('value'));   
                             }
                         }    
                     });
@@ -714,5 +714,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 countrySelected.style.color = '#000';
            }
         });    
-    }    
+    }   
+    
+    // ADD SCRIPT FOR SETING IMAGE INPUT FIELD INFO TEXT
+    let updateImageInput = document.getElementById('id_UPDATE-image');
+    let addImageInput = document.getElementById('id_ADD-image');
+
+    if(updateImageInput){
+        updateImageInput.addEventListener('input', (e) => {
+            let file = e.target.files[0];
+            document.getElementById('UPDATE-image-filename').textContent = `Image will be set to: ${file.name}`;
+        });
+    }
+
+    if(addImageInput){
+        addImageInput.addEventListener('input', (e) => {
+            let file = e.target.files[0];
+            document.getElementById('ADD-image-filename').textContent = `Image will be set to: ${file.name}`;
+        });
+    }
 });
