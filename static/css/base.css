@@ -82,6 +82,10 @@ body {
 }
 
 /* BACKGROUND CLASSES */
+.bg-floral-responsive{
+    background-color: floralwhite;
+}
+
 .bg-floral {
     background-color: floralwhite;
 }
@@ -1592,6 +1596,11 @@ select option[value=""] {
 
     .wh-sm-max-content {
         width: max-content;
+    }
+
+    .bg-floral-responsive{
+        background-color: transparent;
+        box-shadow: none;
     }
 }
 
