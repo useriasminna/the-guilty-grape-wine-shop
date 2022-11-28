@@ -261,6 +261,24 @@
                         <div class="col-12">
                             <!-- ADD PRODUCT DETAILS -->
                             <h6>{{product.name}}</h6>
+                            <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING FOR DEVICES WITH NO HOVER MECHANISM-->
+                            <div class="no-hover-rating">
+                                {% if product.rating %}
+                                    <div class="w-100">
+                                        <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
+                                        <div class="ratings-generated stars-disabled d-flex"></div>
+                                    </div>
+                                {% else %}
+                                    <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
+                                    <div class="stars-inactive d-flex">
+                                        <button type="button" class="star">★</button>
+                                        <button type="button" class="star">★</button>
+                                        <button type="button" class="star">★</button>
+                                        <button type="button" class="star">★</button>
+                                        <button type="button" class="star">★</button>
+                                    </div>
+                                {% endif %} 
+                            </div>
                             <div class="d-flex align-items-center">
                                 <p class="font-italic m-0">{{product.country.name}} -</p>
                                 <p class="m-0"> {{product.year}}</p>
@@ -268,14 +286,14 @@
                             <p class="font-weight-bold">€{{product.price}}</p>
                         </div>
                         <!-- ADD PRODUCT OVERLAY -->
-                        <div class="product-overlay col-10 d-none d-xl-block">
+                        <div class="product-overlay col-10">
                             <!-- ADD STARS CONTAINER WITH THE VALUE OF PRODUCT RATING -->
                             {% if product.rating %}
                             <input type="hidden" name="rate" class="rate" value="{{product.rating}}">
-                            <div class="ratings-generated stars-big d-flex align-items-end justify-content-around mb-3"></div>
+                            <div class="ratings-generated stars-big align-items-end justify-content-around mb-3"></div>
                             {% else %}
                             <!-- ADD STARS CONTAINER WITH INACTIVE STARS -->
-                            <div class="stars-big stars-inactive d-flex align-items-end justify-content-around mb-3">
+                            <div class="stars-big stars-inactive align-items-end justify-content-around mb-3">
                                 <button type="button" class="star">★</button>
                                 <button type="button" class="star">★</button>
                                 <button type="button" class="star">★</button>
