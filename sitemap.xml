@@ -1,0 +1,2512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/accounts/login/?next=/wishlist/</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/bag/</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Montepulciano</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Petit%20Verdot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Prosecco</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Sangiovese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Sauvignon%20Blanc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Tannat</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Tempranillo</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Tinta%20Roriz</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Touriga%20Franca</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Touriga%20Nacional</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Verdelho</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Vinhas%20Velhas</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Xinomavro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;year=2017</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;year=2016</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;year=2010</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;country=Spain</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;country=Greece</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;country=Portugal</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;country=Romania</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Alentejo%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Burgundy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Champagne</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Douro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Friuli%20Grave%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Loire%20Valley</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Marche%20IGP</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Oraiokastro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Podgoria%20Sarica%20Niculitel%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Rias%20Baixas</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Rioja</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;region=Valdobbiandene</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Beef%20and%20Lamb</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Rich%20Fish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;grapes=Albarino</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;grapes=Alvarinho</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;grapes=Ant%C3%A3o%20Vaz</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;grapes=Chardonnay</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;grapes=Gros%20Manseng</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;grapes=Pinot%20Grigio</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;grapes=Sauvignon%20Blanc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;grapes=Verdelho</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;country=Spain</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;country=Portugal</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;region=Alentejo%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;region=Burgundy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;region=Friuli%20Grave%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;region=Rias%20Baixas</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;food_pairing=Rich%20Fish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=white_wines&amp;filter=True&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Cabernet%20Franc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Cabernet%20Sauvignon</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Merlot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Montepulciano</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Petit%20Verdot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Pinot%20Noir</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Sangiovese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Tannat</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Tempranillo</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Tinta%20Roriz</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Touriga%20Franca</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Touriga%20Nacional</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;grapes=Vinhas%20Velhas</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;year=2016</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;year=2010</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;country=Spain</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;country=Portugal</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;region=Burgundy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;region=Douro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;region=Marche%20IGP</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;region=Rioja</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;food_pairing=Beef%20and%20Lamb</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=red_wines&amp;filter=True&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;grapes=Assyrtiko</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;grapes=Cabernet%20Sauvignon</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;grapes=Feteasca%20Regala</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;grapes=Malagouzia</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;grapes=Merlot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;grapes=Xinomavro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;country=Greece</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;country=Romania</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;region=Oraiokastro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;region=Podgoria%20Sarica%20Niculitel%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=rose_wines&amp;filter=True&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;grapes=Chardonnay</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;grapes=Folle%20Blanche</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;grapes=Pinot%20Blanc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;grapes=Pinot%20Meunier</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;grapes=Pinot%20Noir</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;grapes=Prosecco</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;year=2017</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;region=Champagne</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;region=Loire%20Valley</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;region=Valdobbiandene</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?category=sparkling_wines&amp;filter=True&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;style=Red</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;style=Sparkling</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;style=White</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Cabernet%20Franc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Cabernet%20Sauvignon</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Chardonnay</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Folle%20Blanche</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Merlot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Petit%20Verdot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Pinot%20Blanc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Pinot%20Meunier</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;grapes=Pinot%20Noir</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;year=2017</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;year=2016</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;year=2010</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;region=Burgundy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;region=Champagne</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;region=Loire%20Valley</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;region=Valdobbiandene</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Beef%20and%20Lamb</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Rich%20Fish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?is_deluxe=True&amp;filter=True&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/accounts/signup/?next=%2Fwishlist%2F</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Cabernet%20Franc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Cabernet%20Sauvignon</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Merlot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Montepulciano</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Petit%20Verdot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Pinot%20Noir</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Sangiovese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Tannat</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Tempranillo</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Tinta%20Roriz</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Touriga%20Franca</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Touriga%20Nacional</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;grapes=Vinhas%20Velhas</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;year=2016</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;year=2010</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;country=Spain</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;country=Portugal</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;region=Burgundy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;region=Douro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;region=Marche%20IGP</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;region=Rioja</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;food_pairing=Beef%20and%20Lamb</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=red_wines&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;grapes=Assyrtiko</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;grapes=Cabernet%20Sauvignon</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;grapes=Feteasca%20Regala</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;grapes=Malagouzia</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;grapes=Merlot</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;grapes=Xinomavro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;country=Greece</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;country=Romania</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;region=Oraiokastro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;region=Podgoria%20Sarica%20Niculitel%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=rose_wines&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;grapes=Chardonnay</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;grapes=Folle%20Blanche</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;grapes=Pinot%20Blanc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;grapes=Pinot%20Meunier</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;grapes=Pinot%20Noir</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;grapes=Prosecco</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;year=2017</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;region=Champagne</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;region=Loire%20Valley</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;region=Valdobbiandene</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=sparkling_wines&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;grapes=Albarino</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;grapes=Alvarinho</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;grapes=Ant%C3%A3o%20Vaz</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;grapes=Chardonnay</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;grapes=Gros%20Manseng</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;grapes=Pinot%20Grigio</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;grapes=Sauvignon%20Blanc</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;grapes=Verdelho</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;country=Spain</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;country=Portugal</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;region=Alentejo%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;region=Burgundy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;region=Friuli%20Grave%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;region=Rias%20Baixas</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;food_pairing=Rich%20Fish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;category=white_wines&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino&amp;category=white_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino&amp;country=Spain</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino&amp;region=Rias%20Baixas</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Albarino&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho&amp;category=white_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho&amp;country=Portugal</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho&amp;region=Alentejo%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho&amp;food_pairing=Rich%20Fish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Alvarinho&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz&amp;category=white_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz&amp;country=Portugal</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz&amp;region=Alentejo%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz&amp;food_pairing=Rich%20Fish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Ant%C3%A3o%20Vaz&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko&amp;category=rose_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko&amp;country=Greece</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko&amp;region=Oraiokastro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Assyrtiko&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;category=red_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;year=2016</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;year=2010</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;food_pairing=Beef%20and%20Lamb</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Franc&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;category=red_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;category=rose_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;year=2016</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;food_pairing=Beef%20and%20Lamb</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Cabernet%20Sauvignon&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;category=sparkling_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;category=white_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;year=2017</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;region=Burgundy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;region=Champagne</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;region=Valdobbiandene</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;food_pairing=Rich%20Fish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Chardonnay&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala&amp;category=rose_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala&amp;country=Romania</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala&amp;region=Podgoria%20Sarica%20Niculitel%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Feteasca%20Regala&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche&amp;category=sparkling_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche&amp;region=Loire%20Valley</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Folle%20Blanche&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng&amp;category=white_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng&amp;food_pairing=Fresh%20Greens</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Gros%20Manseng&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia&amp;category=rose_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia&amp;country=Greece</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia&amp;region=Oraiokastro</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Malagouzia&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;category=red_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;category=rose_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;year=2016</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;year=2010</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;region=South%20West%20France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;food_pairing=Beef%20and%20Lamb</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;food_pairing=Hearty%20Roots</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Merlot&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Montepulciano&amp;category=red_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Montepulciano&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Montepulciano&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Montepulciano&amp;region=Marche%20IGP</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Montepulciano&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Montepulciano&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Montepulciano&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Petit%20Verdot&amp;category=red_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Petit%20Verdot&amp;year=2016</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Petit%20Verdot&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Petit%20Verdot&amp;region=Bordeaux</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Petit%20Verdot&amp;food_pairing=Beef%20and%20Lamb</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Petit%20Verdot&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Petit%20Verdot&amp;food_pairing=Pasta%20and%20Pizza</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc&amp;category=sparkling_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc&amp;region=Valdobbiandene</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Blanc&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio&amp;category=white_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio&amp;year=2021</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio&amp;region=Friuli%20Grave%20DOC</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio&amp;food_pairing=Rich%20Fish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Grigio&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier&amp;category=sparkling_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier&amp;year=2017</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier&amp;region=Champagne</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Meunier&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;category=red_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;category=sparkling_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;year=2019</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;year=2018</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;year=2017</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;country=France</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;country=Italy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;region=Burgundy</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;region=Champagne</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;region=Loire%20Valley</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;region=Valdobbiandene</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;food_pairing=Dessert</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;food_pairing=Hard%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;food_pairing=Light%20Fish%20and%20Shellfish</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;food_pairing=Pork%20and%20Poultry</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;food_pairing=Soft%20Cheese</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Pinot%20Noir&amp;food_pairing=Spicy%20Food</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://the-guilty-grape-wine-shop.herokuapp.com/products/?filter=True&amp;grapes=Prosecco&amp;category=sparkling_wines</loc>
+  <lastmod>2022-11-28T23:09:18+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
