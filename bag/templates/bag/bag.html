@@ -72,8 +72,8 @@
                                                 {% csrf_token %}
                                                 <input name="current_url" type="hidden" value="{{ request.path }}">
                                                 <!-- Submit button -->
-                                                <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent font-size-small"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>
-                                                <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>  
+                                                <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent text-dark font-size-small"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>
+                                                <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent text-dark"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button>  
                                             </form>
                                         {% else %}
                                             <!-- Remove from wishlist form -->
@@ -81,8 +81,8 @@
                                                 {% csrf_token %}
                                                 <input name="current_url" type="hidden" value="{{ request.path }}">
                                                 <!-- Submit button -->
-                                                <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent font-size-small"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
-                                                <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
+                                                <button type="submit" class="d-flex d-md-none d-lg-flex align-items-center border-0 bg-transparent text-dark font-size-small"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
+                                                <button type="submit" class="d-none d-md-flex d-lg-none align-items-center border-0 bg-transparent text-dark"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
                                             </form>
                                         {% endif %}
                                     {% elif not user.is_authenticated %}
@@ -148,7 +148,7 @@
                                 <p class="m-0 mr-2 d-xl-none mr-4"><b><em>{{voucher.voucher_code}}</em> ({{ voucher.percentage }}%)</b></p>
                                 <form action="{% url 'update_discount' %}" method="POST">
                                     {% csrf_token %}
-                                    <button class="border-0 bg-transparent voucher-close position-absolute" type="submit">
+                                    <button class="border-0 bg-transparent voucher-close position-absolute text-dark" type="submit">
                                         <span hidden>Remove voucher</span>
                                         <i class="fas fa-times"></i>
                                     </button>
