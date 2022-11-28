@@ -194,19 +194,19 @@
                 <!-- 'ADD TO WISH LIST' SECTION -->
                 {% if user.is_authenticated and not user.is_superuser %}
                   {% if not current_wishlist_line %}
-                    <!-- Add to wishlist form -->
+                    <!-- ADD TO WISHLIST FORM -->
                     <form method="POST" action="{% url 'add_wishlist' product.id %}" class="mt-4">
                         {% csrf_token %}
                         <input name="current_url" type="hidden" value="{{ request.path }}">
-                        <!-- Submit button -->
+                        <!-- SUBMIT BUTTON -->
                         <button type="submit" class="d-flex align-items-center border-0 bg-transparent"><i class="far fa-heart mr-1"></i><span>Add to wishlist </span></button> 
                     </form>
                   {% else %}
-                    <!-- Remove from wishlist form -->
+                    <!-- REMOVE FROM WISHLIST FORM -->
                     <form method="POST" action="{% url 'remove_wishlist' wishlist_id=current_wishlist_line.id %}" class="mt-4">
                         {% csrf_token %}
                         <input name="current_url" type="hidden" value="{{ request.path }}">
-                        <!-- Submit button -->
+                        <!-- SUBMIT BUTTON -->
                         <button type="submit" class="d-flex align-items-center border-0 bg-transparent"><i class="fas fa-heart mr-1"></i><span>Remove from wishlist </span></button> 
                     </form>
                   {% endif %}
@@ -222,13 +222,13 @@
             <div class="col-xl-10 p-0 mx-auto">
               <!-- REVIEWS -->
               <div  id="reviewsSection" class="d-flex flex-column-reverse justify-content-between flex-xl-row">
-                <div class="col-12 col-xl-7 p-0">
+                <div class="col-12 col-lg-10 col-xl-7 p-0">
                   <h4 class="mb-3 mb-md-2">Reviews</h4>
                   {% if review_list %}
                     {% for review in review_list %}
                       {% if review.product == product %}
                         <!-- REVIEW CONTAINER -->
-                        <div class="d-flex review-container">
+                        <div class="d-flex review-container mt-3">
                             <!-- DEFAULT USER IMAGE -->
                             <div class="col-1 p-0 mr-md-2">
                                 <img class="img-fluid" src="{{ MEDIA_URL }}user-img.png" alt="user icon">
@@ -253,7 +253,7 @@
                   <p><b>There are no reviews for this product yet.</b></p>
                   {% endif %}
                 </div>
-                <div class="col-12 col-md-8 col-xl-4 p-0">
+                <div class="col-12 col-md-7 col-lg-5 col-xl-4 p-0">
                   <div class="text-left review-form-container mb-3 p-2">
                     {% if user.is_authenticated %}
                       {% if not user.is_superuser %}
@@ -273,7 +273,7 @@
                           <div id="updateReviewForm">
                             <!-- UPDATE REVIEW FORM -->
                             <h4>Update your review</h4>
-                            <form action="{% url 'update_review' product_id=product.id review_id=current_review.id %}" method="POST" class="flex f-column a-start">
+                            <form class="d-flex flex-column" action="{% url 'update_review' product_id=product.id review_id=current_review.id %}" method="POST">
                               {% csrf_token %}
                               <input type="hidden" name="rate" class="rate" value="{{current_review.rate}}">
                               <div class="rating">
@@ -290,14 +290,14 @@
                                   {{ field }}
                                 </label>
                               {% endfor %}
-                              <button type="submit" class="button purple-btn small-btn rounded-0" >Submit</button>
+                              <button type="submit" class="button purple-btn small-btn rounded-0">Submit</button>
                             </form> 
                           </div>  
                         {% else %}
                           <div class="mb-3" id="addReviewForm">
                             <!-- ADDD REVIEW FORM -->
                             <h4>Add your review</h4>
-                            <form method="POST" action="{% url 'add_review' product.id %}" class="flex f-column a-start">
+                            <form class="d-flex flex-column" method="POST" action="{% url 'add_review' product.id %}">
                               {% csrf_token %}
                               <div class="d-flex rating">
                                 <button type="button" class="star mr-1">★</button>
