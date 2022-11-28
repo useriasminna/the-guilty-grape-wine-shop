@@ -13,6 +13,7 @@ from django.views.generic import ListView, DeleteView, UpdateView, View
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.db.models import Sum
 from django_countries.data import COUNTRIES
 from django.contrib import messages
 from product_reviews.forms import ReviewForm, UpdateReviewForm
@@ -60,6 +61,10 @@ class Products(ListView):
                     sortkey = f'-{sortkey}'
             if sortkey != 'best_sellers' and 'rating' not in sortkey:
                 products = products.order_by(sortkey)
+            elif sortkey == 'best_sellers':
+                # SORT PRODUCTS BY SUM OF PRODUCTS QUANTITY IN ORDERLINES
+                products = products.annotate(orders_products=Sum(
+                    ('orderline__quantity'))).order_by('-orders_products')
             elif 'rating' in sortkey:
                 if direction == 'asc':
                     products = products.order_by(
