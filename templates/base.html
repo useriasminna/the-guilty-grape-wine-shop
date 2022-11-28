@@ -140,7 +140,7 @@
                     </li>
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="wishlistNav">
                       <a href="{% url 'wishlist' %}" title="Wishlist" id="navitem-wishlist">
-                        <span class="d-lg-none">Wishlist</span>
+                        <span class="d-lg-none">Wishlist {% if wishlist_user_count %}({{ wishlist_user_count }}){% endif %}</span>
                         <i class="fas fa-heart d-none d-lg-block"></i>
                       </a>
                       {% if wishlist_user_count %}
@@ -155,7 +155,7 @@
                     </li>
                     <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="bagNav">
                       <a href="{% url 'bag' %}" title="Shopping Bag" id="navitem-bag">
-                        <span class="d-lg-none">Shopping Bag</span>
+                        <span class="d-lg-none">Shopping Bag {% if product_count %}({{ product_count }}){% endif %}</span>
                         <i class="fas fa-shopping-bag d-none d-lg-block"></i>
                       </a>
                       {% if product_count %}
