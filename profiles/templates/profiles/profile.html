@@ -8,7 +8,7 @@
     <div class="pt-lg-3">
         <div class="col-12 mb-4 mb-lg-3">
             <div class="col-12 p-0 mx-auto">
-                <div class="d-xl-flex justify-content-between text-center mx-auto">
+                <div class="d-xl-flex justify-content-between mx-auto">
                     <hr>
                     <!-- USER'S DELIVERY DETAILS -->
                     <div class="col-md-10 col-xl-5 mb-3 mb-lg-0 p-0 mx-auto">
@@ -19,15 +19,23 @@
                         <form method="POST" action="{% url 'profile_delivery_update' user_pk=request.user.pk %}" enctype="multipart/form-data" id="payment-form">
                             {% csrf_token %}
                             {% for field in delivery_details_form %}
-                                <div class="w-100 p-0 mb-3 mx-auto">
+                                <div class="w-100 p-0 mb-2 mx-auto">
                                     <label class="w-100">
                                         <span hidden>{{field.label}}</span>
-                                        {{ field }}
+                                        {% if field.name == 'default_phone_number' %}
+                                            {{ field }}
+                                            <small class="text-muted font-size-smaller text-left">* Only phone numbers available in Ireland</small>
+                                        {% else %}
+                                            {{ field }}
+                                        {% endif %}
                                     </label>
-                                    <small class="errorlist"></small>
                                 </div> 
+                                <span class="mb-2">{{field.errors}}</span>
                             {% endfor %}
-                            <button type="submit" class="btn small-btn btn-secondary text-white rounded-0">Update details</button>
+                            <div class="w-100 text-center">
+                                <button type="submit" class="btn small-btn btn-secondary text-white rounded-0">Update details</button>
+
+                            </div>
                         </form>
                     </div> 
                     <hr>

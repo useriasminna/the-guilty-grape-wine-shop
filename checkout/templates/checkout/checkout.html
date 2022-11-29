@@ -22,57 +22,69 @@
                                             {{ order_form.full_name  }}
                                         </label>
                                     </div>
+                                    <span class="mb-2">{{order_form.full_name.errors}}</span>
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Email</span>
                                             {{ order_form.email  }}
                                         </label>
-                                    </div>                                    
+                                    </div>   
+                                    <span class="mb-2">{{order_form.email.errors}}</span>                                 
                                 </fieldset>
                                 <fieldset class="rounded mb-4">
                                     <legend class="fieldset-label pl-2 small"><b>Delivery</b></legend>
+                                    <small class="text-muted font-size-smaller text-left">* Only phone numbers available in Ireland</small>
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Phone number</span>
                                             {{ order_form.phone_number  }}
                                         </label>
                                     </div>
+                                    <span class="mb-2">{{order_form.phone_number.errors}}</span>
+                                    <small class="text-muted font-size-smaller text-left">* Delivery only in Dublin, Ireland</small>
+
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Country</span>
                                             {{ order_form.country  }}
                                         </label>
                                     </div>
+                                    <span class="mb-2">{{order_form.country.errors}}</span>
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>County</span>
                                             {{ order_form.county  }}
                                         </label>
                                     </div>
+                                    <span class="mb-2">{{order_form.county.errors}}</span>
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Town or City</span>
                                             {{ order_form.town_or_city  }}
                                         </label>
                                     </div>
+                                    <span class="mb-2">{{order_form.town_or_city.errors}}</span>
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Street Aaddress 1</span>
                                             {{ order_form.street_address1  }}
                                         </label>
                                     </div>
+                                    <span class="mb-2">{{order_form.street_address1.phone_number.errors}}</span>
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Street Address 2</span>
                                             {{ order_form.street_address2  }}
                                         </label>
-                                    </div>                                    
+                                    </div>     
+                                    <span class="mb-2">{{order_form.street_address2.errors}}</span>                               
                                     <div class="w-100 mb-2">
                                         <label class="w-100">
                                             <span hidden>Postcode</span>
                                             {{ order_form.postcode  }}
                                         </label>
                                     </div>
+                                    <span class="mb-2">{{order_form.postcode.errors}}</span>
                                     {% if user.is_authenticated %}
                                     <div class="d-flex">
                                         <input class="mr-2 ml-0" type="checkbox" id="id-save-info" name="save-info" checked>
@@ -91,7 +103,7 @@
                                     <!-- STRIPE CARD -->
                                     <div class="mb-3" id="card-element"></div>
                                     <!-- CARD ERRORS -->
-                                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                                    <div class="mb-3 font-size-smaller errorlist" id="card-errors" role="alert"></div>
                                     <!-- PASS THE CLIENT SECRET TO THE VIEW FOR GETTING THE PAYMENT INTENT-->
                                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                                 </fieldset>
