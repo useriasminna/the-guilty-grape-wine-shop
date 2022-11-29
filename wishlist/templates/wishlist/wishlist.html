@@ -303,7 +303,7 @@
                             {% endif %}
                             {% if product.stock != 0 %}
                             {% if not request.user.is_authenticated or not request.user.is_superuser %}
-                                <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR EXTRA LARGE DEVICES-->
+                                <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR DEVICES WITH HOVER MECHANISM-->
                                 <form action="{% url 'add_to_bag' product.id %}" class="overlay-form" method="POST">
                                     {% csrf_token %}
                                     <div class="d-flex">
@@ -316,7 +316,7 @@
                                             <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
                                         </div>
                                         <div class="col-8 p-0">
-                                            <button type="submit" class="w-100 button purple-btn rounded-0 small-btn">Add to bag</button>
+                                            <button type="submit" class="w-100 button purple-btn rounded-0 small-btn small-pad">Add to bag</button>
                                         </div>
                                         <input name="current_url" type="hidden" value="{{ request.path }}">
                                     </div>
@@ -325,8 +325,8 @@
                         {% endif %}
                         </div>
                     </div>
-                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR LARGE MEDIUM AND SMALL DEVICES-->
-                    <div class="d-block d-xl-none ">
+                    <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR DEVICES with NO HOVER MECHANISM -->
+                    <div class="add-to-bag-no-hover">
                         <form action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
                             <div class="d-flex">
