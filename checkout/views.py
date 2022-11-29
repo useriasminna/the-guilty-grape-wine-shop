@@ -86,9 +86,17 @@ class Checkout(TemplateView):
                     'county': profile.default_county,
                 })
             except UserProfile.DoesNotExist:
-                order_form = OrderForm()
+                order_form = OrderForm(initial={
+                    'country': 'IE',
+                    'town_or_city': 'Dublin',
+                    'county': 'Dublin',
+                    })
         else:
-            order_form = OrderForm()
+            order_form = OrderForm(initial={
+                'country': 'IE',
+                'town_or_city': 'Dublin',
+                'county': 'Dublin',
+                })
 
         if not stripe_public_key:
             messages.warning(request, 'Stripe public key is missing. \
@@ -105,7 +113,24 @@ class Checkout(TemplateView):
 
     def post(self, request):
         """Override post method for submiting order form"""
+        stripe_public_key = settings.STRIPE_PUBLIC_KEY
+        stripe_secret_key = settings.STRIPE_SECRET_KEY
         bag = request.session.get('bag', {})
+        if not bag:
+            messages.error(
+                request, "There's nothing in your bag at the moment")
+            return redirect(reverse('products'))
+
+        current_bag = bag_contents(request)
+        total = current_bag['grand_total']
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+        bag = request.session.get('bag', {})
+        # set form data
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -158,13 +183,24 @@ class Checkout(TemplateView):
             request.session['discount'] = None
             request.session['voucher_id'] = None
 
+            # set save_info session variable
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse(
                 'checkout_success', args=[order.order_number]))
         else:
+            # If form is not valid pass the form with errors and strype
+            # secrets to context
+            order_form = OrderForm(
+                    request.POST, form_data)
+            template = 'checkout/checkout.html'
+            context = {
+                'order_form': order_form,
+                'stripe_public_key': stripe_public_key,
+                'client_secret': intent.client_secret,
+            }
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
-        return redirect(reverse('checkout'))
+            return render(request, template, context)
 
 
 class CheckoutSuccess(View):
