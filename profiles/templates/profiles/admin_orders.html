@@ -16,7 +16,7 @@
                                 {{ date_form.date.label }}
                                 {{ date_form.date }}
                             </label>
-                            <button type="submit" class="col-3 button gray-btn small-btn rounded-0" id="filterSubmit">Submit</button>
+                            <button type="submit" class="button gray-btn small-btn rounded-0 small-pad responsive-pad" id="filterSubmit">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -60,7 +60,7 @@
                                             <td class="p-2">${{ order.grand_total }}</td>
                                             <!-- ORDER DELTE BUTTON AND MODAL-->
                                             <td class="text-center">
-                                                <button class="btn btn-secondary rounded-0 small-btn" data-toggle="modal" data-target="#deleteOrderModal{{ product.pk }}">Delete</button>
+                                                <button class="button btn-secondary rounded-0 small-btn small-pad responsive-pad" data-toggle="modal" data-target="#deleteOrderModal{{ product.pk }}">Delete</button>
                                                 <div class="modal fade" id="deleteOrderModal{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteOrderModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
@@ -71,13 +71,13 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <p>Are you sure you want to delete order number <b>{{order.order_number}}</b></p> 
+                                                                <p>Are you sure you want to delete order number <b>{{order.order_number}} ?</b></p> 
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <form method="POST" action="{% url 'admin_delete_order' order.pk %}">
                                                                     {% csrf_token %}
-                                                                    <button type="submit" class="btn btn-secondary">Yes</button>
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                                                    <button type="submit" class="button rounded-0 btn-secondary small-btn">Yes</button>
+                                                                    <button type="button" class="button rounded-0 btn-secondary small-btn" data-dismiss="modal">No</button>
                                                                     <input name='current_url' type="hidden" value="{{ request.get_full_path }}">
                                                                 </form>
                                                             </div>

@@ -327,8 +327,10 @@ h1 {
     background-color: #d6d6d6;
 }
 
-.small-btn {
+.small-pad {
     padding: 5px 10px;
+}
+.small-btn {
     font-size: smaller;
 }
 
@@ -956,7 +958,7 @@ input:not([type=checkbox]) {
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
-    right: 71px;
+    right: 11px;
 }
 
 .bag-notification-wrapper {
@@ -1392,6 +1394,7 @@ select option[value=""] {
     .home-cover {
         height: 85vh;
     }
+
 }
 
 /* --------------------------------- IPAD PRO STYLINYG ------------------------------- */
@@ -1537,6 +1540,10 @@ select option[value=""] {
         padding-left: 0.5rem;
         border-radius: 0.5rem;
         font-size: inherit;
+    }
+
+    .responsive-pad{
+        padding: 10px 20px !important;
     }
 }
 
