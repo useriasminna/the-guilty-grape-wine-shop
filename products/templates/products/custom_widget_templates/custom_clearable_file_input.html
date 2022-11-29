@@ -15,10 +15,10 @@
 {% endif %}
 <span class="rounded-0 btn-file button small-btn btn-secondary text-left">
     Select image
-    <label for="{{ widget.attrs.id }}">
+    <label class="mt-3 mt-xl-2" for="{{ widget.attrs.id }}">
         <span hidden>Select image</span>
     </label>
         <input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
     
 </span><br>
-<strong class="text-danger font-size-smaller" id="{{ widget.name }}-filename"></strong>
+<strong class="text-danger font-size-smaller mb-2" id="{{ widget.name }}-filename"></strong>
