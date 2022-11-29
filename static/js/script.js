@@ -674,13 +674,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
         }); 
 
-        let countrySelected = document.getElementById('id_country')
-        // PREVENT cOUNTRY SELECT OPENING
+        let countrySelected = document.getElementById('id_country');
+        // PREVENT COUNTRY SELECT OPENING
         countrySelected.addEventListener('mousedown', (e) => {
             e.preventDefault();
-            e.target.blur()
+            e.target.blur();
             window.focus();
-        })
+        });
     }
 
     // SCRIPT FOR SETTING NAV ITEM ACTIVE
@@ -727,9 +727,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // PREVENT cOUNTRY SELECT OPENING
         countrySelected.addEventListener('mousedown', (e) => {
             e.preventDefault();
-            e.target.blur()
+            e.target.blur();
             window.focus();
-        })
+        });
     }   
     
     // ADD SCRIPT FOR SETING IMAGE INPUT FIELD INFO TEXT
