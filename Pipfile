@@ -23,6 +23,7 @@ humanhash3 = "*"
 django-countries = "*"
 stripe = "*"
 django-mathfilters = "*"
+django-phonenumber-field = {extras = ["phonenumbers"], version = "*"}
 
 [dev-packages]
 django-url-tools = "*"
