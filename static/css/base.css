@@ -1244,6 +1244,20 @@ select option[value=""] {
     border-collapse: separate;
 }
 
+#id_default_country, #id_default_county, #id_default_town_or_city,
+#id_country, #id_county, #id_town_or_city{
+    color: #3a3a3a;
+}
+#id_default_county:focus, #id_default_town_or_city:focus,
+#id_county:focus, #id_town_or_city:focus{
+    box-shadow: none;
+}
+
+#id_default_county:hover, #id_default_town_or_city:hover,
+#id_county:hover, #id_town_or_city:hover{
+    cursor: auto;
+}
+
 /* ADD/EDIT PRODUCTS FORM */
 
 .btn-file {
