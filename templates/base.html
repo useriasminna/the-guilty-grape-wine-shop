@@ -42,7 +42,7 @@
     <header>
       <div class="col-12 col-md-6 mx-md-auto mb-md-2 mb-lg-0 col-lg-4 col-xl-3 pt-2 pt-lg-0">
         <a class="logo d-flex d-lg-none justify-content-center justify-content-lg-start align-items-end mb-2 mb-md-0" href="{% url 'home' %}">
-          <img class="col-3" src="{% static 'img/logo.png' %}" alt="logo image">
+          <img class="col-3" src="{{ MEDIA_URL }}logo.png"" alt="logo image">
           <h4>The Guilty Grape</h4>  
         </a>
       </div>
@@ -91,7 +91,7 @@
           <div class="container-fluid d-block d-lg-flex mb-lg-1">
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
               <a class="logo d-none d-lg-flex justify-content-center justify-content-md-start align-items-end mb-2 mb-md-0" href="{% url 'home' %}">
-                <img class="col-3 " src="{% static 'img/logo.png' %}" alt="logo image">
+                <img class="col-3 " src="{{ MEDIA_URL }}logo.png" alt="logo image">
                 <h4>The Guilty Grape</h4>  
               </a>
             </div>
@@ -380,16 +380,16 @@
             <div class="d-lg-flex justify-content-between col-md-10 p-0 mx-auto">
               <div class="d-flex flex-column mb-3 mb-lg-0 text-center">
                 <a class="text-white" href="{% url 'products' %}">All Products</a>
-                <a class="text-white" href="https://www.privacypolicygenerator.info/live.php?token=xhL36bycqh8mHdigq1wXydkXq09YFVMc" target="_blank">Privacy And Policy</a>
-                <a class="text-white" href="https://www.termsandconditionsgenerator.com/live.php?token=9BlUv24cM4GbLB6YKWl023QUZebf2gNT" target="_blank">Terms & Conditions</a>
+                <a class="text-white" rel="noopener nofollow" href="https://www.privacypolicygenerator.info/live.php?token=xhL36bycqh8mHdigq1wXydkXq09YFVMc" target="_blank">Privacy And Policy</a>
+                <a class="text-white" rel="noopener nofollow" href="https://www.termsandconditionsgenerator.com/live.php?token=9BlUv24cM4GbLB6YKWl023QUZebf2gNT" target="_blank">Terms & Conditions</a>
               </div>
               <div class="text-center">
                 <p class="mb-0">Follow us on social media: </p>
                 <div class="d-flex justify-content-between text-center mb-2">
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Link to facebook page"><i class="fab fa-facebook-square ms-3 "></i></a>
-                    <a href="https://www.twitter.com" target="_blank" rel="noopener" aria-label="Link to twitter page"><i class="fab fa-twitter-square ms-3"></i></a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Link to instagram page"><i class="fab fa-instagram-square ms-3"></i></a>
-                    <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="Link to youtube page"><i class="fab fa-youtube-square ms-3"></i></a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener nofollow" aria-label="Link to facebook page"><i class="fab fa-facebook-square ms-3 "></i></a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener nofollow" aria-label="Link to twitter page"><i class="fab fa-twitter-square ms-3"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener nofollow" aria-label="Link to instagram page"><i class="fab fa-instagram-square ms-3"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener nofollow" aria-label="Link to youtube page"><i class="fab fa-youtube-square ms-3"></i></a>
                 </div>
                 <p class="mb-0">Copyright &copy;Pal Iasmina 2022</p>
               </div>
