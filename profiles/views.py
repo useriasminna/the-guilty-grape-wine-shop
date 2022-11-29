@@ -11,6 +11,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib import messages
 from datetime import date
+from django.http import HttpResponseRedirect
 
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
@@ -28,8 +29,12 @@ class Profile(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
 
     def get(self, request):
         profile = get_object_or_404(UserProfile, user=request.user)
-
-        form = UserProfileForm(instance=profile)
+        # Set initial values
+        form = UserProfileForm(instance=profile, initial={
+            'default_country': 'IE',
+            'default_town_or_city': 'Dublin',
+            'default_county': 'Dublin',
+            })
         orders = Order.objects.filter(user=profile)
 
         template = 'profiles/profile.html'
@@ -54,22 +59,38 @@ class ProfileDeliveryUpdate(LoginRequiredMixin, UserPassesTestMixin,
         profile = get_object_or_404(UserProfile, user=user_pk)
         orders = Order.objects.filter(user=profile)
         if request.method == 'POST':
-            delivery_details_form = UserProfileForm(request.POST,
-                                                    instance=profile)
+            delivery_details_form = UserProfileForm(
+                request.POST, instance=profile)
             if delivery_details_form.is_valid():
+                # Set IE as default country value
+                profile.default_country = 'IE'
+                profile.save()
                 delivery_details_form.save()
                 messages.success(request, 'Delivery details updated\
                     successfully')
+                HttpResponseRedirect(reverse_lazy('profile'))
+            else:
+                # If form is not valid pass the form with errors to context
+                delivery_details_form = UserProfileForm(
+                    request.POST, instance=profile)
+                template = 'profiles/profile.html'
+                context = {
+                    'delivery_details_form': delivery_details_form,
+                    'orders': orders,
+                }
+                messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
+                return render(request, template, context)
+        elif request.method == 'GET':
+            delivery_details_form = UserProfileForm(
+                initial={
+                    'default_country': 'IE',
+                    'default_town_or_city': 'Dublin',
+                    'default_county': 'Dublin',
+                    },
+                instance=profile)
 
-        delivery_details_form = UserProfileForm(instance=profile)
-
-        template = 'profiles/profile.html'
-        context = {
-            'delivery_details_form': delivery_details_form,
-            'orders': orders,
-        }
-
-        return render(request, template, context)
+        return HttpResponseRedirect(reverse_lazy('profile'))
 
     def test_func(self):
         user = User.objects.get(pk=self.kwargs['user_pk'])
@@ -108,6 +129,7 @@ class AdminOrdersList(LoginRequiredMixin, UserPassesTestMixin, ListView):
             today = date.today()
             date_form = DateOrdersForm(data=request.GET)
             if date_form.is_valid():
+                # if form is valid filter orders by date field value
                 orders_date = date_form.cleaned_data['date']
                 if orders_date:
                     orders_date = orders_date
