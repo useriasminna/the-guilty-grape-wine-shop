@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'url_tools',
     'mathfilters',
+    "phonenumber_field",
     'users',
     'home',
     'newsletter',
