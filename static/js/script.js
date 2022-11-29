@@ -673,6 +673,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 location.reload();
             });
         }); 
+
+        let countrySelected = document.getElementById('id_country')
+        // PREVENT cOUNTRY SELECT OPENING
+        countrySelected.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            e.target.blur()
+            window.focus();
+        })
     }
 
     // SCRIPT FOR SETTING NAV ITEM ACTIVE
@@ -699,10 +707,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById('navitem-home').classList.add('nav-item-active');
         
 
-    // SCRIPT FOR SETTING COUNTRY PLACEHOLDER COLOR
-    if(path_info == ('/profile/')){
+    
+    if(path_info.includes('/profile/')){
 
         let countrySelected = document.getElementById('id_default_country');
+        // SCRIPT FOR SETTING COUNTRY PLACEHOLDER COLOR
         if(!countrySelected.value) {
             countrySelected.style.color = '#6c757d';
         }
@@ -714,6 +723,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 countrySelected.style.color = '#000';
            }
         });    
+
+        // PREVENT cOUNTRY SELECT OPENING
+        countrySelected.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            e.target.blur()
+            window.focus();
+        })
     }   
     
     // ADD SCRIPT FOR SETING IMAGE INPUT FIELD INFO TEXT
