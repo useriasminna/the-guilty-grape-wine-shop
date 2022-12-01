@@ -212,6 +212,10 @@ footer>div>div>div:nth-child(1) form .messages {
     height: 20px;
 }
 
+.hover-underline:hover{
+    text-decoration: underline;
+}
+
 /* ICON STYLING */
 i {
     font-size: 20px;
