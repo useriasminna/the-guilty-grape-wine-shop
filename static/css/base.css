@@ -1140,7 +1140,6 @@ select option[value=""] {
 }
 
 .loading-spinner {
-    color: official;
     display: inline-block;
     position: relative;
     width: 80px;
@@ -1648,7 +1647,6 @@ select option[value=""] {
 
     .toast {
         width: 90vw;
-        max-width: auto;
     }
 
     .wh-sm-max-content {
