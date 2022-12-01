@@ -24,6 +24,9 @@ django-countries = "*"
 stripe = "*"
 django-mathfilters = "*"
 django-phonenumber-field = {extras = ["phonenumbers"], version = "*"}
+django-coverage = "*"
+pytest-cov = "*"
+coverage = "*"
 
 [dev-packages]
 django-url-tools = "*"
