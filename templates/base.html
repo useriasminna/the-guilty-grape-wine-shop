@@ -29,7 +29,7 @@
     >
     <link rel="icon" href="{{ MEDIA_URL }}favicon.ico" type="image/x-icon">
     <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/base.css' %}">
     {% endblock %} 
     
     {% block extra_css %} 
@@ -58,13 +58,13 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
           <div class="container-fluid p-side">
             <ul class="categories d-block d-lg-flex col-7 pl-lg-0">
-              <li class="nav-item mr-3 mt-2 mt-lg-0">
+              <li class="nav-item mb-2 mb-lg-0 mr-3 mt-2 mt-lg-0">
                 <a href="{% url 'home' %}" id="navitem-home">Home</a>
               </li>
-              <li class="nav-item mr-3 mt-2 mt-lg-0">
+              <li class="nav-item mb-2 mb-lg-0  mr-3 mt-2 mt-lg-0">
                 <a href="{% url 'products' %}" id="navitem-products">All products</a>
               </li>
-              <li class="nav-item mr-3 mt-2 mt-lg-0">
+              <li class="nav-item mb-2 mb-lg-0  mr-3 mt-2 mt-lg-0">
                 <div class="dropdown">
                   <a href="" id="navitem-wines" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Wines</a>
                   <div class="dropdown-menu dropdown-menu-lg-start">
@@ -99,7 +99,7 @@
               {% if user.is_staff %}
                 <div class="col-12 col-md-3 col-lg-2 col-xl-1">
                   <ul class="d-block d-lg-flex justify-content-end navigation">
-                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="adminManageNav">
+                    <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0" id="adminManageNav">
                       <div class="dropdown">
                         <a title="Admin Manage" href="#"  data-toggle="dropdown" aria-expanded="false" id="navitem-admin">
                           <span class="dropdown-toggle d-lg-none">Admin manage</span>
@@ -123,7 +123,7 @@
               {% else %}
                 <div class="col-12 col-md-6 col-lg-3 col-xl-2">
                   <ul class="d-block d-lg-flex justify-content-end navigation">
-                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="userNav">
+                    <li class="nav-item mb-2 mb-lg-0 mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0" id="userNav">
                       <div class="dropdown">
                         <a class="d-none d-lg-block" title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                           <i class="fas fa-user-circle"></i>
@@ -138,7 +138,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="wishlistNav">
+                    <li class="nav-item mb-2 mb-lg-0 mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0 position-relative" id="wishlistNav">
                       <a href="{% url 'wishlist' %}" title="Wishlist" id="navitem-wishlist">
                         <span class="d-lg-none">Wishlist {% if wishlist_user_count %}({{ wishlist_user_count }}){% endif %}</span>
                         <i class="fas fa-heart d-none d-lg-block"></i>
@@ -153,7 +153,7 @@
                         {% endif %}
                       {% endif %}
                     </li>
-                    <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="bagNav">
+                    <li class="nav-item mb-2 mb-lg-0 mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0 position-relative" id="bagNav">
                       <a href="{% url 'bag' %}" title="Shopping Bag" id="navitem-bag">
                         <span class="d-lg-none">Shopping Bag {% if product_count %}({{ product_count }}){% endif %}</span>
                         <i class="fas fa-shopping-bag d-none d-lg-block"></i>
@@ -168,7 +168,7 @@
                         {% endif %}
                       {% endif %}
                     </li>
-                    <li class="nav-item mx-auto mb-2 mb-lg-0 mt-2 d-lg-none">
+                    <li class="nav-item mb-2 mb-lg-0 mb-2 mb-lg-0 mx-auto mb-2 mb-lg-0 mt-2 d-lg-none">
                       <a href="#" data-toggle="modal" data-target="#logoutModal">
                         <span>Logout</span>
                       </a>
@@ -179,7 +179,7 @@
             {% else %}
               <div class="col-12 col-md-6 col-lg-3 col-xl-2">
                 <ul class="d-block d-lg-flex justify-content-end navigation">
-                  <li class="nav-item ml-lg-4 mt-2 d-lg-none">
+                  <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 d-lg-none">
                     <a href="{% url 'account_login' %}" id="navitem-login">
                       <span>Login</span>
                     </a>
@@ -189,7 +189,7 @@
                       <span>Register</span>
                     </a>
                   </li>
-                  <li class="nav-item ml-lg-4 mt-2 mt-lg-0 d-none d-lg-block" id="userNav">
+                  <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0 d-none d-lg-block" id="userNav">
                     <div class="dropdown">
                       <a title="Account" href="#"  data-toggle="dropdown" aria-expanded="false" >
                         <i class="fas fa-user-circle"></i>
@@ -200,13 +200,13 @@
                       </div>
                     </div>
                   </li>
-                  <li class="nav-item ml-lg-4 mt-2 mt-lg-0" id="wishlistNav">
+                  <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0" id="wishlistNav">
                     <a href="{% url 'wishlist' %}" title="Wishlist">
                       <span class="d-lg-none">Wishlist</span>
                       <i class="fas fa-heart d-none d-lg-block"></i>
                     </a>
                   </li>
-                  <li class="nav-item ml-lg-4 mt-2 mt-lg-0 position-relative" id="bagNav">
+                  <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0 position-relative" id="bagNav">
                     <a href="{% url 'bag' %}" title="Shopping Bag">
                       <span class="d-lg-none">Shopping Bag</span>
                       <i class="fas fa-shopping-bag d-none d-lg-block"></i>
@@ -379,12 +379,12 @@
           <div class="col-10 pt-4 pt-md-0 col-md-6 mx-auto">
             <div class="d-lg-flex justify-content-between col-md-10 p-0 mx-auto">
               <div class="d-flex flex-column mb-3 mb-lg-0 text-center">
-                <a class="hover-underline text-white" href="{% url 'products' %}">All Products</a>
-                <a class="hover-underline text-white" rel="noopener nofollow" href="https://www.privacypolicygenerator.info/live.php?token=xhL36bycqh8mHdigq1wXydkXq09YFVMc" target="_blank">Privacy And Policy</a>
-                <a class="hover-underline text-white" rel="noopener nofollow" href="https://www.termsandconditionsgenerator.com/live.php?token=9BlUv24cM4GbLB6YKWl023QUZebf2gNT" target="_blank">Terms & Conditions</a>
+                <a class="hover-underline text-white mb-3" href="{% url 'products' %}">All Products</a>
+                <a class="hover-underline text-white mb-3" rel="noopener nofollow" href="https://www.privacypolicygenerator.info/live.php?token=xhL36bycqh8mHdigq1wXydkXq09YFVMc" target="_blank">Privacy And Policy</a>
+                <a class="hover-underline text-white mb-3" rel="noopener nofollow" href="https://www.termsandconditionsgenerator.com/live.php?token=9BlUv24cM4GbLB6YKWl023QUZebf2gNT" target="_blank">Terms & Conditions</a>
               </div>
               <div class="text-center">
-                <p class="mb-0">Follow us on social media: </p>
+                <p class="mb-2">Follow us on social media: </p>
                 <div class="d-flex justify-content-between text-center mb-2">
                     <a href="https://www.facebook.com" target="_blank" rel="noopener nofollow" aria-label="Link to facebook page"><i class="fab fa-facebook-square ms-3 "></i></a>
                     <a href="https://www.twitter.com" target="_blank" rel="noopener nofollow" aria-label="Link to twitter page"><i class="fab fa-twitter-square ms-3"></i></a>
