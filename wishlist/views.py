@@ -11,6 +11,7 @@ from django.views.generic.edit import DeleteView
 from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
+from django_countries.data import COUNTRIES
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from django.db.models import Q
@@ -81,13 +82,22 @@ class WishList(LoginRequiredMixin, UserPassesTestMixin, ListView):
         filter_clauses = {}
         for key, value in request.GET.items():
             if key in filter_options:
-                if key == 'category':
-                    filter_clauses[key] = get_object_or_404(
-                        Category, name=value)
-                elif key in ('grapes', 'food_pairing'):
-                    filter_clauses[key+"__contains"] = value
-                else:
+                if key not in ('category', 'country', 'grapes',
+                               'food_pairing'):
                     filter_clauses[key] = value
+                else:
+                    if key == 'category':
+                        category = get_object_or_404(
+                            Category, name=value)
+                        filter_clauses[key] = category
+                    if key == 'country':
+                        country_value = None
+                        for c_key, c_value in COUNTRIES.items():
+                            if c_value == value:
+                                country_value = c_key
+                        filter_clauses[key] = country_value
+                    if key in ('grapes', 'food_pairing'):
+                        filter_clauses[key+"__contains"] = value
 
         if filter_clauses:
             wishlist = wishlist.filter(**filter_clauses)
@@ -166,8 +176,10 @@ class WishList(LoginRequiredMixin, UserPassesTestMixin, ListView):
         regions_list = wishlist.values_list(
             'region', flat=True).distinct().order_by('region')
 
-        countries_list = wishlist.values_list(
-            'country', flat=True).distinct().order_by('country')
+        countries_list = [COUNTRIES[country_code] for country_code
+                          in products.values_list(
+                              'country', flat=True).distinct().order_by(
+                                  'country')]
 
         food_pairings_list = []
         for food in wishlist.values_list('food_pairing', flat=True):
