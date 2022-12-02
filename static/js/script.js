@@ -689,7 +689,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById('navitem-wines').classList.add('nav-item-active');
     else if (path_info == '/products/?is_deluxe=True') 
         document.getElementById('navitem-deluxe').classList.add('nav-item-active');
-    else if (path_info.includes('/products/')) 
+    else if (path_info =='/products/')
         document.getElementById('navitem-products').classList.add('nav-item-active');
     else if (path_info.includes('/manage_orders/')) 
         document.getElementById('navitem-admin').classList.add('nav-item-active');
