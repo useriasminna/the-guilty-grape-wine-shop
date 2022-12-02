@@ -1,5 +1,4 @@
-/*jshint esversion: 6 */
-/*global $:false */
+
 document.addEventListener("DOMContentLoaded", function(event) { 
 
     // SCRIPT FOR NAVBAR SEARCH BOX TO BE DISPLAYED ONLY WHEN THE COLLAPSIBLE NAV IS OFF
@@ -243,13 +242,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
     validateAddModalForm();
 
     // CREATE A MUTATION OBSERVER TO DETECT IF FORM MODAL CLASSLIST HAS CHANGED
-    // CALL A METHOD TO RELOAD THE PAGE WHEN MODAL IS CLOSED TO CLEAR FORM INPUTS
-    const reloadPageOnClassChange = (modal) => {
-        if (!modal.classList.contains('show'))
-            window.location.reload();
+    // CALL A METHOD TO CLEAR FORM INPUTS WHEN THE MODAL IS CLOSED
+    const emptyFieldsOnClassChange = (modal) => {
+        if (!modal.classList.contains('show')){
+            let inputs = modal.getElementsByTagName('input')
+            for(let el of inputs){
+                if(el.classList.contains('custom-control-input')){
+                    el.checked = false
+                }
+                else{
+                    el.value = '';
+                }
+            }
+            let selects = modal.getElementsByTagName('select')
+            for(let el of selects){
+                el.selectedIndex = 0;
+            }
+        }
     };
     var obAdd = new MutationObserver(() => {
-        reloadPageOnClassChange(addModal);
+        emptyFieldsOnClassChange(addModal);
     });
 
     obAdd.observe(addModal, {
