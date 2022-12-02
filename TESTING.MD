@@ -117,7 +117,7 @@ All the user stories were tested manually, including all the representative feat
 * **Summary:**<br> 
    - In the navigation menu there are separate links that redirect the user to the products' catalogue. These links are classified as: <em>All products</em>, <em>White Wines</em>, <em>Red Wines</em>, <em>Rose Wines</em> and <em>Sparkling Wines</em>;<br><br>
 
-    *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
+    *By testing this feature, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
 #### 3B: US - As a user, I want to be able to apply filters and sort the listed products, so I can easily find the ones I am interested to buy
 * **Acceptance Criteria:** A user should be able to apply filters for different types of wine selections.
@@ -126,7 +126,9 @@ All the user stories were tested manually, including all the representative feat
    - Every filter is a dropdown with the values corresponding to the list of wines displayed;<br>
    - When a user chooses a value for filtering, the active filter is removed from the filters' list and added to a list of active filters;<br>
    - Any applied filter can be cancelled and the list of products will be displayed only considering the active filters;<br>
-   - The is a button for removing all the filters at once;<br><br>
+   - There is a button for removing all the filters at once;<br>
+   - There is also a select input for sorting the products;<br>
+   - All sorting options work properly;<br>
 
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
@@ -165,7 +167,8 @@ All the user stories were tested manually, including all the representative feat
     - When the button is clicked, a modal is triggered and contains a form for editing every detail of the product;<br>
     - The form is prefilled with existing data;<br>
     - The form has validation that prevents the user to update a product with invalid information;<br>
-    - Any update is reflected in the product's details page;<br>
+    - Any update is reflected in the product's details page;<br><br>
+
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br><br> 
 * **Outcome:** Pass
 #### 3G: US - As an admin, I want to be able to delete products from the catalogue, so it reflects the existing stock
@@ -194,7 +197,7 @@ All the user stories were tested manually, including all the representative feat
 * **Summary:**<br>
     - All the reviews registered for a product are listed on the <em>Product details</em> page;
     - Every review element has an attractive design and contains relevant details such as User name, Review text, Star rating and Date and Time of posting;
-    - The reviews are ordered by time in a reverse way so that the last added review is the first on the list.
+    - The reviews are ordered by time in a reverse way so that the last added review is the first on the list.<br> <br> 
     
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
@@ -237,11 +240,11 @@ All the user stories were tested manually, including all the representative feat
 #### 5A: US - As a logged-in user, I want to be able to add/remove any product from the Wishlist
 * **Acceptance Criteria:** A logged-in user should be able to add a product to the wishlist through an implemented feature.
 * **Summary:**<br>
-   - On every product's details page there is a wishlist feature visible only to users that are authenticated and not staff members, considering that this feature wouldn't make sense for admins;<br>
-   - To add a product object to the wishlist, a form is displayed with an empty heart icon that acts like a button, and a suggestive message, "Add to wishlist", that indicates to the user what is its purpose;<br>
-   - When the user clicks on the button, the change is visible immediately, as the heart icon changes its shape into a filled heart, and the message is now "Remove from Wishlist";<br>
-   - The change is also reflected in the Wishlist page where the list of products includes only the ones that are currently in the wishlist database;<br>
-  - By clicking on the filled heart, the form comes back to its initial state, and the wine is removed from the list.<br><br>
+    - On every product's details page there is a wishlist feature visible only to users that are authenticated and not staff members, considering that this feature wouldn't make sense for admins;<br>
+    - To add a product object to the wishlist, a form is displayed with an empty heart icon that acts like a button, and a suggestive message, "Add to wishlist", that indicates to the user what is its purpose;<br>
+    - When the user clicks on the button, the change is visible immediately, as the heart icon changes its shape into a filled heart, and the message is now "Remove from Wishlist";<br>
+    - The change is also reflected in the Wishlist page where the list of products includes only the ones that are currently in the wishlist database;<br>
+    - By clicking on the filled heart, the form comes back to its initial state, and the wine is removed from the list.<br><br>
     
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
@@ -251,6 +254,7 @@ All the user stories were tested manually, including all the representative feat
     - For an authenticated user the content of the Wishlist page is available with all the products added to the wishlist;<br>
     - The page content is not accessible to admins or guest users;<br>
     - Every product element is clickable and redirects to the details page.<br><br>
+
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
 #### 5C: US - As a logged-in user, I want to be able to apply filters and sort the products in the wishlist
@@ -260,7 +264,9 @@ All the user stories were tested manually, including all the representative feat
     - Every filter is a dropdown with the values corresponding to the list of wines displayed;<br>
     - When a user chooses a value for filtering, the active filter is removed from the filters' list and added to a list of active filters;<br>
     - Any applied filter can be cancelled and the list of products will be displayed only considering the active filters;<br>
-    - The is a button for removing all the filters at once;<br><br>
+    - There is a button for removing all the filters at once;<br>
+    - There is also a select input for sorting the products;<br>
+    - All sorting options work properly;<br><br>
 
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
@@ -280,7 +286,7 @@ All the user stories were tested manually, including all the representative feat
 * **Summary:**<br>
     - On the wishlist page, every product element has a section that includes a heart icon and a value representing the number of times the product has been added to the Wishlist by all the users; <br><br>
 
-    *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
+    *By testing this feature, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
 ### EPIC - BAG
 #### 6A: US - As a user, I want to see all the products I added to the shopping bag
@@ -380,7 +386,7 @@ All the user stories were tested manually, including all the representative feat
 * **Summary:**<br>
     - On the <em>Checkout</em> page there is a form section with fields for payment information;<br>
     - The form can be filled by the user with the card details;<br>
-    - The card input has validation that doesn't accept invalid card details.<br>
+    - The card input has validation that doesn't accept invalid card details.<br><br>
     
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
@@ -391,8 +397,9 @@ All the user stories were tested manually, including all the representative feat
     - On the <em>Profile</em> page, there is a form with fields for delivery details;<br>
     - The fields for <em>Country</em>, <em>County</em> and <em>City</em> are set by default to <q>Ireland</q><q>Dublin</q><q>Dublin</q> as the shop only delivers to Dublin city;<br>
     - The form has validation that forces the user to insert only phone numbers with the format available in Ireland;<br>
-    - When the user adds or updates the delivery values in the <em>Profile</em> page, the form from the<em>Checkout</em> page is prefilled with the updated data.
-     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
+    - When the user adds or updates the delivery values in the <em>Profile</em> page, the form from the<em>Checkout</em> page is prefilled with the updated data.<br><br> 
+    
+    *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
 #### 8B: US - As a logged-in user, I want to be able to see my orders history
 * **Acceptance Criteria:** A logged-in user should be able to see a list of the orders he has made.
@@ -426,7 +433,7 @@ All the user stories were tested manually, including all the representative feat
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
 #### 9C: US -As an admin, I want to see full details of every order placed on the website 
-* **Acceptance Criteria:** 
+* **Acceptance Criteria:** An admin user should be able to see a page with full specifications for any order.
 * **Summary:**<br>  An admin user should be able to see a page with full specifications for every order existent.
    - Every order_number value corresponding to the order elements in the table is a link that redirects the admin to a details page for the order;<br>
    - The page contains all the details of the order.<br><br>
@@ -434,10 +441,11 @@ All the user stories were tested manually, including all the representative feat
     *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 ### EPIC - NEWSLETTER
 #### 10A: US - As a user, I want to be able to subscribe to a newsletter, so I can always be up to date with the latest promotions
-* **Acceptance Criteria:** A user should be able to register his email to newsletter for getting informed about the lasts promotions
+* **Acceptance Criteria:** A user should be able to register his email to newsletter for getting informed about the latest promotions
 * **Summary:**<br>  
     - There is a form available in the footer of every page where the user can register his email;<br>
     - The form has validation that doesn't let the user register the same email twice.<br><br>
+
      *By testing all these features, it can be affirmed that the user story is accomplished.*<br> 
 * **Outcome:** Pass
 
@@ -518,5 +526,191 @@ The website was tested on different browser for assuring the features work accor
 * Opera
 * Firefox
 
+## Code Validation
+### HTML
+
+The html code of the website was validated using [W3 Markup Validator](https://validator.w3.org/).<br>
+At the time of deployment the validation have the following outcome:<br><br>
+
+<img src="media/html_valid.png" width="40%"><br><br>
+
+The following pages have been tested:
+* Home
+* Products
+* Product details
+* Bag
+* Checkout
+* Checkout Success
+* User Profile
+* Admin Orders
+* Wishlist
+* Login/Register
+* 403/404/500 custom pages
+
+
+### CSS
+
+The CSS code was validated using [W3 Jigsaw Validator](https://jigsaw.w3.org/css-validator/)<br>
+At the time of deployment the validation for *base.css* has the following outcome:<br><br>
+
+<img src="media/css_valid.png" width="40%"><br><br>
+
+### Javascript
+
+The Javascript code was validated using using [JsHint](https://jshint.com/)<br>
+At the time of deployment the validation for *script.js* has the following outcome:<br><br>
+
+<img src="media/js_valid.png" width="40%"><br><br>
+
+* The warnings appeared because of EventListeners added to elements in a loop.<br>
+I tried to solve the issue but no successful method has been found, so I chose to ignore the warning as it is not affecting the way my code works in any way.
+* The script for defining the Stripe methods contains *Stripe* variable that generate the error in the linter. As this is a script taken and adapted from the [Stripe Documentation](https://stripe.com/docs/development), I choose to ignore this issue as there is no fix found for it. 
+
+### Python
+The python code was tested using [pycodestyle](https://pypi.org/project/pycodestyle/) online validator.<br>
+At the time of deployment the python code validation has the following outcome:<br><br>
+
+<img src="media/python_valid.png" width="60%"><br><br>
+
+
+### Accesibility 
+The accesibility of the website was tested with [Wave](https://wave.webaim.org/)
+
+**Wave results:**<br>
+<details>
+<summary>Home page</summary>
+<img src="media/wv_home.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Products page</summary>
+<img src="media/wv_products.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Product details page</summary>
+<img src="media/wv_details.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Bag page</summary>
+<img src="media/wv_bag.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Checkout page</summary>
+<img src="media/wv_checkout.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Checkout Success page</summary>
+<img src="media/wv_success.png" width="30%"><br><br>
+</details>
+<details>
+<summary>User Profile page</summary>
+<img src="media/wv_profile.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Admin Orders page</summary>
+<img src="media/wv_orders.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Wishlist page</summary>
+<img src="media/wv_wishlist.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Login page</summary>
+<img src="media/wv_login.png" width="30%"><br><br>
+</details>
+<details>
+<summary>Register page</summary>
+<img src="media/wv_register.png" width="30%"><br><br>
+</details><br>
+
+### Performance
+The performance of the website was tested with [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+
+**Lighthouse reports:**<br>
+
+<details>
+<summary>Desktop</summary>
+
+* Home page<br>
+<img src="" width="60%"><br><br>
+
+* Products page<br>
+<img src="" width="60%"><br><br>
+
+* Product details page<br>
+<img src="" width="60%"><br><br>
+
+* Bag page<br>
+<img src="" width="60%"><br><br>
+
+* Checkout page<br>
+<img src="" width="60%"><br><br>
+
+* Checkout Success page<br>
+<img src="" width="60%"><br><br>
+
+* User Profile page<br>
+<img src="" width="60%"><br><br>
+
+* Admin Orders page<br>
+<img src="" width="60%"><br><br>
+
+* Wishlist page<br>
+<img src="" width="60%"><br><br>
+
+* Login page<br>
+<img src="" width="60%"><br><br>
+
+* Register page<br>
+<img src="" width="60%"><br><br>
+</details>
+
+<details>
+<summary>Mobile</summary>  
+
+* Home page<br>
+<img src="" width="60%"><br><br>
+
+* Products page<br>
+<img src="" width="60%"><br><br>
+
+* Product details page<br>
+<img src="" width="60%"><br><br>
+
+* Bag page<br>
+<img src="" width="60%"><br><br>
+
+* Checkout page<br>
+<img src="" width="60%"><br><br>
+
+* Checkout Success page<br>
+<img src="" width="60%"><br><br>
+
+* User Profile page<br>
+<img src="" width="60%"><br><br>
+
+* Admin Orders page<br>
+<img src="" width="60%"><br><br>
+
+* Wishlist page<br>
+<img src="" width="60%"><br><br>
+
+* Login page<br>
+<img src="" width="60%"><br><br>
+
+* Register page<br>
+<img src="" width="60%"><br><br>
+</details><br>
+
+## Bugs 
+* **Header padding**
+    Because the header is implemented with <code>position: fixed</code>, I had to set a <code>padding-top</code> for the main container so it appears as if it is positioned below the header's content. In order to find the <code>padding-top</code> value that matches the header's height for every device, I used javascript to dynamically adjust it. This is why when testing the website for responsiveness using <b>dev tools</b>, the padding only changes its value on page reload. This bug is not visible when testing on real devices.  
+* **Pagination**
+    I have tried to implement pagination for the Products page using the class-based view <code>ListView</code> by setting the <code>paginate_by</code> value. The implementation didn't succeed as it seems that the view's feature doesn't work properly with filtered querysets. An alternative way of doing the pagination would be by using javascript but I didn't consider it as being completely necessary and I left it for future implementations because of time constraints.
+
+* **Form reloads page**<br>
+    The bug here is the fact that when a user submits any kind of form,  the page is reloaded and the user is brought to the top of the page. This results in a decrease in the user experience's quality because sometimes the user has to scroll back to the element where the action has been performed. This issue applies for <b>Newsletter subscribe</b>, <b>Update wishlist</b>, <b>Add/Update review</b> and <b>Update product quantity in shopping bag</b> features. As a solution for this issue, I added a <code>#section_id</code> to the redirecting URL in the views. This solution was used for <b>Newsletter subscribe</b> and  <b>Add/Update review</b> forms' post methods and it can be said that the user experience's quality has been increased. Another issue has appeared though, considering that the hash is now visible in the page URL and should be found a propper way of hiding it from the user.
+   <br><br>
+
 Back to [README.MD](README.MD)<br>
+ 
  
