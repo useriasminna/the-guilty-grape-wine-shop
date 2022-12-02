@@ -708,6 +708,10 @@ input:not([type=checkbox]) {
     color: #000;
     font-size: .875rem;
 }
+select{
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
 
 .custom-control label:hover {
     cursor: pointer;
@@ -1549,14 +1553,28 @@ select option[value=""] {
         max-height: 35vh;
     }
 
+    .StripeElement {
+        width: 100%;
+        border: 1px solid #ced4da;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        padding-left: 0.6rem;
+        border-radius: 0.25rem;
+        color: #000;
+    }
+
     .modal form input:not([type=checkbox]),
     select,
     input:not([type=checkbox]) {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         padding-left: 0.5rem;
-        border-radius: 0.5rem;
         font-size: inherit;
+    }
+
+    select{
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
     }
 
     .responsive-pad{
@@ -1656,6 +1674,14 @@ select option[value=""] {
     .bg-floral-responsive{
         background-color: transparent;
         box-shadow: none;
+    }
+
+    .dropdown-toggle::after {
+        border-top: 0.4em solid;
+        border-right: 0.4em solid transparent;
+        border-left: 0.4em solid transparent;
+        margin-bottom: -3px;
+        margin-left: 8px;
     }
 }
 
