@@ -300,7 +300,7 @@ if(userType.textContent == "admin"){
         // CALL A METHOD TO PREFILL THE FORM'S INPUT WITH CURRENT PRODUCT VALUES
         const prefillFieldsOnClassChange = (modal) => {
             if (!modal.classList.contains('show')){
-                let inputs = modal.getElementsByTagName('input')
+                let inputs = modal.getElementsByTagName('input');
                 for(let el of inputs){
                     if(el.type != 'hidden')
                         if(el.classList.contains('custom-control-input')){
@@ -315,11 +315,11 @@ if(userType.textContent == "admin"){
                         }
                     
                 }
-                let selects = modal.getElementsByTagName('select')
+                let selects = modal.getElementsByTagName('select');
                 for(let el of selects){
                     let name = el.name.replace('UPDATE-','');
                     if(name == 'category'){
-                        el.selectedIndex = currentProduct.fields[name]
+                        el.selectedIndex = currentProduct.fields[name];
                     }
                     else{
                         for (let option in el.options) {
