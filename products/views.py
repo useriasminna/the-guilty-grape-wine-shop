@@ -16,6 +16,8 @@ from django.db.models.functions import Lower
 from django.db.models import Sum
 from django_countries.data import COUNTRIES
 from django.contrib import messages
+from django.core.serializers import serialize
+
 from product_reviews.forms import ReviewForm, UpdateReviewForm
 from product_reviews.models import Review as ReviewModel
 
@@ -301,6 +303,7 @@ class ProductDetail(ListView):
             'current_review': current_review,
             'add_to_wishlist_form': add_to_wishlist_form,
             'current_wishlist_line': current_wishlist_line,
+            'product_json': serialize('json', Product.objects.filter(pk=product.pk)),
         }
 
         return render(request, 'products/product_detail.html', context)
