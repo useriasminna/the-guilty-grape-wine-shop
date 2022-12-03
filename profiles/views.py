@@ -35,7 +35,7 @@ class Profile(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
             'default_town_or_city': 'Dublin',
             'default_county': 'Dublin',
             })
-        orders = Order.objects.filter(user=profile)
+        orders = Order.objects.filter(user=profile).order_by('-date')
 
         template = 'profiles/profile.html'
         context = {
@@ -134,10 +134,12 @@ class AdminOrdersList(LoginRequiredMixin, UserPassesTestMixin, ListView):
                 if orders_date:
                     orders_date = orders_date
                 if orders_date:
-                    query = Order.objects.filter(date=orders_date)
+                    query = Order.objects.filter(
+                        date=orders_date).order_by('-date')
                 else:
                     orders_date = today
-                query = Order.objects.filter(date__date=orders_date)
+                query = Order.objects.filter(
+                    date__date=orders_date).order_by('-date')
                 context = {'date_form': date_form,
                            'date': orders_date,
                            'orders': query}
