@@ -65,7 +65,7 @@
               </li>
               <li class="nav-item mb-2 mb-lg-0  mr-3 mt-2 mt-lg-0">
                 <div class="dropdown">
-                  <a href="" id="navitem-wines" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Wines</a>
+                  <button id="navitem-wines" class="dropdown-toggle dropdown-btn bg-transparent" data-toggle="dropdown" aria-expanded="false">Wines</button>
                   <div class="dropdown-menu dropdown-menu-lg-start">
                       <a class="dropdown-item" href="{% url 'products' %}?category=white_wines">White Wines</a>
                       <a class="dropdown-item" href="{% url 'products' %}?category=red_wines">Red Wines</a>
@@ -100,15 +100,16 @@
                   <ul class="d-block d-lg-flex justify-content-end navigation">
                     <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0" id="adminManageNav">
                       <div class="dropdown">
-                        <a title="Admin Manage"  data-toggle="dropdown" aria-expanded="false" id="navitem-admin">
-                          <span class="dropdown-toggle d-lg-none">Admin manage</span>
+                        <button title="Admin Manage" class="dropdown-btn" data-toggle="dropdown" aria-expanded="false" id="navitem-admin">
+                          <span class="dropdown-toggle d-lg-none pl-0">Admin manage</span>
                           <i class="fas fa-database d-none d-lg-block"></i>
-                        </a>
+                        </button>
                         <div class="dropdown-menu dropdown-menu-lg-start">
                           <a class="dropdown-item" href="{% url 'admin_manage_orders' %}">Orders</a>
-                          <a class="dropdown-item" data-toggle="modal" data-target="#addProductModal">Add a new product</a>
+                          <button class="d-lg-none pl-4 dropdown-item dropdown-btn color-inherit" data-toggle="modal" data-target="#addProductModal">Add a new product</button>
+                          <button class="d-none d-lg-block dropdown-item dropdown-btn color-inherit" data-toggle="modal" data-target="#addProductModal">Add a new product</button>
                           <hr class="dropdown-divider d-none d-lg-block">
-                          <a class="dropdown-item d-none d-lg-block" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                          <button class="dropdown-btn dropdown-item d-none d-lg-block" data-toggle="modal" data-target="#logoutModal">Logout</button>
                         </div>
                       </div>
                     </li>
@@ -124,16 +125,16 @@
                   <ul class="d-block d-lg-flex justify-content-end navigation">
                     <li class="nav-item mb-2 mb-lg-0 mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0" id="userNav">
                       <div class="dropdown">
-                        <a class="d-none d-lg-block" title="Account"  data-toggle="dropdown" aria-expanded="false" >
+                        <button class="d-none d-lg-block dropdown-btn" title="Account"  data-toggle="dropdown" aria-expanded="false" >
                           <i class="fas fa-user-circle"></i>
-                        </a>
+                        </button>
                         <a class="d-lg-none" href="{% url 'profile' %}" id="navitem-profile">
                           <span>My profile</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-start">
                           <a class="dropdown-item" href="{% url 'profile' %}">My profile</a>
                           <hr class="dropdown-divider d-none d-lg-block">
-                          <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                          <button class="dropdown-item dropdown-btn" data-toggle="modal" data-target="#logoutModal">Logout</button>
                         </div>
                       </div>
                     </li>
@@ -190,9 +191,9 @@
                   </li>
                   <li class="nav-item mb-2 mb-lg-0 ml-lg-4 mt-2 mt-lg-0 d-none d-lg-block" id="userNav">
                     <div class="dropdown">
-                      <a title="Account"  data-toggle="dropdown" aria-expanded="false" >
+                      <button title="Account" data-toggle="dropdown" class="dropdown-btn" aria-expanded="false" >
                         <i class="fas fa-user-circle"></i>
-                      </a>
+                      </button>
                       <div class="dropdown-menu dropdown-menu-lg-start">
                           <a class="dropdown-item" href="{% url 'account_login' %}" >Login</a>
                           <a class="dropdown-item"  href="{% url 'account_signup' %}">Register</a>
@@ -230,9 +231,9 @@
         </div>
         <div class="d-md-none p-0 search-bar">
           <div class="dropdown">
-            <a class="d-lg-none" title="Search"  data-toggle="dropdown" aria-expanded="false" >
+            <button class="d-lg-none dropdown-btn" title="Search"  data-toggle="dropdown" aria-expanded="false" >
               <i class="fas fa-search text-light"></i>
-            </a>
+            </button>
             <div class="dropdown-menu dropdown-menu-lg-start col-12">
               {% include 'includes/search-box.html' %}
             </div>
