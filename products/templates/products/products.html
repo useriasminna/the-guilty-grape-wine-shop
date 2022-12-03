@@ -332,6 +332,7 @@
                     </div>
                     {% if not request.user.is_authenticated or not request.user.is_superuser %}
                     <!-- ADD TO BAG AND NUMBER OF ITEMS BUTTONS FOR DEVICES WITH NO HOVER MECHANISM-->
+                    {% if product.stock != 0 %}
                     <div class="add-to-bag-no-hover">
                         <form action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
@@ -351,6 +352,7 @@
                             </div>
                         </form>
                     </div>
+                    {% endif %}
                     {% endif %}
                 </div>
                 <!-- ADD SEPARATORS -->
