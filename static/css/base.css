@@ -1603,6 +1603,56 @@ select option[value=""] {
     .small-btn {
         font-size: inherit;
     }
+
+    .no-hover-rating {
+        display: block;
+    }
+
+    .add-to-bag-no-hover {
+        display: block;
+    }
+
+    .product-overlay {
+        display: none;
+    }
+
+    .product-overlay>* {
+        display: none;
+    }
+
+    .product-container:hover {
+        cursor: initial;
+        background-color: initial;
+        box-shadow: none;
+    }
+
+    .product-container:hover .product-img {
+        opacity: 1;
+    }
+
+    .product-container:hover img {
+        opacity: initial;
+    }
+
+    .product-container:hover .product-overlay {
+        opacity: 0;
+    }
+
+    .product-container>div:last-of-type {
+        display: block !important;
+    }
+
+    .product-container:hover .banner-hover {
+        opacity: 0;
+    }
+
+    .product-container:hover .banner-hover img {
+        opacity: 0;
+    }
+
+    .product-container:hover .product-banner {
+        opacity: 1;
+    }
 }
 
 /* --------------------------------- SMALL DEVICES STYLINYG ------------------------------- */
