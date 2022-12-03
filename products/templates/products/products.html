@@ -58,10 +58,10 @@
                         {% if not current_category and not is_deluxe and not filters_list.category %}
                         <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
-                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                <button class="dropdown-btn w-100 text-muted d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Category</span>
                                     <span class="dropdown-toggle"></span>
-                                </a>
+                                </button>
                                 <div class="dropdown-menu dropdown-menu-lg-start">
                                     {% for category in categories %}
                                     <a class="dropdown-item" href="{{current_url}}category={{category|urlencode}}">{{category.get_friendly_name}}</a>
@@ -74,10 +74,10 @@
                         {% if is_deluxe and not deluxe_style %}
                         <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
-                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                <button class="dropdown-btn w-100 text-muted d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Style Of Wine</span>
                                     <span class="dropdown-toggle"></span>
-                                </a>                                
+                                </button>                                
                                 <div class="dropdown-menu dropdown-menu-lg-start">
                                     {% for style in deluxe_styles %}
                                     <a class="dropdown-item" href="{{current_url}}style={{style|urlencode}}">{{style}}</a>
@@ -90,10 +90,10 @@
                         {% if not filters_list.grapes %}
                         <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
-                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                <button class="dropdown-btn w-100 text-muted d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Grape Variety</span>
                                     <span class="dropdown-toggle"></span>
-                                </a>                                
+                                </button>                                
                                 <div class="dropdown-menu dropdown-menu-lg-start">
                                     {% for grape in grapes_list %}
                                         <a class="dropdown-item" href="{{current_url}}grapes={{grape|urlencode}}">{{grape}}</a>
@@ -106,10 +106,10 @@
                         {% if not filters_list.year %}
                         <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
-                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                <button class="dropdown-btn w-100 text-muted d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Year</span>
                                     <span class="dropdown-toggle"></span>
-                                </a>                                
+                                </button>                                
                                 <div class="dropdown-menu dropdown-menu-lg-start">
                                     {% for year in years_list %}
                                         <a class="dropdown-item" href="{{current_url}}year={{year|urlencode}}">{{year}}</a>
@@ -122,10 +122,10 @@
                         {% if not filters_list.country %}
                         <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
-                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                <button class="dropdown-btn w-100 text-muted d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Country</span>
                                     <span class="dropdown-toggle"></span>
-                                </a>                                
+                                </button>                                
                                 <div class="dropdown-menu dropdown-menu-lg-start">
                                     {% for country in countries_list %}
                                         <a class="dropdown-item" href="{{current_url}}country={{country|urlencode}}">{{country}}</a>
@@ -138,10 +138,10 @@
                         {% if not filters_list.region %}
                         <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
-                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                <button class="dropdown-btn w-100 text-muted d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Region</span>
                                     <span class="dropdown-toggle"></span>
-                                </a>                                
+                                </button>                                
                                 <div class="dropdown-menu dropdown-menu-lg-start">
                                     {% for region in regions_list %}
                                         <a class="dropdown-item" href="{{current_url}}region={{region|urlencode}}">{{region}}</a>
@@ -154,10 +154,10 @@
                         {% if not filters_list.food_pairing %}
                         <li class="col-md-3 col-xl-2 p-0 nav-item mt-2 mt-lg-0 mr-4 mb-2">
                             <div class="dropdown">
-                                <a href="" class="d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
+                                <button class="dropdown-btn w-100 text-muted d-flex justify-content-between text-uppercase" data-toggle="dropdown" aria-expanded="false">
                                     <span>Food Pairing</span>
                                     <span class="dropdown-toggle"></span>
-                                </a>                                
+                                </button>                                
                                 <div class="dropdown-menu dropdown-menu-lg-start">
                                     {% for food in food_pairing_list %}
                                         <a class="dropdown-item" href="{{current_url}}food_pairing={{food|urlencode}}">{{food}}</a>
