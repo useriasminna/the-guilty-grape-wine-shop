@@ -336,8 +336,8 @@
                     <div class="add-to-bag-no-hover">
                         <form action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
-                            <div class="col-12 d-flex">
-                                <div class="col-4 p-0 product-count d-flex">
+                            <div class="d-flex">
+                                <div class="col-5 p-0 product-count d-flex">
                                     <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 substraction">-</button>
                                     <label class="col-4 p-0 m-0">
                                         <span hidden>Product count</span>
@@ -345,7 +345,7 @@
                                     </label>
                                     <button type="button" class="font-weight-bold col-4 p-0 button rounded-0 addition">+</button>
                                 </div>
-                                <div class="col-8 p-0">
+                                <div class="col-7 p-0">
                                     <button type="submit" class="w-100 button purple-btn rounded-0 font-size-smaller">Add to bag</button>
                                 </div>
                                 <input name="current_url" type="hidden" value="{{ request.path }}">
