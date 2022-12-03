@@ -107,7 +107,8 @@
                 <div class="col-12 col-md-8 col-xl-6 p-0">
                   <label>
                     <span hidden>Current product</span>
-                    <input hidden id="currentProduct" type="text" value='{{ product.id }}'>
+                    {{ product_json|json_script:"currentProduct" }}
+                    <!-- <input hidden id="currentProduct" type="text" value='{{ product }}'> -->
                   </label>
                   <button class="w-100 button purple-btn small-btn rounded-0  mb-3 mb-md-2" data-toggle="modal" data-target="#updateProductModal{{ product.pk }}">Edit product details</button>
                   <div class="modal fade" id="updateProductModal{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="updateProductModalLabel" aria-hidden="true">
@@ -334,4 +335,7 @@
       </div>
     </div>
   </div>
+{% endblock %}
+{% block extra_js %} 
+<script src="{% static 'products/js/products.js' %}"></script>
 {% endblock %}
