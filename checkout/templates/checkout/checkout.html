@@ -115,9 +115,9 @@
                                     <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
                                 </p>
                                 <!-- BACK TO BAG BUTTON -->
-                                <div class="col-12 col-xl-8 p-0 d-flex flex-column align-items-center flex-lg-row mx-auto justify-content-around">
+                                <div class="col-12 col-xl-10 p-0 d-flex flex-column align-items-center flex-lg-row mx-auto justify-content-around">
                                     <button type="submit" class="button purple-btn small-btn rounded-0 mb-3 mb-lg-0">Complete order</button>
-                                    <a class="button gray-btn small-btn rounded-0" href="{% url 'bag' %}">Back to bag</a>
+                                    <a class="button gray-btn small-btn rounded-0" href="{% url 'bag' %}">Back to shopping bag</a>
                                 </div>
                             </form>
                         </div>
@@ -127,16 +127,16 @@
                             <div class="border p-2 mb-2 scroll-h">
                                 <table>
                                     <tr>
-                                        <th class="col-1 pl-1 pb-2 text-center text-muted font-size-smaller">Quantity</th>
-                                        <th class="col-9 p-0 pb-2 text-center text-muted font-size-smaller">Item</th>
-                                        <th class="col-2 p-0 pb-2 text-center text-muted font-size-smaller">Price</th>
+                                        <th class="col-2 pl-0 pb-2 text-muted text-md-center font-size-smaller">Quantity</th>
+                                        <th class="col-8 p-0 pr-2 pb-2 text-muted font-size-smaller">Item</th>
+                                        <th class="col-2 p-0 pb-2 text-muted text-md-center font-size-smaller">Price</th>
                                     </tr>
                                     {% for item in bag_items %}
                                         <tr class="border-bottom">
-                                            <td class="col-1 pl-1 pb-3 pb-lg-2 text-center text-muted">
+                                            <td class="col-2 pl-0 pb-2 text-center text-muted">
                                                 <p class="m-0 font-size-larger">{{item.quantity}} x </p>
                                             </td>
-                                            <td class="col-9 p-0 pb-3 pb-lg-2 pr-1 pr-lg-0 text-left text-muted">
+                                            <td class="col-8 p-0 pr-2 pb-2 text-left text-muted">
                                                 <div class="d-flex align-items-center">
                                                     {% if item.product.image %}
                                                         <img class="d-none d-md-block col-2 p-0 img-fluid" src="{{ item.product.image.url }}" alt="{{ product.style }} wine {{ item.product.name }}">
@@ -147,7 +147,7 @@
                                                     <p class="d-lg-none p-0 m-0"><b>{{item.product.name}}</b></p>
                                                 </div>
                                             </td>
-                                            <td class="col-2 p-0 pb-3 pb-lg-2 text-center text-muted">
+                                            <td class="col-2 p-0 pb-2 text-md-center text-muted">
                                                 <p class="m-0">€{{item.subtotal}}</p>
                                             </td>
                                         </tr>                                
