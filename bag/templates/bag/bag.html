@@ -106,12 +106,12 @@
                                         <form method="POST" action="{% url 'update_quantity' item.product.id %}">
                                             {% csrf_token %}
                                             <div class="product-count bag-count d-flex mb-2 justify-content-center">
-                                                <button type="button" class="font-weight-bold col-4 col-xl-2 p-1 button purple-btn small-btn rounded-0 substraction">-</button>
+                                                <button type="button" class="font-weight-bold col-4 col-xl-3 p-1 button purple-btn small-btn rounded-0 substraction">-</button>
                                                 <label class="col-4 col-xl-6 p-0 m-0">
                                                     <span hidden>Product count</span>
                                                     <input class="p-0 text-center rounded-0" name="quantity" type="number" value="{{item.quantity}}" min="1" max="{{item.product.stock}}">
                                                 </label>
-                                                <button type="button" class="font-weight-bold col-4 col-xl-2 p-1 button purple-btn small-btn rounded-0 addition">+</button>
+                                                <button type="button" class="font-weight-bold col-4 col-xl-3 p-1 button purple-btn small-btn rounded-0 addition">+</button>
                                             </div>
                                             <button type="submit" class="text-purple p-0 w-100 text-center hover-underline border-0 font-weight-bold font-size-small bg-transparent"><em>Update quantity</em></button>
                                             <input name="current_url" type="hidden" value="{{ request.path }}">
@@ -207,4 +207,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %} 
+    <script src="{% static 'bag/js/bag.js' %}"></script>
 {% endblock %}
