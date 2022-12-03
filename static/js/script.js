@@ -269,78 +269,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     attributeFilter: ["class"]
     });
 
-    if (window.location.pathname == '/products/' || window.location.pathname == '/wishlist/') {  
-        // ---------------------------SCRIPT FOR UPDATING CURRENT URL WITH SORT VALUE--------------------------------------------
-        let sortSelector = document.getElementById('sort-selector');
-        if(sortSelector)
-            sortSelector.addEventListener('change', (e) =>{
-                let selector = e.target;
-                let currentUrl = new URL(window.location);
-        
-                let selectedVal = selector.value;
-                if(selectedVal != "reset"){
-                    if(selectedVal == 'best_sellers'){
-                        let sort = selectedVal;
-                        currentUrl.searchParams.set("sort", sort);
-                        currentUrl.searchParams.delete("direction");
-                    }
-                    else{
-                        let sort = selectedVal.split("_")[0];
-                        let direction = selectedVal.split("_")[1];
-        
-                        currentUrl.searchParams.set("sort", sort);
-                        currentUrl.searchParams.set("direction", direction);
-                    }
-        
-                    window.location.replace(currentUrl);
-                } else {
-                    currentUrl.searchParams.delete("sort");
-                    currentUrl.searchParams.delete("direction");
-        
-                    window.location.replace(currentUrl);
-                }
-            } );
 
-        //----------------------SCRIPT FOR STOPING CLICK EVENT PROPAGATION FROM PRODUCT CONTAINBER TO OVERLAY ADD TO BAG FORM-----------------------------------------------
-        let formsOverlay = document.getElementsByClassName('overlay-form');
-        for(let form of formsOverlay){
-            form.addEventListener('click', (e) => { 
-                e.stopPropagation();
-            });
-        }
-    }
-
-    if (window.location.pathname.includes('/products/') || window.location.pathname.includes('/wishlist/')) {
-        const generateStarsContainers = document.getElementsByClassName('ratings-generated');
-        //GENERATE STARS FOR REVIEWS RATING AFTER RATE VALUE
-
-        for(let container of generateStarsContainers){
-        let rateHidden = container.previousElementSibling.value;
-        rateHidden = Math.ceil(parseFloat(rateHidden));
-
-    
-        for(let i=0; i<rateHidden; i++){
-            let star = document.createElement("button");
-            star.textContent = '★';
-            star.classList.add('star');
-            star.style.color = "#590243";
-            container.appendChild(star);
-        
-            }
-        
-            for(let i=0; i<5-rateHidden; i++){
-            let star = document.createElement("button");
-            star.textContent = '★';
-            star.classList.add('star');
-            star.style.color = "#80808066";
-            container.appendChild(star);
-        
-            }
-        } 
-    } 
-
-    if (window.location.pathname.includes('/products/') || window.location.pathname.includes('/wishlist/') || 
-        window.location.pathname.includes('/bag/')) {
+    if (window.location.pathname.includes('/bag/')) {
             // -------------------------SCRIPT FOR PRODUCT COUNT BUTTONS FOR ADDITION AND SUBSTRACTION TO UPDATE INPUT VALUE ON CLICK---------------------------------
             let productCountContainers = document.getElementsByClassName('product-count');
             for(let container of productCountContainers){
@@ -367,214 +297,214 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         }
 
-    if (window.location.pathname.includes('/products/')) {  
+    // if (window.location.pathname.includes('/products/')) {  
 
 
-        if (window.location.pathname.includes('/product_details/')) {  
-            // --------------------------SCRIPT FOR ADDING VALIDATION TO UPDATE PRODUCT FORM AVAILABLE IN PRODUCT_DETAILS.HTML--------------------------------------------- 
+    //     if (window.location.pathname.includes('/product_details/')) {  
+    //         // --------------------------SCRIPT FOR ADDING VALIDATION TO UPDATE PRODUCT FORM AVAILABLE IN PRODUCT_DETAILS.HTML--------------------------------------------- 
             
-            let currentProduct = document.getElementById('currentProduct');
-            if(currentProduct){
-                let updateModal =  document.getElementById('updateProductModal' + currentProduct.value);
-                let updateModalContent = updateModal.getElementsByClassName('modal-content')[0];
-                let updateForm = updateModal.getElementsByTagName('form')[0];
-                let up_country = document.getElementById('id_UPDATE-country');
-                let up_sku = document.getElementById('id_UPDATE-sku');
-                let up_region = document.getElementById('id_UPDATE-region');
-                let up_grapes = document.getElementById('id_UPDATE-grapes');
-                let up_style = document.getElementById('id_UPDATE-style');
-                let up_code = document.getElementById('id_UPDATE-code');
-                let up_food = document.getElementById('id_UPDATE-food_pairing');
+    //         let currentProduct = document.getElementById('currentProduct');
+    //         if(currentProduct){
+    //             let updateModal =  document.getElementById('updateProductModal' + currentProduct.value);
+    //             let updateModalContent = updateModal.getElementsByClassName('modal-content')[0];
+    //             let updateForm = updateModal.getElementsByTagName('form')[0];
+    //             let up_country = document.getElementById('id_UPDATE-country');
+    //             let up_sku = document.getElementById('id_UPDATE-sku');
+    //             let up_region = document.getElementById('id_UPDATE-region');
+    //             let up_grapes = document.getElementById('id_UPDATE-grapes');
+    //             let up_style = document.getElementById('id_UPDATE-style');
+    //             let up_code = document.getElementById('id_UPDATE-code');
+    //             let up_food = document.getElementById('id_UPDATE-food_pairing');
 
-                // METHOD FOR CHECKING IF SKU IS UNIQUE EXCLUDING CURRENT SKU
-                const sku_update_is_not_unique = (sku) => {
-                    for(let product of productsData){
-                        if(product.pk != currentProduct.value && product.fields.sku == sku)
-                            return true;
-                    }
-                };
+    //             // METHOD FOR CHECKING IF SKU IS UNIQUE EXCLUDING CURRENT SKU
+    //             const sku_update_is_not_unique = (sku) => {
+    //                 for(let product of productsData){
+    //                     if(product.pk != currentProduct.value && product.fields.sku == sku)
+    //                         return true;
+    //                 }
+    //             };
                 
-                // METHOD FOR CHECKING IF CODEE IS UNIQUE EXCLUDING CURRENT CODE
-                const code_update_is_not_unique = (code) => {
-                    for(let product of productsData){
-                        if(product.pk != currentProduct.value && product.fields.code == code)
-                            return true;
-                    }
-                };
+    //             // METHOD FOR CHECKING IF CODEE IS UNIQUE EXCLUDING CURRENT CODE
+    //             const code_update_is_not_unique = (code) => {
+    //                 for(let product of productsData){
+    //                     if(product.pk != currentProduct.value && product.fields.code == code)
+    //                         return true;
+    //                 }
+    //             };
             
-                // METHOD TO CHECK IF SKU VALUE IS VALID FOR UPDATE FORM
-                const checkUpdateSku = (sku) => {
+    //             // METHOD TO CHECK IF SKU VALUE IS VALID FOR UPDATE FORM
+    //             const checkUpdateSku = (sku) => {
 
-                    let valid = false;
+    //                 let valid = false;
 
-                    const skuValue = sku.value.trim();
+    //                 const skuValue = sku.value.trim();
 
-                    if (sku_update_is_not_unique(skuValue)) {
-                        showError(sku, 'Sku value is already registered');
-                    } else {
-                        valid = true;
-                    }
-                    return valid;
-                };
+    //                 if (sku_update_is_not_unique(skuValue)) {
+    //                     showError(sku, 'Sku value is already registered');
+    //                 } else {
+    //                     valid = true;
+    //                 }
+    //                 return valid;
+    //             };
 
-                // METHOD TO CHECK IF CODE VALUE IS VALID FOR UPDATE FORM
-                const checkUpdateCode = (code) => {
+    //             // METHOD TO CHECK IF CODE VALUE IS VALID FOR UPDATE FORM
+    //             const checkUpdateCode = (code) => {
 
-                    let valid = false;
+    //                 let valid = false;
 
-                    const codeValue = code.value.trim();
+    //                 const codeValue = code.value.trim();
 
-                    if (code_update_is_not_unique(codeValue)) {
-                        showError(code, 'Code value is already registered');
-                    } else {
-                        valid = true;
-                    }
-                    return valid;
-                };
+    //                 if (code_update_is_not_unique(codeValue)) {
+    //                     showError(code, 'Code value is already registered');
+    //                 } else {
+    //                     valid = true;
+    //                 }
+    //                 return valid;
+    //             };
             
-                // METHOD TO PREVENT UPDATE FORM FOR SUBMITING IF FIELDS ARE NOT VALID
-                const validateUpdateModalForm = () => {
+    //             // METHOD TO PREVENT UPDATE FORM FOR SUBMITING IF FIELDS ARE NOT VALID
+    //             const validateUpdateModalForm = () => {
                     
-                    updateForm.addEventListener('submit', (e) => {
+    //                 updateForm.addEventListener('submit', (e) => {
                         
-                        let isSkuValid = checkUpdateSku(up_sku);
-                        let isCountryValid = checkCountry(up_country);
-                        let isRegionValid = checkRegion(up_region);
-                        let isGrapesValid = checkGrapes(up_grapes);
-                        let isStyleValid = checkStyle(up_style);
-                        let isCodeValid = checkUpdateCode(up_code);
-                        let isFoodValid = checkFood(up_food);
-                        let isFormValid = isCountryValid && isSkuValid && isRegionValid &&
-                                          isGrapesValid && isStyleValid && isCodeValid && isFoodValid;
-                        if(!isFormValid){
-                            e.preventDefault();
-                            if (! isSkuValid)
-                                addModal.scrollTo(0, up_sku.offsetTop);
-                            else if (!isCountryValid)
-                                updateModal.scrollTo(0, up_country.offsetTop);
-                            else if (! isRegionValid)
-                                updateModal.scrollTo(0, up_region.offsetTop);
-                            else if (! isGrapesValid)
-                                updateModal.scrollTo(0, up_grapes.offsetTop);
-                            else if (! isStyleValid)
-                                updateModal.scrollTo(0, up_style.offsetTop);
-                            else if (! isCodeValid)
-                                addModal.scrollTo(0, up_code.offsetTop);
-                            else if (! isFoodValid)
-                                updateModal.scrollTo(0, up_food.offsetTop);
-                            updateModalContent.style.border = '2px solid red';
-                        }
-                    });
+    //                     let isSkuValid = checkUpdateSku(up_sku);
+    //                     let isCountryValid = checkCountry(up_country);
+    //                     let isRegionValid = checkRegion(up_region);
+    //                     let isGrapesValid = checkGrapes(up_grapes);
+    //                     let isStyleValid = checkStyle(up_style);
+    //                     let isCodeValid = checkUpdateCode(up_code);
+    //                     let isFoodValid = checkFood(up_food);
+    //                     let isFormValid = isCountryValid && isSkuValid && isRegionValid &&
+    //                                       isGrapesValid && isStyleValid && isCodeValid && isFoodValid;
+    //                     if(!isFormValid){
+    //                         e.preventDefault();
+    //                         if (! isSkuValid)
+    //                             addModal.scrollTo(0, up_sku.offsetTop);
+    //                         else if (!isCountryValid)
+    //                             updateModal.scrollTo(0, up_country.offsetTop);
+    //                         else if (! isRegionValid)
+    //                             updateModal.scrollTo(0, up_region.offsetTop);
+    //                         else if (! isGrapesValid)
+    //                             updateModal.scrollTo(0, up_grapes.offsetTop);
+    //                         else if (! isStyleValid)
+    //                             updateModal.scrollTo(0, up_style.offsetTop);
+    //                         else if (! isCodeValid)
+    //                             addModal.scrollTo(0, up_code.offsetTop);
+    //                         else if (! isFoodValid)
+    //                             updateModal.scrollTo(0, up_food.offsetTop);
+    //                         updateModalContent.style.border = '2px solid red';
+    //                     }
+    //                 });
                     
-                };
-                validateUpdateModalForm();
+    //             };
+    //             validateUpdateModalForm();
                 
             
-                // CREATE A MUTATION OBSERVER TO DETECT IF FORM MODAL CLASSLIST HAS CHANGED
-                // CALL A METHOD TO RELOAD THE PAGE WHEN MODAL IS CLOSED TO CLEAR FORM INPUTS
+    //             // CREATE A MUTATION OBSERVER TO DETECT IF FORM MODAL CLASSLIST HAS CHANGED
+    //             // CALL A METHOD TO RELOAD THE PAGE WHEN MODAL IS CLOSED TO CLEAR FORM INPUTS
             
-                var obUpdate = new MutationObserver(() => {
-                    reloadPageOnClassChange(updateModal);
-                });
+    //             var obUpdate = new MutationObserver(() => {
+    //                 reloadPageOnClassChange(updateModal);
+    //             });
             
-                obUpdate.observe(updateModal, {
-                attributes: true,
-                attributeFilter: ["class"]
-                });
+    //             obUpdate.observe(updateModal, {
+    //             attributes: true,
+    //             attributeFilter: ["class"]
+    //             });
 
-            }
-
-
+    //         }
 
 
-            // --------------------------REVIEWS SECTION----------------------------------------------------------
+
+
+    //         // --------------------------REVIEWS SECTION----------------------------------------------------------
             
-            let authStatus= document.getElementById('authStatus');
-            let userType = document.getElementById('userType');
-            if(authStatus.textContent == "authenticated" && userType.textContent == "client"){
-                const rating = document.getElementsByClassName('rating')[0];
-                const stars = rating.getElementsByTagName('button');
-                var rateValue;
-                if(document.querySelector('#myReview'))
-                {
-                rateValue = document.querySelector('#updateRateValue');        
-                }
-                else{
-                rateValue = document.querySelector('#rateValue');
-                }
+    //         let authStatus= document.getElementById('authStatus');
+    //         let userType = document.getElementById('userType');
+    //         if(authStatus.textContent == "authenticated" && userType.textContent == "client"){
+    //             const rating = document.getElementsByClassName('rating')[0];
+    //             const stars = rating.getElementsByTagName('button');
+    //             var rateValue;
+    //             if(document.querySelector('#myReview'))
+    //             {
+    //             rateValue = document.querySelector('#updateRateValue');        
+    //             }
+    //             else{
+    //             rateValue = document.querySelector('#rateValue');
+    //             }
                     
-                const displayUpdateForm = document.querySelector('#displayUpdateForm');
+    //             const displayUpdateForm = document.querySelector('#displayUpdateForm');
 
-                //ADD EVENT LISTENERS FOR STAR RATING BUTTONS
-                stars[0].clicked = true;
-                const makeHoverStarsPurple = (limit) => {
-                    for(let j=0; j<=limit; j++){
-                        stars[j].style.color = "#590243";
-                    }
-                };
+    //             //ADD EVENT LISTENERS FOR STAR RATING BUTTONS
+    //             stars[0].clicked = true;
+    //             const makeHoverStarsPurple = (limit) => {
+    //                 for(let j=0; j<=limit; j++){
+    //                     stars[j].style.color = "#590243";
+    //                 }
+    //             };
 
-                const makeNotClickedStarsGray = (i) => {
-                    for(let j=0; j<=i; j++){
-                        if(!stars[j].clicked)
-                        stars[j].style.color = "#80808066";
-                    }
-                };
+    //             const makeNotClickedStarsGray = (i) => {
+    //                 for(let j=0; j<=i; j++){
+    //                     if(!stars[j].clicked)
+    //                     stars[j].style.color = "#80808066";
+    //                 }
+    //             };
                 
-                const makeClickedStarsPurple = (i) => {
-                    rateValue.value = i+1;
-                    rateValue.innerHTML = i+1;
-                    for(let j=0; j<=i; j++){
-                        stars[j].style.color = "#590243";
-                        stars[j].clicked = true;
-                    }
-                    if(i != stars.length-1)
-                        for(let z=i+1; z<stars.length; z++){
-                        stars[z].style.color = "#80808066";
-                        stars[z].clicked = false;
-                        }
-                };
+    //             const makeClickedStarsPurple = (i) => {
+    //                 rateValue.value = i+1;
+    //                 rateValue.innerHTML = i+1;
+    //                 for(let j=0; j<=i; j++){
+    //                     stars[j].style.color = "#590243";
+    //                     stars[j].clicked = true;
+    //                 }
+    //                 if(i != stars.length-1)
+    //                     for(let z=i+1; z<stars.length; z++){
+    //                     stars[z].style.color = "#80808066";
+    //                     stars[z].clicked = false;
+    //                     }
+    //             };
         
-                for(let i=0; i<stars.length; i++){
-                    stars[i].addEventListener('mouseover', (event) => {
-                    event = makeHoverStarsPurple(i);
-                    });
+    //             for(let i=0; i<stars.length; i++){
+    //                 stars[i].addEventListener('mouseover', (event) => {
+    //                 event = makeHoverStarsPurple(i);
+    //                 });
                     
-                    stars[i].addEventListener('mouseleave', (event) => {
-                    event = makeNotClickedStarsGray(i);
-                    });
+    //                 stars[i].addEventListener('mouseleave', (event) => {
+    //                 event = makeNotClickedStarsGray(i);
+    //                 });
 
-                    stars[i].addEventListener('click', (event) => {
-                    event = makeClickedStarsPurple(i);
-                    });
+    //                 stars[i].addEventListener('click', (event) => {
+    //                 event = makeClickedStarsPurple(i);
+    //                 });
 
-                }
+    //             }
             
-            //ON 'UPDATE' BUTTON CLICK, DISPLAY UPDATE FORM AND FILL IT WITH EXISTING VALUES OF THE CURRENT REVIEW 
-            if(displayUpdateForm)
-                displayUpdateForm.addEventListener("click", () => {
-                    const updateReviewForm = document.querySelector('#updateReviewForm');
-                    const reviewText = document.querySelector('#reviewTextHidden');
-                    const reviewTextInput = updateReviewForm.querySelector('#updateReviewText');
-                    const updateRating = updateReviewForm.querySelectorAll('.rating')[0].querySelectorAll('button');
-                    const updateRate = updateReviewForm.getElementsByClassName("rate")[0];
-                    const formRate = updateReviewForm.querySelector('#updateRateValue');
-                    const myReview = document.querySelector('#myReview');
+    //         //ON 'UPDATE' BUTTON CLICK, DISPLAY UPDATE FORM AND FILL IT WITH EXISTING VALUES OF THE CURRENT REVIEW 
+    //         if(displayUpdateForm)
+    //             displayUpdateForm.addEventListener("click", () => {
+    //                 const updateReviewForm = document.querySelector('#updateReviewForm');
+    //                 const reviewText = document.querySelector('#reviewTextHidden');
+    //                 const reviewTextInput = updateReviewForm.querySelector('#updateReviewText');
+    //                 const updateRating = updateReviewForm.querySelectorAll('.rating')[0].querySelectorAll('button');
+    //                 const updateRate = updateReviewForm.getElementsByClassName("rate")[0];
+    //                 const formRate = updateReviewForm.querySelector('#updateRateValue');
+    //                 const myReview = document.querySelector('#myReview');
 
-                    myReview.style.display = "none";
-                    updateReviewForm.style.display = "block";
-                    displayUpdateForm.style.display = "none";
+    //                 myReview.style.display = "none";
+    //                 updateReviewForm.style.display = "block";
+    //                 displayUpdateForm.style.display = "none";
 
-                    formRate.value = updateRate.value;
-                    reviewTextInput.textContent = reviewText.value;
-                    for(let i=0; i < updateRate.value; i++){
-                        updateRating[i].style.color = "#590243";
-                    }
+    //                 formRate.value = updateRate.value;
+    //                 reviewTextInput.textContent = reviewText.value;
+    //                 for(let i=0; i < updateRate.value; i++){
+    //                     updateRating[i].style.color = "#590243";
+    //                 }
                 
-                });
-            }
+    //             });
+    //         }
 
-        }
-    }
+    //     }
+    // }
     if (window.location.pathname == '/checkout/') {
         var stripePublicKey = document.getElementById('id_stripe_public_key').innerText.slice(1, -1);
         var clientSecret = document.getElementById('id_client_secret').innerText.slice(1, -1);
