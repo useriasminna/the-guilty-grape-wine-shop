@@ -321,7 +321,6 @@ h1 {
 
 .gray-btn {
     background-color: #e9ecef;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     border: 1px solid #bebebe;
     color: #3a3a3a;
 
@@ -709,8 +708,8 @@ input:not([type=checkbox]) {
     font-size: .875rem;
 }
 select{
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
 }
 
 .custom-control label:hover {
@@ -1579,6 +1578,10 @@ select option[value=""] {
 
     .responsive-pad{
         padding: 10px 20px !important;
+    }
+
+    .small-btn {
+        font-size: inherit;
     }
 }
 
