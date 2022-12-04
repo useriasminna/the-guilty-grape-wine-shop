@@ -2,4 +2,5 @@ env.py
 *.sqlite3
 *.pyc
 .venv
+.vscode
 __pycache__
