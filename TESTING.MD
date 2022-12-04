@@ -560,11 +560,35 @@ At the time of deployment the validation for *base.css* has the following outcom
 The Javascript code was validated using using [JsHint](https://jshint.com/)<br>
 At the time of deployment the validation for *script.js* has the following outcome:<br><br>
 
+<details>
+<summary>script.js</summary>
 <img src="media/js_valid.png" width="40%"><br><br>
-
-* The warnings appeared because of EventListeners added to elements in a loop.<br>
-I tried to solve the issue but no successful method has been found, so I chose to ignore the warning as it is not affecting the way my code works in any way.
+</details>
+<details>
+<summary>products.js</summary>
+<img src="media/js_valid_products.png" width="40%"><br><br>
+</details>
+<details>
+<summary>bag.js</summary>
+<img src="media/js_valid_bag.png" width="40%"><br><br>
+</details>
+<details>
+<summary>checkout.js</summary>
+<img src="media/js_valid_checkout.png" width="40%"><br><br>
 * The script for defining the Stripe methods contains *Stripe* variable that generate the error in the linter. As this is a script taken and adapted from the [Stripe Documentation](https://stripe.com/docs/development), I choose to ignore this issue as there is no fix found for it. 
+</details>
+<details>
+<summary>profiles.js</summary>
+<img src="media/js_valid_profiles.png" width="40%"><br><br>
+</details>
+<details>
+<summary>wishlist.js</summary>
+<img src="media/js_valid_wishlist.png" width="40%"><br><br>
+</details><br><br.>
+
+* The warnings listed are caused of the EventListeners added to elements in a loop.<br>
+I tried to solve the issue but no successful method has been found, so I chose to ignore the warning as it is not affecting the way my code works in any way.
+
 
 ### Python
 The python code was tested using [pycodestyle](https://pypi.org/project/pycodestyle/) online validator.<br>
@@ -631,77 +655,88 @@ The performance of the website was tested with [Google Lighthouse](https://devel
 <summary>Desktop</summary>
 
 * Home page<br>
-<img src="" width="60%"><br><br>
+<img src="media/home_dsk.png" width="60%"><br><br>
 
 * Products page<br>
-<img src="" width="60%"><br><br>
+<img src="media/products_dsk.png" width="60%"><br><br>
 
 * Product details page<br>
-<img src="" width="60%"><br><br>
+<img src="media/details_dsk.png" width="60%"><br><br>
 
 * Bag page<br>
-<img src="" width="60%"><br><br>
+<img src="media/bag_dsk.png" width="60%"><br><br>
 
 * Checkout page<br>
-<img src="" width="60%"><br><br>
+<img src="media/checkout_dsk.png" width="60%"><br><br>
 
 * Checkout Success page<br>
-<img src="" width="60%"><br><br>
+<img src="media/success_dsk.png" width="60%"><br><br>
 
 * User Profile page<br>
-<img src="" width="60%"><br><br>
+<img src="media/profile_dsk.png" width="60%"><br><br>
 
 * Admin Orders page<br>
-<img src="" width="60%"><br><br>
+<img src="media/orders_dsk.png" width="60%"><br><br>
 
 * Wishlist page<br>
-<img src="" width="60%"><br><br>
+<img src="media/wishlist_dsk.png" width="60%"><br><br>
 
 * Login page<br>
-<img src="" width="60%"><br><br>
+<img src="media/login_dsk.png" width="60%"><br><br>
 
 * Register page<br>
-<img src="" width="60%"><br><br>
+<img src="media/register_dsk.png" width="60%"><br><br>
 </details>
 
 <details>
 <summary>Mobile</summary>  
 
 * Home page<br>
-<img src="" width="60%"><br><br>
+<img src="media/home_mbl.png" width="60%"><br><br>
 
 * Products page<br>
-<img src="" width="60%"><br><br>
+<img src="media/products_mbl.png" width="60%"><br><br>
 
 * Product details page<br>
-<img src="" width="60%"><br><br>
+<img src="media/details_mbl.png" width="60%"><br><br>
 
 * Bag page<br>
-<img src="" width="60%"><br><br>
+<img src="media/bag_mbl.png" width="60%"><br><br>
 
 * Checkout page<br>
-<img src="" width="60%"><br><br>
+<img src="media/checkout_mbl.png" width="60%"><br><br>
 
 * Checkout Success page<br>
-<img src="" width="60%"><br><br>
+<img src="media/success_mbl.png" width="60%"><br><br>
 
 * User Profile page<br>
-<img src="" width="60%"><br><br>
+<img src="media/profile_mbl.png" width="60%"><br><br>
 
 * Admin Orders page<br>
-<img src="" width="60%"><br><br>
+<img src="media/orders_mbl.png" width="60%"><br><br>
 
 * Wishlist page<br>
-<img src="" width="60%"><br><br>
+<img src="media/wishlist_mbl.png" width="60%"><br><br>
 
 * Login page<br>
-<img src="" width="60%"><br><br>
+<img src="media/login_mbl.png" width="60%"><br><br>
 
 * Register page<br>
-<img src="" width="60%"><br><br>
+<img src="media/register_mbl.png" width="60%"><br><br>
 </details><br>
+ 
+ The following updates have been made for improving the performance score:
+ * Compress images with [Tiny PNG](https://tinypng.com/)
+ * Convert images to <em>webp</em> format
+ * Split base <code>script.js</code > into multiple js files for every app
+
+ After these updates were made, the score improved but the lowest score remains <b>67</b> for desktop and <b>64</b> for mobile.
+ <!-- The main issue is the server response time for which I couldn't find a solution.<br><br -->
+ <img src="media/low_score.png" width="60%"><br><br>
 
 ## Bugs 
+* **Admin orders appear multiple time**
+    Because of the implementation of the webhooks for checkout, whenever a user tries to complete an order and it is not finalised because of the form's errors or other types of validations, the order is still created. That means that multiple order objects will be added to the database until a successful one is created. Therefore, the orders listed in the Admin  <em>Manage orders</em> page reflects all the database's order objects. As I was not sure how this issue would be handled in a real-world situation, I didn't filter the results displayed for the admin, thinking that he should have access to all the entities created for better data manipulation. . 
 * **Header padding**
     Because the header is implemented with <code>position: fixed</code>, I had to set a <code>padding-top</code> for the main container so it appears as if it is positioned below the header's content. In order to find the <code>padding-top</code> value that matches the header's height for every device, I used javascript to dynamically adjust it. This is why when testing the website for responsiveness using <b>dev tools</b>, the padding only changes its value on page reload. This bug is not visible when testing on real devices.  
 * **Pagination**
