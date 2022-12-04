@@ -1,6 +1,3 @@
-// GET USER AUTHENTICATION STATUS AND TYPE
-let authStatus= document.getElementById('authStatus');
-let userType = document.getElementById('userType');
 
 // ---------------------------SCRIPT FOR UPDATING CURRENT URL WITH SORT VALUE--------------------------------------------
 let sortSelector = document.getElementById('sort-selector');
