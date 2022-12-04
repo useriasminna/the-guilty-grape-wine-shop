@@ -2,7 +2,8 @@
 <img src="media/responsive.png" ><br>
 <hr>
 
-- [The Guilty Grape - Online Wine Shop](#the-guilty-grape---online-wine-shop)
+TABLE OF CONTENTS
+
   - [Overview](#overview)
   - [UX](#ux)
   - [Business Model](#business-model)
