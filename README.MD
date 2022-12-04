@@ -1,45 +1,20 @@
 # The Guilty Grape - Online Wine Shop
 <img src="media/responsive.png" ><br>
 <hr>
-- [The Guilty Grape - Online Wine Shop](#the-guilty-grape---online-wine-shop)
-  
-  * [Overview](#overview)
-  * [UX](#ux)
-    + [Strategy<hr>](#strategy-hr-)
-    + [Scope<hr>](#scope-hr-)
-    + [Structure<hr>](#structure-hr-)
-    + [Skeleton<hr>](#skeleton-hr-)
-    + [Surface<hr>](#surface-hr-)
-      - [Color Scheme](#color-scheme)
-      - [Fonts](#fonts)
-      - [Visual Effects](#visual-effects)
-  * [Business Model](#business-model)
-  * [Marketing](#marketing)
-  * [Agile Methodology](#agile-methodology)
-  * [Features](#features)
-    + [Existing Features<hr>](#existing-features-hr-)
-      - [Products](#products)
-      - [Product Reviews](#product-reviews)
-      - [Wishlist](#wishlist)
-      - [Bag](#bag)
-      - [Checkout](#checkout)
-      - [User Profile](#user-profile)
-      - [Admin](#admin)
-    + [Future Feature Considerations<hr>](#future-feature-considerations-hr-)
-  * [Responsive Layout and Design](#responsive-layout-and-design)
-  * [Tools Used](#tools-used)
-    + [Python packages](#python-packages)
-  * [Testing](#testing)
-  * [Deployment](#deployment)
-    + [Deploy on Heroku](#deploy-on-heroku)
-    + [Fork the repository](#fork-the-repository)
-    + [Clone the repository](#clone-the-repository)
-  * [Credits](#credits)
-    + [Content](#content)
-    + [Media](#media)
-    + [Code](#code)
-  * [Acknowledgements](#acknowledgements)
 
+- [The Guilty Grape - Online Wine Shop](#the-guilty-grape---online-wine-shop)
+  - [Overview](#overview)
+  - [UX](#ux)
+  - [Business Model](#business-model)
+  - [Marketing](#marketing)
+  - [Agile Methodology](#agile-methodology)
+  - [Features](#features)
+  - [Responsive Layout and Design](#responsive-layout-and-design)
+  - [Tools Used](#tools-used)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 ## Overview
 The Guilty Grape is an e-commerce website created for a fictive wine shop located in Dublin, Ireland. The main purpose of the project was to implement a fully functional online store that will make the process of selecting and purchasing wine products much easier for customers.<br>
 The users are given the possibility to see every product's details, create a wishlist, add items to the shopping bag, purchase with an online payment and access orders' history. Also, the staff members have permission for controlling the data using specially designed features.<br>
@@ -121,7 +96,7 @@ Create an e-commerce application for The Guilty Grape wine shop that is useful f
 * To implement fully functional features that will ease the staff members' tasks and upgrade clients' experience with the restaurant services;
 * To make the website available and functional on every device.<br><br>
 
-### Scope<hr>
+### Scope <hr>
 **Simple and intuitive User Experience**<br>
 * Ensure the navigation menu is visible and functional at every step;
 * Ensure every page has a suggestive name that fits its content;
