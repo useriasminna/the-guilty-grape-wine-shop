@@ -1,5 +1,6 @@
-/*jshint esversion: 6 */
-
+// GET USER AUTHENTICATION STATUS AND TYPE
+let authStatus= document.getElementById('authStatus');
+let userType = document.getElementById('userType');
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
@@ -281,10 +282,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById('navitem-products').classList.add('nav-item-active');
     else if (path_info.includes('/manage_orders/')) 
         document.getElementById('navitem-admin').classList.add('nav-item-active');
-    else if (path_info.includes('/bag/')) 
-        document.getElementById('navitem-bag').classList.add('nav-item-active');
-    else if (path_info.includes('/wishlist/')) 
-        document.getElementById('navitem-wishlist').classList.add('nav-item-active');
+    else if (path_info.includes('/bag/')){
+        if(authStatus.innerText == 'neauthenticated'){
+            document.getElementById('bagNav').getElementsByTagName('a')[0].classList.add('nav-item-active');
+        }
+        else{
+            document.getElementById('navitem-bag').classList.add('nav-item-active');
+        }
+    } 
+    else if (path_info.includes('/wishlist/')){
+        if(authStatus.innerText == 'neauthenticated'){
+            document.getElementById('wishlistNav').getElementsByTagName('a')[0].classList.add('nav-item-active');
+        }
+        else{
+            document.getElementById('navitem-wishlist').classList.add('nav-item-active');
+        }
+    } 
     else if (path_info.includes('/profile/')) 
         document.getElementById('navitem-profile').classList.add('nav-item-active');
     else if (path_info.includes('/login/')) 
