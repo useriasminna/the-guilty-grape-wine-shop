@@ -27,6 +27,7 @@ django-phonenumber-field = {extras = ["phonenumbers"], version = "*"}
 django-coverage = "*"
 pytest-cov = "*"
 coverage = "*"
+pycodestyle = "*"
 
 [dev-packages]
 django-url-tools = "*"

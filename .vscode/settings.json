@@ -1,5 +1,5 @@
 {
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "[python]": {
         "diffEditor.codeLens": false
@@ -9,4 +9,6 @@
         "--disable=django-not-configured",
         "--django-settings-module=<mainapp>.settings",
     ],
+    "python.linting.flake8Enabled": false,
+    "python.linting.pycodestyleEnabled": true,
 }
