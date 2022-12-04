@@ -561,7 +561,7 @@ a:hover {
 }
 
 .search-bar i {
-    margin-top: 4px;
+    margin-top: 5px;
 }
 
 .search-bar .dropdown {
@@ -1600,10 +1600,6 @@ select option[value=""] {
         padding: 10px 20px !important;
     }
 
-    .small-btn {
-        font-size: inherit;
-    }
-
     .no-hover-rating {
         display: block;
     }
@@ -1701,7 +1697,7 @@ select option[value=""] {
     }
 
     .search-bar i {
-        margin-top: 0px;
+        margin-top: 2px;
     }
 
     .home-cover {
